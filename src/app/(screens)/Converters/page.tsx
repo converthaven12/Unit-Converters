@@ -4,7 +4,7 @@ import KgToGram from "./WeightAndMass/KgToGram/page";
 const page = () => {
   return (
     <div>
-      <KgToGram />
+      addwad
     </div>
   );
 };
