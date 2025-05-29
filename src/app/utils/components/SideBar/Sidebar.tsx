@@ -10,12 +10,10 @@ import { useSidebar } from "../../../../app/utils/context/SidebarContext";
 
 const Sidebar: React.FC = () => {
   const { isOpened, setIsOpened } = useSidebar();
-  const [menusToMap, setMenusToMap] = useState<string | "">("");
+  const [openSection, setOpenSection] = useState<string | "">("");
 
-  const KgConverters = menus.WeightAndMass;
-
-  const handleMenuClick = (menu: string) => {
-    setMenusToMap((prev) => (prev === menu ? "" : menu));
+  const handleMenuClick = (menuKey: string) => {
+    setOpenSection((prev) => (prev === menuKey ? "" : menuKey));
   };
 
   return (
@@ -25,38 +23,43 @@ const Sidebar: React.FC = () => {
       ${!isOpened ? "w-[74px]" : "w-full md:w-[20dvw] xl:w-[18dvw]"}`}
     >
       <Image src={Logo} alt="logo" className="w-20 h-20 mx-auto" />
+
       <div className="flex flex-col flex-grow overflow-y-auto pr-1">
-        {/* Weight And Mass Unit Conversions */}
+        {Object.entries(menus).map(([key, links]) => (
+          <div key={key}>
+            {/* Dropdown heading */}
+            {isOpened && (
+              <div
+                className="flex items-center justify-between mb-2 cursor-pointer"
+                onClick={() => handleMenuClick(key)}
+              >
+                <p className="text-xs font-medium">{key.replace(/([A-Z])/g, " $1").trim()}</p>
+                <Image src={ArrowDown} alt="arrow_down" className={`w-4 h-4 transition-transform duration-200 ${openSection === key ? "rotate-180" : ""}`} />
+              </div>
+            )}
 
-        {isOpened && (
-          <div
-            className="flex items-center justify-between mb-4 cursor-pointer"
-            onClick={() => handleMenuClick("WeightAndMass")}
-          >
-            <p className="text-xs">Weight And Mass Unit Conversions</p>
-            <Image src={ArrowDown} alt="arrow_down" className="w-4 h-4" />
+            {/* Dropdown items */}
+            {openSection === key &&
+              links.map((item: any, index: number) => (
+                <Link
+                  href={item.path}
+                  key={index}
+                  className={`cursor-pointer gap-2 py-2 ml-5 rounded-md truncate 
+                  transition-all duration-200 block ${
+                    item.isActive
+                      ? "text-themeColor font-semibold"
+                      : "text-[#575757] font-light hover:text-black"
+                  }`}
+                >
+                  {isOpened && (
+                    <p className="transition-opacity duration-100 text-xs">
+                      {item.label}
+                    </p>
+                  )}
+                </Link>
+              ))}
           </div>
-        )}
-
-        {menusToMap === "WeightAndMass" &&
-          KgConverters.map((item: any, index: number) => (
-            <Link
-              href={item.path}
-              key={index}
-              className={`cursor-pointer gap-2 py-2 ml-5 rounded-md truncate 
-              transition-all duration-200 ${
-                item.isActive
-                  ? "text-themeColor font-semibold"
-                  : "text-[#575757] font-light hover:text-black"
-              } ${!isOpened && "justify-center"}`}
-            >
-              {isOpened && (
-                <p className="transition-opacity duration-100 text-xs">
-                  {item.label}
-                </p>
-              )}
-            </Link>
-          ))}
+        ))}
       </div>
 
       <div className="w-full flex justify-end mt-2 pt-2 border-t border-gray-200">
