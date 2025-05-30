@@ -35,7 +35,7 @@ const Sidebar: React.FC = () => {
             {/* Dropdown heading */}
             {isOpened && (
               <div
-                className="flex items-center justify-between mb-2 cursor-pointer"
+                className="flex items-center justify-between mb-4 cursor-pointer"
                 onClick={() => handleMenuClick(key)}
               >
                 <p className="text-sm font-medium">

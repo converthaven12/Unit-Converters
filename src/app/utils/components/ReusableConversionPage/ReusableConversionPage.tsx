@@ -9,10 +9,9 @@ interface ConversionPageProps {
   title: string;
   fromUnit: string;
   toUnit: string;
-  definitions: { heading: string; content: string }[];
+  definitions: { heading: string; content: string[] }[];
   tableComponent: React.ReactNode;
-//   conversionExample: string;
-conversionExample: React.ReactNode;
+  conversionExample: React.ReactNode;
 
   convertFunction: (value: number) => number;
   reversePath?: string;
@@ -103,7 +102,9 @@ const ReusableConversionPage: React.FC<ConversionPageProps> = ({
           <h1 className="text-xl text-[#006633] font-semibold">
             {section.heading}
           </h1>
-          <p>{section.content}</p>
+          {section.content.map((e, i) => (
+            <p key={i}>{e}</p>
+          ))}
         </section>
       ))}
 
