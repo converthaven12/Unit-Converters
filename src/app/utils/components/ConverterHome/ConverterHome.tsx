@@ -47,14 +47,14 @@ const ConverterHome: React.FC = () => {
 
   return (
     <div className="p-4 font-sans max-w-[40%]">
-      <h2 className="text-xl font-bold mb-4">Universal Unit Converter</h2>
+       <h1 className="font-bold text-4xl text-[#006633] mb-4">Universal Unit Converter</h1>
 
       <div className="flex flex-wrap gap-2 mb-6">
         {categories.map((cat) => (
           <button
             key={cat}
             className={`px-3 py-1 rounded border ${
-              category === cat ? 'bg-blue-600 text-white' : 'bg-white'
+              category === cat ? 'bg-green-800 text-white font-bold px-4 py-2 rounded shadow hover:bg-green-900' : 'bg-white'
             }`}
             onClick={() => {
               setCategory(cat);

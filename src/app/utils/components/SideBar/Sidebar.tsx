@@ -22,7 +22,12 @@ const Sidebar: React.FC = () => {
       flex flex-col border border-[#D7D7FB] transition-all duration-300
       ${!isOpened ? "w-[74px]" : "w-full md:w-[20dvw] xl:w-[18dvw]"}`}
     >
-      <Image src={Logo} alt="logo" className="w-20 h-20 mx-auto" />
+      {/* <Image src={Logo} alt="logo" className="w-20 h-20 mx-auto" /> */}
+      {isOpened && (
+        <p className="text-[#006633] font-bold text-xl mb-5 text-center">
+          Convert Haven
+        </p>
+      )}
 
       <div className="flex flex-col flex-grow overflow-y-auto pr-1">
         {Object.entries(menus).map(([key, links]) => (
@@ -33,8 +38,16 @@ const Sidebar: React.FC = () => {
                 className="flex items-center justify-between mb-2 cursor-pointer"
                 onClick={() => handleMenuClick(key)}
               >
-                <p className="text-xs font-medium">{key.replace(/([A-Z])/g, " $1").trim()}</p>
-                <Image src={ArrowDown} alt="arrow_down" className={`w-4 h-4 transition-transform duration-200 ${openSection === key ? "rotate-180" : ""}`} />
+                <p className="text-sm font-medium">
+                  {key.replace(/([A-Z])/g, " $1").trim()}
+                </p>
+                <Image
+                  src={ArrowDown}
+                  alt="arrow_down"
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    openSection === key ? "rotate-180" : ""
+                  }`}
+                />
               </div>
             )}
 

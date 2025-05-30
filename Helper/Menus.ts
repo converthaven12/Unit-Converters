@@ -8,6 +8,58 @@ type Menus = {
 };
 
 export const menus: Menus = {
+  CommonConversions : [
+    { label: "cm to inches", path: "/Converters/CommonConversions/CmToInches" },
+    { label: "inches to cm", path: "/Converters/CommonConversions/InchesToCm" },
+
+    { label: "Kg to lbs", path: "/Converters/WeightAndMass/KgToLbs" },
+    { label: "lbs to kg", path: "/Converters/WeightAndMass/LbsToKg" },
+
+    { label: "Celsius to Fahrenheit", path: "/Converters/CommonConversions/CelsiusToFahrenheit" },
+    { label: "Fahrenheit to Celsius", path: "/Converters/CommonConversions/FahrenheitToCelsius" },
+
+    { label: "inches to mm", path: "/Converters/CommonConversions/InchesToMm" },
+    { label: "mm to inches", path: "/Converters/CommonConversions/MmToInches" },
+
+    { label: "meters to feet", path: "/Converters/CommonConversions/MetersToFeet" },
+    { label: "feet to meters", path: "/Converters/CommonConversions/FeetToMeters" },
+
+    { label: "km to miles", path: "/Converters/CommonConversions/KmToMiles" },
+    { label: "miles to km", path: "/Converters/CommonConversions/MilesToKm" },
+
+    { label: "cm to feet", path: "/Converters/CommonConversions/CmToFeet" },
+    { label: "feet to cm", path: "/Converters/CommonConversions/FeetToCm" },
+
+    { label: "grams to ounces", path: "/Converters/WeightAndMass/GramsToOunces" },
+    { label: "ounces to grams", path: "/Converters/WeightAndMass/OuncesToGrams" },
+
+    { label: "inches to feet", path: "/Converters/CommonConversions/InchesToFeet" },
+    { label: "feet to inches", path: "/Converters/CommonConversions/FeetToInches" },
+
+    { label: "liters to gallons", path: "/Converters/CommonConversions/LitersToGallons" },
+    { label: "gallons to liters", path: "/Converters/CommonConversions/GallonsToLiters" },
+
+    { label: "pounds to ounces", path: "/Converters/WeightAndMass/PoundsToOunces" },
+    { label: "ounces to pounds", path: "/Converters/WeightAndMass/OuncesToPounds" },
+
+    { label: "kph to mph", path: "/Converters/CommonConversions/KphToMph" },
+    { label: "mph to kph", path: "/Converters/CommonConversions/MphToKph" },
+
+    { label: "acres to square feet", path: "/Converters/CommonConversions/AcresToSquareFeet" },
+    { label: "square feet to acres", path: "/Converters/CommonConversions/SquareFeetToAcres" },
+
+    { label: "radians to degrees", path: "/Converters/CommonConversions/RadiansToDegrees" },
+    { label: "degrees to radians", path: "/Converters/CommonConversions/DegreesToRadians" },
+
+    { label: "hp to kw", path: "/Converters/CommonConversions/HpToKw" },
+    { label: "kw to hp", path: "/Converters/CommonConversions/KwToHp" },
+
+    { label: "meters to yards", path: "/Converters/CommonConversions/MetersToYards" },
+    { label: "yards to meters", path: "/Converters/CommonConversions/YardsToMeters" },
+
+    { label: "mL to cups", path: "/Converters/CommonConversions/MlToCups" },
+    { label: "cups to mL", path: "/Converters/CommonConversions/CupsToMl" }
+  ],
   WeightAndMass: [
     { label: "Kg to lbs", path: "/Converters/WeightAndMass/KgToLbs" },
     { label: "lbs to kg", path: "/Converters/WeightAndMass/LbsToKg" },
@@ -134,7 +186,7 @@ export const menus: Menus = {
     { label: "Sound Converter", path: "/Converters/OtherConverters/SoundConverter" },
     { label: "Typography Converter", path: "/Converters/OtherConverters/TypographyConverter" },
     { label: "Volume - Lumber Converter", path: "/Converters/OtherConverters/VolumeLumberConverter" }
-  ]
+  ],
 };
 
 export const CommonConversions = [
