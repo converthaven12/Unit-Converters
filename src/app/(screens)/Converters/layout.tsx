@@ -16,7 +16,7 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
         <Sidebar />
       </div>
       <div
-        className={`w-full flex-1 flex flex-col overflow-y-auto py-5 px-3 md:px-0 transition-all duration-300 ${sidebarWidth}`}
+        className={`bg-[#F5F5F9] w-full flex-1 flex flex-col overflow-y-auto py-5 px-3 md:px-0 transition-all duration-300 ${sidebarWidth}`}
       >
         <div className="px-0 md:px-5 flex-1 font-alata">{children}</div>
       </div>
