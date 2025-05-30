@@ -46,7 +46,7 @@ const ConverterHome: React.FC = () => {
   const result = convert(numericValue, fromUnit, toUnit);
 
   return (
-    <div className="p-4 font-sans max-w-[40%] mx-auto">
+    <div className="p-4 font-sans max-w-[40%]">
       <h2 className="text-xl font-bold mb-4">Universal Unit Converter</h2>
 
       <div className="flex flex-wrap gap-2 mb-6">
