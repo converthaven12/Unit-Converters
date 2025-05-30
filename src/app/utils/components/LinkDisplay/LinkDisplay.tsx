@@ -9,7 +9,7 @@ const LinkDisplay = () => {
       <HeadingTag heading="Common Conversions" />
       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 list-disc pl-6">
         {CommonConversions.map((item, index) => (
-          <li key={index}>
+          <li key={index} className="list-none">
             <Link href={item.path} className="text-blue-600 hover:underline">
               {item.label}
             </Link>
