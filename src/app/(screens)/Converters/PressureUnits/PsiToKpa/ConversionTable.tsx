@@ -1,0 +1,47 @@
+import React from "react";
+
+const ConversionTable = () => {
+  const data = [
+    { psi: 10, kpa: 10 / 0.145038 },
+    { psi: 20, kpa: 20 / 0.145038 },
+    { psi: 50, kpa: 50 / 0.145038 },
+    { psi: 100, kpa: 100 / 0.145038 },
+    { psi: 150, kpa: 150 / 0.145038 },
+    { psi: 200, kpa: 200 / 0.145038 },
+    { psi: 300, kpa: 300 / 0.145038 },
+    { psi: 500, kpa: 500 / 0.145038 },
+    { psi: 750, kpa: 750 / 0.145038 },
+    { psi: 1000, kpa: 1000 / 0.145038 },
+  ];
+
+  return (
+    <div className="overflow-x-auto mt-10">
+      <table className="table-auto border-collapse w-full">
+        <thead>
+          <tr className="bg-blue-700 text-white text-left">
+            <th className="px-4 py-2 border border-blue-900">
+              Pounds per Square Inch (psi)
+            </th>
+            <th className="px-4 py-2 border border-blue-900">
+              Kilopascal (kPa)
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, i) => (
+            <tr key={i} className={i % 2 === 0 ? "bg-gray-100" : ""}>
+              <td className="px-4 py-2 border border-blue-800">
+                {row.psi.toFixed(2)}
+              </td>
+              <td className="px-4 py-2 border border-blue-800">
+                {row.kpa.toFixed(4)}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default ConversionTable;

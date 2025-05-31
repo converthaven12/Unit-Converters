@@ -13,7 +13,7 @@ interface ConversionPageProps {
   tableComponent: React.ReactNode;
   conversionExample: React.ReactNode;
 
-  convertFunction: (value: number) => number;
+  convertFunction: (value: any) => any;
   reversePath?: string;
 }
 
