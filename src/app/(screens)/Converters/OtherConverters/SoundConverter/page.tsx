@@ -1,31 +1,50 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
-const units: Record<string, number> = {
-  "Decibel (dB)": 1,
-  "Bel (B)": 10,
-  "Pascal (Pa)": 1,
-  "MicroPascal (µPa)": 1e-6,
-  "Atmosphere (atm)": 101325,
-  "Bar": 100000,
-  "Torr": 133.322,
-  "Sound Pressure Level (SPL) Reference": 20e-6, // Reference pressure in Pa
-};
+const units = ["bel [B]", "decibel [dB]", "neper [Np]"];
 
+// Conversion formulas between units
 const convert = (value: number, from: string, to: string): number => {
-  // Decibel conversions are logarithmic and context dependent,
-  // so for simplicity, only convert pressure units linearly here.
-  if ((from === "Decibel (dB)" || from === "Bel (B)") || (to === "Decibel (dB)" || to === "Bel (B)")) {
-    // No direct linear conversion
-    return NaN;
+  if (from === to) return value;
+
+  // Convert all input values first to a common base — let's use bel as base
+  let valueInBel: number;
+
+  switch (from) {
+    case "bel [B]":
+      valueInBel = value;
+      break;
+    case "decibel [dB]":
+      valueInBel = value / 10; // dB to bel
+      break;
+    case "neper [Np]":
+      valueInBel = (value * 8.6858896) / 10; // Np → dB → bel
+      break;
+    default:
+      return NaN;
   }
-  return (value * units[from]) / units[to];
+
+  // Convert from bel to target unit
+  switch (to) {
+    case "bel [B]":
+      return valueInBel;
+    case "decibel [dB]":
+      return valueInBel * 10;
+    case "neper [Np]":
+      return (valueInBel * 10) / 8.6858896;
+    default:
+      return NaN;
+  }
 };
 
 const SoundConverter = () => (
-  <ReusableConverter heading="Sound Converter" units={Object.keys(units)} convert={convert} />
+  <ReusableConverter
+    heading="Sound Level Converter"
+    units={units}
+    convert={convert}
+  />
 );
 
 export default SoundConverter;

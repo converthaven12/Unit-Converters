@@ -5,58 +5,86 @@ import ReusableConverter from "../../../../utils/components/ReusableConverter/Re
 
 const speedOfLight = 299792458; // m/s
 
-const units = [
-  "Hertz (Hz)",
-  "Kilohertz (kHz)",
-  "Megahertz (MHz)",
-  "Gigahertz (GHz)",
-  "Wavelength (meters)",
-  "Wavelength (nanometers)"
-];
+const frequencyWavelengthUnits: Record<string, number> = {
+  // Frequency units (Hz base)
+  "Hertz [Hz]": 1,
+  "Exahertz [EHz]": 1e18,
+  "Petahertz [PHz]": 1e15,
+  "Terahertz [THz]": 1e12,
+  "Gigahertz [GHz]": 1e9,
+  "Megahertz [MHz]": 1e6,
+  "Kilohertz [kHz]": 1e3,
+  "Hectohertz [hHz]": 1e2,
+  "Dekahertz [daHz]": 1e1,
+  "Decihertz [dHz]": 1e-1,
+  "Centihertz [cHz]": 1e-2,
+  "Millihertz [mHz]": 1e-3,
+  "Microhertz [µHz]": 1e-6,
+  "Nanohertz [nHz]": 1e-9,
+  "Picohertz [pHz]": 1e-12,
+  "Femtohertz [fHz]": 1e-15,
+  "Attohertz [aHz]": 1e-18,
+  "Cycle/second": 1,
+
+  // Wavelength units (meters base)
+  "Wavelength in exametres": 1e18,
+  "Wavelength in petametres": 1e15,
+  "Wavelength in terametres": 1e12,
+  "Wavelength in gigametres": 1e9,
+  "Wavelength in megametres": 1e6,
+  "Wavelength in kilometres": 1e3,
+  "Wavelength in hectometres": 1e2,
+  "Wavelength in dekametres": 1e1,
+  "Wavelength in metres [m]": 1,
+  "Wavelength in decimetres": 1e-1,
+  "Wavelength in centimetres [cm]": 1e-2,
+  "Wavelength in millimetres [mm]": 1e-3,
+  "Wavelength in micrometres": 1e-6,
+  "Wavelength in nanometres [nm]": 1e-9,
+
+  // Special wavelengths (meters)
+  "Electron Compton wavelength": 2.426310238e-12,
+  "Proton Compton wavelength": 1.321409856e-15,
+  "Neutron Compton wavelength": 1.319590905e-15,
+};
+
+const units = Object.keys(frequencyWavelengthUnits);
 
 const convert = (value: number, from: string, to: string): number => {
   if (from === to) return value;
 
-  if (from.includes("Hertz") && to.includes("Wavelength")) {
-    let freqHz = value;
-    if (from === "Kilohertz (kHz)") freqHz = value * 1e3;
-    else if (from === "Megahertz (MHz)") freqHz = value * 1e6;
-    else if (from === "Gigahertz (GHz)") freqHz = value * 1e9;
+  const fromIsFrequency = from.includes("Hz") || from === "Cycle/second";
+  const toIsFrequency = to.includes("Hz") || to === "Cycle/second";
 
-    let wavelengthMeters = speedOfLight / freqHz;
-    if (to === "Wavelength (nanometers)") return wavelengthMeters * 1e9;
-    return wavelengthMeters;
+  const fromIsWavelength = from.startsWith("Wavelength") || from.includes("wavelength") || from.includes("Compton");
+  const toIsWavelength = to.startsWith("Wavelength") || to.includes("wavelength") || to.includes("Compton");
+
+  // Convert from frequency to frequency
+  if (fromIsFrequency && toIsFrequency) {
+    const baseValue = value * frequencyWavelengthUnits[from];
+    return baseValue / frequencyWavelengthUnits[to];
   }
 
-  if (from.includes("Wavelength") && to.includes("Hertz")) {
-    let wavelengthMeters = value;
-    if (from === "Wavelength (nanometers)") wavelengthMeters = value * 1e-9;
-
-    let freqHz = speedOfLight / wavelengthMeters;
-    if (to === "Kilohertz (kHz)") return freqHz / 1e3;
-    else if (to === "Megahertz (MHz)") return freqHz / 1e6;
-    else if (to === "Gigahertz (GHz)") return freqHz / 1e9;
-    return freqHz;
+  // Convert from wavelength to wavelength
+  if (fromIsWavelength && toIsWavelength) {
+    const baseValue = value * frequencyWavelengthUnits[from];
+    return baseValue / frequencyWavelengthUnits[to];
   }
 
-  const freqUnits: Record<string, number> = {
-    "Hertz (Hz)": 1,
-    "Kilohertz (kHz)": 1e3,
-    "Megahertz (MHz)": 1e6,
-    "Gigahertz (GHz)": 1e9,
-  };
-
-  const wavelengthUnits: Record<string, number> = {
-    "Wavelength (meters)": 1,
-    "Wavelength (nanometers)": 1e-9,
-  };
-
-  if (from in freqUnits && to in freqUnits) {
-    return (value * freqUnits[from]) / freqUnits[to];
+  // Frequency to wavelength
+  if (fromIsFrequency && toIsWavelength) {
+    const freqHz = value * frequencyWavelengthUnits[from];
+    if (freqHz === 0) return NaN;
+    const wavelengthMeters = speedOfLight / freqHz;
+    return wavelengthMeters / frequencyWavelengthUnits[to]; // convert base meters to target wavelength unit
   }
 
-  if (from in wavelengthUnits && to in wavelengthUnits) {
-    return (value * wavelengthUnits[from]) / wavelengthUnits[to];
+  // Wavelength to frequency
+  if (fromIsWavelength && toIsFrequency) {
+    const wavelengthMeters = value * frequencyWavelengthUnits[from];
+    if (wavelengthMeters === 0) return NaN;
+    const freqHz = speedOfLight / wavelengthMeters;
+    return freqHz / frequencyWavelengthUnits[to]; // convert base Hz to target frequency unit
   }
 
   return NaN;

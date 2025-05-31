@@ -4,11 +4,18 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const units: Record<string, number> = {
-  "Lux (lx)": 1,            // SI unit
-  "Phot (ph)": 10000,       // 1 phot = 10,000 lux
-  "Foot-candle (fc)": 10.7639,  // 1 fc = 10.7639 lux
-  "Meter-candle (m-cd)": 1,  // Obsolete, approx lux
-  "Kilolux (klx)": 1000,
+  "Lux [lx]": 1,
+  "Meter-candle [m*c]": 1,
+  "Centimeter-candle [cm*c]": 10000,
+  "Foot-candle [ft*c, fc]": 10.7639,
+  "Flame": 20,
+  "Phot [ph]": 10000,
+  "Nox": 0.001,
+  "Candela steradian/sq. meter": 1,
+  "Lumen/square meter [lm/m²]": 1,
+  "Lumen/square centimeter": 10000,
+  "Lumen/square foot [lm/ft²]": 10.7639,
+  "Watt/sq. cm (at 555 nm)": 683000,
 };
 
 const convert = (value: number, from: string, to: string): number => {

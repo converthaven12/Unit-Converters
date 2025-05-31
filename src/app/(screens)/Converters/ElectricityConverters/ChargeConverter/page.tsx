@@ -5,16 +5,22 @@ import ReusableConverter from "../../../../utils/components/ReusableConverter/Re
 
 const chargeUnits: Record<string, number> = {
   "Coulomb (C)": 1,
-  "Abcoulomb (abC)": 10,
-  "Elementary charge (e)": 1.602176634e-19,
-  "Faraday (F)": 96485.33212,
-  "Statcoulomb (statC)": 3.33564e-10,
-  "Ampere-hour (Ah)": 3600,
-  "Millicoulomb (mC)": 0.001,
-  "Microcoulomb (μC)": 1e-6,
+  "Megacoulomb (MC)": 1e6,
+  "Kilocoulomb (kC)": 1e3,
+  "Millicoulomb (mC)": 1e-3,
+  "Microcoulomb (µC)": 1e-6,
   "Nanocoulomb (nC)": 1e-9,
   "Picocoulomb (pC)": 1e-12,
+  "Abcoulomb (abC) / EMU of charge": 10,
+  "Statcoulomb (stC) / ESU of charge (franklin)": 3.33564e-10,
+  "Ampere-hour (A*h)": 3600,
+  "Ampere-minute (A*min)": 60,
+  "Ampere-second (A*s)": 1,
+  "Faraday (based on carbon 12)": 96485.33212,
+  "Elementary charge (e)": 1.602176634e-19,
 };
+
+
 
 const ChargeConverterPage: React.FC = () => {
   const convertCharge = (value: number, from: string, to: string): number => {

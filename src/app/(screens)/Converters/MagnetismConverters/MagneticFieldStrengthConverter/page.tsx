@@ -4,9 +4,12 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const magneticFieldStrengthUnits: Record<string, number> = {
-  "Ampere per Meter": 1,
-  "Oersted": 79.5774715459,
+  "ampere/meter [A/m]": 1,
+  "ampere turn/meter [At/m]": 1,              // equivalent to A/m
+  "kiloampere/meter [kA/m]": 1000,            // 1 kA/m = 1000 A/m
+  "oersted [Oe]": 79.5774715459,              // 1 Oe ≈ 79.577 A/m
 };
+
 
 const convert = (value: number, from: string, to: string): number => {
   const fromFactor = magneticFieldStrengthUnits[from];

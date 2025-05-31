@@ -4,11 +4,19 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const electricFieldStrengthUnits: Record<string, number> = {
-  "Volt per meter (V/m)": 1,
-  "Statvolt per centimeter (statV/cm)": 299.792458,
-  "Volt per centimeter (V/cm)": 100,
-  "Kilovolt per meter (kV/m)": 1000,
-  "Millivolt per meter (mV/m)": 0.001,
+  "volt/meter [V/m]": 1,
+  "kilovolt/meter [kV/m]": 1e3,
+  "kilovolt/centimeter [kV/cm]": 1e5,
+  "volt/centimeter [V/cm]": 100,
+  "millivolt/meter [mV/m]": 1e-3,
+  "microvolt/meter [µ/m]": 1e-6,
+  "kilovolt/inch [kV/in]": 3.937e4,
+  "volt/inch [V/in]": 39.37,
+  "volt/mil [V/mil]": 3.937e4,
+  "abvolt/centimeter [abV/cm]": 1e-8,
+  "statvolt/centimeter [stV/cm]": 299.792458,
+  "statvolt/inch [stV/in]": 11781.0,
+  "newton/coulomb [N/C]": 1,
 };
 
 const ElectricFieldStrengthConverterPage: React.FC = () => {

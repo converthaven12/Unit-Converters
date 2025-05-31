@@ -4,11 +4,18 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const units: Record<string, number> = {
-  "Mole/liter (M)": 1,
-  "Millimole/liter (mM)": 1e-3,
-  "Micromole/liter (µM)": 1e-6,
-  "Nanomole/liter (nM)": 1e-9,
-  "Mole/cubic meter (mol/m³)": 1e-3
+  "Mol/Cubic Meter": 1,
+  "Mol/Liter": 1e3,
+  "Mol/Cubic Centimeter": 1e6,
+  "Mol/Cubic Millimeter": 1e9,
+  "Kilomol/Cubic Meter": 1e3,
+  "Kilomol/Liter": 1e6,
+  "Kilomol/Cubic Centimeter": 1e9,
+  "Kilomol/Cubic Millimeter": 1e12,
+  "Millimol/Cubic Meter": 1e-3,
+  "Millimol/Liter": 1,
+  "Millimol/Cubic Centimeter": 1e3,
+  "Millimol/Cubic Millimeter": 1e6,
 };
 
 const convert = (value: number, from: string, to: string): number => {

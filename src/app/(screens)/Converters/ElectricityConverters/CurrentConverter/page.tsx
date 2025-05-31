@@ -4,16 +4,18 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const currentUnits: Record<string, number> = {
-  "Ampere (A)": 1,
-  "Milliampere (mA)": 0.001,
-  "Microampere (μA)": 1e-6,
-  "Kiloampere (kA)": 1000,
-  "Statampere (statA)": 3.33564e-10,
-  "Abampere (abA)": 10,
-  "Biot (Bi)": 10,
-  "Ampere-hour (Ah)": 3600,
-  "Coulomb per second (C/s)": 1,
+  "ampere [A]": 1,
+  "kiloampere [kA]": 1e3,
+  "milliampere [mA]": 1e-3,
+  "biot [Bi]": 10, // 1 Biot = 10 A
+  "abampere [abA]": 10,
+  "EMU of current": 10,
+  "statampere [stA]": 3.33564e-10,
+  "ESU of current": 3.33564e-10,
+  "CGS e.m. unit": 10,
+  "CGS e.s. unit": 3.33564e-10,
 };
+
 
 const CurrentConverterPage: React.FC = () => {
   const convertCurrent = (value: number, from: string, to: string): number => {

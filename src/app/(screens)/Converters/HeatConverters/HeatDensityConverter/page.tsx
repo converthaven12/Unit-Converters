@@ -4,12 +4,13 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const heatDensityUnits: Record<string, number> = {
-  "Joule per cubic meter (J/m³)": 1,
-  "Kilojoule per cubic meter (kJ/m³)": 1000,
-  "Calorie per cubic centimeter (cal/cm³)": 4184 * 1e6,
-  "BTU per cubic foot (BTU/ft³)": 37257.1428571,
-  "Watt hour per liter (Wh/L)": 3600 * 1000,
+  "joule/square meter [J/m^2]": 1,
+  "calorie (th)/square centimeter": 41840,      // 1 cal(th)/cm² = 41840 J/m²
+  "langley": 41840,                             // 1 langley = 1 cal/cm² ≈ 41840 J/m²
+  "Btu (IT)/square foot": 11306.4,             // 1 Btu/ft² = 11306.4 J/m²
+  "Btu (th)/square foot": 11280,                // 1 Btu(th)/ft² = 11280 J/m²
 };
+
 
 const HeatDensityConverterPage: React.FC = () => {
   const convert = (value: number, from: string, to: string): number => {

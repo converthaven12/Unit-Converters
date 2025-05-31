@@ -4,10 +4,11 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const units: Record<string, number> = {
-  "Darcy (D)": 1,
-  "Millidarcy (mD)": 1e-3,
-  "Square meter (m²)": 9.869233e-13,
-  "Square centimeter (cm²)": 9.869233e-9
+  "Kilogram/Pascal/Second/Square Meter": 1,
+  "Permeability (0°C)": 1.01325e-10,
+  "Permeability (23°C)": 1.01325e-10 * 1.05,
+  "Permeability Inches (0°C)": 2.54e-10,
+  "Permeability Inches (23°C)": 2.54e-10 * 1.05,
 };
 
 const convert = (value: number, from: string, to: string): number => {
