@@ -22,11 +22,6 @@ const definitions = [
 ];
 
 const HexToBinaryPage = () => {
-  console.log(hexToBinary("A")); // "1010"
-  console.log(hexToBinary("1F")); // "11111"
-  console.log(hexToBinary(" ")); // "Invalid hexadecimal number"
-  console.log(hexToBinary("Z")); // "Invalid hexadecimal number"
-
   return (
     <ReusableConversionPage
       title="Convert Hexadecimal to Binary"

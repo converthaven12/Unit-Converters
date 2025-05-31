@@ -22,11 +22,25 @@ const Sidebar: React.FC = () => {
       flex flex-col border border-[#D7D7FB] transition-all duration-300
       ${!isOpened ? "w-[74px]" : "w-full md:w-[20dvw] xl:w-[18dvw]"}`}
     >
+      <div className="w-full flex justify-end mb-2 pb-2 border-b border-gray-200">
+        <Image
+          src={arrows}
+          height={15}
+          alt="Collapse Toggle"
+          title="Collapse"
+          className={`cursor-pointer transition-transform duration-100 ${
+            isOpened ? "rotate-180" : ""
+          }`}
+          onClick={() => setIsOpened(!isOpened)}
+        />
+      </div>
+
       {/* <Image src={Logo} alt="logo" className="w-20 h-20 mx-auto" /> */}
       {isOpened && (
+        <Link href={"/Converters"}>
         <p className="text-[#006633] font-bold text-xl mb-5 text-center">
           Convert Haven
-        </p>
+        </p></Link>
       )}
 
       <div className="flex flex-col flex-grow overflow-y-auto pr-1">
@@ -35,7 +49,7 @@ const Sidebar: React.FC = () => {
             {/* Dropdown heading */}
             {isOpened && (
               <div
-                className="flex items-center justify-between mb-4 cursor-pointer"
+                className="flex items-center justify-between mb-3 cursor-pointer"
                 onClick={() => handleMenuClick(key)}
               >
                 <p className="text-sm font-medium">
@@ -57,7 +71,7 @@ const Sidebar: React.FC = () => {
                 <Link
                   href={item.path}
                   key={index}
-                  className={`cursor-pointer gap-2 py-2 ml-5 rounded-md truncate 
+                  className={`cursor-pointer gap-2 py-1 ml-5 rounded-md truncate 
                   transition-all duration-200 block ${
                     item.isActive
                       ? "text-themeColor font-semibold"
@@ -65,7 +79,7 @@ const Sidebar: React.FC = () => {
                   }`}
                 >
                   {isOpened && (
-                    <p className="transition-opacity duration-100 text-xs">
+                    <p className="transition-opacity duration-100 text-sm">
                       {item.label}
                     </p>
                   )}
@@ -73,19 +87,6 @@ const Sidebar: React.FC = () => {
               ))}
           </div>
         ))}
-      </div>
-
-      <div className="w-full flex justify-end mt-2 pt-2 border-t border-gray-200">
-        <Image
-          src={arrows}
-          height={15}
-          alt="Collapse Toggle"
-          title="Collapse"
-          className={`cursor-pointer transition-transform duration-100 ${
-            isOpened ? "rotate-180" : ""
-          }`}
-          onClick={() => setIsOpened(!isOpened)}
-        />
       </div>
     </div>
   );

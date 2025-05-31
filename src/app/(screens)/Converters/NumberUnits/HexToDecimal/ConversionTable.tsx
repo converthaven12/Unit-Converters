@@ -28,10 +28,10 @@ const ConversionTable = () => {
           {data.map(({ hex, decimal }) => (
             <tr key={hex} className="hover:bg-green-50 even:bg-green-100">
               <td className="border border-green-800 px-4 py-2 font-mono">
-                {hex.startsWith("0x") ? hex : `0x${hex.toUpperCase()}`}
+                {hex.startsWith("0x") ? hex : `${hex.toUpperCase()}`}
               </td>
               <td className="border border-green-800 px-4 py-2">
-                {decimal.toLocaleString()}
+                {decimal}
               </td>
             </tr>
           ))}
