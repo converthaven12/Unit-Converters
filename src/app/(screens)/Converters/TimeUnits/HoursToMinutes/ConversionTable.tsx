@@ -17,18 +17,27 @@ const ConversionTable = () => {
 
   return (
     <div className="overflow-x-auto mt-6">
-      <table className="min-w-full table-auto border border-gray-300">
-        <thead className="bg-gray-100">
+      <table className="min-w-full table-auto border border-green-800">
+        <thead className="bg-green-700 text-white">
           <tr>
-            <th className="px-4 py-2 border">Hours</th>
-            <th className="px-4 py-2 border">Minutes</th>
+            <th className="px-4 py-2 border border-green-900 text-center">
+              Hours
+            </th>
+            <th className="px-4 py-2 border border-green-900 text-center">
+              Minutes
+            </th>
           </tr>
         </thead>
         <tbody>
           {data.map((row, index) => (
-            <tr key={index} className="text-center">
-              <td className="px-4 py-2 border">{row.hours}</td>
-              <td className="px-4 py-2 border">{row.minutes}</td>
+            <tr
+              key={index}
+              className="text-center hover:bg-green-50 even:bg-green-100"
+            >
+              <td className="px-4 py-2 border border-green-800">{row.hours}</td>
+              <td className="px-4 py-2 border border-green-800">
+                {row.minutes}
+              </td>
             </tr>
           ))}
         </tbody>

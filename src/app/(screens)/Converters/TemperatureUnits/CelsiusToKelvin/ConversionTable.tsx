@@ -10,42 +10,42 @@ const ConversionTable = () => {
   ];
 
   return (
-    <table style={{ width: "100%", borderCollapse: "collapse" }}>
-      <thead>
-        <tr>
-          <th style={{ border: "1px solid #ddd", padding: "8px" }}>
-            Celsius (°C)
-          </th>
-          <th style={{ border: "1px solid #ddd", padding: "8px" }}>
-            Kelvin (K)
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map(({ celsius, kelvin }) => (
-          <tr key={celsius}>
-            <td
-              style={{
-                border: "1px solid #ddd",
-                padding: "8px",
-                textAlign: "right",
-              }}
-            >
-              {celsius}
-            </td>
-            <td
-              style={{
-                border: "1px solid #ddd",
-                padding: "8px",
-                textAlign: "right",
-              }}
-            >
-              {kelvin}
-            </td>
+    <div className="overflow-x-auto mt-10">
+      <table style={{ width: "100%", borderCollapse: "collapse" }}>
+        <thead>
+          <tr style={{ backgroundColor: "#15803d", color: "white" }}>
+            <th style={{ border: "1px solid #14532d", padding: "8px" }}>
+              Celsius (°C)
+            </th>
+            <th style={{ border: "1px solid #14532d", padding: "8px" }}>
+              Kelvin (K)
+            </th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {data.map(({ celsius, kelvin }) => (
+            <tr key={celsius}>
+              <td
+                style={{
+                  border: "1px solid #166534",
+                  padding: "8px",
+                }}
+              >
+                {celsius}
+              </td>
+              <td
+                style={{
+                  border: "1px solid #166534",
+                  padding: "8px",
+                }}
+              >
+                {kelvin}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

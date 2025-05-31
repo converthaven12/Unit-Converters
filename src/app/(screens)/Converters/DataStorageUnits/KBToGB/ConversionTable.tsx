@@ -11,42 +11,48 @@ const ConversionTable = () => {
   ];
 
   return (
-    <table style={{ width: "100%", borderCollapse: "collapse" }}>
-      <thead>
-        <tr>
-          <th style={{ border: "1px solid #ccc", padding: "8px" }}>
-            Kilobytes (KB)
-          </th>
-          <th style={{ border: "1px solid #ccc", padding: "8px" }}>
-            Gigabytes (GB)
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map(({ kb, gb }) => (
-          <tr key={kb}>
-            <td
-              style={{
-                border: "1px solid #ccc",
-                padding: "8px",
-                textAlign: "right",
-              }}
-            >
-              {kb.toLocaleString()}
-            </td>
-            <td
-              style={{
-                border: "1px solid #ccc",
-                padding: "8px",
-                textAlign: "right",
-              }}
-            >
-              {gb}
-            </td>
+    <div className="overflow-x-auto mt-10">
+      <table style={{ width: "100%", borderCollapse: "collapse" }}>
+        <thead>
+          <tr
+            style={{
+              backgroundColor: "#15803d",
+              color: "white",
+              textAlign: "left",
+            }}
+          >
+            <th style={{ border: "1px solid #14532d", padding: "8px" }}>
+              Kilobytes (KB)
+            </th>
+            <th style={{ border: "1px solid #14532d", padding: "8px" }}>
+              Gigabytes (GB)
+            </th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {data.map(({ kb, gb }) => (
+            <tr key={kb}>
+              <td
+                style={{
+                  border: "1px solid #166534",
+                  padding: "8px",
+                }}
+              >
+                {kb.toLocaleString()}
+              </td>
+              <td
+                style={{
+                  border: "1px solid #166534",
+                  padding: "8px",
+                }}
+              >
+                {gb}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

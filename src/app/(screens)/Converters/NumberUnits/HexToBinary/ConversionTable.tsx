@@ -12,40 +12,42 @@ const ConversionTable = () => {
   ];
 
   return (
-    <table style={{ width: "100%", borderCollapse: "collapse" }}>
-      <thead>
-        <tr>
-          <th style={{ border: "1px solid #ddd", padding: "8px" }}>
-            Hexadecimal
-          </th>
-          <th style={{ border: "1px solid #ddd", padding: "8px" }}>Binary</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map(({ hex, binary }) => (
-          <tr key={hex}>
-            <td
-              style={{
-                border: "1px solid #ddd",
-                padding: "8px",
-                textAlign: "center",
-              }}
-            >
-              {hex}
-            </td>
-            <td
-              style={{
-                border: "1px solid #ddd",
-                padding: "8px",
-                textAlign: "center",
-              }}
-            >
-              {binary}
-            </td>
+    <div style={{ overflowX: "auto", marginTop: "1.5rem" }}>
+      <table style={{ width: "100%", borderCollapse: "collapse" }}>
+        <thead>
+          <tr style={{ backgroundColor: "#15803d", color: "white" }}>
+            <th style={{ border: "1px solid #14532d", padding: "8px" }}>
+              Hexadecimal
+            </th>
+            <th style={{ border: "1px solid #14532d", padding: "8px" }}>
+              Binary
+            </th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {data.map(({ hex, binary }) => (
+            <tr key={hex} style={{ backgroundColor: "inherit" }}>
+              <td
+                style={{
+                  border: "1px solid #166534",
+                  padding: "8px",
+                }}
+              >
+                {hex.startsWith("0x") ? hex : `${hex.toUpperCase()}`}
+              </td>
+              <td
+                style={{
+                  border: "1px solid #166534",
+                  padding: "8px",
+                }}
+              >
+                {binary.padStart(8, "0")}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

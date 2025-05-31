@@ -13,24 +13,28 @@ const ConversionTable = () => {
   ];
 
   return (
-    <table className="w-full border-collapse border border-gray-300">
-      <thead>
-        <tr>
-          <th className="border border-gray-300 px-4 py-2">Seconds</th>
-          <th className="border border-gray-300 px-4 py-2">Milliseconds</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map(({ seconds, milliseconds }) => (
-          <tr key={seconds}>
-            <td className="border border-gray-300 px-4 py-2">{seconds}</td>
-            <td className="border border-gray-300 px-4 py-2">
-              {milliseconds.toFixed(0)}
-            </td>
+    <div className="overflow-x-auto mt-6">
+      <table className="w-full border-collapse border border-green-800">
+        <thead>
+          <tr className="bg-green-700 text-white">
+            <th className="border border-green-900 px-4 py-2">Seconds</th>
+            <th className="border border-green-900 px-4 py-2">Milliseconds</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {data.map(({ seconds, milliseconds }) => (
+            <tr key={seconds} className="hover:bg-green-50 even:bg-green-100">
+              <td className="border border-green-800 px-4 py-2">
+                {seconds.toLocaleString()}
+              </td>
+              <td className="border border-green-800 px-4 py-2">
+                {milliseconds.toLocaleString()}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

@@ -12,18 +12,22 @@ const ConversionTable = () => {
 
   return (
     <div className="overflow-x-auto mt-4">
-      <table className="min-w-full bg-white border border-gray-300">
+      <table className="min-w-full bg-white border border-green-800">
         <thead>
-          <tr className="bg-gray-100 text-left">
-            <th className="py-2 px-4 border-b">Seconds</th>
-            <th className="py-2 px-4 border-b">Days</th>
+          <tr className="bg-green-700 text-white text-left">
+            <th className="py-2 px-4 border-b border-green-900">Seconds</th>
+            <th className="py-2 px-4 border-b border-green-900">Days</th>
           </tr>
         </thead>
         <tbody>
           {data.map((row, index) => (
-            <tr key={index} className="hover:bg-gray-50">
-              <td className="py-2 px-4 border-b">{row.seconds}</td>
-              <td className="py-2 px-4 border-b">{row.days}</td>
+            <tr key={index} className="hover:bg-green-50 even:bg-green-100">
+              <td className="py-2 px-4 border-b border-green-800">
+                {row.seconds.toLocaleString()}
+              </td>
+              <td className="py-2 px-4 border-b border-green-800">
+                {row.days.toFixed(4)}
+              </td>
             </tr>
           ))}
         </tbody>

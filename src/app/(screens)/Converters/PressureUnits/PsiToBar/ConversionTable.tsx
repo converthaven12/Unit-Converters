@@ -17,20 +17,20 @@ const ConversionTable = () => {
     <div className="overflow-x-auto mt-10">
       <table className="table-auto border-collapse w-full">
         <thead>
-          <tr className="bg-blue-700 text-white text-left">
-            <th className="px-4 py-2 border border-blue-900">
+          <tr className="bg-green-700 text-white text-left">
+            <th className="px-4 py-2 border border-green-900">
               Pounds per Square Inch (psi)
             </th>
-            <th className="px-4 py-2 border border-blue-900">Bar</th>
+            <th className="px-4 py-2 border border-green-900">Bar</th>
           </tr>
         </thead>
         <tbody>
           {data.map((row, i) => (
             <tr key={i} className={i % 2 === 0 ? "bg-gray-100" : ""}>
-              <td className="px-4 py-2 border border-blue-800">
+              <td className="px-4 py-2 border border-green-800">
                 {row.psi.toFixed(3)}
               </td>
-              <td className="px-4 py-2 border border-blue-800">
+              <td className="px-4 py-2 border border-green-800">
                 {row.bar.toFixed(5)}
               </td>
             </tr>

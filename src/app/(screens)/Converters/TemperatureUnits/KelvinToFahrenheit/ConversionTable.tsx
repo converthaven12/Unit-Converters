@@ -16,9 +16,9 @@ const ConversionTable = () => {
     <div className="overflow-x-auto mt-10">
       <table className="table-auto border-collapse w-full">
         <thead>
-          <tr className="bg-blue-700 text-white text-left">
-            <th className="px-4 py-2 border border-blue-900">Kelvin (K)</th>
-            <th className="px-4 py-2 border border-blue-900">
+          <tr style={{ backgroundColor: "#15803d", color: "white" }}>
+            <th className="px-4 py-2 border border-[#15803d]">Kelvin (K)</th>
+            <th className="px-4 py-2 border border-[#15803d]">
               Fahrenheit (°F)
             </th>
           </tr>
@@ -26,10 +26,10 @@ const ConversionTable = () => {
         <tbody>
           {data.map((row, i) => (
             <tr key={i} className={i % 2 === 0 ? "bg-gray-100" : ""}>
-              <td className="px-4 py-2 border border-blue-800">
+              <td className="px-4 py-2 border border-[#15803d]">
                 {row.kelvin.toFixed(2)}
               </td>
-              <td className="px-4 py-2 border border-blue-800">
+              <td className="px-4 py-2 border border-[#15803d]">
                 {row.fahrenheit.toFixed(2)}
               </td>
             </tr>
