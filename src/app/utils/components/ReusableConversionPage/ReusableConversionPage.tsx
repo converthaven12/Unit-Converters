@@ -31,12 +31,17 @@ const ReusableConversionPage: React.FC<ConversionPageProps> = ({
   const [fromValue, setFromValue] = useState("");
   const [toValue, setToValue] = useState("");
 
+  // const convert = () => {
+  //   const value = parseFloat(fromValue);
+  //   if (!isNaN(value)) {
+  //     const result = convertFunction(value);
+  //     setToValue(result.toString());
+  //   }
+  // };
   const convert = () => {
-    const value = parseFloat(fromValue);
-    if (!isNaN(value)) {
-      const result = convertFunction(value);
-      setToValue(result.toString());
-    }
+    if (fromValue.trim() === "") return;
+    const result = convertFunction(fromValue);
+    setToValue(result.toString());
   };
 
   const clear = () => {

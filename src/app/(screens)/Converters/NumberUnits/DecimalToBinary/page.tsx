@@ -1,6 +1,7 @@
 "use client";
 import ReusableConversionPage from "../../../../utils/components/ReusableConversionPage/ReusableConversionPage";
 import ConversionTable from "./ConversionTable"; // Table component for Decimal to Binary
+import { decimalToBinary } from "../../../../utils/Functions/conversionUtils";
 
 const definitions = [
   {
@@ -20,12 +21,6 @@ const definitions = [
     ],
   },
 ];
-
-// Function to convert decimal number to binary string
-const decimalToBinary = (val: number) => {
-  if (typeof val !== "number" || val < 0 || !Number.isInteger(val)) return NaN;
-  return parseInt(val.toString(2)); // converts binary string back to number
-};
 
 const DecimalToBinaryPage = () => {
   return (
@@ -53,7 +48,7 @@ const DecimalToBinaryPage = () => {
           So, 11 in binary = 1011
         </>
       }
-      reversePath="/Converters/NumberSystems/BinaryToDecimal"
+      reversePath="/Converters/NumberUnits/BinaryToDecimal"
     />
   );
 };

@@ -44,7 +44,7 @@ const HexToDecimalPage = () => {
           <br />F × 16¹ + F × 16⁰ = 15 × 16 + 15 × 1 = 255
         </>
       }
-      reversePath="/Converters/NumberSystems/DecimalToHex"
+      reversePath="/Converters/NumberUnits/DecimalToHex"
     />
   );
 };

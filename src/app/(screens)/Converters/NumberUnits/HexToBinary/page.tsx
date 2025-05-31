@@ -1,7 +1,7 @@
 "use client";
 import ReusableConversionPage from "../../../../utils/components/ReusableConversionPage/ReusableConversionPage";
 import ConversionTable from "./ConversionTable"; // Table component for Hexadecimal to Binary
-
+import { hexToBinary } from "../../../../utils/Functions/conversionUtils";
 const definitions = [
   {
     heading: "Hexadecimal",
@@ -21,16 +21,12 @@ const definitions = [
   },
 ];
 
-// Function to convert hexadecimal string to binary string
-const hexToBinary = (val: any) => {
-  if (typeof val !== "string" || !/^[0-9A-Fa-f]+$/.test(val))
-    return "Invalid input";
-  // Convert hex string to decimal, then decimal to binary string
-  const decimalValue = parseInt(val, 16);
-  return decimalValue.toString(2);
-};
-
 const HexToBinaryPage = () => {
+  console.log(hexToBinary("A")); // "1010"
+  console.log(hexToBinary("1F")); // "11111"
+  console.log(hexToBinary(" ")); // "Invalid hexadecimal number"
+  console.log(hexToBinary("Z")); // "Invalid hexadecimal number"
+
   return (
     <ReusableConversionPage
       title="Convert Hexadecimal to Binary"
@@ -51,7 +47,7 @@ const HexToBinaryPage = () => {
           255 in binary = 11111111
         </>
       }
-      reversePath="/Converters/NumberSystems/BinaryToHex"
+      reversePath="/Converters/NumberUnits/BinaryToHex"
     />
   );
 };

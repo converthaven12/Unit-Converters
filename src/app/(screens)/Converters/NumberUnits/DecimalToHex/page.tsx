@@ -1,6 +1,7 @@
 "use client";
 import ReusableConversionPage from "../../../../utils/components/ReusableConversionPage/ReusableConversionPage";
 import ConversionTable from "./ConversionTable"; // Table component for Decimal to Hexadecimal
+import { decimalToHex } from "../../../../utils/Functions/conversionUtils";
 
 const definitions = [
   {
@@ -20,14 +21,6 @@ const definitions = [
     ],
   },
 ];
-
-// Function to convert decimal number to hexadecimal string
-const decimalToHex = (val: any) => {
-  // Ensure input is a non-negative integer number
-  if (typeof val !== "number" || val < 0 || !Number.isInteger(val))
-    return "Invalid input";
-  return val.toString(16).toUpperCase();
-};
 
 const DecimalToHexPage = () => {
   return (
@@ -51,7 +44,7 @@ const DecimalToHexPage = () => {
           So, 255 in hexadecimal = FF
         </>
       }
-      reversePath="/Converters/NumberSystems/HexToDecimal"
+      reversePath="/Converters/NumberUnits/HexToDecimal"
     />
   );
 };

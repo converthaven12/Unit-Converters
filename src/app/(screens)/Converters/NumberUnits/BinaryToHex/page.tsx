@@ -1,6 +1,7 @@
 "use client";
 import ReusableConversionPage from "../../../../utils/components/ReusableConversionPage/ReusableConversionPage";
 import ConversionTable from "./ConversionTable"; // Table component for Binary to Hexadecimal
+import { binaryToHex } from "../../../../utils/Functions/conversionUtils";
 
 const definitions = [
   {
@@ -20,14 +21,6 @@ const definitions = [
     ],
   },
 ];
-
-// Function to convert binary string to hexadecimal string
-const binaryToHex = (val: any) => {
-  if (typeof val !== "string" || !/^[01]+$/.test(val)) return "Invalid input";
-  // Convert binary string to decimal, then decimal to hex
-  const decimalValue = parseInt(val, 2);
-  return decimalValue.toString(16).toUpperCase();
-};
 
 const BinaryToHexPage = () => {
   return (
@@ -50,7 +43,7 @@ const BinaryToHexPage = () => {
           255 in hexadecimal = FF
         </>
       }
-      reversePath="/Converters/NumberSystems/HexToBinary"
+      reversePath="/Converters/NumberUnits/HexToBinary"
     />
   );
 };
