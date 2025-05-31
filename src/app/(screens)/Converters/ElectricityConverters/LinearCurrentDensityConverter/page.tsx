@@ -4,11 +4,16 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const linearCurrentDensityUnits: Record<string, number> = {
-  "Ampere per meter (A/m)": 1,
-  "Milliampere per centimeter (mA/cm)": 10,
-  "Ampere per centimeter (A/cm)": 100,
-  "Kiloampere per meter (kA/m)": 1000,
+  "ampere/meter [A/m]": 1,
+  "ampere/centimeter [A/cm]": 100,
+  "ampere/inch [A/in]": 39.3701,
+  "abampere/meter [abA/m]": 10,
+  "abampere/centimeter": 1000,
+  "abampere/inch [abA/in]": 393.701,
+  "oersted [Oe]": 79.5775, // magnetic field strength conversion, approximate
+  "gilbert/centimeter [Gi/cm]": 79.5775,
 };
+
 
 const LinearCurrentDensityConverterPage: React.FC = () => {
   const convertLinearCurrentDensity = (value: number, from: string, to: string): number => {

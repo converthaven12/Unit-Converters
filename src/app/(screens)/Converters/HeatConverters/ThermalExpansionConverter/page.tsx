@@ -4,13 +4,13 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const thermalExpansionUnits: Record<string, number> = {
-  "1/K (per kelvin)": 1,
-  "1/°C (per celsius)": 1,
-  "1/°F (per fahrenheit)": 1.8,
-  "1/°R (per rankine)": 1.8,
-  "ppm/K (parts per million per kelvin)": 1e-6,
-  "ppm/°C": 1e-6,
+  "length/length/kelvin [1/K]": 1,
+  "length/length/degree Celsius": 1,
+  "length/length/degree Fahrenheit": 5 / 9,
+  "length/length/degree Rankine": 5 / 9,
+  "length/length/degree Reaumur": 1.25,
 };
+
 
 const ThermalExpansionConverterPage: React.FC = () => {
   const convert = (value: number, from: string, to: string): number => {

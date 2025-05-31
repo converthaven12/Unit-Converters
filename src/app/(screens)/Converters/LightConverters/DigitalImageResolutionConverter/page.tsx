@@ -5,10 +5,10 @@ import ReusableConverter from "../../../../utils/components/ReusableConverter/Re
 
 // Digital image resolution can be measured in pixels per inch/cm or total pixels count (simplified)
 const units: Record<string, number> = {
-  "Pixels per inch (PPI)": 1,
-  "Pixels per centimeter (PPCM)": 2.54,  // 1 inch = 2.54 cm, so 1 PPI = 2.54 PPCM
-  "Dots per inch (DPI)": 1,              // Often interchangeable with PPI
-  "Dots per centimeter (DPCM)": 2.54,
+  "Dot/meter [dot/m]": 1,
+  "Dot/millimeter [dot/mm]": 1000,
+  "Dot/inch [dot/in]": 39.3701,
+  "Pixel/inch [pixel/in]": 39.3701,
 };
 
 const convert = (value: number, from: string, to: string): number => {

@@ -4,12 +4,14 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const volumeChargeDensityUnits: Record<string, number> = {
-  "Coulomb per cubic meter (C/m³)": 1,
-  "Coulomb per cubic centimeter (C/cm³)": 1e6,
-  "Statcoulomb per cubic centimeter (statC/cm³)": 3.33564e-4,
-  "Abcoulomb per cubic centimeter (abC/cm³)": 1e7,
-  "Microcoulomb per cubic meter (μC/m³)": 1e-6,
+  "coulomb/cubic meter [C/m^3]": 1,
+  "coulomb/cubic centimeter": 1e6,
+  "coulomb/cubic inch [C/in^3]": 61023.7441,
+  "abcoulomb/cubic meter": 10,
+  "abcoulomb/cubic centimeter": 1e7,
+  "abcoulomb/cubic inch": 610237.441,
 };
+
 
 const VolumeChargeDensityConverterPage: React.FC = () => {
   const convertVolumeChargeDensity = (value: number, from: string, to: string): number => {

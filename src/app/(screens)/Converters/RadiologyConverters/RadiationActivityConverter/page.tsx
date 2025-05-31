@@ -4,14 +4,22 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const units: Record<string, number> = {
-  Becquerel: 1,           // SI unit (decays per second)
-  Curie: 3.7e10,          // 1 Ci = 3.7 x 10^10 Bq
-  Millicurie: 3.7e7,
-  Microcurie: 3.7e4,
-  Kilobecquerel: 1e3,
-  Megabecquerel: 1e6,
-  Gigabecquerel: 1e9,
-  Terabecquerel: 1e12,
+  "becquerel [Bq]": 1,
+  "terabecquerel [TBq]": 1e12,
+  "gigabecquerel [GBq]": 1e9,
+  "megabecquerel [MBq]": 1e6,
+  "kilobecquerel [kBq]": 1e3,
+  "millibecquerel [mBq]": 1e-3,
+  "curie [Ci]": 3.7e10,
+  "kilocurie [kCi]": 3.7e13,
+  "millicurie [mCi]": 3.7e7,
+  "microcurie [µCi]": 3.7e4,
+  "nanocurie [nCi]": 37,
+  "picocurie [pCi]": 0.037,
+  "rutherford": 1e6,
+  "one/second [1/s]": 1,
+  "disintegrations/second": 1,
+  "disintegrations/minute": 1 / 60
 };
 
 const convert = (value: number, from: string, to: string): number => {

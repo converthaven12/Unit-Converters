@@ -4,11 +4,13 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const thermalResistanceUnits: Record<string, number> = {
-  "Kelvin per watt (K/W)": 1,
-  "Celsius per watt (°C/W)": 1,
-  "Kelvin per kilowatt (K/kW)": 0.001,
-  "Celsius per kilowatt (°C/kW)": 0.001,
+  "kelvin/watt [K/W]": 1,
+  "degree Fahrenheit hour/Btu (IT)": 0.17611,
+  "degree Fahrenheit hour/Btu (th)": 0.17611,
+  "degree Fahrenheit second/Btu (IT)": 4.89e-5,
+  "degree Fahrenheit second/Btu (th)": 4.89e-5,
 };
+
 
 const ThermalResistanceConverterPage: React.FC = () => {
   const convert = (value: number, from: string, to: string): number => {

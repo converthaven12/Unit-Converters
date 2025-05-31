@@ -4,11 +4,13 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const angularAccelerationUnits: Record<string, number> = {
-  "Radians per second squared (rad/s²)": 1,
-  "Degrees per second squared (°/s²)": Math.PI / 180,
-  "Revolutions per minute squared (RPM²)": (2 * Math.PI / 60) ** 2,
-  "Revolutions per second squared (rps²)": (2 * Math.PI) ** 2,
+  "radian/square second": 1,
+  "radian/square minute": 1 / (60 ** 2),
+  "revolution/square second": (2 * Math.PI),
+  "revolution/minute/second": (2 * Math.PI) / 60,
+  "revolution/square minute": (2 * Math.PI) / (60 ** 2),
 };
+
 
 const AccelerationAngularConverterPage: React.FC = () => {
   const convertAngularAcceleration = (value: number, from: string, to: string): number => {

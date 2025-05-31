@@ -1,54 +1,77 @@
 'use client';
 
-import React, { useState, useEffect } from "react";
-import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
+import React, { useEffect, useState } from 'react';
 
-const currencyUnits = [
-  "USD",
-  "EUR",
-  "GBP",
-  "JPY",
-  "AUD",
-  "CAD",
-  "CHF",
-  "CNY",
-  "INR",
-  "RUB",
-  "BRL",
-  "ZAR",
-];
+const currencies = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'CAD', 'CHF', 'CNY', 'INR'];
 
-const staticRates: Record<string, number> = {
-  USD: 1,
-  EUR: 0.91,
-  GBP: 0.81,
-  JPY: 132.5,
-  AUD: 1.46,
-  CAD: 1.35,
-  CHF: 0.91,
-  CNY: 7.0,
-  INR: 82.0,
-  RUB: 75.0,
-  BRL: 5.0,
-  ZAR: 18.0,
-};
+export default function CurrencyConverter() {
+  const [amount, setAmount] = useState(1);
+  const [from, setFrom] = useState('USD');
+  const [to, setTo] = useState('EUR');
+  const [result, setResult] = useState<number | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
-const CurrencyConverterPage: React.FC = () => {
-  // Normally, you'd fetch live rates here.
-  const convertCurrency = (value: number, from: string, to: string): number => {
-    const fromRate = staticRates[from];
-    const toRate = staticRates[to];
-    if (fromRate === undefined || toRate === undefined) return NaN;
-    return (value / fromRate) * toRate;
-  };
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!hasMounted || !amount || !from || !to) return;
+    setLoading(true);
+
+    fetch(`https://api.exchangerate.host/convert?from=${from}&to=${to}&amount=${amount}`)
+      .then(res => res.json())
+      .then(data => {
+        setResult(data.result);
+        setLoading(false);
+      })
+      .catch(() => {
+        setResult(null);
+        setLoading(false);
+      });
+  }, [amount, from, to, hasMounted]);
+
+  if (!hasMounted) return null; // 👈 skip rendering until on client
 
   return (
-    <ReusableConverter
-      heading="Currency Converter"
-      units={currencyUnits}
-      convert={convertCurrency}
-    />
-  );
-};
+    <div className="max-w-md mx-auto p-4 rounded-xl shadow-md bg-white space-y-4">
+      <h2 className="text-xl font-bold">Currency Converter</h2>
 
-export default CurrencyConverterPage;
+      <div className="flex gap-2">
+        <input
+          type="number"
+          className="w-1/2 border p-2 rounded"
+          value={amount}
+          onChange={(e) => setAmount(parseFloat(e.target.value))}
+        />
+        <select
+          className="w-1/2 border p-2 rounded"
+          value={from}
+          onChange={(e) => setFrom(e.target.value)}
+        >
+          {currencies.map(code => (
+            <option key={code} value={code}>{code}</option>
+          ))}
+        </select>
+      </div>
+
+      <div className="flex gap-2">
+        <span className="w-1/2 text-center">→</span>
+        <select
+          className="w-1/2 border p-2 rounded"
+          value={to}
+          onChange={(e) => setTo(e.target.value)}
+        >
+          {currencies.map(code => (
+            <option key={code} value={code}>{code}</option>
+          ))}
+        </select>
+      </div>
+
+      <div className="text-lg font-semibold mt-2">
+        {loading ? 'Loading...' : result !== null ? `${amount} ${from} = ${result.toFixed(2)} ${to}` : 'Conversion failed.'}
+      </div>
+    </div>
+  );
+}

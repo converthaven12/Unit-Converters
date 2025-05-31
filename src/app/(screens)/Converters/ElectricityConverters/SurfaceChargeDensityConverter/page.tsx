@@ -4,11 +4,12 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const surfaceChargeDensityUnits: Record<string, number> = {
-  "Coulomb per square meter (C/m²)": 1,
-  "Coulomb per square centimeter (C/cm²)": 10000,
-  "Statcoulomb per square centimeter (statC/cm²)": 3.33564e-6,
-  "Abcoulomb per square centimeter (abC/cm²)": 100000,
-  "Microcoulomb per square meter (μC/m²)": 1e-6,
+  "coulomb/square meter": 1,
+  "coulomb/square centimeter": 1e4,
+  "coulomb/square inch [C/in^2]": 1550.0031,
+  "abcoulomb/square meter": 10,
+  "abcoulomb/square centimeter": 1e5,
+  "abcoulomb/square inch": 15500.031,
 };
 
 const SurfaceChargeDensityConverterPage: React.FC = () => {

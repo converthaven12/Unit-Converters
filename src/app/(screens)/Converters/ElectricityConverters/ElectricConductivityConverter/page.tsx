@@ -4,12 +4,16 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const electricConductivityUnits: Record<string, number> = {
-  "Siemens per meter (S/m)": 1,
-  "Millisiemens per meter (mS/m)": 0.001,
-  "Microsiemens per meter (μS/m)": 1e-6,
-  "Siemens per centimeter (S/cm)": 100,
-  "Millisiemens per centimeter (mS/cm)": 0.1,
+  "siemens/meter [S/m]": 1,
+  "picosiemens/meter [pS/m]": 1e-12,
+  "mho/meter [mho/m]": 1,
+  "mho/centimeter [mho/cm]": 100,
+  "abmho/meter [abmho/m]": 1e9,
+  "abmho/centimeter": 1e11,
+  "statmho/meter [stmho/m]": 8.98755e11,
+  "statmho/centimeter": 8.98755e13,
 };
+
 
 const ElectricConductivityConverterPage: React.FC = () => {
   const convertElectricConductivity = (value: number, from: string, to: string): number => {

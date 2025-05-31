@@ -4,11 +4,14 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 
-export const massFluxUnits: Record<string, number> = {
-  "Kilogram/second/square meter": 1,
-  "Gram/second/square meter": 0.001,
-  "Pound/second/square foot": 0.45359237 / 0.09290304,
-  "Pound/hour/square foot": (0.45359237 / 0.09290304) / 3600
+const massFluxUnits: Record<string, number> = {
+  "Gram/Second/Square Meter": 1e-3,
+  "Kilogram/Hour/Square Meter": 1 / 3600,
+  "Kilogram/Hour/Square Foot": 1 / 3600 / 0.092903,
+  "Kilogram/Second/Square Meter": 1,
+  "Gram/Second/Square Centimeter": 1e-3 / 0.0001,
+  "Pound/Hour/Square Foot": 0.453592 / 3600 / 0.092903,
+  "Pound/Second/Square Foot": 0.453592 / 0.092903,
 };
 
 const MassFluxDensityConverter: React.FC = () => {

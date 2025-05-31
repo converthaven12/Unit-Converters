@@ -4,12 +4,23 @@ import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const fuelConsumptionUnits: Record<string, number> = {
+  // Distance per volume (base unit: miles per gallon US)
   "Miles per gallon (US)": 1,
-  "Miles per gallon (UK)": 1.20095,
-  "Liters per 100 kilometers": 235.215 / 100, // This unit requires special handling; we approximate here
-  "Kilometers per liter": 0.425144,
-  "Gallons per 100 miles": 100 / 235.215,
+  "Miles per gallon (UK)": 1.20095,            // 1 mpg(UK) ≈ 1.20095 mpg(US)
+  "Kilometers per liter": 2.35215,             // 1 km/L ≈ 2.35215 mpg(US)
+  "Meter per liter": 2352.15,                   // 1 m/L = 0.001 km/L * 2352.15 (conversion factor)
+  "Mile per liter": 0.264172,                   // 1 mi/L ≈ 0.264172 mpg(US)
+
+  // Volume per distance (inverse units, base unit: gallons per 100 miles US)
+  "Liters per 100 kilometers": 1 / 235.215,    // Convert L/100km to mpg(US) requires inversion
+  "Gallons per 100 miles (US)": 1 / 100,       // base for volume per distance is gal/100mi
+  "Gallons per 100 miles (UK)": 1 / 120.095,   // UK gallon per 100 mi approx
+
+  // Additional:
+  "Kilometer per gallon (US)": 0.425144,       // km/gal(US)
+  "Nautical mile per gallon (US)": 0.23074,    // nm/gal(US)
 };
+
 
 const FuelConsumptionConverterPage: React.FC = () => {
   // Since some units (like L/100km) are inverse measures, here’s a helper for accurate conversions:

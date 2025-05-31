@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import CategoryLinksList from '../CategoryList/CategoryLinksList';
 
 interface UnitConverterProps {
   heading: string;
@@ -17,7 +18,7 @@ const ReusableConverter: React.FC<UnitConverterProps> = ({ heading, units, conve
   const result = convert(numericValue, fromUnit, toUnit);
 
   return (
-    <div className="p-4 font-sans w-full max-w-md sm:max-w-xl lg:max-w-[40%] ">
+    <div className="p-4 font-sans w-full max-w-md sm:max-w-xl lg:max-w-full ">
       <h1 className="font-bold text-3xl sm:text-4xl text-[#006633] mb-4 text-center sm:text-left">
         {heading}
       </h1>
@@ -83,6 +84,8 @@ const ReusableConverter: React.FC<UnitConverterProps> = ({ heading, units, conve
           -moz-appearance: textfield;
         }
       `}</style>
+
+      <CategoryLinksList/>
     </div>
   );
 };
