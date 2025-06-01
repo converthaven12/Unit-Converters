@@ -10,88 +10,8 @@ type Menus = {
 };
 
 export const menus: Menus = {
-  CommonConversions: [
-    { label: "cm to inches", path: "/Converters/CommonConversions/CmToInches" },
-    { label: "inches to cm", path: "/Converters/CommonConversions/InchesToCm" },
-
-    { label: "Kg to lbs", path: "/Converters/WeightAndMass/KgToLbs" },
-    { label: "lbs to kg", path: "/Converters/WeightAndMass/LbsToKg" },
-
-    {
-      label: "Celsius to Fahrenheit",
-      path: "/Converters/CommonConversions/CelsiusToFahrenheit",
-    },
-    {
-      label: "Fahrenheit to Celsius",
-      path: "/Converters/CommonConversions/FahrenheitToCelsius",
-    },
-
-    { label: "inches to mm", path: "/Converters/CommonConversions/InchesToMm" },
-    { label: "mm to inches", path: "/Converters/CommonConversions/MmToInches" },
-
-    {
-      label: "meters to feet",
-      path: "/Converters/CommonConversions/MetersToFeet",
-    },
-    {
-      label: "feet to meters",
-      path: "/Converters/CommonConversions/FeetToMeters",
-    },
-
-    { label: "km to miles", path: "/Converters/CommonConversions/KmToMiles" },
-    { label: "miles to km", path: "/Converters/CommonConversions/MilesToKm" },
-
-    { label: "cm to feet", path: "/Converters/CommonConversions/CmToFeet" },
-    { label: "feet to cm", path: "/Converters/CommonConversions/FeetToCm" },
-
-    {
-      label: "grams to ounces",
-      path: "/Converters/WeightAndMass/GramsToOunces",
-    },
-    {
-      label: "ounces to grams",
-      path: "/Converters/WeightAndMass/OuncesToGrams",
-    },
-
-    {
-      label: "inches to feet",
-      path: "/Converters/CommonConversions/InchesToFeet",
-    },
-    {
-      label: "feet to inches",
-      path: "/Converters/CommonConversions/FeetToInches",
-    },
-
-    {
-      label: "liters to gallons",
-      path: "/Converters/CommonConversions/LitersToGallons",
-    },
-    {
-      label: "gallons to liters",
-      path: "/Converters/CommonConversions/GallonsToLiters",
-    },
-
-    {
-      label: "pounds to ounces",
-      path: "/Converters/WeightAndMass/PoundsToOunces",
-    },
-    {
-      label: "ounces to pounds",
-      path: "/Converters/WeightAndMass/OuncesToPounds",
-    },
-
-    { label: "kph to mph", path: "/Converters/CommonConversions/KphToMph" },
-    { label: "mph to kph", path: "/Converters/CommonConversions/MphToKph" },
-
-    {
-      label: "acres to square feet",
-      path: "/Converters/CommonConversions/AcresToSquareFeet",
-    },
-    {
-      label: "square feet to acres",
-      path: "/Converters/CommonConversions/SquareFeetToAcres",
-    },
-
+  // units start
+  AngleUnits: [
     {
       label: "radians to degrees",
       path: "/Converters/CommonConversions/RadiansToDegrees",
@@ -100,23 +20,138 @@ export const menus: Menus = {
       label: "degrees to radians",
       path: "/Converters/CommonConversions/DegreesToRadians",
     },
-
-    { label: "hp to kw", path: "/Converters/CommonConversions/HpToKw" },
-    { label: "kw to hp", path: "/Converters/CommonConversions/KwToHp" },
-
-    {
-      label: "meters to yards",
-      path: "/Converters/CommonConversions/MetersToYards",
-    },
-    {
-      label: "yards to meters",
-      path: "/Converters/CommonConversions/YardsToMeters",
-    },
-
-    { label: "mL to cups", path: "/Converters/CommonConversions/MlToCups" },
-    { label: "cups to mL", path: "/Converters/CommonConversions/CupsToMl" },
   ],
 
+  AreaUnits: [
+    {
+      label: "acres to square feet",
+      path: "/Converters/CommonConversions/AcresToSquareFeet",
+    },
+    {
+      label: "square feet to acres",
+      path: "/Converters/CommonConversions/SquareFeetToAcres",
+    },
+    {
+      label: "hectare to acres",
+      path: "/Converters/AreaUnit/HectareToAcres",
+    },
+    {
+      label: "acres to hectare",
+      path: "/Converters/AreaUnit/AcresToHectare",
+    },
+    {
+      label: "square feet to square meter",
+      path: "/Converters/AreaUnit/SquareFeetToSquareMeter",
+    },
+    {
+      label: "square meter to square feet",
+      path: "/Converters/AreaUnit/SquareMeterToSquareFeet",
+    },
+    {
+      label: "acres to square miles",
+      path: "/Converters/AreaUnit/AcresToSquareMiles",
+    },
+    {
+      label: "square miles to acres",
+      path: "/Converters/AreaUnit/SquareMilesToAcres",
+    },
+    {
+      label: "square feet to square yards",
+      path: "/Converters/AreaUnit/SquareFeetToSquareYards",
+    },
+    {
+      label: "square yards to square feet",
+      path: "/Converters/AreaUnit/SquareYardsToSquareFeet",
+    },
+  ],
+
+  DataStorageUnits: [
+    {
+      label: "MB to GB",
+      path: "/Converters/DataStorageUnits/MBToGB",
+    },
+    {
+      label: "GB to MB",
+      path: "/Converters/DataStorageUnits/GBToMB",
+    },
+    {
+      label: "KB to MB",
+      path: "/Converters/DataStorageUnits/KBToMB",
+    },
+    {
+      label: "MB to KB",
+      path: "/Converters/DataStorageUnits/MBToKB",
+    },
+    {
+      label: "KB to GB",
+      path: "/Converters/DataStorageUnits/KBToGB",
+    },
+    {
+      label: "GB to KB",
+      path: "/Converters/DataStorageUnits/GBToKB",
+    },
+  ],
+  EnergyUnits: [
+    {
+      label: "kJ to kcal",
+      path: "/Converters/EnergyUnits/KJToKcal",
+    },
+    {
+      label: "kcal to kJ",
+      path: "/Converters/EnergyUnits/KcalToKJ",
+    },
+    {
+      label: "kcal to cal",
+      path: "/Converters/EnergyUnits/KcalToCal",
+    },
+    {
+      label: "cal to kcal",
+      path: "/Converters/EnergyUnits/CalToKcal",
+    },
+    {
+      label: "J to kJ",
+      path: "/Converters/EnergyUnits/JToKJ",
+    },
+    {
+      label: "kJ to J",
+      path: "/Converters/EnergyUnits/KJToJ",
+    },
+    {
+      label: "cal to J",
+      path: "/Converters/EnergyUnits/CalToJ",
+    },
+    {
+      label: "J to cal",
+      path: "/Converters/EnergyUnits/JToCal",
+    },
+    {
+      label: "ft lb to Nm",
+      path: "/Converters/EnergyUnits/FtLbToNm",
+    },
+    {
+      label: "Nm to ft lb",
+      path: "/Converters/EnergyUnits/NmToFtLb",
+    },
+  ],
+
+  ForceUnits: [
+    {
+      label: "kg to newtons",
+      path: "/Converters/Force/KgToNewtons",
+    },
+    {
+      label: "newtons to kg",
+      path: "/Converters/Force/NewtonsToKg",
+    },
+    {
+      label: "newtons to lbs",
+      path: "/Converters/Force/NewtonsToLbs",
+    },
+    {
+      label: "lbs to newtons",
+      path: "/Converters/Force/LbsToNewtons",
+    },
+  ],
   LengthUnits: [
     { label: "cm to inches", path: "/Converters/CommonConversions/CmToInches" },
     { label: "inches to cm", path: "/Converters/CommonConversions/InchesToCm" },
@@ -260,6 +295,210 @@ export const menus: Menus = {
       path: "/Converters/LengthUnits/MilesToYards",
     },
   ],
+
+  NumberUnits: [
+    {
+      label: "binary to decimal",
+      path: "/Converters/NumberUnits/BinaryToDecimal",
+    },
+    {
+      label: "decimal to binary",
+      path: "/Converters/NumberUnits/DecimalToBinary",
+    },
+    {
+      label: "decimal to hex",
+      path: "/Converters/NumberUnits/DecimalToHex",
+    },
+    {
+      label: "hex to decimal",
+      path: "/Converters/NumberUnits/HexToDecimal",
+    },
+    {
+      label: "binary to hex",
+      path: "/Converters/NumberUnits/BinaryToHex",
+    },
+    {
+      label: "hex to binary",
+      path: "/Converters/NumberUnits/HexToBinary",
+    },
+  ],
+  SpeedUnits: [
+    { label: "mph to kph", path: "/Converters/CommonConversions/MphToKph" },
+    { label: "kph to mph", path: "/Converters/CommonConversions/KphToMph" },
+
+    {
+      label: "meters per second to miles per hour",
+      path: "/Converters/SpeedUnits/MetersPerSecondToMilesPerHour",
+    },
+    {
+      label: "miles per hour to meters per second",
+      path: "/Converters/SpeedUnits/MilesPerHourToMetersPerSecond",
+    },
+
+    {
+      label: "knot to mph",
+      path: "/Converters/SpeedUnits/KnotToMph",
+    },
+    {
+      label: "mph to knot",
+      path: "/Converters/SpeedUnits/MphToKnot",
+    },
+
+    {
+      label: "feet per second to mph",
+      path: "/Converters/SpeedUnits/FeetPerSecondToMph",
+    },
+    {
+      label: "mph to feet per second",
+      path: "/Converters/SpeedUnits/MphToFeetPerSecond",
+    },
+
+    {
+      label: "meters per second to kph",
+      path: "/Converters/SpeedUnits/MetersPerSecondToKph",
+    },
+    {
+      label: "kph to meters per second",
+      path: "/Converters/SpeedUnits/KphToMetersPerSecond",
+    },
+  ],
+
+  TemperatureUnits: [
+    {
+      label: "Celsius to Fahrenheit",
+      path: "/Converters/CommonConversions/CelsiusToFahrenheit",
+    },
+    {
+      label: "Fahrenheit to Celsius",
+      path: "/Converters/CommonConversions/FahrenheitToCelsius",
+    },
+
+    {
+      label: "Celsius to Kelvin",
+      path: "/Converters/TemperatureUnits/CelsiusToKelvin",
+    },
+    {
+      label: "Kelvin to Celsius",
+      path: "/Converters/TemperatureUnits/KelvinToCelsius",
+    },
+    {
+      label: "Fahrenheit to Kelvin",
+      path: "/Converters/TemperatureUnits/FahrenheitToKelvin",
+    },
+    {
+      label: "Kelvin to Fahrenheit",
+      path: "/Converters/TemperatureUnits/KelvinToFahrenheit",
+    },
+  ],
+
+  TimeUnits: [
+    {
+      label: "minutes to hours",
+      path: "/Converters/TimeUnits/MinutesToHours",
+    },
+    {
+      label: "hours to minutes",
+      path: "/Converters/TimeUnits/HoursToMinutes",
+    },
+    {
+      label: "hours to days",
+      path: "/Converters/TimeUnits/HoursToDays",
+    },
+    {
+      label: "days to hours",
+      path: "/Converters/TimeUnits/DaysToHours",
+    },
+    {
+      label: "seconds to days",
+      path: "/Converters/TimeUnits/SecondsToDays",
+    },
+    {
+      label: "days to seconds",
+      path: "/Converters/TimeUnits/DaysToSeconds",
+    },
+    {
+      label: "minutes to days",
+      path: "/Converters/TimeUnits/MinutesToDays",
+    },
+    {
+      label: "days to minutes",
+      path: "/Converters/TimeUnits/DaysToMinutes",
+    },
+    {
+      label: "days to months",
+      path: "/Converters/TimeUnits/DaysToMonths",
+    },
+    {
+      label: "months to days",
+      path: "/Converters/TimeUnits/MonthsToDays",
+    },
+    {
+      label: "days to years",
+      path: "/Converters/TimeUnits/DaysToYears",
+    },
+    {
+      label: "years to days",
+      path: "/Converters/TimeUnits/YearsToDays",
+    },
+    {
+      label: "minutes to seconds",
+      path: "/Converters/TimeUnits/MinutesToSeconds",
+    },
+    {
+      label: "seconds to minutes",
+      path: "/Converters/TimeUnits/SecondsToMinutes",
+    },
+    {
+      label: "milliseconds to seconds",
+      path: "/Converters/TimeUnits/MillisecondsToSeconds",
+    },
+    {
+      label: "seconds to milliseconds",
+      path: "/Converters/TimeUnits/SecondsToMilliseconds",
+    },
+  ],
+
+  PressureUnits: [
+    {
+      label: "bar to psi",
+      path: "/Converters/PressureUnits/BarToPsi",
+    },
+    {
+      label: "psi to bar",
+      path: "/Converters/PressureUnits/PsiToBar",
+    },
+    {
+      label: "kpa to psi",
+      path: "/Converters/PressureUnits/KpaToPsi",
+    },
+    {
+      label: "psi to kpa",
+      path: "/Converters/PressureUnits/PsiToKpa",
+    },
+  ],
+
+  PowerUnits: [
+    { label: "hp to kw", path: "/Converters/CommonConversions/HpToKw" },
+    { label: "kw to hp", path: "/Converters/CommonConversions/KwToHp" },
+
+    {
+      label: "hp to watts",
+      path: "/Converters/PowerUnits/HpToWatts",
+    },
+    {
+      label: "watts to hp",
+      path: "/Converters/PowerUnits/WattsToHp",
+    },
+    {
+      label: "BTU to Ton",
+      path: "/Converters/PowerUnits/BTUToTon",
+    },
+    {
+      label: "Ton to BTU",
+      path: "/Converters/PowerUnits/TonToBTU",
+    },
+  ],
+
   VolumeUnits: [
     {
       label: "liters to gallons",
@@ -376,539 +615,7 @@ export const menus: Menus = {
     { label: "gallon to pints", path: "/Converters/VolumeUnits/GallonToPints" },
   ],
 
-  AreaUnits: [
-    {
-      label: "acres to square feet",
-      path: "/Converters/CommonConversions/AcresToSquareFeet",
-    },
-    {
-      label: "square feet to acres",
-      path: "/Converters/CommonConversions/SquareFeetToAcres",
-    },
-    {
-      label: "hectare to acres",
-      path: "/Converters/AreaUnit/HectareToAcres",
-    },
-    {
-      label: "acres to hectare",
-      path: "/Converters/AreaUnit/AcresToHectare",
-    },
-    {
-      label: "square feet to square meter",
-      path: "/Converters/AreaUnit/SquareFeetToSquareMeter",
-    },
-    {
-      label: "square meter to square feet",
-      path: "/Converters/AreaUnit/SquareMeterToSquareFeet",
-    },
-    {
-      label: "acres to square miles",
-      path: "/Converters/AreaUnit/AcresToSquareMiles",
-    },
-    {
-      label: "square miles to acres",
-      path: "/Converters/AreaUnit/SquareMilesToAcres",
-    },
-    {
-      label: "square feet to square yards",
-      path: "/Converters/AreaUnit/SquareFeetToSquareYards",
-    },
-    {
-      label: "square yards to square feet",
-      path: "/Converters/AreaUnit/SquareYardsToSquareFeet",
-    },
-  ],
-
-  EnergyUnits: [
-    {
-      label: "kJ to kcal",
-      path: "/Converters/EnergyUnits/KJToKcal",
-    },
-    {
-      label: "kcal to kJ",
-      path: "/Converters/EnergyUnits/KcalToKJ",
-    },
-    {
-      label: "kcal to cal",
-      path: "/Converters/EnergyUnits/KcalToCal",
-    },
-    {
-      label: "cal to kcal",
-      path: "/Converters/EnergyUnits/CalToKcal",
-    },
-    {
-      label: "J to kJ",
-      path: "/Converters/EnergyUnits/JToKJ",
-    },
-    {
-      label: "kJ to J",
-      path: "/Converters/EnergyUnits/KJToJ",
-    },
-    {
-      label: "cal to J",
-      path: "/Converters/EnergyUnits/CalToJ",
-    },
-    {
-      label: "J to cal",
-      path: "/Converters/EnergyUnits/JToCal",
-    },
-    {
-      label: "ft lb to Nm",
-      path: "/Converters/EnergyUnits/FtLbToNm",
-    },
-    {
-      label: "Nm to ft lb",
-      path: "/Converters/EnergyUnits/NmToFtLb",
-    },
-  ],
-
-  ForceUnits: [
-    {
-      label: "kg to newtons",
-      path: "/Converters/Force/KgToNewtons",
-    },
-    {
-      label: "newtons to kg",
-      path: "/Converters/Force/NewtonsToKg",
-    },
-    {
-      label: "newtons to lbs",
-      path: "/Converters/Force/NewtonsToLbs",
-    },
-    {
-      label: "lbs to newtons",
-      path: "/Converters/Force/LbsToNewtons",
-    },
-  ],
-
-  SpeedUnits: [
-    { label: "mph to kph", path: "/Converters/CommonConversions/MphToKph" },
-    { label: "kph to mph", path: "/Converters/CommonConversions/KphToMph" },
-
-    {
-      label: "meters per second to miles per hour",
-      path: "/Converters/SpeedUnits/MetersPerSecondToMilesPerHour",
-    },
-    {
-      label: "miles per hour to meters per second",
-      path: "/Converters/SpeedUnits/MilesPerHourToMetersPerSecond",
-    },
-
-    {
-      label: "knot to mph",
-      path: "/Converters/SpeedUnits/KnotToMph",
-    },
-    {
-      label: "mph to knot",
-      path: "/Converters/SpeedUnits/MphToKnot",
-    },
-
-    {
-      label: "feet per second to mph",
-      path: "/Converters/SpeedUnits/FeetPerSecondToMph",
-    },
-    {
-      label: "mph to feet per second",
-      path: "/Converters/SpeedUnits/MphToFeetPerSecond",
-    },
-
-    {
-      label: "meters per second to kph",
-      path: "/Converters/SpeedUnits/MetersPerSecondToKph",
-    },
-    {
-      label: "kph to meters per second",
-      path: "/Converters/SpeedUnits/KphToMetersPerSecond",
-    },
-  ],
-
-  DataStorageUnits: [
-    {
-      label: "MB to GB",
-      path: "/Converters/DataStorageUnits/MBToGB",
-    },
-    {
-      label: "GB to MB",
-      path: "/Converters/DataStorageUnits/GBToMB",
-    },
-    {
-      label: "KB to MB",
-      path: "/Converters/DataStorageUnits/KBToMB",
-    },
-    {
-      label: "MB to KB",
-      path: "/Converters/DataStorageUnits/MBToKB",
-    },
-    {
-      label: "KB to GB",
-      path: "/Converters/DataStorageUnits/KBToGB",
-    },
-    {
-      label: "GB to KB",
-      path: "/Converters/DataStorageUnits/GBToKB",
-    },
-  ],
-
-  // CurrencyUnits: [
-  //   {
-  //     label: "EUR to USD",
-  //     path: "/Converters/Currency/EURToUSD",
-  //   },
-  //   {
-  //     label: "USD to EUR",
-  //     path: "/Converters/Currency/USDToEUR",
-  //   },
-  //   {
-  //     label: "GBP to USD",
-  //     path: "/Converters/Currency/GBPToUSD",
-  //   },
-  //   {
-  //     label: "USD to GBP",
-  //     path: "/Converters/Currency/USDToGBP",
-  //   },
-  //   {
-  //     label: "MXN to USD",
-  //     path: "/Converters/Currency/MXNToUSD",
-  //   },
-  //   {
-  //     label: "USD to MXN",
-  //     path: "/Converters/Currency/USDToMXN",
-  //   },
-  //   {
-  //     label: "AUD to USD",
-  //     path: "/Converters/Currency/AUDToUSD",
-  //   },
-  //   {
-  //     label: "USD to AUD",
-  //     path: "/Converters/Currency/USDToAUD",
-  //   },
-  //   {
-  //     label: "BRL to USD",
-  //     path: "/Converters/Currency/BRLToUSD",
-  //   },
-  //   {
-  //     label: "USD to BRL",
-  //     path: "/Converters/Currency/USDToBRL",
-  //   },
-  //   {
-  //     label: "CAD to USD",
-  //     path: "/Converters/Currency/CADToUSD",
-  //   },
-  //   {
-  //     label: "USD to CAD",
-  //     path: "/Converters/Currency/USDToCAD",
-  //   },
-  //   {
-  //     label: "CHF to USD",
-  //     path: "/Converters/Currency/CHFToUSD",
-  //   },
-  //   {
-  //     label: "USD to CHF",
-  //     path: "/Converters/Currency/USDToCHF",
-  //   },
-  //   {
-  //     label: "CNY to USD",
-  //     path: "/Converters/Currency/CNYToUSD",
-  //   },
-  //   {
-  //     label: "USD to CNY",
-  //     path: "/Converters/Currency/USDToCNY",
-  //   },
-  //   {
-  //     label: "INR to USD",
-  //     path: "/Converters/Currency/INRToUSD",
-  //   },
-  //   {
-  //     label: "USD to INR",
-  //     path: "/Converters/Currency/USDToINR",
-  //   },
-  //   {
-  //     label: "JPY to USD",
-  //     path: "/Converters/Currency/JPYToUSD",
-  //   },
-  //   {
-  //     label: "USD to JPY",
-  //     path: "/Converters/Currency/USDToJPY",
-  //   },
-  //   {
-  //     label: "RUB to USD",
-  //     path: "/Converters/Currency/RUBToUSD",
-  //   },
-  //   {
-  //     label: "USD to RUB",
-  //     path: "/Converters/Currency/USDToRUB",
-  //   },
-  //   {
-  //     label: "HKD to USD",
-  //     path: "/Converters/Currency/HKDToUSD",
-  //   },
-  //   {
-  //     label: "USD to HKD",
-  //     path: "/Converters/Currency/USDToHKD",
-  //   },
-  //   {
-  //     label: "BTC to USD",
-  //     path: "/Converters/Currency/BTCToUSD",
-  //   },
-  //   {
-  //     label: "USD to BTC",
-  //     path: "/Converters/Currency/USDToBTC",
-  //   },
-  //   {
-  //     label: "AUD to BTC",
-  //     path: "/Converters/Currency/AUDToBTC",
-  //   },
-  //   {
-  //     label: "BTC to AUD",
-  //     path: "/Converters/Currency/BTCToAUD",
-  //   },
-  //   {
-  //     label: "BRL to BTC",
-  //     path: "/Converters/Currency/BRLToBTC",
-  //   },
-  //   {
-  //     label: "BTC to BRL",
-  //     path: "/Converters/Currency/BTCToBRL",
-  //   },
-  //   {
-  //     label: "CAD to BTC",
-  //     path: "/Converters/Currency/CADToBTC",
-  //   },
-  //   {
-  //     label: "BTC to CAD",
-  //     path: "/Converters/Currency/BTCToCAD",
-  //   },
-  //   {
-  //     label: "CHF to BTC",
-  //     path: "/Converters/Currency/CHFToBTC",
-  //   },
-  //   {
-  //     label: "BTC to CHF",
-  //     path: "/Converters/Currency/BTCToCHF",
-  //   },
-  //   {
-  //     label: "EUR to BTC",
-  //     path: "/Converters/Currency/EURToBTC",
-  //   },
-  //   {
-  //     label: "BTC to EUR",
-  //     path: "/Converters/Currency/BTCToEUR",
-  //   },
-  //   {
-  //     label: "GBP to BTC",
-  //     path: "/Converters/Currency/GBPToBTC",
-  //   },
-  //   {
-  //     label: "BTC to GBP",
-  //     path: "/Converters/Currency/BTCToGBP",
-  //   },
-  //   {
-  //     label: "INR to BTC",
-  //     path: "/Converters/Currency/INRToBTC",
-  //   },
-  //   {
-  //     label: "BTC to INR",
-  //     path: "/Converters/Currency/BTCToINR",
-  //   },
-  //   {
-  //     label: "JPY to BTC",
-  //     path: "/Converters/Currency/JPYToBTC",
-  //   },
-  //   {
-  //     label: "BTC to JPY",
-  //     path: "/Converters/Currency/BTCToJPY",
-  //   },
-  //   {
-  //     label: "MXN to BTC",
-  //     path: "/Converters/Currency/MXNToBTC",
-  //   },
-  //   {
-  //     label: "BTC to MXN",
-  //     path: "/Converters/Currency/BTCToMXN",
-  //   },
-  //   {
-  //     label: "RUB to BTC",
-  //     path: "/Converters/Currency/RUBToBTC",
-  //   },
-  //   {
-  //     label: "BTC to RUB",
-  //     path: "/Converters/Currency/BTCToRUB",
-  //   },
-  // ],
-
-  TemperatureUnits: [
-    {
-      label: "Celsius to Fahrenheit",
-      path: "/Converters/CommonConversions/CelsiusToFahrenheit",
-    },
-    {
-      label: "Fahrenheit to Celsius",
-      path: "/Converters/CommonConversions/FahrenheitToCelsius",
-    },
-
-    {
-      label: "Celsius to Kelvin",
-      path: "/Converters/TemperatureUnits/CelsiusToKelvin",
-    },
-    {
-      label: "Kelvin to Celsius",
-      path: "/Converters/TemperatureUnits/KelvinToCelsius",
-    },
-    {
-      label: "Fahrenheit to Kelvin",
-      path: "/Converters/TemperatureUnits/FahrenheitToKelvin",
-    },
-    {
-      label: "Kelvin to Fahrenheit",
-      path: "/Converters/TemperatureUnits/KelvinToFahrenheit",
-    },
-  ],
-
-  PressureUnits: [
-    {
-      label: "bar to psi",
-      path: "/Converters/PressureUnits/BarToPsi",
-    },
-    {
-      label: "psi to bar",
-      path: "/Converters/PressureUnits/PsiToBar",
-    },
-    {
-      label: "kpa to psi",
-      path: "/Converters/PressureUnits/KpaToPsi",
-    },
-    {
-      label: "psi to kpa",
-      path: "/Converters/PressureUnits/PsiToKpa",
-    },
-  ],
-
-  PowerUnits: [
-    { label: "hp to kw", path: "/Converters/CommonConversions/HpToKw" },
-    { label: "kw to hp", path: "/Converters/CommonConversions/KwToHp" },
-
-    {
-      label: "hp to watts",
-      path: "/Converters/PowerUnits/HpToWatts",
-    },
-    {
-      label: "watts to hp",
-      path: "/Converters/PowerUnits/WattsToHp",
-    },
-    {
-      label: "BTU to Ton",
-      path: "/Converters/PowerUnits/BTUToTon",
-    },
-    {
-      label: "Ton to BTU",
-      path: "/Converters/PowerUnits/TonToBTU",
-    },
-  ],
-
-  TimeUnits: [
-    {
-      label: "minutes to hours",
-      path: "/Converters/TimeUnits/MinutesToHours",
-    },
-    {
-      label: "hours to minutes",
-      path: "/Converters/TimeUnits/HoursToMinutes",
-    },
-    {
-      label: "hours to days",
-      path: "/Converters/TimeUnits/HoursToDays",
-    },
-    {
-      label: "days to hours",
-      path: "/Converters/TimeUnits/DaysToHours",
-    },
-    {
-      label: "seconds to days",
-      path: "/Converters/TimeUnits/SecondsToDays",
-    },
-    {
-      label: "days to seconds",
-      path: "/Converters/TimeUnits/DaysToSeconds",
-    },
-    {
-      label: "minutes to days",
-      path: "/Converters/TimeUnits/MinutesToDays",
-    },
-    {
-      label: "days to minutes",
-      path: "/Converters/TimeUnits/DaysToMinutes",
-    },
-    {
-      label: "days to months",
-      path: "/Converters/TimeUnits/DaysToMonths",
-    },
-    {
-      label: "months to days",
-      path: "/Converters/TimeUnits/MonthsToDays",
-    },
-    {
-      label: "days to years",
-      path: "/Converters/TimeUnits/DaysToYears",
-    },
-    {
-      label: "years to days",
-      path: "/Converters/TimeUnits/YearsToDays",
-    },
-    {
-      label: "minutes to seconds",
-      path: "/Converters/TimeUnits/MinutesToSeconds",
-    },
-    {
-      label: "seconds to minutes",
-      path: "/Converters/TimeUnits/SecondsToMinutes",
-    },
-    {
-      label: "milliseconds to seconds",
-      path: "/Converters/TimeUnits/MillisecondsToSeconds",
-    },
-    {
-      label: "seconds to milliseconds",
-      path: "/Converters/TimeUnits/SecondsToMilliseconds",
-    },
-  ],
-
-  AngleUnits: [
-    {
-      label: "radians to degrees",
-      path: "/Converters/CommonConversions/RadiansToDegrees",
-    },
-    {
-      label: "degrees to radians",
-      path: "/Converters/CommonConversions/DegreesToRadians",
-    },
-  ],
-
-  NumberUnits: [
-    {
-      label: "binary to decimal",
-      path: "/Converters/NumberUnits/BinaryToDecimal",
-    },
-    {
-      label: "decimal to binary",
-      path: "/Converters/NumberUnits/DecimalToBinary",
-    },
-    {
-      label: "decimal to hex",
-      path: "/Converters/NumberUnits/DecimalToHex",
-    },
-    {
-      label: "hex to decimal",
-      path: "/Converters/NumberUnits/HexToDecimal",
-    },
-    {
-      label: "binary to hex",
-      path: "/Converters/NumberUnits/BinaryToHex",
-    },
-    {
-      label: "hex to binary",
-      path: "/Converters/NumberUnits/HexToBinary",
-    },
-  ],
+  // units end
   WeightAndMass: [
     { label: "Kg to lbs", path: "/Converters/WeightAndMass/KgToLbs" },
     { label: "lbs to kg", path: "/Converters/WeightAndMass/LbsToKg" },
@@ -953,7 +660,112 @@ export const menus: Menus = {
     { label: "ton to lbs", path: "/Converters/WeightAndMass/TonToLbs" },
     { label: "lbs to ton", path: "/Converters/WeightAndMass/LbsToTon" },
   ],
+  CommonConversions: [
+    { label: "cm to inches", path: "/Converters/CommonConversions/CmToInches" },
+    { label: "inches to cm", path: "/Converters/CommonConversions/InchesToCm" },
 
+    { label: "Kg to lbs", path: "/Converters/WeightAndMass/KgToLbs" },
+    { label: "lbs to kg", path: "/Converters/WeightAndMass/LbsToKg" },
+
+    {
+      label: "Celsius to Fahrenheit",
+      path: "/Converters/CommonConversions/CelsiusToFahrenheit",
+    },
+    {
+      label: "Fahrenheit to Celsius",
+      path: "/Converters/CommonConversions/FahrenheitToCelsius",
+    },
+
+    { label: "inches to mm", path: "/Converters/CommonConversions/InchesToMm" },
+    { label: "mm to inches", path: "/Converters/CommonConversions/MmToInches" },
+
+    {
+      label: "meters to feet",
+      path: "/Converters/CommonConversions/MetersToFeet",
+    },
+    {
+      label: "feet to meters",
+      path: "/Converters/CommonConversions/FeetToMeters",
+    },
+
+    { label: "km to miles", path: "/Converters/CommonConversions/KmToMiles" },
+    { label: "miles to km", path: "/Converters/CommonConversions/MilesToKm" },
+
+    { label: "cm to feet", path: "/Converters/CommonConversions/CmToFeet" },
+    { label: "feet to cm", path: "/Converters/CommonConversions/FeetToCm" },
+
+    {
+      label: "grams to ounces",
+      path: "/Converters/WeightAndMass/GramsToOunces",
+    },
+    {
+      label: "ounces to grams",
+      path: "/Converters/WeightAndMass/OuncesToGrams",
+    },
+
+    {
+      label: "inches to feet",
+      path: "/Converters/CommonConversions/InchesToFeet",
+    },
+    {
+      label: "feet to inches",
+      path: "/Converters/CommonConversions/FeetToInches",
+    },
+
+    {
+      label: "liters to gallons",
+      path: "/Converters/CommonConversions/LitersToGallons",
+    },
+    {
+      label: "gallons to liters",
+      path: "/Converters/CommonConversions/GallonsToLiters",
+    },
+
+    {
+      label: "pounds to ounces",
+      path: "/Converters/WeightAndMass/PoundsToOunces",
+    },
+    {
+      label: "ounces to pounds",
+      path: "/Converters/WeightAndMass/OuncesToPounds",
+    },
+
+    { label: "kph to mph", path: "/Converters/CommonConversions/KphToMph" },
+    { label: "mph to kph", path: "/Converters/CommonConversions/MphToKph" },
+
+    {
+      label: "acres to square feet",
+      path: "/Converters/CommonConversions/AcresToSquareFeet",
+    },
+    {
+      label: "square feet to acres",
+      path: "/Converters/CommonConversions/SquareFeetToAcres",
+    },
+
+    {
+      label: "radians to degrees",
+      path: "/Converters/CommonConversions/RadiansToDegrees",
+    },
+    {
+      label: "degrees to radians",
+      path: "/Converters/CommonConversions/DegreesToRadians",
+    },
+
+    { label: "hp to kw", path: "/Converters/CommonConversions/HpToKw" },
+    { label: "kw to hp", path: "/Converters/CommonConversions/KwToHp" },
+
+    {
+      label: "meters to yards",
+      path: "/Converters/CommonConversions/MetersToYards",
+    },
+    {
+      label: "yards to meters",
+      path: "/Converters/CommonConversions/YardsToMeters",
+    },
+
+    { label: "mL to cups", path: "/Converters/CommonConversions/MlToCups" },
+    { label: "cups to mL", path: "/Converters/CommonConversions/CupsToMl" },
+  ],
   CommonConverters: [
     {
       label: "Length Converter",
@@ -1123,6 +935,48 @@ export const menus: Menus = {
     },
   ],
 
+  FluidsConverters: [
+    {
+      label: "Flow Converter",
+      path: "/Converters/FluidsConverters/FlowConverter",
+    },
+    {
+      label: "Flow - Mass Converter",
+      path: "/Converters/FluidsConverters/FlowMassConverter",
+    },
+    {
+      label: "Flow - Molar Converter",
+      path: "/Converters/FluidsConverters/FlowMolarConverter",
+    },
+    {
+      label: "Mass Flux Density Converter",
+      path: "/Converters/FluidsConverters/MassFluxDensityConverter",
+    },
+    {
+      label: "Concentration - Molar Converter",
+      path: "/Converters/FluidsConverters/ConcentrationMolarConverter",
+    },
+    {
+      label: "Concentration - Solution Converter",
+      path: "/Converters/FluidsConverters/ConcentrationSolutionConverter",
+    },
+    {
+      label: "Viscosity - Dynamic Converter",
+      path: "/Converters/FluidsConverters/ViscosityDynamicConverter",
+    },
+    {
+      label: "Viscosity - Kinematic Converter",
+      path: "/Converters/FluidsConverters/ViscosityKinematicConverter",
+    },
+    {
+      label: "Surface Tension Converter",
+      path: "/Converters/FluidsConverters/SurfaceTensionConverter",
+    },
+    {
+      label: "Permeability Converter",
+      path: "/Converters/FluidsConverters/PermeabilityConverter",
+    },
+  ],
   HeatConverters: [
     {
       label: "Fuel Efficiency - Mass Converter",
@@ -1184,69 +1038,6 @@ export const menus: Menus = {
       path: "/Converters/MagnetismConverters/MagneticFluxDensityConverter",
     },
   ],
-
-  FluidsConverters: [
-    {
-      label: "Flow Converter",
-      path: "/Converters/FluidsConverters/FlowConverter",
-    },
-    {
-      label: "Flow - Mass Converter",
-      path: "/Converters/FluidsConverters/FlowMassConverter",
-    },
-    {
-      label: "Flow - Molar Converter",
-      path: "/Converters/FluidsConverters/FlowMolarConverter",
-    },
-    {
-      label: "Mass Flux Density Converter",
-      path: "/Converters/FluidsConverters/MassFluxDensityConverter",
-    },
-    {
-      label: "Concentration - Molar Converter",
-      path: "/Converters/FluidsConverters/ConcentrationMolarConverter",
-    },
-    {
-      label: "Concentration - Solution Converter",
-      path: "/Converters/FluidsConverters/ConcentrationSolutionConverter",
-    },
-    {
-      label: "Viscosity - Dynamic Converter",
-      path: "/Converters/FluidsConverters/ViscosityDynamicConverter",
-    },
-    {
-      label: "Viscosity - Kinematic Converter",
-      path: "/Converters/FluidsConverters/ViscosityKinematicConverter",
-    },
-    {
-      label: "Surface Tension Converter",
-      path: "/Converters/FluidsConverters/SurfaceTensionConverter",
-    },
-    {
-      label: "Permeability Converter",
-      path: "/Converters/FluidsConverters/PermeabilityConverter",
-    },
-  ],
-
-  RadiologyConverters: [
-    {
-      label: "Radiation Converter",
-      path: "/Converters/RadiologyConverters/RadiationConverter",
-    },
-    {
-      label: "Radiation-Activity Converter",
-      path: "/Converters/RadiologyConverters/RadiationActivityConverter",
-    },
-    {
-      label: "Radiation-Exposure Converter",
-      path: "/Converters/RadiologyConverters/RadiationExposureConverter",
-    },
-    {
-      label: "Radiation-Absorbed Dose Converter",
-      path: "/Converters/RadiologyConverters/RadiationAbsorbedDoseConverter",
-    },
-  ],
-
   LightConverters: [
     {
       label: "Luminance Converter",
@@ -1267,6 +1058,24 @@ export const menus: Menus = {
     {
       label: "Frequency Wavelength Converter",
       path: "/Converters/LightConverters/FrequencyWavelengthConverter",
+    },
+  ],
+  RadiologyConverters: [
+    {
+      label: "Radiation Converter",
+      path: "/Converters/RadiologyConverters/RadiationConverter",
+    },
+    {
+      label: "Radiation-Activity Converter",
+      path: "/Converters/RadiologyConverters/RadiationActivityConverter",
+    },
+    {
+      label: "Radiation-Exposure Converter",
+      path: "/Converters/RadiologyConverters/RadiationExposureConverter",
+    },
+    {
+      label: "Radiation-Absorbed Dose Converter",
+      path: "/Converters/RadiologyConverters/RadiationAbsorbedDoseConverter",
     },
   ],
 
