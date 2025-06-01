@@ -1,4 +1,5 @@
 "use client";
+import LinkToOthers from "@/app/utils/components/LinkToOthers/LinkToOthers";
 import ReusableConversionPage from "../../../../utils/components/ReusableConversionPage/ReusableConversionPage";
 import ConversionTable from "./ConversionTable"; // Table component for Ton to BTU
 
@@ -23,23 +24,30 @@ const definitions = [
 
 const TonToBTUPage = () => {
   return (
-    <ReusableConversionPage
-      title="Convert Ton of Refrigeration to British Thermal Unit (BTU)"
-      fromUnit="Ton of Refrigeration"
-      toUnit="British Thermal Unit (BTU)"
-      convertFunction={(val) => val * 12000} // 1 Ton = 12,000 BTU/hr
-      definitions={definitions}
-      tableComponent={<ConversionTable />} // Table component for Ton to BTU
-      conversionExample={
-        <>
-          Formula: BTU = Ton × 12,000
-          <br />
-          <strong>Example:</strong> convert 2 Ton to BTU:
-          <br />2 × 12,000 = 24,000 BTU
-        </>
-      }
-      reversePath="/Converters/Power/BTUToTon"
-    />
+    <>
+      <ReusableConversionPage
+        title="Convert Ton of Refrigeration to British Thermal Unit (BTU)"
+        fromUnit="Ton of Refrigeration"
+        toUnit="British Thermal Unit (BTU)"
+        convertFunction={(val) => val * 12000} // 1 Ton = 12,000 BTU/hr
+        definitions={definitions}
+        tableComponent={<ConversionTable />} // Table component for Ton to BTU
+        conversionExample={
+          <>
+            Formula: BTU = Ton × 12,000
+            <br />
+            <strong>Example:</strong> convert 2 Ton to BTU:
+            <br />2 × 12,000 = 24,000 BTU
+          </>
+        }
+        reversePath="/Converters/Power/BTUToTon"
+      />
+      <LinkToOthers
+        heading={"More Ton Conversions"}
+        link={"/Converters/linkedConversions/TonToOthers"}
+        label={"Ton to other..."}
+      />
+    </>
   );
 };
 

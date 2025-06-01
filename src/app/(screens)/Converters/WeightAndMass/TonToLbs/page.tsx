@@ -4,20 +4,20 @@ import GreenBtn from "@/app/utils/components/GreenBtn/GreenBtn";
 import React, { useState } from "react";
 import ConversionTable from "./ConversionTable";
 import { useRouter } from "next/navigation";
+import LinkToOthers from "@/app/utils/components/LinkToOthers/LinkToOthers";
 
 const page = () => {
   const router = useRouter();
   const [fromValue, setFromValue] = useState("");
   const [toValue, setToValue] = useState("");
 
- const convert = () => {
-  const value = parseFloat(fromValue);
-  if (!isNaN(value)) {
-    const pounds = value * 2204.62262;
-    setToValue(pounds.toFixed(4));
-  }
-};
-
+  const convert = () => {
+    const value = parseFloat(fromValue);
+    if (!isNaN(value)) {
+      const pounds = value * 2204.62262;
+      setToValue(pounds.toFixed(4));
+    }
+  };
 
   const clear = () => {
     setFromValue("");
@@ -25,9 +25,7 @@ const page = () => {
   };
   return (
     <div className="min-h-screen">
-      <h1 className="font-bold text-4xl text-[#006633]">
-        Convert ton to lbs
-      </h1>
+      <h1 className="font-bold text-4xl text-[#006633]">Convert ton to lbs</h1>
       <div className="w-full max-w-md mt-10 px-2 py-4 bg-gray-100 rounded shadow">
         <div className="flex justify-between items-center sm:gap-0 -gap-x-1">
           <div>
@@ -136,25 +134,27 @@ const page = () => {
           where a stone is comprised of 14 pounds.
         </p>
       </section>
-
       {/* Section 3 */}
       <h1 className="text-xl text-[#006633] font-semibold mt-10">
         Ton (metric) to Pound Conversion Table
       </h1>
       <ConversionTable />
-
       {/* Section 4 */}
       <h1 className="text-xl text-[#006633] font-semibold mt-10">
         How to Convert Ton (metric) to Pound
       </h1>
       1 t = 2204.6226218488 lbs
-      <br />
-1 lbs = 0.0004535924 t
+      <br />1 lbs = 0.0004535924 t
       <p>
         <strong>Example: </strong>convert 15 t to lbs :
         <br />
         15 t = 15 × 2204.6226218488 lbs = 33069.339327732 lbs
       </p>
+      <LinkToOthers
+        heading={"More Ton Conversions"}
+        link={"/Converters/linkedConversions/TonToOthers"}
+        label={"Ton to other..."}
+      />
     </div>
   );
 };

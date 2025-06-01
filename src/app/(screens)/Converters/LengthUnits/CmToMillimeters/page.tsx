@@ -40,7 +40,7 @@ const GramToMilligramPage = () => {
           <br />7 cm = 7 × 10 mm = 70 mm
         </>
       }
-      reversePath="/Converters/LengthUnits/MillimetersToCentimeters"
+      reversePath="/Converters/LengthUnits/MillimetersToCm"
     />
   );
 };

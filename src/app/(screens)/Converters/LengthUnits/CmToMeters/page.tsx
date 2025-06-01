@@ -1,16 +1,8 @@
 "use client";
 import ReusableConversionPage from "../../../../utils/components/ReusableConversionPage/ReusableConversionPage";
-import ConversionTable from "./ConversionTable"; // You'll need a new table or adjust existing for km to cm
+import ConversionTable from "./ConversionTable";
 
 const definitions = [
-  {
-    heading: "Kilometer",
-    content: [
-      "Definition: A kilometer is a unit of length equal to 1,000 meters or 100,000 centimeters and is used to measure longer distances.",
-      "History/origin: The kilometer was introduced as part of the metric system to measure large distances such as between cities or geographical features.",
-      "Current use: The kilometer is widely used globally in transportation, geography, and everyday measurement of long distances.",
-    ],
-  },
   {
     heading: "Centimeter",
     content: [
@@ -19,31 +11,39 @@ const definitions = [
       "Current use: The centimeter is widely used in everyday life for measuring small to medium lengths such as the height of a person or the dimensions of objects, and it is also commonly seen on rulers and measuring tapes.",
     ],
   },
+  {
+    heading: "Meter",
+    content: [
+      "Definition: A meter is the SI base unit of length, originally defined in 1793 as one ten-millionth of the distance from the equator to the North Pole along a meridian through Paris.",
+      "History/origin: The meter was established to provide a universal standard for measuring length and is widely used around the world in science, industry, and everyday life.",
+      "Current use: The meter is the fundamental unit of length in the metric system, used globally in scientific measurements, engineering, and everyday length measurements.",
+    ],
+  },
 ];
 
-const KilometersToCentimetersPage = () => {
+const page = () => {
   return (
     <ReusableConversionPage
-      title="Convert Kilometers to Centimeters"
-      fromUnit="Kilometers"
-      toUnit="Centimeters"
-      convertFunction={(val) => val * 100000} // 1 km = 100,000 cm
+      title="Convert Centimeters to Meters"
+      fromUnit="Centimeters"
+      toUnit="Meters"
+      convertFunction={(val) => val / 100} // 1 cm = 0.01 m
       definitions={definitions}
       tableComponent={<ConversionTable />}
       conversionExample={
         <>
-          1 km = 100,000 cm
+          1 cm = 0.01 m
           <br />
-          1 cm = 0.00001 km
+          1 m = 100 cm
           <br />
-          <strong>Example:</strong> convert 2.5 km to cm:
+          <strong>Example:</strong> convert 150 cm to m:
           <br />
-          2.5 km = 2.5 × 100,000 cm = 250,000 cm
+          150 cm = 150 ÷ 100 m = 1.5 m
         </>
       }
-      reversePath="/Converters/LengthUnits/CentimetersToKilometers"
+      reversePath="/Converters/LengthUnits/MetersToCm"
     />
   );
 };
 
-export default KilometersToCentimetersPage;
+export default page;

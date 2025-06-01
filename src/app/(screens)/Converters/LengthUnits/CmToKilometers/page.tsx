@@ -41,7 +41,7 @@ const CentimetersToKilometersPage = () => {
           150,000 cm = 150,000 ÷ 100,000 km = 1.5 km
         </>
       }
-      reversePath="/Converters/LengthUnits/KilometersToCentimeters"
+      reversePath="/Converters/LengthUnits/KilometersToCm"
     />
   );
 };

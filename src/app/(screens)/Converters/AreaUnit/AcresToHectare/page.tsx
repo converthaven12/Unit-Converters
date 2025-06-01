@@ -41,7 +41,7 @@ const AcresToHectarePage = () => {
           15 × 0.404685642 = 6.07028463 hectares
         </>
       }
-      reversePath="/Converters/AreaUnits/HectareToAcres"
+      reversePath="/Converters/AreaUnit/HectareToAcres"
     />
   );
 };

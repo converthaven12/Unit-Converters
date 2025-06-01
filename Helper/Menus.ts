@@ -165,27 +165,27 @@ export const menus: Menus = {
     // need to add these
     {
       label: "mm to cm",
-      path: "/Converters/LengthUnits/MillimetersToCentimeters",
+      path: "/Converters/LengthUnits/MillimetersToCm",
     },
     {
       label: "cm to mm",
-      path: "/Converters/LengthUnits/CentimetersToMillimeters",
+      path: "/Converters/LengthUnits/CmToMillimeters",
     },
     {
       label: "cm to m",
-      path: "/Converters/LengthUnits/CentimetersToMeters",
+      path: "/Converters/LengthUnits/CmToMeters",
     },
     {
       label: "m to cm",
-      path: "/Converters/LengthUnits/MetersToCentimeters",
+      path: "/Converters/LengthUnits/MetersToCm",
     },
     {
       label: "cm to km",
-      path: "/Converters/LengthUnits/CentimetersToKilometers",
+      path: "/Converters/LengthUnits/CmToKilometers",
     },
     {
       label: "km to cm",
-      path: "/Converters/LengthUnits/KilometersToCentimeters",
+      path: "/Converters/LengthUnits/KilometersToCm",
     },
     {
       label: "mm to feet",
@@ -349,13 +349,19 @@ export const menus: Menus = {
     { label: "quart to cup", path: "/Converters/VolumeUnits/QuartToCup" },
 
     { label: "cups to gallon", path: "/Converters/VolumeUnits/CupsToGallon" },
-    { label: "gallon to cups", path: "/Converters/VolumeUnits/GallonToCups" },
+    { label: "gallon to cups", path: "/Converters/VolumeUnits/GallonsToCups" },
 
     { label: "pint to cups", path: "/Converters/VolumeUnits/PintToCups" },
     { label: "cups to pint", path: "/Converters/VolumeUnits/CupsToPint" },
 
-    { label: "quart to gallon", path: "/Converters/VolumeUnits/QuartToGallon" },
-    { label: "gallon to quart", path: "/Converters/VolumeUnits/GallonToQuart" },
+    {
+      label: "quart to gallon",
+      path: "/Converters/VolumeUnits/QuartsToGallon",
+    },
+    {
+      label: "gallon to quart",
+      path: "/Converters/VolumeUnits/GallonsToQuarts",
+    },
 
     { label: "gallon to ml", path: "/Converters/VolumeUnits/GallonToMl" },
     { label: "ml to gallon", path: "/Converters/VolumeUnits/MlToGallon" },

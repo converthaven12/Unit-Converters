@@ -41,7 +41,7 @@ const MillimeterToCentimeterPage = () => {
           70 mm = 70 ÷ 10 cm = 7 cm
         </>
       }
-      reversePath="/Converters/LengthUnits/CentimetersToMillimeters"
+      reversePath="/Converters/LengthUnits/CmToMillimeters"
     />
   );
 };

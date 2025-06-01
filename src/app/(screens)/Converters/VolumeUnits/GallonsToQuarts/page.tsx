@@ -38,7 +38,7 @@ const GallonsToQuartsPage = () => {
           <br />3 × 4 = 12 quarts
         </>
       }
-      reversePath="/Converters/VolumeUnits/QuartsToGallons"
+      reversePath="/Converters/VolumeUnits/QuartsToGallon"
     />
   );
 };

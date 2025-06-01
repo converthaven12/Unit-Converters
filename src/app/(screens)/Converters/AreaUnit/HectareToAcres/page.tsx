@@ -41,7 +41,7 @@ const HectareToAcresPage = () => {
           10 × 2.47105381 = 24.7105381 acres
         </>
       }
-      reversePath="/Converters/AreaUnits/AcresToHectare"
+      reversePath="/Converters/AreaUnit/AcresToHectare"
     />
   );
 };

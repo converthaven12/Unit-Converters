@@ -1,14 +1,14 @@
 "use client";
 import ReusableConversionPage from "../../../../utils/components/ReusableConversionPage/ReusableConversionPage";
-import ConversionTable from "./ConversionTable";
+import ConversionTable from "./ConversionTable"; // You'll need a new table or adjust existing for km to cm
 
 const definitions = [
   {
-    heading: "Meter",
+    heading: "Kilometer",
     content: [
-      "Definition: A meter is the SI base unit of length, originally defined in 1793 as one ten-millionth of the distance from the equator to the North Pole along a meridian through Paris.",
-      "History/origin: The meter was established to provide a universal standard for measuring length and is widely used around the world in science, industry, and everyday life.",
-      "Current use: The meter is the fundamental unit of length in the metric system, used globally in scientific measurements, engineering, and everyday length measurements.",
+      "Definition: A kilometer is a unit of length equal to 1,000 meters or 100,000 centimeters and is used to measure longer distances.",
+      "History/origin: The kilometer was introduced as part of the metric system to measure large distances such as between cities or geographical features.",
+      "Current use: The kilometer is widely used globally in transportation, geography, and everyday measurement of long distances.",
     ],
   },
   {
@@ -21,29 +21,29 @@ const definitions = [
   },
 ];
 
-const MetersToCentimetersPage = () => {
+const KilometersToCentimetersPage = () => {
   return (
     <ReusableConversionPage
-      title="Convert Meters to Centimeters"
-      fromUnit="Meters"
+      title="Convert Kilometers to Centimeters"
+      fromUnit="Kilometers"
       toUnit="Centimeters"
-      convertFunction={(val) => val * 100}
+      convertFunction={(val) => val * 100000} // 1 km = 100,000 cm
       definitions={definitions}
       tableComponent={<ConversionTable />}
       conversionExample={
         <>
-          1 m = 100 cm
+          1 km = 100,000 cm
           <br />
-          1 cm = 0.01 m
+          1 cm = 0.00001 km
           <br />
-          <strong>Example:</strong> convert 2.5 m to cm:
+          <strong>Example:</strong> convert 2.5 km to cm:
           <br />
-          2.5 m = 2.5 × 100 cm = 250 cm
+          2.5 km = 2.5 × 100,000 cm = 250,000 cm
         </>
       }
-      reversePath="/Converters/LengthUnits/CentimetersToMeters"
+      reversePath="/Converters/LengthUnits/CmToKilometers"
     />
   );
 };
 
-export default MetersToCentimetersPage;
+export default KilometersToCentimetersPage;
