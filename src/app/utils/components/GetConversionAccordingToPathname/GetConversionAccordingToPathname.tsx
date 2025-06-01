@@ -324,7 +324,6 @@ const GetConversionAccordingToPathname = () => {
 
     if (unitConfigs[name]) {
       setObj(unitConfigs[name]);
-      console.log(name);
       setReady(true);
     }
   }, [pathname]);

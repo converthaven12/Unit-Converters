@@ -46,101 +46,107 @@ const ConverterHome: React.FC = () => {
   const result = convert(numericValue, fromUnit, toUnit);
 
   return (
-    <div className="p-4 font-sans w-full ">
-      <h1 className="font-bold text-3xl sm:text-4xl text-[#006633] mb-4 text-center sm:text-left">
+    <>
+    <div className="p-6 font-sans w-full  bg-white rounded-lg shadow-sm">
+      <h1 className="font-bold text-3xl sm:text-4xl text-[#006633] mb-6 text-center">
         Universal Unit Converter
       </h1>
 
-      <div className="flex flex-wrap gap-2 mb-6 justify-center sm:justify-start">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            className={`px-3 py-1 rounded border text-sm sm:text-base ${
-              category === cat
-                ? "bg-green-800 text-white font-bold px-4 py-2 rounded shadow hover:bg-green-900"
-                : "bg-white"
-            }`}
-            onClick={() => {
-              setCategory(cat);
-              const units =
-                cat === "TemperatureUnits"
-                  ? temperatureUnits
-                  : Object.keys(unitMaps[cat]);
-              setFromUnit(units[0]);
-              setToUnit(units[1] || units[0]);
-              setFromValue("");
-            }}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-        <div>
-          <label className="block mb-1 text-sm">From:</label>
-          <input
-            type="number"
-            value={fromValue}
-            onChange={(e) => setFromValue(e.target.value)}
-            className="w-full p-2 border rounded no-spinners text-sm"
-            placeholder="Enter value"
-          />
-          <select
-            value={fromUnit}
-            onChange={(e) => setFromUnit(e.target.value)}
-            className="w-full p-2 mt-2 border rounded text-sm"
-          >
-            {units.map((unit) => (
-              <option key={unit} value={unit}>
-                {unit}
-              </option>
-            ))}
-          </select>
+      <div className="mb-8 p-4 bg-gray-50 rounded-lg border border-[#006633]/10">
+        <div className="flex flex-wrap gap-2 mb-6 justify-center">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={`px-4 py-2 rounded-full text-sm transition-all ${
+                category === cat
+                  ? "bg-[#006633] text-white font-medium shadow-md"
+                  : "bg-white text-gray-700 border border-[#006633]/20 hover:border-[#006633]/40"
+              }`}
+              onClick={() => {
+                setCategory(cat);
+                const units =
+                  cat === "TemperatureUnits"
+                    ? temperatureUnits
+                    : Object.keys(unitMaps[cat]);
+                setFromUnit(units[0]);
+                setToUnit(units[1] || units[0]);
+                setFromValue("");
+              }}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
 
-        <div>
-          <label className="block mb-1 text-sm">To:</label>
-          <input
-            type="text"
-            readOnly
-            value={fromValue ? result.toFixed(6) : ""}
-            className="w-full p-2 border rounded bg-gray-100 text-sm"
-          />
-          <select
-            value={toUnit}
-            onChange={(e) => setToUnit(e.target.value)}
-            className="w-full p-2 mt-2 border rounded text-sm"
-          >
-            {units.map((unit) => (
-              <option key={unit} value={unit}>
-                {unit}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+          <div className="space-y-2">
+            <label className="block text-sm font-medium text-gray-700">From:</label>
+            <input
+              type="number"
+              value={fromValue}
+              onChange={(e) => setFromValue(e.target.value)}
+              className="w-full p-3 border border-[#138a55] rounded-lg outline-none  transition"
+              placeholder="Enter value"
+            />
+            <select
+              value={fromUnit}
+              onChange={(e) => setFromUnit(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-lg outline-none bg-white transition"
+            >
+              {units.map((unit) => (
+                <option key={unit} value={unit}>
+                  {unit}
+                </option>
+              ))}
+            </select>
+          </div>
 
-      {fromValue && (
-        <p className="text-blue-600 font-medium text-sm sm:text-base">
-          Result: {numericValue} {fromUnit} = {result.toFixed(6)} {toUnit}
-        </p>
-      )}
+          <div className="space-y-2">
+            <label className="block text-sm font-medium text-gray-700">To:</label>
+            <input
+              type="text"
+              readOnly
+              value={fromValue ? result.toFixed(6) : ""}
+              className="w-full p-3 border border-[#138a55] outline-none rounded-lg bg-gray-50 "
+            />
+            <select
+              value={toUnit}
+              onChange={(e) => setToUnit(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-lg outline-none bg-white transition"
+            >
+              {units.map((unit) => (
+                <option key={unit} value={unit}>
+                  {unit}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        {fromValue && (
+          <div className="mt-4 p-3 bg-[#006633]/5 rounded-lg border border-[#006633]/10">
+            <p className="text-[#006633] font-medium text-center">
+              {numericValue} {fromUnit} = <span className="font-bold">{result.toFixed(6)}</span> {toUnit}
+            </p>
+          </div>
+        )}
+      </div>
 
       {/* Hide spinners in number inputs */}
       <style jsx>{`
-        input.no-spinners::-webkit-inner-spin-button,
-        input.no-spinners::-webkit-outer-spin-button {
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
           -webkit-appearance: none;
           margin: 0;
         }
-        input.no-spinners[type="number"] {
+        input[type="number"] {
           -moz-appearance: textfield;
         }
       `}</style>
 
-      <LinkDisplay />
     </div>
+      <LinkDisplay />
+    </>
   );
 };
 

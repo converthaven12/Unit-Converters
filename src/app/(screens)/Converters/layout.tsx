@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Sidebar from "../../utils/components/SideBar/Sidebar";
 import {
   SidebarProvider,
@@ -13,11 +13,15 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { isOpened } = useSidebar();
   const sidebarWidth = isOpened ? "md:ml-[20dvw] xl:ml-[18dvw]" : "ml-[74px]";
-  console.log(
-    "dfdfd",
-    pathname.split("/")[3].split("To")[0],
-    units.includes(pathname.split("/")[3].split("To")[0])
-  );
+
+  // Safely extract path segments
+  const pathSegments = pathname?.split("/") || [];
+  const isLinkedConversions = pathSegments[2] !== "linkedConversions";
+  const unitSegment = pathSegments[3] || "";
+  const baseUnit = unitSegment.split("To")[0] || "";
+
+  const shouldShowConversion = isLinkedConversions && units.includes(baseUnit);
+
   return (
     <div className="flex min-h-screen">
       <div className="fixed top-0 h-full z-10">
@@ -28,10 +32,7 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
       >
         <div className="px-0 md:px-5 flex-1 font-alata">
           {children}
-          {pathname.split("/")[2] !== "linkedConversions" &&
-            units.includes(pathname.split("/")[3].split("To")[0]) && (
-              <GetConversionAccordingToPathname />
-            )}
+          {shouldShowConversion && <GetConversionAccordingToPathname />}
         </div>
       </div>
     </div>
