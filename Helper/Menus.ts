@@ -982,10 +982,6 @@ export const menus: Menus = {
       path: "/Converters/CommonConverters/VolumeDryConverter",
     },
     {
-      label: "Currency Converter",
-      path: "/Converters/CommonConverters/CurrencyConverter",
-    },
-    {
       label: "Case Converter",
       path: "/Converters/CommonConverters/CaseConverter",
     },

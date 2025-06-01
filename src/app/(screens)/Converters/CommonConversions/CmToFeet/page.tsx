@@ -4,6 +4,8 @@ import GreenBtn from "@/app/utils/components/GreenBtn/GreenBtn";
 import React, { useState } from "react";
 import ConversionTable from "./ConversionTable";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import LinkToOthers from "@/app/utils/components/LinkToOthers/LinkToOthers";
 
 const page = () => {
   const router = useRouter();
@@ -148,6 +150,13 @@ const page = () => {
         <br />
         15 cm = 15 × 0.032808399 ft = 0.4921259843 ft
       </p>
+      {/* <div>
+        <h2>More CM Conversions</h2>
+        <Link href={"/Converters/linkedConversions/CmToOthers"}>
+            CM To Others
+      </Link>
+      </div> */}
+      <LinkToOthers heading="More CM Conversions" label="CM To Others..." link="/Converters/linkedConversions/CmToOthers"/>
     </div>
   );
 };

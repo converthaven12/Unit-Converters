@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../../../../public/assests/logo1.png";
+import Logo from "../../../../../public/assests/logo2.png";
 import ArrowDown from "../../../../../public/assests/arrow-down.svg";
 import arrows from "../../../../../public/assests/sideMenuToggler.svg";
 import { menus } from "../../../../../Helper/Menus";
@@ -34,13 +34,14 @@ const Sidebar: React.FC = () => {
           onClick={() => setIsOpened(!isOpened)}
         />
       </div>
-
-      {/* <Image src={Logo} alt="logo" className="w-20 h-20 mx-auto" /> */}
+          {/* <p className="text-[#006633] font-bold text-xl mb-5 text-center">
+          Convert Haven
+        </p> */}
+      
       {isOpened && (
         <Link href={"/Converters"}>
-        <p className="text-[#006633] font-bold text-xl mb-5 text-center">
-          Convert Haven
-        </p></Link>
+          <Image src={Logo} alt="logo" className="w-48 mx-auto" />
+        </Link>
       )}
 
       <div className="flex flex-col flex-grow overflow-y-auto pr-1">
