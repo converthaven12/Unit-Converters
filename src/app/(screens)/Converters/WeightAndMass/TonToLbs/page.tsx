@@ -26,7 +26,7 @@ const page = () => {
   return (
     <div className="min-h-screen">
       <h1 className="font-bold text-4xl text-[#006633]">Convert ton to lbs</h1>
-      <div className="w-full max-w-md mt-10 px-2 py-4 bg-white rounded shadow">
+      {/* <div className="w-full max-w-md mt-10 px-2 py-4 bg-white rounded shadow">
         <div className="flex justify-between items-center sm:gap-0 -gap-x-1">
           <div>
             <div className="flex items-center mb-4">
@@ -66,6 +66,51 @@ const page = () => {
         </div>
 
         <div className="flex space-x-4">
+          <GreenBtn text="Convert" clickEvent={convert} />
+          <GreenBtn text="Clear" clickEvent={clear} />
+        </div>
+      </div> */}
+      <div className="w-full max-w-xl mt-10 px-4 py-6 bg-white rounded-lg shadow-md">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-4">
+          <div className="space-y-4 w-full">
+            <div className="flex items-center">
+              <label className="w-16 font-semibold text-gray-700">From:</label>
+              <div className="flex-1 max-w-xs">
+                <InputTag
+                  value={fromValue}
+                  setter={(n, v) => setFromValue(v)}
+                  name="ton (metric)"
+                />
+              </div>
+              <span className="ml-2 font-bold text-[#006633]">
+                ton (metric)
+              </span>
+            </div>
+
+            <div className="flex items-center">
+              <label className="w-16 font-semibold text-gray-700">To:</label>
+              <div className="flex-1 max-w-xs">
+                <InputTag
+                  value={toValue}
+                  setter={() => {}}
+                  disabled={true}
+                  name="pound"
+                />
+              </div>
+              <span className="ml-2 font-bold text-[#006633]">pound</span>
+            </div>
+          </div>
+          <div className="self-center sm:self-start">
+            <span
+              className="text-[#006633] text-2xl cursor-pointer hover:rotate-180 transition-transform duration-300"
+              onClick={() => router.push("/Converters/WeightAndMass/LbsToTon")}
+            >
+              ↕
+            </span>
+          </div>
+        </div>
+
+        <div className="flex space-x-4 mt-6">
           <GreenBtn text="Convert" clickEvent={convert} />
           <GreenBtn text="Clear" clickEvent={clear} />
         </div>

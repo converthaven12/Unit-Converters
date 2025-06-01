@@ -54,54 +54,54 @@ const ReusableConversionPage: React.FC<ConversionPageProps> = ({
       <h1 className="font-bold text-4xl text-[#006633]">{title}</h1>
 
       {/* Input Section */}
-      {/* <div className="w-full max-w-xl mt-10 px-4 py-6 bg-white rounded-lg shadow-md">
-  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-4">
-    <div className="space-y-4 w-full">
-      <div className="flex items-center">
-        <label className="w-16 font-semibold text-gray-700">From:</label>
-        <div className="flex-1 max-w-xs">
-          <InputTag
-            value={fromValue}
-            setter={(n, v) => setFromValue(v)}
-            name={fromUnit}
-          />
+      <div className="w-full max-w-xl mt-10 px-4 py-6 bg-white rounded-lg shadow-md">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-4">
+          <div className="space-y-4 w-full">
+            <div className="flex items-center">
+              <label className="w-16 font-semibold text-gray-700">From:</label>
+              <div className="flex-1 max-w-xs">
+                <InputTag
+                  value={fromValue}
+                  setter={(n, v) => setFromValue(v)}
+                  name={fromUnit}
+                />
+              </div>
+              <span className="ml-2 font-bold text-[#006633]">{fromUnit}</span>
+            </div>
+
+            <div className="flex items-center">
+              <label className="w-16 font-semibold text-gray-700">To:</label>
+              <div className="flex-1 max-w-xs">
+                <InputTag
+                  value={toValue}
+                  setter={() => {}}
+                  disabled={true}
+                  name={toUnit}
+                />
+              </div>
+              <span className="ml-2 font-bold text-[#006633]">{toUnit}</span>
+            </div>
+          </div>
+
+          {reversePath && (
+            <div className="self-center sm:self-start">
+              <span
+                className="text-[#006633] text-2xl cursor-pointer hover:rotate-180 transition-transform duration-300"
+                onClick={() => router.push(reversePath)}
+              >
+                ↕
+              </span>
+            </div>
+          )}
         </div>
-        <span className="ml-2 font-bold text-[#006633]">{fromUnit}</span>
-      </div>
 
-      <div className="flex items-center">
-        <label className="w-16 font-semibold text-gray-700">To:</label>
-        <div className="flex-1 max-w-xs">
-          <InputTag
-            value={toValue}
-            setter={() => {}}
-            disabled={true}
-            name={toUnit}
-          />
+        <div className="mt-6 flex flex-wrap gap-4 justify-center sm:justify-start">
+          <GreenBtn text="Convert" clickEvent={convert} />
+          <GreenBtn text="Clear" clickEvent={clear} />
         </div>
-        <span className="ml-2 font-bold text-[#006633]">{toUnit}</span>
       </div>
-    </div>
-
-    {reversePath && (
-      <div className="self-center sm:self-start">
-        <span
-          className="text-[#006633] text-2xl cursor-pointer hover:rotate-180 transition-transform duration-300"
-          onClick={() => router.push(reversePath)}
-        >
-          ↕
-        </span>
-      </div>
-    )}
-  </div>
-
-  <div className="mt-6 flex flex-wrap gap-4 justify-center sm:justify-start">
-    <GreenBtn text="Convert" clickEvent={convert} />
-    <GreenBtn text="Clear" clickEvent={clear} />
-  </div>
-</div> */}
-      <div className="w-full max-w-md mt-10 px-2 py-4 bg-white rounded shadow">
-        <div className="flex justify-between items-center sm:gap-0 -gap-x-1">
+      {/* <div className="w-full max-w-md mt-10 px-2 py-4 bg-white rounded shadow">
+        <div className="flex justify-between items-center sm:gap-0 -gap-x-1 flex-wrap">
           <div>
             <div className="flex items-center mb-4">
               <label className="w-16 font-semibold">From:</label>
@@ -145,7 +145,7 @@ const ReusableConversionPage: React.FC<ConversionPageProps> = ({
           <GreenBtn text="Convert" clickEvent={convert} />
           <GreenBtn text="Clear" clickEvent={clear} />
         </div>
-      </div>
+      </div> */}
 
       {/* Definitions */}
       {definitions.map((section, index) => (
