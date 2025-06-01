@@ -39,7 +39,7 @@ const BTUToTonPage = () => {
           24,000 ÷ 12,000 = 2 Ton
         </>
       }
-      reversePath="/Converters/Power/TonToBTU"
+      reversePath="/Converters/PowerUnits/TonToBTU"
     />
   );
 };

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
@@ -22,13 +22,13 @@ const powerUnits: Record<string, number> = {
   femtowatt: 1e-15,
   attowatt: 1e-18,
 
-  horsepower: 745.7,                   // Imperial/US
-  "horsepower (550 ftlbf/s)": 745.7,  // same as above (mechanical hp)
+  horsepower: 745.7, // Imperial/US
+  "horsepower (550 ftlbf/s)": 745.7, // same as above (mechanical hp)
   "horsepower (metric)": 735.5,
   "horsepower (boiler)": 9809.5,
   "horsepower (electric)": 746,
   "horsepower (water)": 745.7,
-  pferdestarke: 735.5,                 // German PS, metric hp
+  pferdestarke: 735.5, // German PS, metric hp
 
   "Btu (IT)/hour": 0.29307107,
   "Btu (IT)/minute": 17.584264,
@@ -93,7 +93,6 @@ const powerUnits: Record<string, number> = {
   "kilojoule/minute": 16.6667,
 };
 
-
 const PowerConverterPage: React.FC = () => {
   const convertPower = (value: number, from: string, to: string): number => {
     const fromFactor = powerUnits[from];
@@ -104,7 +103,7 @@ const PowerConverterPage: React.FC = () => {
 
   return (
     <ReusableConverter
-      heading="Power Converter"
+      heading="PowerUnits Converter"
       units={Object.keys(powerUnits)}
       convert={convertPower}
     />

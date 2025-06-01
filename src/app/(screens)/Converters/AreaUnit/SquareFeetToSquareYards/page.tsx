@@ -41,7 +41,7 @@ const SquareFeetToSquareYardsPage = () => {
           90 ÷ 9 = 10 square yards
         </>
       }
-      reversePath="/Converters/AreaUnits/SquareYardsToSquareFeet"
+      reversePath="/Converters/AreaUnit/SquareYardsToSquareFeet"
     />
   );
 };

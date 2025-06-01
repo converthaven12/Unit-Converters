@@ -40,7 +40,7 @@ const TonToBTUPage = () => {
             <br />2 × 12,000 = 24,000 BTU
           </>
         }
-        reversePath="/Converters/Power/BTUToTon"
+        reversePath="/Converters/PowerUnits/BTUToTon"
       />
       <LinkToOthers
         heading={"More Ton Conversions"}

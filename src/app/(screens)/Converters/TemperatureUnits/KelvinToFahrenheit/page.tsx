@@ -39,7 +39,7 @@ const KelvinToFahrenheitPage = () => {
           (298.15 - 273.15) × 9/5 + 32 = 77 °F
         </>
       }
-      reversePath="/Converters/Temperature/FahrenheitToKelvin"
+      reversePath="/Converters/TemperatureUnits/FahrenheitToKelvin"
     />
   );
 };

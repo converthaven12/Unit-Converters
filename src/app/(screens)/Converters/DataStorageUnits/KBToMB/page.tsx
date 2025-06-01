@@ -39,7 +39,7 @@ const KBToMBPage = () => {
           2048 ÷ 1024 = 2 MB
         </>
       }
-      reversePath="/Converters/DataUnits/MBToKB"
+      reversePath="/Converters/DataStorageUnits/MBToKB"
     />
   );
 };

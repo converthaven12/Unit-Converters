@@ -40,7 +40,7 @@ const SquareMilesToAcresPage = () => {
           <br />2 × 640 = 1280 acres
         </>
       }
-      reversePath="/Converters/AreaUnits/AcresToSquareMiles"
+      reversePath="/Converters/AreaUnit/AcresToSquareMiles"
     />
   );
 };

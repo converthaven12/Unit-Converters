@@ -38,7 +38,7 @@ const DaysToSecondsPage = () => {
           <br />2 × 86,400 = 172,800 Seconds
         </>
       }
-      reversePath="/Converters/Time/SecondsToDays"
+      reversePath="/Converters/TimeUnits/SecondsToDays"
     />
   );
 };

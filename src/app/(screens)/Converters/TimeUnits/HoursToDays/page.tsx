@@ -39,7 +39,7 @@ const HoursToDaysPage = () => {
           48 ÷ 24 = 2 Days
         </>
       }
-      reversePath="/Converters/Time/DaysToHours"
+      reversePath="/Converters/TimeUnits/DaysToHours"
     />
   );
 };

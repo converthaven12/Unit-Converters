@@ -34,10 +34,10 @@ const Sidebar: React.FC = () => {
           onClick={() => setIsOpened(!isOpened)}
         />
       </div>
-          {/* <p className="text-[#006633] font-bold text-xl mb-5 text-center">
+      {/* <p className="text-[#006633] font-bold text-xl mb-5 text-center">
           Convert Haven
         </p> */}
-      
+
       {isOpened && (
         <Link href={"/Converters"}>
           <Image src={Logo} alt="logo" className="w-48 mx-auto" />
@@ -45,49 +45,51 @@ const Sidebar: React.FC = () => {
       )}
 
       <div className="flex flex-col flex-grow overflow-y-auto pr-1">
-        {Object.entries(menus).map(([key, links]) => (
-          <div key={key}>
-            {/* Dropdown heading */}
-            {isOpened && (
-              <div
-                className="flex items-center justify-between mb-3 cursor-pointer"
-                onClick={() => handleMenuClick(key)}
-              >
-                <p className="text-sm font-medium">
-                  {key.replace(/([A-Z])/g, " $1").trim()}
-                </p>
-                <Image
-                  src={ArrowDown}
-                  alt="arrow_down"
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    openSection === key ? "rotate-180" : ""
-                  }`}
-                />
-              </div>
-            )}
+        {Object.entries(menus)
+          .sort(([keyA], [keyB]) => keyA.localeCompare(keyB))
+          .map(([key, links]) => (
+            <div key={key}>
+              {/* Dropdown heading */}
+              {isOpened && (
+                <div
+                  className="flex items-center justify-between mb-3 cursor-pointer"
+                  onClick={() => handleMenuClick(key)}
+                >
+                  <p className="text-sm font-medium">
+                    {key.replace(/([A-Z])/g, " $1").trim()}
+                  </p>
+                  <Image
+                    src={ArrowDown}
+                    alt="arrow_down"
+                    className={`w-4 h-4 transition-transform duration-200 ${
+                      openSection === key ? "rotate-180" : ""
+                    }`}
+                  />
+                </div>
+              )}
 
-            {/* Dropdown items */}
-            {openSection === key &&
-              links.map((item: any, index: number) => (
-                <Link
-                  href={item.path}
-                  key={index}
-                  className={`cursor-pointer gap-2 py-1 ml-5 rounded-md truncate 
+              {/* Dropdown items */}
+              {openSection === key &&
+                links.map((item: any, index: number) => (
+                  <Link
+                    href={item.path}
+                    key={index}
+                    className={`cursor-pointer gap-2 py-1 ml-5 rounded-md truncate 
                   transition-all duration-200 block ${
                     item.isActive
                       ? "text-themeColor font-semibold"
                       : "text-[#575757] font-light hover:text-black"
                   }`}
-                >
-                  {isOpened && (
-                    <p className="transition-opacity duration-100 text-sm">
-                      {item.label}
-                    </p>
-                  )}
-                </Link>
-              ))}
-          </div>
-        ))}
+                  >
+                    {isOpened && (
+                      <p className="transition-opacity duration-100 text-sm">
+                        {item.label}
+                      </p>
+                    )}
+                  </Link>
+                ))}
+            </div>
+          ))}
       </div>
     </div>
   );

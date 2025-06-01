@@ -39,7 +39,7 @@ const PsiToBarPage = () => {
           29.0076 ÷ 14.5038 = 2 Bar
         </>
       }
-      reversePath="/Converters/Pressure/BarToPsi"
+      reversePath="/Converters/PressureUnits/BarToPsi"
     />
   );
 };

@@ -39,7 +39,7 @@ const NewtonsToLbsPage = () => {
           100 × 0.224809 = 22.4809 pounds-force
         </>
       }
-      reversePath="/Converters/ForceUnits/LbsToNewtons"
+      reversePath="/Converters/Force/LbsToNewtons"
     />
   );
 };

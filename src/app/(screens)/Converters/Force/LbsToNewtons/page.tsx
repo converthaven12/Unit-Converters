@@ -39,7 +39,7 @@ const LbsToNewtonsPage = () => {
           22.4809 ÷ 0.224809 = 100 newtons
         </>
       }
-      reversePath="/Converters/ForceUnits/NewtonsToLbs"
+      reversePath="/Converters/Force/NewtonsToLbs"
     />
   );
 };

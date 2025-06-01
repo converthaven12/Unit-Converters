@@ -38,7 +38,7 @@ const DaysToMinutesPage = () => {
           <br />2 × 1,440 = 2,880 Minutes
         </>
       }
-      reversePath="/Converters/Time/MinutesToDays"
+      reversePath="/Converters/TimeUnits/MinutesToDays"
     />
   );
 };

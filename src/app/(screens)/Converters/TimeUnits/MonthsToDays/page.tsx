@@ -38,7 +38,7 @@ const MonthsToDaysPage = () => {
           <br />2 × 30 = 60 Days
         </>
       }
-      reversePath="/Converters/Time/DaysToMonths"
+      reversePath="/Converters/TimeUnits/DaysToMonths"
     />
   );
 };

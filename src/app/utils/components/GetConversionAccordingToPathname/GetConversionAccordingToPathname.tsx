@@ -109,8 +109,8 @@ const GetConversionAccordingToPathname = () => {
       link: "/Converters/linkedConversions/HexaDecimalToOthers",
     },
     Hp: {
-      heading: "More Horse Power Conversions",
-      label: "Horse Power to other...",
+      heading: "More Horse PowerUnits Conversions",
+      label: "Horse PowerUnits to other...",
       link: "/Converters/linkedConversions/HorsePowerToOthers",
     },
     Hours: {

@@ -38,7 +38,7 @@ const BarToPsiPage = () => {
           <br />2 × 14.5038 = 29.0076 psi
         </>
       }
-      reversePath="/Converters/Pressure/PsiToBar"
+      reversePath="/Converters/PressureUnits/PsiToBar"
     />
   );
 };

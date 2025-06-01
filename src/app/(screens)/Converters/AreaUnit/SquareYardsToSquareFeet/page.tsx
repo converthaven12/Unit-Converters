@@ -41,7 +41,7 @@ const SquareYardsToSquareFeetPage = () => {
           10 × 9 = 90 square feet
         </>
       }
-      reversePath="/Converters/AreaUnits/SquareFeetToSquareYards"
+      reversePath="/Converters/AreaUnit/SquareFeetToSquareYards"
     />
   );
 };

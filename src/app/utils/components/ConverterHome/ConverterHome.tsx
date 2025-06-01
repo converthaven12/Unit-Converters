@@ -12,16 +12,16 @@ const ConverterHome: React.FC = () => {
   const [fromUnit, setFromUnit] = useState<string>("Meter");
   const [toUnit, setToUnit] = useState<string>("Kilometer");
 
-  const categories = Object.keys(unitMaps).concat("Temperature");
+  const categories = Object.keys(unitMaps).concat("TemperatureUnits");
 
   const getUnits = () => {
-    return category === "Temperature"
+    return category === "TemperatureUnits"
       ? temperatureUnits
       : Object.keys(unitMaps[category]);
   };
 
   const convert = (value: number, from: string, to: string): number => {
-    if (category === "Temperature") {
+    if (category === "TemperatureUnits") {
       if (from === to) return value;
 
       let celsius: number;
@@ -63,7 +63,7 @@ const ConverterHome: React.FC = () => {
             onClick={() => {
               setCategory(cat);
               const units =
-                cat === "Temperature"
+                cat === "TemperatureUnits"
                   ? temperatureUnits
                   : Object.keys(unitMaps[cat]);
               setFromUnit(units[0]);

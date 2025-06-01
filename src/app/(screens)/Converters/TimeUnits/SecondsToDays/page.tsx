@@ -39,7 +39,7 @@ const SecondsToDaysPage = () => {
           172,800 ÷ 86,400 = 2 Days
         </>
       }
-      reversePath="/Converters/Time/DaysToSeconds"
+      reversePath="/Converters/TimeUnits/DaysToSeconds"
     />
   );
 };

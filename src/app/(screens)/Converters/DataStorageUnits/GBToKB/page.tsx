@@ -38,7 +38,7 @@ const GBToKBPage = () => {
           <br />2 × (1024 × 1024) = 2,097,152 KB
         </>
       }
-      reversePath="/Converters/DataUnits/KBToGB"
+      reversePath="/Converters/DataStorageUnits/KBToGB"
     />
   );
 };

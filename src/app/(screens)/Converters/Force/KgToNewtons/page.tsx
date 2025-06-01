@@ -39,7 +39,7 @@ const KgToNewtonsPage = () => {
           10 × 9.80665 = 98.0665 newtons
         </>
       }
-      reversePath="/Converters/ForceUnits/NewtonsToKg"
+      reversePath="/Converters/Force/NewtonsToKg"
     />
   );
 };

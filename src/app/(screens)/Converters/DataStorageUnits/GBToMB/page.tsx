@@ -38,7 +38,7 @@ const GBToMBPage = () => {
           <br />2 × 1024 = 2048 MB
         </>
       }
-      reversePath="/Converters/DataUnits/MBToGB"
+      reversePath="/Converters/DataStorageUnits/MBToGB"
     />
   );
 };

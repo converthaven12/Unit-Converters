@@ -39,7 +39,7 @@ const NewtonsToKgPage = () => {
           98.0665 ÷ 9.80665 = 10 kilograms
         </>
       }
-      reversePath="/Converters/ForceUnits/KgToNewtons"
+      reversePath="/Converters/Force/KgToNewtons"
     />
   );
 };

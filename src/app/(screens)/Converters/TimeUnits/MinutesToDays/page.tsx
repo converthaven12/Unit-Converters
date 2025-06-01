@@ -39,7 +39,7 @@ const MinutesToDaysPage = () => {
           2,880 ÷ 1,440 = 2 Days
         </>
       }
-      reversePath="/Converters/Time/DaysToMinutes"
+      reversePath="/Converters/TimeUnits/DaysToMinutes"
     />
   );
 };

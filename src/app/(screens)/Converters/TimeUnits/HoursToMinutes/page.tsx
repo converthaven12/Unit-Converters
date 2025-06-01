@@ -38,7 +38,7 @@ const HoursToMinutesPage = () => {
           <br />2 × 60 = 120 Minutes
         </>
       }
-      reversePath="/Converters/Time/MinutesToHours"
+      reversePath="/Converters/TimeUnits/MinutesToHours"
     />
   );
 };

@@ -38,7 +38,7 @@ const SecondsToMillisecondsPage = () => {
           <br />2 × 1000 = 2000 Milliseconds
         </>
       }
-      reversePath="/Converters/Time/MillisecondsToSeconds"
+      reversePath="/Converters/TimeUnits/MillisecondsToSeconds"
     />
   );
 };

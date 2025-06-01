@@ -41,7 +41,7 @@ const SquareMeterToSquareFeetPage = () => {
           50 × 10.7639 = 538.195 square feet
         </>
       }
-      reversePath="/Converters/AreaUnits/SquareFeetToSquareMeter"
+      reversePath="/Converters/AreaUnit/SquareFeetToSquareMeter"
     />
   );
 };

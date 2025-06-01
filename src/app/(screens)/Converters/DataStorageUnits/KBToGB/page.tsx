@@ -39,7 +39,7 @@ const KBToGBPage = () => {
           2,097,152 ÷ (1024 × 1024) = 2 GB
         </>
       }
-      reversePath="/Converters/DataUnits/GBToKB"
+      reversePath="/Converters/DataStorageUnits/GBToKB"
     />
   );
 };

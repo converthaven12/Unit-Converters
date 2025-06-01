@@ -39,7 +39,7 @@ const KelvinToCelsiusPage = () => {
           298.15 - 273.15 = 25 °C
         </>
       }
-      reversePath="/Converters/Temperature/CelsiusToKelvin"
+      reversePath="/Converters/TemperatureUnits/CelsiusToKelvin"
     />
   );
 };

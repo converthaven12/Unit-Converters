@@ -41,7 +41,7 @@ const SquareFeetToSquareMeterPage = () => {
           500 × 0.092903 = 46.4515 square meters
         </>
       }
-      reversePath="/Converters/AreaUnits/SquareMeterToSquareFeet"
+      reversePath="/Converters/AreaUnit/SquareMeterToSquareFeet"
     />
   );
 };

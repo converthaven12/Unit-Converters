@@ -39,7 +39,7 @@ const MBToGBPage = () => {
           2048 ÷ 1024 = 2 GB
         </>
       }
-      reversePath="/Converters/DataUnits/GBToMB"
+      reversePath="/Converters/DataStorageUnits/GBToMB"
     />
   );
 };

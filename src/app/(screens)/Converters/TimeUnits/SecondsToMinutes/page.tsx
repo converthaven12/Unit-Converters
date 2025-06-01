@@ -39,7 +39,7 @@ const SecondsToMinutesPage = () => {
           120 ÷ 60 = 2 Minutes
         </>
       }
-      reversePath="/Converters/Time/MinutesToSeconds"
+      reversePath="/Converters/TimeUnits/MinutesToSeconds"
     />
   );
 };

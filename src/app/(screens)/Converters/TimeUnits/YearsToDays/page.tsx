@@ -38,7 +38,7 @@ const YearsToDaysPage = () => {
           <br />2 × 365.25 = 730.5 Days
         </>
       }
-      reversePath="/Converters/Time/DaysToYears"
+      reversePath="/Converters/TimeUnits/DaysToYears"
     />
   );
 };

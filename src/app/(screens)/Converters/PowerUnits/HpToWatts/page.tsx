@@ -38,7 +38,7 @@ const HpToWattsPage = () => {
           <br />2 × 745.7 = 1491.4 W
         </>
       }
-      reversePath="/Converters/Power/WattsToHp"
+      reversePath="/Converters/PowerUnits/WattsToHp"
     />
   );
 };

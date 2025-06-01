@@ -39,7 +39,7 @@ const KpaToPsiPage = () => {
           100 × 0.145038 = 14.5038 psi
         </>
       }
-      reversePath="/Converters/Pressure/PsiToKpa"
+      reversePath="/Converters/PressureUnits/PsiToKpa"
     />
   );
 };
