@@ -11,13 +11,12 @@ const page = () => {
   const [toValue, setToValue] = useState("");
 
   const convert = () => {
-  const value = parseFloat(fromValue);
-  if (!isNaN(value)) {
-    const kilometers = value * 1.609344;
-    setToValue(kilometers.toFixed(4));
-  }
-};
-
+    const value = parseFloat(fromValue);
+    if (!isNaN(value)) {
+      const kilometers = value * 1.609344;
+      setToValue(kilometers.toFixed(4));
+    }
+  };
 
   const clear = () => {
     setFromValue("");
@@ -26,7 +25,7 @@ const page = () => {
   return (
     <div className="min-h-screen">
       <h1 className="font-bold text-4xl text-[#006633]">Convert miles to km</h1>
-      <div className="w-full max-w-md mt-10 px-2 py-4 bg-gray-100 rounded shadow">
+      <div className="w-full max-w-md mt-10 px-2 py-4 bg-white rounded shadow">
         <div className="flex justify-between items-center sm:gap-0 -gap-x-1">
           <div>
             <div className="flex items-center mb-4">
@@ -101,7 +100,7 @@ const page = () => {
       </section>
 
       {/* Section 2 */}
-      
+
       <h1 className="text-xl text-[#006633] font-semibold mt-10">Kilometer</h1>
       <section className="space-y-3 text-justify">
         <p className="mt-2">
@@ -136,9 +135,8 @@ const page = () => {
         How to Convert Mile to Kilometer
       </h1>
       <p>
-       1 mi, mi(Int) = 1.609344 km
-       <br />
-1 km = 0.6213711922 mi, mi(Int)
+        1 mi, mi(Int) = 1.609344 km
+        <br />1 km = 0.6213711922 mi, mi(Int)
       </p>
       <p>
         <strong>Example: </strong>convert 15 mi, mi(Int) to km :

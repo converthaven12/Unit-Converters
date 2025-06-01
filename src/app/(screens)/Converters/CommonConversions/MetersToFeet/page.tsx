@@ -27,7 +27,7 @@ const page = () => {
       <h1 className="font-bold text-4xl text-[#006633]">
         Convert meters to feet
       </h1>
-      <div className="w-full max-w-md mt-10 px-2 py-4 bg-gray-100 rounded shadow">
+      <div className="w-full max-w-md mt-10 px-2 py-4 bg-white rounded shadow">
         <div className="flex justify-between items-center sm:gap-0 -gap-x-1">
           <div>
             <div className="flex items-center mb-4">
@@ -144,8 +144,7 @@ const page = () => {
       </h1>
       <p>
         1 m = 3.280839895 ft
-        <br />
-1 ft = 0.3048 m
+        <br />1 ft = 0.3048 m
       </p>
       <p>
         <strong>Example: </strong>convert 15 m to ft :

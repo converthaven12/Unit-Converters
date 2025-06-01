@@ -25,7 +25,7 @@ const page = () => {
   return (
     <div className="min-h-screen">
       <h1 className="font-bold text-4xl text-[#006633]">Convert kph to mph</h1>
-      <div className="w-full max-w-md mt-10 px-2 py-4 bg-gray-100 rounded shadow">
+      <div className="w-full max-w-md mt-10 px-2 py-4 bg-white rounded shadow">
         <div className="flex justify-between items-center sm:gap-0 -gap-x-1">
           <div>
             <div className="flex items-center mb-4">
@@ -136,8 +136,7 @@ const page = () => {
       </h1>
       <p>
         1 km/h = 0.6213711922 mi/h
-        <br />
-1 mi/h = 1.609344 km/h
+        <br />1 mi/h = 1.609344 km/h
       </p>
       <p>
         <strong>Example: </strong>convert 15 km/h to mi/h :

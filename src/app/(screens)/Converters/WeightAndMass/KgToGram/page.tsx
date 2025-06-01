@@ -23,8 +23,10 @@ const page = () => {
   };
   return (
     <div className="min-h-screen">
-      <h1 className="font-bold text-4xl text-[#006633]">Convert kilogram to gram</h1>
-      <div className="w-full max-w-md mt-10 px-2 py-4 bg-gray-100 rounded shadow">
+      <h1 className="font-bold text-4xl text-[#006633]">
+        Convert kilogram to gram
+      </h1>
+      <div className="w-full max-w-md mt-10 px-2 py-4 bg-white rounded shadow">
         <div className="flex justify-between items-center sm:gap-0 -gap-x-1">
           <div>
             <div className="flex items-center mb-4">

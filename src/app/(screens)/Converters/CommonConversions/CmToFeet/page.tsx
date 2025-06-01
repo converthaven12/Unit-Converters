@@ -27,7 +27,7 @@ const page = () => {
   return (
     <div className="min-h-screen">
       <h1 className="font-bold text-4xl text-[#006633]">Convert cm to feet</h1>
-      <div className="w-full max-w-md mt-10 px-2 py-4 bg-gray-100 rounded shadow">
+      <div className="w-full max-w-md mt-10 px-2 py-4 bg-white rounded shadow">
         <div className="flex justify-between items-center sm:gap-0 -gap-x-1">
           <div>
             <div className="flex items-center mb-4">
@@ -142,8 +142,7 @@ const page = () => {
       </h1>
       <p>
         1 cm = 0.032808399 ft
-        <br />
-1 ft = 30.48 cm
+        <br />1 ft = 30.48 cm
       </p>
       <p>
         <strong>Example: </strong>convert 15 cm to ft :
@@ -156,7 +155,11 @@ const page = () => {
             CM To Others
       </Link>
       </div> */}
-      <LinkToOthers heading="More CM Conversions" label="CM To Others..." link="/Converters/linkedConversions/CmToOthers"/>
+      <LinkToOthers
+        heading="More CM Conversions"
+        label="CM To Others..."
+        link="/Converters/linkedConversions/CmToOthers"
+      />
     </div>
   );
 };

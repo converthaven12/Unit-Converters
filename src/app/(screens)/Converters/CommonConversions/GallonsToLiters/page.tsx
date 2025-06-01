@@ -10,14 +10,13 @@ const page = () => {
   const [fromValue, setFromValue] = useState("");
   const [toValue, setToValue] = useState("");
 
-const convert = () => {
-  const value = parseFloat(fromValue);
-  if (!isNaN(value)) {
-    const liters = value * 3.785411784;
-    setToValue(liters.toFixed(4));
-  }
-};
-
+  const convert = () => {
+    const value = parseFloat(fromValue);
+    if (!isNaN(value)) {
+      const liters = value * 3.785411784;
+      setToValue(liters.toFixed(4));
+    }
+  };
 
   const clear = () => {
     setFromValue("");
@@ -28,7 +27,7 @@ const convert = () => {
       <h1 className="font-bold text-4xl text-[#006633]">
         Convert gallons to liters
       </h1>
-      <div className="w-full max-w-md mt-10 px-2 py-4 bg-gray-100 rounded shadow">
+      <div className="w-full max-w-md mt-10 px-2 py-4 bg-white rounded shadow">
         <div className="flex justify-between items-center sm:gap-0 -gap-x-1">
           <div>
             <div className="flex items-center mb-4">
@@ -139,8 +138,7 @@ const convert = () => {
       </h1>
       <p>
         1 gal (US) = 3.785411784 L, l
-        <br />
-1 L, l = 0.2641720524 gal (US)
+        <br />1 L, l = 0.2641720524 gal (US)
       </p>
       <p>
         <strong>Example: </strong>convert 15 gal (US) to L, l :

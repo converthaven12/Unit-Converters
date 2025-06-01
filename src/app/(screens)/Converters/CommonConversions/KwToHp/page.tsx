@@ -25,7 +25,7 @@ const page = () => {
   return (
     <div className="min-h-screen">
       <h1 className="font-bold text-4xl text-[#006633]">Convert kw to hp</h1>
-      <div className="w-full max-w-md mt-10 px-2 py-4 bg-gray-100 rounded shadow">
+      <div className="w-full max-w-md mt-10 px-2 py-4 bg-white rounded shadow">
         <div className="flex justify-between items-center sm:gap-0 -gap-x-1">
           <div>
             <div className="flex items-center mb-4">
@@ -137,17 +137,17 @@ const page = () => {
 
       {/* Section 4 */}
       <h1 className="text-xl text-[#006633] font-semibold mt-10">
-       How to Convert Kilowatt to Horsepower (metric)
+        How to Convert Kilowatt to Horsepower (metric)
       </h1>
       <p>
         1 kW = 1.3596216173 horsepower (metric)
-        <br />
-1 horsepower (metric) = 0.73549875 kW
+        <br />1 horsepower (metric) = 0.73549875 kW
       </p>
       <p>
         <strong>Example: </strong>convert 15 kW to horsepower (metric) :
         <br />
-        15 kW = 15 × 1.3596216173 horsepower (metric) = 20.3943242596 horsepower (metric)
+        15 kW = 15 × 1.3596216173 horsepower (metric) = 20.3943242596 horsepower
+        (metric)
       </p>
     </div>
   );

@@ -11,12 +11,12 @@ const page = () => {
   const [toValue, setToValue] = useState("");
 
   const convert = () => {
-  const value = parseFloat(fromValue);
-  if (!isNaN(value)) {
-    const ounces = value * 16;
-    setToValue(ounces.toFixed(4));
-  }
-};
+    const value = parseFloat(fromValue);
+    if (!isNaN(value)) {
+      const ounces = value * 16;
+      setToValue(ounces.toFixed(4));
+    }
+  };
 
   const clear = () => {
     setFromValue("");
@@ -27,7 +27,7 @@ const page = () => {
       <h1 className="font-bold text-4xl text-[#006633]">
         Convert pounds to ounces
       </h1>
-      <div className="w-full max-w-md mt-10 px-2 py-4 bg-gray-100 rounded shadow">
+      <div className="w-full max-w-md mt-10 px-2 py-4 bg-white rounded shadow">
         <div className="flex justify-between items-center sm:gap-0 -gap-x-1">
           <div>
             <div className="flex items-center mb-4">
@@ -59,7 +59,9 @@ const page = () => {
           <div className="cursor-pointer">
             <span
               className="text-green-700 text-xl"
-              onClick={() => router.push("/Converters/WeightAndMass/OuncesToPounds")}
+              onClick={() =>
+                router.push("/Converters/WeightAndMass/OuncesToPounds")
+              }
             >
               ↕
             </span>
@@ -106,7 +108,7 @@ const page = () => {
         </p>
       </section>
       {/* Section 2 */}
-       <h1 className="text-xl text-[#006633] font-semibold mt-10">Ounce</h1>
+      <h1 className="text-xl text-[#006633] font-semibold mt-10">Ounce</h1>
       <section className="space-y-3 text-justify">
         <p className="mt-2">
           <strong>Definition:</strong> An ounce (symbol: oz) is a unit of mass
@@ -153,8 +155,7 @@ const page = () => {
       </h1>
       <p>
         1 lbs = 16 oz
-        <br />
-1 oz = 0.0625 lbs
+        <br />1 oz = 0.0625 lbs
       </p>
       <p>
         <strong>Example: </strong>convert 15 lbs to oz :

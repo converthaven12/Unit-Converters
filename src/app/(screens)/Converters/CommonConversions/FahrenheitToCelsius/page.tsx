@@ -27,7 +27,7 @@ const page = () => {
       <h1 className="font-bold text-4xl text-[#006633]">
         Convert Fahrenheit to Celsius
       </h1>
-      <div className="w-full max-w-md mt-10 px-2 py-4 bg-gray-100 rounded shadow">
+      <div className="w-full max-w-md mt-10 px-2 py-4 bg-white rounded shadow">
         <div className="flex justify-between items-center sm:gap-0 -gap-x-1">
           <div>
             <div className="flex items-center mb-4">
@@ -167,9 +167,8 @@ const page = () => {
         How to Convert Celsius to Fahrenheit
       </h1>
       <p>
-         F = 5/9(F - 32)
-        <br />
-        F = 9/5 C + 32
+        F = 5/9(F - 32)
+        <br />F = 9/5 C + 32
       </p>
       <p>
         <strong>Example: </strong>convert 50 °F to: °C
