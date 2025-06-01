@@ -1,15 +1,35 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const page = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  function validate() {
+    if (email === "" || password === "") {
+      setError("Email and Password cannot be empty");
+      return false;
+    }
+    if (email !== "admin@gmail.com") {
+      setError("Invalid Email");
+      return false;
+    }
+    if (password !== "Admin@123") {
+      setError("Invalid Password");
+      return false;
+    }
+
+    return true;
+  }
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
+    if (validate()) {
+      localStorage.setItem("isLoggedIn", "true");
+      router.push("/Admin");
+    }
   };
 
   return (
