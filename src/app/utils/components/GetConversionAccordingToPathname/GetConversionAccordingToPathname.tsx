@@ -5,6 +5,7 @@ import LinkToOthers from "../LinkToOthers/LinkToOthers";
 const GetConversionAccordingToPathname = () => {
   const router = useRouter();
   const [isReady, setReady] = useState(false);
+  const[pathUrlName,setPathUrlName] = useState<string>("");
   const pathname = usePathname();
   const [obj, setObj] = useState({
     heading: "",
@@ -321,6 +322,8 @@ const GetConversionAccordingToPathname = () => {
     if (name === "Lbs") {
       name = "Pounds";
     }
+
+    setPathUrlName(name)
 
     if (unitConfigs[name]) {
       setObj(unitConfigs[name]);
