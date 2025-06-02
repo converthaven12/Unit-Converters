@@ -1,10 +1,15 @@
 "use client";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import React from "react";
 
 const HomePage = () => {
   const router = useRouter();
-  router.push("/Converters");
+
+  useEffect(() => {
+    router.push("/Converters");
+  }, [router]);
+
+  return null;
 };
 
 export default HomePage;
