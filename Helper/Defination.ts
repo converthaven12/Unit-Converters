@@ -2121,6 +2121,4087 @@ const Definations: any = {
       example: "1° ≈ 1.0472 diameter parts, 0.95493° = 1 diameter part",
     },
   ],
+  Fahrenheit: [
+    {
+      unit: "Celsius (°C)",
+      description:
+        "Most widely used temperature scale worldwide (metric system).",
+      conversion: 0,
+      example: "32°F = 0°C, 212°F = 100°C",
+    },
+    {
+      unit: "Kelvin (K)",
+      description: "SI base unit of temperature (absolute scale).",
+      conversion: 0,
+      example: "32°F = 273.15K, 212°F = 373.15K",
+    },
+    {
+      unit: "Rankine (°R)",
+      description: "Absolute temperature scale using Fahrenheit degrees.",
+      conversion: 0,
+      example: "0°F = 459.67°R, 32°F = 491.67°R",
+    },
+    {
+      unit: "Réaumur (°Ré)",
+      description: "Historical temperature scale used in parts of Europe.",
+      conversion: 0,
+      example: "32°F = 0°Ré, 212°F = 80°Ré",
+    },
+    {
+      unit: "Delisle (°De)",
+      description:
+        "Historical scale where decreasing values represent hotter temperatures.",
+      conversion: 0,
+      example: "32°F = 150°De, 212°F = 0°De",
+    },
+    {
+      unit: "Newton (°N)",
+      description: "Obsolete temperature scale proposed by Isaac Newton.",
+      conversion: 0,
+      example: "32°F = 0°N, 212°F ≈ 33°N",
+    },
+    {
+      unit: "Rømer (°Rø)",
+      description:
+        "Early temperature scale using brine freezing and water boiling points.",
+      conversion: 0,
+      example: "32°F = 7.5°Rø, 212°F = 60°Rø",
+    },
+    {
+      unit: "Triple Point of Water",
+      description:
+        "The temperature and pressure where water coexists as solid, liquid, and gas.",
+      conversion: 0,
+      example: "32.018°F ≈ 1.0000 (triple point)",
+    },
+  ],
+  FeetPerSecond: [
+    {
+      unit: "Meter/second (m/s)",
+      description:
+        "SI unit of speed, representing distance traveled in meters per second.",
+      conversion: 0,
+      example: "1 ft/s = 0.3048 m/s, 10 ft/s ≈ 3.048 m/s",
+    },
+    {
+      unit: "Kilometer/hour (km/h)",
+      description:
+        "Common metric unit for speed, used in transportation worldwide.",
+      conversion: 0,
+      example: "1 ft/s ≈ 1.097 km/h, 50 ft/s ≈ 54.864 km/h",
+    },
+    {
+      unit: "Mile/hour (mph)",
+      description:
+        "Imperial/US unit for speed, widely used in the United States.",
+      conversion: 0,
+      example: "1 ft/s ≈ 0.682 mph, 88 ft/s = 60 mph",
+    },
+    {
+      unit: "Knot (kn)",
+      description:
+        "Nautical unit of speed, used in aviation and maritime contexts.",
+      conversion: 0,
+      example: "1 ft/s ≈ 0.592 knots, 100 ft/s ≈ 59.25 knots",
+    },
+    {
+      unit: "Mach (at 20°C)",
+      description:
+        "Speed relative to the speed of sound in air at 20°C (343 m/s).",
+      conversion: 0,
+      example: "1 ft/s ≈ 0.000887 Mach, 1126 ft/s ≈ 1 Mach",
+    },
+    {
+      unit: "Velocity of Light in Vacuum (c)",
+      description: "Fraction of the speed of light (299,792,458 m/s).",
+      conversion: 0,
+      example: "1 ft/s ≈ 1.0167 × 10⁻⁹ c",
+    },
+    {
+      unit: "Cosmic Velocity - First",
+      description:
+        "Hypothetical astronomical speed unit (Earth's escape velocity ≈ 11.2 km/s).",
+      conversion: 0,
+      example: "1 ft/s ≈ 3.858 × 10⁻⁵ Cosmic Velocity - First",
+    },
+    {
+      unit: "Earth's Velocity",
+      description: "Ratio to Earth's average orbital speed (≈30 km/s).",
+      conversion: 0,
+      example: "1 ft/s ≈ 1.024 × 10⁻⁵ Earth's Velocity",
+    },
+    {
+      unit: "Centimeter/second (cm/s)",
+      description:
+        "Metric unit for low speeds, used in scientific measurements.",
+      conversion: 0,
+      example: "1 ft/s = 30.48 cm/s, 5 ft/s = 152.4 cm/s",
+    },
+    {
+      unit: "Millimeter/second (mm/s)",
+      description: "Precise metric unit for very slow speeds.",
+      conversion: 0,
+      example: "1 ft/s = 304.8 mm/s, 0.1 ft/s = 30.48 mm/s",
+    },
+    {
+      unit: "Yard/second (yd/s)",
+      description: "Imperial unit for speed, 1 yard = 3 feet.",
+      conversion: 0,
+      example: "1 ft/s ≈ 0.333 yd/s, 3 ft/s = 1 yd/s",
+    },
+    {
+      unit: "Foot/minute (ft/min)",
+      description: "Used in industrial or ventilation speed measurements.",
+      conversion: 0,
+      example: "1 ft/s = 60 ft/min, 10 ft/s = 600 ft/min",
+    },
+    {
+      unit: "Inch/second (in/s)",
+      description: "Small-scale speed unit for engineering applications.",
+      conversion: 0,
+      example: "1 ft/s = 12 in/s, 2.5 ft/s = 30 in/s",
+    },
+    {
+      unit: "Break",
+      description: "Hypothetical unit representing extremely slow speeds.",
+      conversion: 0,
+      example: "1 ft/s = 1 × 10⁻¹⁵ Break",
+    },
+    {
+      unit: "Velocity of Sound in Sea Water (20°C)",
+      description: "Speed relative to sound in seawater (≈1,522 m/s).",
+      conversion: 0,
+      example: "1 ft/s ≈ 0.0002 × speed of sound in seawater",
+    },
+  ],
+  Feet: [
+    {
+      unit: "Meter (m)",
+      description:
+        "The base unit of length in the International System of Units (SI).",
+      conversion: 0,
+      example: "1 ft = 0.3048 m, 10 ft ≈ 3.048 m",
+    },
+    {
+      unit: "Kilometer (km)",
+      description: "Metric unit of length equal to 1,000 meters.",
+      conversion: 0,
+      example: "1 ft ≈ 0.000305 km, 3,281 ft ≈ 1 km",
+    },
+    {
+      unit: "Centimeter (cm)",
+      description: "Metric unit equal to one hundredth of a meter.",
+      conversion: 0,
+      example: "1 ft = 30.48 cm, 6 ft = 182.88 cm",
+    },
+    {
+      unit: "Millimeter (mm)",
+      description: "Small metric unit equal to one thousandth of a meter.",
+      conversion: 0,
+      example: "1 ft = 304.8 mm, 1.5 ft = 457.2 mm",
+    },
+    {
+      unit: "Mile (mi)",
+      description:
+        "Imperial unit of length commonly used in the United States.",
+      conversion: 0,
+      example: "1 ft ≈ 0.000189 mi, 5,280 ft = 1 mi",
+    },
+    {
+      unit: "Yard (yd)",
+      description: "Imperial unit equal to 3 feet.",
+      conversion: 0,
+      example: "1 ft ≈ 0.333 yd, 3 ft = 1 yd",
+    },
+    {
+      unit: "Inch (in)",
+      description: "Imperial unit equal to 1/12 of a foot.",
+      conversion: 0,
+      example: "1 ft = 12 in, 2.5 ft = 30 in",
+    },
+    {
+      unit: "Nautical Mile (nmi)",
+      description:
+        "Unit used in maritime and aviation contexts, equal to 1,852 meters.",
+      conversion: 0,
+      example: "1 ft ≈ 0.000165 nmi, 6,076 ft ≈ 1 nmi",
+    },
+    {
+      unit: "Light Year (ly)",
+      description: "Astronomical distance that light travels in one year.",
+      conversion: 0,
+      example: "1 ft ≈ 3.22 × 10⁻¹⁷ ly",
+    },
+    {
+      unit: "Astronomical Unit (AU)",
+      description:
+        "Average distance from Earth to the Sun (≈149.6 million km).",
+      conversion: 0,
+      example: "1 ft ≈ 2.04 × 10⁻¹² AU",
+    },
+    {
+      unit: "Parsec (pc)",
+      description: "Astronomical unit of distance (≈3.26 light years).",
+      conversion: 0,
+      example: "1 ft ≈ 9.88 × 10⁻¹⁸ pc",
+    },
+    {
+      unit: "Furlong (fur)",
+      description: "Traditional unit of distance equal to 660 feet.",
+      conversion: 0,
+      example: "1 ft ≈ 0.00152 fur, 660 ft = 1 fur",
+    },
+    {
+      unit: "Chain (ch)",
+      description: "Surveying unit equal to 66 feet.",
+      conversion: 0,
+      example: "1 ft ≈ 0.0152 ch, 66 ft = 1 ch",
+    },
+    {
+      unit: "Rod (rd)",
+      description: "Unit of length equal to 16.5 feet.",
+      conversion: 0,
+      example: "1 ft ≈ 0.0606 rd, 16.5 ft = 1 rd",
+    },
+    {
+      unit: "Fathom (ftm)",
+      description: "Nautical unit of depth equal to 6 feet.",
+      conversion: 0,
+      example: "1 ft ≈ 0.167 ftm, 6 ft = 1 ftm",
+    },
+    {
+      unit: "Hand (hh)",
+      description:
+        "Unit used to measure the height of horses, equal to 4 inches.",
+      conversion: 0,
+      example: "1 ft = 3 hh, 5 ft = 15 hh",
+    },
+    {
+      unit: "Cubit (cubit)",
+      description:
+        "Ancient unit based on the length of the forearm (≈18 inches).",
+      conversion: 0,
+      example: "1 ft ≈ 0.667 cubits, 1.5 ft ≈ 1 cubit",
+    },
+    {
+      unit: "Planck Length (ℓₚ)",
+      description: "The smallest measurable length in quantum physics.",
+      conversion: 0,
+      example: "1 ft ≈ 1.89 × 10³⁴ ℓₚ",
+    },
+    {
+      unit: "Angstrom (Å)",
+      description:
+        "Unit used to measure atomic-scale distances (10⁻¹⁰ meters).",
+      conversion: 0,
+      example: "1 ft = 3.048 × 10⁹ Å",
+    },
+    {
+      unit: "Micron (μm)",
+      description: "Another name for micrometer (10⁻⁶ meters).",
+      conversion: 0,
+      example: "1 ft = 304,800 μm",
+    },
+    {
+      unit: "Mil (thou)",
+      description: "Unit equal to one thousandth of an inch.",
+      conversion: 0,
+      example: "1 ft = 12,000 mil",
+    },
+    {
+      unit: "Earth's Equatorial Radius",
+      description: "Radius of Earth at the equator (≈6,378 km).",
+      conversion: 0,
+      example: "1 ft ≈ 4.78 × 10⁻⁸ Earth radii",
+    },
+    {
+      unit: "Sun's Radius",
+      description: "Radius of the Sun (≈696,340 km).",
+      conversion: 0,
+      example: "1 ft ≈ 4.38 × 10⁻¹⁰ Solar radii",
+    },
+  ],
+  Hectare: [
+    {
+      unit: "Square Meter (m²)",
+      description:
+        "The base unit of area in the International System of Units (SI).",
+      conversion: 0,
+      example: "1 ha = 10,000 m², 2.5 ha = 25,000 m²",
+    },
+    {
+      unit: "Square Kilometer (km²)",
+      description: "Metric unit of area equal to 1,000,000 square meters.",
+      conversion: 0,
+      example: "1 ha = 0.01 km², 100 ha = 1 km²",
+    },
+    {
+      unit: "Acre",
+      description:
+        "Imperial unit of area commonly used in the United States and UK.",
+      conversion: 0,
+      example: "1 ha ≈ 2.47 acres, 5 ha ≈ 12.36 acres",
+    },
+    {
+      unit: "Square Mile (mi²)",
+      description: "Imperial unit of large land areas (1 mi² = 640 acres).",
+      conversion: 0,
+      example: "1 ha ≈ 0.00386 mi², 259 ha ≈ 1 mi²",
+    },
+    {
+      unit: "Square Yard (yd²)",
+      description: "Imperial unit of area equal to 9 square feet.",
+      conversion: 0,
+      example: "1 ha ≈ 11,960 yd², 0.1 ha ≈ 1,196 yd²",
+    },
+    {
+      unit: "Square Foot (ft²)",
+      description: "Imperial unit of area commonly used in real estate.",
+      conversion: 0,
+      example: "1 ha ≈ 107,639 ft², 0.01 ha ≈ 1,076 ft²",
+    },
+    {
+      unit: "Square Inch (in²)",
+      description: "Small imperial unit of area.",
+      conversion: 0,
+      example: "1 ha ≈ 15.5 million in², 0.001 ha ≈ 15,500 in²",
+    },
+    {
+      unit: "Are (a)",
+      description:
+        "Metric unit equal to 100 square meters (1/100th of a hectare).",
+      conversion: 0,
+      example: "1 ha = 100 a, 0.5 ha = 50 a",
+    },
+    {
+      unit: "Square Centimeter (cm²)",
+      description: "Metric unit equal to one hundredth of a square meter.",
+      conversion: 0,
+      example: "1 ha = 100 million cm², 0.01 ha = 1 million cm²",
+    },
+    {
+      unit: "Square Millimeter (mm²)",
+      description: "Small metric unit of area.",
+      conversion: 0,
+      example: "1 ha = 10 billion mm², 0.001 ha = 10 million mm²",
+    },
+    {
+      unit: "Barn (b)",
+      description: "Extremely small unit used in nuclear physics (10⁻²⁸ m²).",
+      conversion: 0,
+      example: "1 ha = 1 × 10³² b",
+    },
+    {
+      unit: "Rood",
+      description: "Old English unit equal to 1/4 acre.",
+      conversion: 0,
+      example: "1 ha ≈ 9.88 roods, 0.101 ha ≈ 1 rood",
+    },
+    {
+      unit: "Square Chain",
+      description: "Surveying unit equal to 484 square yards.",
+      conversion: 0,
+      example: "1 ha ≈ 24.71 sq chains, 0.04 ha ≈ 1 sq chain",
+    },
+    {
+      unit: "Circular Inch",
+      description: "Area of a circle with 1-inch diameter.",
+      conversion: 0,
+      example: "1 ha ≈ 19.7 million circular inches",
+    },
+    {
+      unit: "Township",
+      description: "Large US surveying unit (36 square miles).",
+      conversion: 0,
+      example: "1 ha ≈ 0.0000101 townships, 98,842 ha ≈ 1 township",
+    },
+    {
+      unit: "Section",
+      description: "US land area equal to 1 square mile.",
+      conversion: 0,
+      example: "1 ha ≈ 0.00386 sections, 259 ha ≈ 1 section",
+    },
+    {
+      unit: "Arpent",
+      description: "Historical French land area unit (≈0.34 ha).",
+      conversion: 0,
+      example: "1 ha ≈ 0.139 arpents, 7.2 ha ≈ 1 arpent",
+    },
+    {
+      unit: "Cuerda",
+      description: "Traditional Spanish land area unit (≈0.39 ha).",
+      conversion: 0,
+      example: "1 ha ≈ 0.254 cuerdas, 3.93 ha ≈ 1 cuerda",
+    },
+    {
+      unit: "Plaza",
+      description: "Traditional Spanish unit for marketplaces (≈6,400 m²).",
+      conversion: 0,
+      example: "1 ha = 0.0625 plazas, 16 ha = 1 plaza",
+    },
+    {
+      unit: "Electron Cross Section",
+      description: "Approximate cross-sectional area of an electron.",
+      conversion: 0,
+      example: "1 ha ≈ 1.51 × 10³¹ electron cross sections",
+    },
+  ],
+  GB: [
+    {
+      unit: "Bit (b)",
+      description: "The smallest unit of digital data (binary digit).",
+      conversion: 0,
+      example: "1 GB = 8,589,934,592 bits, 0.5 GB = 4,294,967,296 bits",
+    },
+    {
+      unit: "Byte (B)",
+      description: "Basic unit of digital information (8 bits).",
+      conversion: 0,
+      example: "1 GB = 1,073,741,824 bytes, 2 GB = 2,147,483,648 bytes",
+    },
+    {
+      unit: "Kilobyte (KB)",
+      description: "1,024 bytes, used for small file sizes.",
+      conversion: 0,
+      example: "1 GB = 1,048,576 KB, 0.25 GB = 262,144 KB",
+    },
+    {
+      unit: "Megabyte (MB)",
+      description: "1,024 kilobytes, common for medium-sized files.",
+      conversion: 0,
+      example: "1 GB = 1,024 MB, 8 GB = 8,192 MB",
+    },
+    {
+      unit: "Terabyte (TB)",
+      description: "1,024 gigabytes, used for large storage capacities.",
+      conversion: 0,
+      example: "1 GB ≈ 0.000977 TB, 1,024 GB = 1 TB",
+    },
+    {
+      unit: "Petabyte (PB)",
+      description: "1,024 terabytes, for massive data storage.",
+      conversion: 0,
+      example: "1 GB ≈ 0.000000954 PB, 1,048,576 GB = 1 PB",
+    },
+    {
+      unit: "Nibble",
+      description: "4 bits (half a byte), used in low-level computing.",
+      conversion: 0,
+      example: "1 GB = 2,147,483,648 nibbles",
+    },
+    {
+      unit: "Word",
+      description: "Typically 2 bytes (16 bits), varies by system.",
+      conversion: 0,
+      example: "1 GB = 536,870,912 words (16-bit systems)",
+    },
+    {
+      unit: 'Floppy Disk (3.5", HD)',
+      description: "1.44 MB capacity, obsolete storage medium.",
+      conversion: 0,
+      example: "1 GB ≈ 737 floppies, 700 MB ≈ 0.49 GB",
+    },
+    {
+      unit: "CD (80 Minute)",
+      description: "700 MB capacity, standard audio/data CD.",
+      conversion: 0,
+      example: "1 GB ≈ 1.46 CDs, 4.7 GB DVD ≈ 6.7 CDs",
+    },
+    {
+      unit: "DVD (Single Layer)",
+      description: "4.7 GB capacity, common video/data format.",
+      conversion: 0,
+      example: "1 GB ≈ 0.21 single-layer DVDs, 5 GB ≈ 1.06 DVDs",
+    },
+    {
+      unit: "Blu-ray (Single Layer)",
+      description: "25 GB capacity, high-definition storage.",
+      conversion: 0,
+      example: "1 GB = 0.04 Blu-rays, 50 GB = 2 Blu-rays",
+    },
+    {
+      unit: "Jaz 1GB",
+      description: "Obsolete 1GB removable storage cartridge.",
+      conversion: 0,
+      example: "1 GB = 1 Jaz cartridge, 2 GB = 2 cartridges",
+    },
+    {
+      unit: "Zip 100",
+      description: "100 MB capacity, late 1990s removable media.",
+      conversion: 0,
+      example: "1 GB ≈ 10.8 Zip disks, 10 GB ≈ 108 disks",
+    },
+    {
+      unit: "Exabyte (EB)",
+      description: "1,024 petabytes, for hyperscale data.",
+      conversion: 0,
+      example: "1 GB ≈ 0.000000000931 EB, 1 EB ≈ 1,073,741,824 GB",
+    },
+    {
+      unit: "Block (Traditional)",
+      description: "512-byte units (common in filesystems).",
+      conversion: 0,
+      example: "1 GB = 2,097,152 blocks, 0.5 GB = 1,048,576 blocks",
+    },
+    {
+      unit: "Tape Drive (LTO-8)",
+      description: "12 TB native capacity, modern backup solution.",
+      conversion: 0,
+      example: "1 GB ≈ 0.000081 LTO-8 tapes, 12,000 GB = 1 tape",
+    },
+    {
+      unit: "iPod Classic (160GB)",
+      description: "Legacy Apple music player capacity.",
+      conversion: 0,
+      example: "1 GB = 0.00625 iPod capacity, 160 GB = full device",
+    },
+    {
+      unit: "Human Genome",
+      description: "Approximate uncompressed digital size (≈3.2 GB).",
+      conversion: 0,
+      example: "1 GB ≈ 0.31 genomes, 3.2 GB = 1 complete genome",
+    },
+    {
+      unit: "Netflix HD Movie",
+      description: "Average 2-hour stream (≈3 GB).",
+      conversion: 0,
+      example: "1 GB ≈ 20 minutes HD video, 30 GB ≈ 10 movies",
+    },
+  ],
+  Hex: [
+    {
+      unit: "Binary",
+      description: "Base-2 number system using digits 0 and 1",
+      conversion: 0,
+      example: "F (hex) = 1111 (binary), A (hex) = 1010 (binary)",
+    },
+    {
+      unit: "Decimal",
+      description: "Base-10 number system using digits 0-9",
+      conversion: 0,
+      example: "F (hex) = 15 (decimal), 10 (hex) = 16 (decimal)",
+    },
+    {
+      unit: "Octal",
+      description: "Base-8 number system using digits 0-7",
+      conversion: 0,
+      example: "F (hex) = 17 (octal), 20 (hex) = 40 (octal)",
+    },
+    {
+      unit: "Base-4",
+      description: "Quaternary number system using digits 0-3",
+      conversion: 0,
+      example: "F (hex) = 33 (base-4), 10 (hex) = 100 (base-4)",
+    },
+    {
+      unit: "Base-5",
+      description: "Quinary number system using digits 0-4",
+      conversion: 0,
+      example: "F (hex) = 30 (base-5), A (hex) = 20 (base-5)",
+    },
+    {
+      unit: "Base-12",
+      description: "Duodecimal number system",
+      conversion: 0,
+      example: "F (hex) = 13 (base-12), 10 (hex) = 18 (base-12)",
+    },
+    {
+      unit: "Base-20",
+      description: "Vigesimal number system",
+      conversion: 0,
+      example: "F (hex) = F (base-20), 10 (hex) = G (base-20)",
+    },
+    {
+      unit: "Base-36",
+      description: "Alphanumeric number system using 0-9 and A-Z",
+      conversion: 0,
+      example: "F (hex) = F (base-36), 10 (hex) = G (base-36)",
+    },
+    {
+      unit: "ASCII Character",
+      description: "Character representation of hexadecimal values",
+      conversion: 0,
+      example: "41 (hex) = 'A', 61 (hex) = 'a'",
+    },
+    {
+      unit: "RGB Color",
+      description: "Color representation in RGB format",
+      conversion: 0,
+      example: "FF (hex) = rgb(255, 255, 255), 80 (hex) = rgb(128, 128, 128)",
+    },
+  ],
+  Hp: [
+    {
+      unit: "Watt (W)",
+      description: "SI unit of power (1 W = 1 J/s)",
+      conversion: 745.699872,
+      example: "1 hp = 745.7 W, 10 hp = 7,457 W",
+    },
+    {
+      unit: "Kilowatt (kW)",
+      description: "Equal to 1,000 watts",
+      conversion: 0.7457,
+      example: "1 hp ≈ 0.7457 kW, 100 hp = 74.57 kW",
+    },
+    {
+      unit: "Exawatt (EW)",
+      description: "Quintillion watts (10¹⁸ W)",
+      conversion: 7.457e-16,
+      example: "1 hp = 7.457×10⁻¹⁶ EW",
+    },
+    {
+      unit: "Petawatt (PW)",
+      description: "Quadrillion watts (10¹⁵ W)",
+      conversion: 7.457e-13,
+      example: "1 hp = 7.457×10⁻¹³ PW",
+    },
+    {
+      unit: "Terawatt (TW)",
+      description: "Trillion watts (10¹² W)",
+      conversion: 7.457e-10,
+      example: "1 hp = 7.457×10⁻¹⁰ TW",
+    },
+    {
+      unit: "Gigawatt (GW)",
+      description: "Billion watts (10⁹ W)",
+      conversion: 7.457e-7,
+      example: "1 hp = 7.457×10⁻⁷ GW",
+    },
+    {
+      unit: "Megawatt (MW)",
+      description: "Million watts (10⁶ W)",
+      conversion: 0.0007457,
+      example: "1 hp = 0.0007457 MW",
+    },
+    {
+      unit: "Hectowatt (hW)",
+      description: "Hundred watts (10² W)",
+      conversion: 7.457,
+      example: "1 hp = 7.457 hW",
+    },
+    {
+      unit: "Dekawatt (daW)",
+      description: "Ten watts (10¹ W)",
+      conversion: 74.57,
+      example: "1 hp = 74.57 daW",
+    },
+    {
+      unit: "Deciwatt (dW)",
+      description: "Tenth of a watt (10⁻¹ W)",
+      conversion: 7457,
+      example: "1 hp = 7,457 dW",
+    },
+    {
+      unit: "Centiwatt (cW)",
+      description: "Hundredth of a watt (10⁻² W)",
+      conversion: 74570,
+      example: "1 hp = 74,570 cW",
+    },
+    {
+      unit: "Milliwatt (mW)",
+      description: "Thousandth of a watt (10⁻³ W)",
+      conversion: 745700,
+      example: "1 hp = 745,700 mW",
+    },
+    {
+      unit: "Microwatt (µW)",
+      description: "Millionth of a watt (10⁻⁶ W)",
+      conversion: 7.457e8,
+      example: "1 hp = 745.7 million µW",
+    },
+    {
+      unit: "Nanowatt (nW)",
+      description: "Billionth of a watt (10⁻⁹ W)",
+      conversion: 7.457e11,
+      example: "1 hp = 745.7 billion nW",
+    },
+    {
+      unit: "Picowatt (pW)",
+      description: "Trillionth of a watt (10⁻¹² W)",
+      conversion: 7.457e14,
+      example: "1 hp = 745.7 trillion pW",
+    },
+    {
+      unit: "Femtowatt (fW)",
+      description: "Quadrillionth of a watt (10⁻¹⁵ W)",
+      conversion: 7.457e17,
+      example: "1 hp = 745.7 quadrillion fW",
+    },
+    {
+      unit: "Attowatt (aW)",
+      description: "Quintillionth of a watt (10⁻¹⁸ W)",
+      conversion: 7.457e20,
+      example: "1 hp = 7.457×10²⁰ aW",
+    },
+    {
+      unit: "Horsepower (metric/PS)",
+      description: "European metric horsepower",
+      conversion: 1.01387,
+      example: "1 hp ≈ 1.0139 PS",
+    },
+    {
+      unit: "Horsepower (boiler)",
+      description: "Used for boiler power ratings",
+      conversion: 0.076018,
+      example: "1 hp ≈ 0.076 boiler hp",
+    },
+    {
+      unit: "Horsepower (electric)",
+      description: "Electric motor horsepower (746 W exactly)",
+      conversion: 1.0004,
+      example: "1 hp ≈ 1.0004 electric hp",
+    },
+    {
+      unit: "Horsepower (water)",
+      description: "Hydraulic horsepower",
+      conversion: 1.01434,
+      example: "1 hp ≈ 1.0143 water hp",
+    },
+    {
+      unit: "Pferdestarke (ps)",
+      description: "German metric horsepower",
+      conversion: 1.01387,
+      example: "1 hp ≈ 1.0139 ps",
+    },
+    {
+      unit: "Btu (IT)/hour",
+      description: "British thermal unit per hour (International Table)",
+      conversion: 2544.43,
+      example: "1 hp ≈ 2,544 BTU/h",
+    },
+    {
+      unit: "Btu (IT)/minute",
+      description: "BTU per minute (IT)",
+      conversion: 42.4072,
+      example: "1 hp ≈ 42.41 BTU/min",
+    },
+    {
+      unit: "Btu (IT)/second",
+      description: "BTU per second (IT)",
+      conversion: 0.706787,
+      example: "1 hp ≈ 0.7068 BTU/s",
+    },
+    {
+      unit: "Btu (th)/hour",
+      description: "Thermochemical BTU per hour",
+      conversion: 2546.14,
+      example: "1 hp ≈ 2,546 BTU/h (th)",
+    },
+    {
+      unit: "Btu (th)/minute",
+      description: "Thermochemical BTU per minute",
+      conversion: 42.4357,
+      example: "1 hp ≈ 42.44 BTU/min (th)",
+    },
+    {
+      unit: "Btu (th)/second",
+      description: "Thermochemical BTU per second",
+      conversion: 0.707262,
+      example: "1 hp ≈ 0.7073 BTU/s (th)",
+    },
+    {
+      unit: "MBtu (IT)/hour",
+      description: "Thousand BTU per hour (IT)",
+      conversion: 2.54443,
+      example: "1 hp ≈ 2.544 MBtu/h",
+    },
+    {
+      unit: "MBH",
+      description: "Thousand BTU per hour (identical to MBtu/h)",
+      conversion: 2.54443,
+      example: "1 hp ≈ 2.544 MBH",
+    },
+    {
+      unit: "Ton (refrigeration)",
+      description: "Refrigeration ton (12,000 BTU/h)",
+      conversion: 0.212036,
+      example: "1 hp ≈ 0.212 tons refrigeration",
+    },
+    {
+      unit: "Kilocalorie (IT)/hour",
+      description: "International Table kilocalorie per hour",
+      conversion: 641.186,
+      example: "1 hp ≈ 641 kcal/h (IT)",
+    },
+    {
+      unit: "Kilocalorie (IT)/minute",
+      description: "International Table kcal per minute",
+      conversion: 10.6864,
+      example: "1 hp ≈ 10.69 kcal/min (IT)",
+    },
+    {
+      unit: "Kilocalorie (IT)/second",
+      description: "International Table kcal per second",
+      conversion: 0.178107,
+      example: "1 hp ≈ 0.1781 kcal/s (IT)",
+    },
+    {
+      unit: "Kilocalorie (th)/hour",
+      description: "Thermochemical kilocalorie per hour",
+      conversion: 641.615,
+      example: "1 hp ≈ 641.6 kcal/h (th)",
+    },
+    {
+      unit: "Kilocalorie (th)/minute",
+      description: "Thermochemical kcal per minute",
+      conversion: 10.6936,
+      example: "1 hp ≈ 10.69 kcal/min (th)",
+    },
+    {
+      unit: "Kilocalorie (th)/second",
+      description: "Thermochemical kcal per second",
+      conversion: 0.178226,
+      example: "1 hp ≈ 0.1782 kcal/s (th)",
+    },
+    {
+      unit: "Calorie (IT)/hour",
+      description: "International Table calorie per hour",
+      conversion: 641186,
+      example: "1 hp ≈ 641,186 cal/h (IT)",
+    },
+    {
+      unit: "Calorie (IT)/minute",
+      description: "International Table cal per minute",
+      conversion: 10686.4,
+      example: "1 hp ≈ 10,686 cal/min (IT)",
+    },
+    {
+      unit: "Calorie (IT)/second",
+      description: "International Table cal per second",
+      conversion: 178.107,
+      example: "1 hp ≈ 178.1 cal/s (IT)",
+    },
+    {
+      unit: "Calorie (th)/hour",
+      description: "Thermochemical calorie per hour",
+      conversion: 641615,
+      example: "1 hp ≈ 641,615 cal/h (th)",
+    },
+    {
+      unit: "Calorie (th)/minute",
+      description: "Thermochemical cal per minute",
+      conversion: 10693.6,
+      example: "1 hp ≈ 10,694 cal/min (th)",
+    },
+    {
+      unit: "Calorie (th)/second",
+      description: "Thermochemical cal per second",
+      conversion: 178.226,
+      example: "1 hp ≈ 178.2 cal/s (th)",
+    },
+    {
+      unit: "Foot Pound-force/hour",
+      description: "Foot-pounds of torque per hour",
+      conversion: 1980000,
+      example: "1 hp = 1,980,000 ft·lbf/h",
+    },
+    {
+      unit: "Foot Pound-force/minute",
+      description: "Foot-pounds of torque per minute",
+      conversion: 33000,
+      example: "1 hp = 33,000 ft·lbf/min",
+    },
+    {
+      unit: "Foot Pound-force/second",
+      description: "Foot-pounds of torque per second",
+      conversion: 550,
+      example: "1 hp = 550 ft·lbf/s (definition)",
+    },
+    {
+      unit: "Pound-foot/hour",
+      description: "Alternative name for ft·lbf/h",
+      conversion: 1980000,
+      example: "1 hp = 1,980,000 lb·ft/h",
+    },
+    {
+      unit: "Pound-foot/minute",
+      description: "Alternative name for ft·lbf/min",
+      conversion: 33000,
+      example: "1 hp = 33,000 lb·ft/min",
+    },
+    {
+      unit: "Pound-foot/second",
+      description: "Alternative name for ft·lbf/s",
+      conversion: 550,
+      example: "1 hp = 550 lb·ft/s",
+    },
+    {
+      unit: "Erg/second",
+      description: "CGS unit of power (1 erg/s = 10⁻⁷ W)",
+      conversion: 7.457e9,
+      example: "1 hp = 7.457×10⁹ erg/s",
+    },
+    {
+      unit: "Kilovolt Ampere (kVA)",
+      description: "Electrical apparent power",
+      conversion: 0.7457,
+      example: "1 hp ≈ 0.7457 kVA (for resistive loads)",
+    },
+    {
+      unit: "Volt Ampere (VA)",
+      description: "Electrical apparent power",
+      conversion: 745.7,
+      example: "1 hp ≈ 745.7 VA (for resistive loads)",
+    },
+    {
+      unit: "Newton Meter/second (N·m/s)",
+      description: "Alternative expression for watts",
+      conversion: 745.7,
+      example: "1 hp = 745.7 N·m/s",
+    },
+    {
+      unit: "Joule/second (J/s)",
+      description: "Direct equivalent to watts",
+      conversion: 745.7,
+      example: "1 hp = 745.7 J/s",
+    },
+    {
+      unit: "Exajoule/second (EJ/s)",
+      description: "Quintillion joules per second",
+      conversion: 7.457e-16,
+      example: "1 hp = 7.457×10⁻¹⁶ EJ/s",
+    },
+    {
+      unit: "Petajoule/second (PJ/s)",
+      description: "Quadrillion joules per second",
+      conversion: 7.457e-13,
+      example: "1 hp = 7.457×10⁻¹³ PJ/s",
+    },
+    {
+      unit: "Terajoule/second (TJ/s)",
+      description: "Trillion joules per second",
+      conversion: 7.457e-10,
+      example: "1 hp = 7.457×10⁻¹⁰ TJ/s",
+    },
+    {
+      unit: "Gigajoule/second (GJ/s)",
+      description: "Billion joules per second",
+      conversion: 7.457e-7,
+      example: "1 hp = 7.457×10⁻⁷ GJ/s",
+    },
+    {
+      unit: "Megajoule/second (MJ/s)",
+      description: "Million joules per second",
+      conversion: 0.0007457,
+      example: "1 hp = 0.0007457 MJ/s",
+    },
+    {
+      unit: "Kilojoule/second (kJ/s)",
+      description: "Thousand joules per second",
+      conversion: 0.7457,
+      example: "1 hp ≈ 0.7457 kJ/s",
+    },
+    {
+      unit: "Hectojoule/second (hJ/s)",
+      description: "Hundred joules per second",
+      conversion: 7.457,
+      example: "1 hp = 7.457 hJ/s",
+    },
+    {
+      unit: "Dekajoule/second (daJ/s)",
+      description: "Ten joules per second",
+      conversion: 74.57,
+      example: "1 hp = 74.57 daJ/s",
+    },
+    {
+      unit: "Decijoule/second (dJ/s)",
+      description: "Tenth of a joule per second",
+      conversion: 7457,
+      example: "1 hp = 7,457 dJ/s",
+    },
+    {
+      unit: "Centijoule/second (cJ/s)",
+      description: "Hundredth of a joule per second",
+      conversion: 74570,
+      example: "1 hp = 74,570 cJ/s",
+    },
+    {
+      unit: "Millijoule/second (mJ/s)",
+      description: "Thousandth of a joule per second",
+      conversion: 745700,
+      example: "1 hp = 745,700 mJ/s",
+    },
+    {
+      unit: "Microjoule/second (µJ/s)",
+      description: "Millionth of a joule per second",
+      conversion: 7.457e8,
+      example: "1 hp = 745.7 million µJ/s",
+    },
+    {
+      unit: "Nanojoule/second (nJ/s)",
+      description: "Billionth of a joule per second",
+      conversion: 7.457e11,
+      example: "1 hp = 745.7 billion nJ/s",
+    },
+    {
+      unit: "Picojoule/second (pJ/s)",
+      description: "Trillionth of a joule per second",
+      conversion: 7.457e14,
+      example: "1 hp = 745.7 trillion pJ/s",
+    },
+    {
+      unit: "Femtojoule/second (fJ/s)",
+      description: "Quadrillionth of a joule per second",
+      conversion: 7.457e17,
+      example: "1 hp = 745.7 quadrillion fJ/s",
+    },
+    {
+      unit: "Attojoule/second (aJ/s)",
+      description: "Quintillionth of a joule per second",
+      conversion: 7.457e20,
+      example: "1 hp = 7.457×10²⁰ aJ/s",
+    },
+    {
+      unit: "Joule/hour (J/h)",
+      description: "Joules per hour",
+      conversion: 2684520,
+      example: "1 hp = 2,684,520 J/h",
+    },
+    {
+      unit: "Joule/minute (J/min)",
+      description: "Joules per minute",
+      conversion: 44742,
+      example: "1 hp = 44,742 J/min",
+    },
+    {
+      unit: "Kilojoule/hour (kJ/h)",
+      description: "Kilojoules per hour",
+      conversion: 2684.52,
+      example: "1 hp = 2,684.52 kJ/h",
+    },
+    {
+      unit: "Kilojoule/minute (kJ/min)",
+      description: "Kilojoules per minute",
+      conversion: 44.742,
+      example: "1 hp = 44.742 kJ/min",
+    },
+  ],
+  Hours: [
+  {
+    unit: "Second (s)",
+    description: "SI base unit of time",
+    conversion: 3600,
+    example: "1 hour = 3,600 seconds, 2 hours = 7,200 seconds"
+  },
+  {
+    unit: "Millisecond (ms)",
+    description: "Thousandth of a second",
+    conversion: 3.6e6,
+    example: "1 hour = 3.6 million ms, 0.5 hours = 1.8 million ms"
+  },
+  {
+    unit: "Microsecond (µs)",
+    description: "Millionth of a second",
+    conversion: 3.6e9,
+    example: "1 hour = 3.6 billion µs"
+  },
+  {
+    unit: "Nanosecond (ns)",
+    description: "Billionth of a second",
+    conversion: 3.6e12,
+    example: "1 hour = 3.6 trillion ns"
+  },
+  {
+    unit: "Picosecond (ps)",
+    description: "Trillionth of a second",
+    conversion: 3.6e15,
+    example: "1 hour = 3.6 quadrillion ps"
+  },
+  {
+    unit: "Femtosecond (fs)",
+    description: "Quadrillionth of a second",
+    conversion: 3.6e18,
+    example: "1 hour = 3.6 quintillion fs"
+  },
+  {
+    unit: "Attosecond (as)",
+    description: "Quintillionth of a second",
+    conversion: 3.6e21,
+    example: "1 hour = 3.6 sextillion as"
+  },
+  {
+    unit: "Minute (min)",
+    description: "60 seconds",
+    conversion: 60,
+    example: "1 hour = 60 minutes, 3 hours = 180 minutes"
+  },
+  {
+    unit: "Day (d)",
+    description: "24 hours",
+    conversion: 0.0416667,
+    example: "1 hour ≈ 0.04167 days, 12 hours = 0.5 days"
+  },
+  {
+    unit: "Week (wk)",
+    description: "7 days",
+    conversion: 0.00595238,
+    example: "1 hour ≈ 0.005952 weeks, 168 hours = 1 week"
+  },
+  {
+    unit: "Month (avg)",
+    description: "Average Gregorian month (30.44 days)",
+    conversion: 0.00136893,
+    example: "1 hour ≈ 0.001369 months, 730.5 hours ≈ 1 month"
+  },
+  {
+    unit: "Year (calendar)",
+    description: "Common year (365 days)",
+    conversion: 0.000114155,
+    example: "1 hour ≈ 0.0001142 years, 8,760 hours = 1 year"
+  },
+  {
+    unit: "Decade",
+    description: "10 years",
+    conversion: 1.14155e-5,
+    example: "1 hour ≈ 0.000011415 decades"
+  },
+  {
+    unit: "Century",
+    description: "100 years",
+    conversion: 1.14155e-6,
+    example: "1 hour ≈ 1.1416×10⁻⁶ centuries"
+  },
+  {
+    unit: "Millennium",
+    description: "1,000 years",
+    conversion: 1.14155e-7,
+    example: "1 hour ≈ 1.1416×10⁻⁷ millennia"
+  },
+  {
+    unit: "Fortnight",
+    description: "2 weeks (14 days)",
+    conversion: 0.00297619,
+    example: "1 hour ≈ 0.002976 fortnights"
+  },
+  {
+    unit: "Shake",
+    description: "10 nanoseconds (nuclear physics)",
+    conversion: 3.6e11,
+    example: "1 hour = 3.6×10¹¹ shakes"
+  },
+  {
+    unit: "Month (synodic)",
+    description: "Lunar month (29.53 days)",
+    conversion: 0.00141097,
+    example: "1 hour ≈ 0.001411 lunar months"
+  },
+  {
+    unit: "Year (Julian)",
+    description: "Julian year (365.25 days)",
+    conversion: 0.000114077,
+    example: "1 hour ≈ 0.00011408 Julian years"
+  },
+  {
+    unit: "Year (leap)",
+    description: "Leap year (366 days)",
+    conversion: 0.000113843,
+    example: "1 hour ≈ 0.00011384 leap years"
+  },
+  {
+    unit: "Year (tropical)",
+    description: "Solar/tropical year (365.24219 days)",
+    conversion: 0.00011408,
+    example: "1 hour ≈ 0.00011408 tropical years"
+  },
+  {
+    unit: "Year (sidereal)",
+    description: "Sidereal year (365.25636 days)",
+    conversion: 0.000114075,
+    example: "1 hour ≈ 0.000114075 sidereal years"
+  },
+  {
+    unit: "Day (sidereal)",
+    description: "Earth's rotation relative to stars (23h56m4.1s)",
+    conversion: 0.0417807,
+    example: "1 hour ≈ 0.04178 sidereal days"
+  },
+  {
+    unit: "Hour (sidereal)",
+    description: "Sidereal hour (59m50.17s)",
+    conversion: 1.00274,
+    example: "1 standard hour ≈ 1.00274 sidereal hours"
+  },
+  {
+    unit: "Minute (sidereal)",
+    description: "Sidereal minute (59.8362 seconds)",
+    conversion: 60.1644,
+    example: "1 standard hour ≈ 60.164 sidereal minutes"
+  },
+  {
+    unit: "Second (sidereal)",
+    description: "Sidereal second (0.99727 standard seconds)",
+    conversion: 3609.86,
+    example: "1 standard hour ≈ 3,609.86 sidereal seconds"
+  },
+  {
+    unit: "Septennial",
+    description: "7-year period",
+    conversion: 1.63079e-5,
+    example: "1 hour ≈ 0.000016308 septennials"
+  },
+  {
+    unit: "Octennial",
+    description: "8-year period",
+    conversion: 1.42694e-5,
+    example: "1 hour ≈ 0.000014269 octennials"
+  },
+  {
+    unit: "Novennial",
+    description: "9-year period",
+    conversion: 1.26839e-5,
+    example: "1 hour ≈ 0.000012684 novennials"
+  },
+  {
+    unit: "Quindecennial",
+    description: "15-year period",
+    conversion: 7.60514e-6,
+    example: "1 hour ≈ 0.000007605 quindecennials"
+  },
+  {
+    unit: "Quinquennial",
+    description: "5-year period",
+    conversion: 2.28311e-5,
+    example: "1 hour ≈ 0.000022831 quinquennials"
+  },
+  {
+    unit: "Planck Time",
+    description: "Quantum of time (5.39×10⁻⁴⁴ s)",
+    conversion: 6.67833e46,
+    example: "1 hour ≈ 6.678×10⁴⁶ Planck times"
+  },
+  {
+    unit: "Break",
+    description: "Extremely short time unit in physics",
+    conversion: 3.6e-19,
+    example: "1 hour ≈ 3.6×10⁻¹⁹ breaks"
+  }
+],
+Inches: [
+    {
+      unit: "Meter (m)",
+      description: "The SI base unit of length.",
+      conversion: 0.0254,
+      example: "1 inch = 0.0254 m, 39.3701 inches = 1 m"
+    },
+    {
+      unit: "Kilometer (km)",
+      description: "Metric unit equal to 1,000 meters.",
+      conversion: 0.0000254,
+      example: "1 inch ≈ 0.0000254 km, 39,370.1 inches = 1 km"
+    },
+    {
+      unit: "Centimeter (cm)",
+      description: "Common metric unit equal to 1/100 meter.",
+      conversion: 2.54,
+      example: "1 inch = 2.54 cm, 0.393701 inches = 1 cm"
+    },
+    {
+      unit: "Millimeter (mm)",
+      description: "Small metric unit equal to 1/1,000 meter.",
+      conversion: 25.4,
+      example: "1 inch = 25.4 mm, 0.0393701 inches = 1 mm"
+    },
+    {
+      unit: "Micrometer (µm)",
+      description: "Tiny metric unit equal to 1/1,000,000 meter.",
+      conversion: 25400,
+      example: "1 inch = 25,400 µm, 0.0000393701 inches = 1 µm"
+    },
+    {
+      unit: "Nanometer (nm)",
+      description: "Extremely small metric unit used in nanotechnology.",
+      conversion: 25400000,
+      example: "1 inch = 25,400,000 nm, 3.93701e-8 inches = 1 nm"
+    },
+    {
+      unit: "Mile (mi)",
+      description: "Imperial unit for long distances.",
+      conversion: 0.0000157828,
+      example: "1 inch ≈ 0.0000157828 mi, 63,360 inches = 1 mi"
+    },
+    {
+      unit: "Yard (yd)",
+      description: "Imperial unit equal to 3 feet.",
+      conversion: 0.0277778,
+      example: "1 inch ≈ 0.0277778 yd, 36 inches = 1 yd"
+    },
+    {
+      unit: "Foot (ft)",
+      description: "Imperial unit equal to 12 inches.",
+      conversion: 0.0833333,
+      example: "1 inch ≈ 0.0833333 ft, 12 inches = 1 ft"
+    },
+    {
+      unit: "Light Year (ly)",
+      description: "Astronomical distance light travels in one year.",
+      conversion: 2.68478e-18,
+      example: "1 inch ≈ 2.68478e-18 ly, 3.7247e17 inches = 1 ly"
+    },
+    {
+      unit: "Nautical Mile (nmi)",
+      description: "Maritime and aviation distance unit.",
+      conversion: 0.0000137149,
+      example: "1 inch ≈ 0.0000137149 nmi, 72,913.4 inches = 1 nmi"
+    },
+    {
+      unit: "Fathom (ftm)",
+      description: "Nautical depth measurement.",
+      conversion: 0.0138889,
+      example: "1 inch ≈ 0.0138889 ftm, 72 inches = 1 ftm"
+    },
+    {
+      unit: "Rod",
+      description: "Old English unit for land measurement.",
+      conversion: 0.00505051,
+      example: "1 inch ≈ 0.00505051 rods, 198 inches = 1 rod"
+    },
+    {
+      unit: "Furlong",
+      description: "Traditional English unit equal to 40 rods.",
+      conversion: 0.000126263,
+      example: "1 inch ≈ 0.000126263 furlongs, 7,920 inches = 1 furlong"
+    },
+    {
+      unit: "Astronomical Unit (AU)",
+      description: "Average Earth-Sun distance.",
+      conversion: 1.69789e-13,
+      example: "1 inch ≈ 1.69789e-13 AU, 5.88968e12 inches = 1 AU"
+    },
+    {
+      unit: "Parsec (pc)",
+      description: "Astronomical distance unit.",
+      conversion: 8.23158e-19,
+      example: "1 inch ≈ 8.23158e-19 pc, 1.21483e18 inches = 1 pc"
+    },
+    {
+      unit: "Angstrom (Å)",
+      description: "Unit for atomic-scale measurements.",
+      conversion: 254000000,
+      example: "1 inch = 254,000,000 Å, 3.93701e-9 inches = 1 Å"
+    },
+    {
+      unit: "Micron (µ)",
+      description: "Another name for micrometer.",
+      conversion: 25400,
+      example: "1 inch = 25,400 µ, 0.0000393701 inches = 1 µ"
+    },
+    {
+      unit: "Mil (thousandth of an inch)",
+      description: "Engineering unit equal to 0.001 inches.",
+      conversion: 1000,
+      example: "1 inch = 1,000 mils, 0.001 inches = 1 mil"
+    },
+    {
+      unit: "Point (typography)",
+      description: "Printing measurement unit.",
+      conversion: 72,
+      example: "1 inch = 72 points, 0.0138889 inches = 1 point"
+    },
+    {
+      unit: "Pica (typography)",
+      description: "Printing measurement equal to 12 points.",
+      conversion: 6,
+      example: "1 inch = 6 picas, 0.166667 inches = 1 pica"
+    },
+    {
+      unit: "Hand (equestrian)",
+      description: "Unit for measuring horse height.",
+      conversion: 0.25,
+      example: "1 inch = 0.25 hands, 4 inches = 1 hand"
+    },
+    {
+      unit: "Cubit (ancient)",
+      description: "Ancient unit based on forearm length.",
+      conversion: 0.0555556,
+      example: "1 inch ≈ 0.0555556 cubits, 18 inches = 1 cubit"
+    },
+    {
+      unit: "Span (cloth)",
+      description: "Traditional measurement based on hand span.",
+      conversion: 0.111111,
+      example: "1 inch ≈ 0.111111 spans, 9 inches = 1 span"
+    },
+    {
+      unit: "Finger (cloth)",
+      description: "Old English textile measurement.",
+      conversion: 0.222222,
+      example: "1 inch ≈ 0.222222 fingers, 4.5 inches = 1 finger"
+    },
+    {
+      unit: "Planck Length",
+      description: "Theoretical smallest measurable length.",
+      conversion: 1.57173e+33,
+      example: "1 inch ≈ 1.57173e33 Planck lengths, 6.3624e-34 inches ≈ 1 Planck length"
+    },
+    {
+      unit: "Earth's Equatorial Radius",
+      description: "Radius of Earth at the equator.",
+      conversion: 3.98201e-9,
+      example: "1 inch ≈ 3.98201e-9 Earth radii, 251,108,000 inches ≈ 1 Earth radius"
+    },
+    {
+      unit: "Football Field (US, 100 yards)",
+      description: "Standard American football field length.",
+      conversion: 0.000277778,
+      example: "1 inch ≈ 0.000277778 fields, 3,600 inches = 1 field"
+    },
+    {
+      unit: "Olympic Swimming Pool (50m)",
+      description: "Standard competition pool length.",
+      conversion: 0.000508,
+      example: "1 inch ≈ 0.000508 pools, 1,968.5 inches = 1 pool"
+    },
+    {
+      unit: "Empire State Building Height (443.2m)",
+      description: "Iconic New York skyscraper height.",
+      conversion: 0.0000574,
+      example: "1 inch ≈ 0.0000574 ESB heights, 17,448 inches ≈ 1 ESB height"
+    },
+    {
+      unit: "Eiffel Tower Height (330m)",
+      description: "Paris landmark height.",
+      conversion: 0.000077,
+      example: "1 inch ≈ 0.000077 Eiffel heights, 12,992 inches ≈ 1 Eiffel height"
+    },
+    {
+      unit: "Human Hair Diameter (≈70µm)",
+      description: "Average thickness of human hair.",
+      conversion: 0.362,
+      example: "1 inch ≈ 362 hair widths, 0.00276 inches ≈ 1 hair width"
+    },
+    {
+      unit: "Credit Card Thickness (0.76mm)",
+      description: "Standard plastic card thickness.",
+      conversion: 33.3333,
+      example: "1 inch ≈ 33.3333 card thicknesses, 0.03 inches ≈ 1 card thickness"
+    },
+    {
+      unit: "Grain of Sand (0.5mm average)",
+      description: "Typical medium sand grain size.",
+      conversion: 50,
+      example: "1 inch ≈ 50 sand grains, 0.02 inches ≈ 1 sand grain"
+    },
+    {
+      unit: "Red Blood Cell (≈7.5µm)",
+      description: "Average diameter of human erythrocytes.",
+      conversion: 3386.67,
+      example: "1 inch ≈ 3,386.67 RBCs, 0.000295 inches ≈ 1 RBC"
+    },
+    {
+      unit: "DNA Helix Width (≈2nm)",
+      description: "Diameter of DNA double helix.",
+      conversion: 12700000,
+      example: "1 inch ≈ 12,700,000 DNA widths, 7.874e-8 inches ≈ 1 DNA width"
+    }
+],
+J: [
+    {
+      unit: "Kilojoule (kJ)",
+      description: "Metric unit equal to 1,000 joules.",
+      conversion: 0.001,
+      example: "1 J = 0.001 kJ, 1,000 J = 1 kJ"
+    },
+    {
+      unit: "Kilowatt-hour (kWh)",
+      description: "Common electrical energy unit.",
+      conversion: 2.77778e-7,
+      example: "1 J ≈ 2.77778e-7 kWh, 3.6e6 J = 1 kWh"
+    },
+    {
+      unit: "Watt-hour (Wh)",
+      description: "Electrical energy unit for smaller devices.",
+      conversion: 0.000277778,
+      example: "1 J ≈ 0.000277778 Wh, 3,600 J = 1 Wh"
+    },
+    {
+      unit: "Calorie (nutritional)",
+      description: "Food energy measurement.",
+      conversion: 0.000238846,
+      example: "1 J ≈ 0.000238846 cal, 4,186.8 J = 1 cal"
+    },
+    {
+      unit: "British Thermal Unit (BTU)",
+      description: "Traditional British/US heat energy unit.",
+      conversion: 0.000947817,
+      example: "1 J ≈ 0.000947817 BTU, 1,055.06 J = 1 BTU"
+    },
+    {
+      unit: "Electronvolt (eV)",
+      description: "Energy unit in particle physics.",
+      conversion: 6.24151e18,
+      example: "1 J ≈ 6.24151e18 eV, 1.60218e-19 J = 1 eV"
+    },
+    {
+      unit: "Erg",
+      description: "CGS system energy unit.",
+      conversion: 1e7,
+      example: "1 J = 10,000,000 erg, 1e-7 J = 1 erg"
+    },
+    {
+      unit: "Foot-pound (ft·lb)",
+      description: "Imperial mechanical energy unit.",
+      conversion: 0.737562,
+      example: "1 J ≈ 0.737562 ft·lb, 1.35582 J = 1 ft·lb"
+    },
+    {
+      unit: "Horsepower-hour (hp·h)",
+      description: "Mechanical engineering energy unit.",
+      conversion: 3.72506e-7,
+      example: "1 J ≈ 3.72506e-7 hp·h, 2.6845e6 J = 1 hp·h"
+    },
+    {
+      unit: "Newton-meter (N·m)",
+      description: "Direct equivalent to joule in SI system.",
+      conversion: 1,
+      example: "1 J = 1 N·m"
+    },
+    {
+      unit: "Therm",
+      description: "Natural gas energy measurement.",
+      conversion: 9.47817e-9,
+      example: "1 J ≈ 9.47817e-9 therms, 1.05506e8 J = 1 therm"
+    },
+    {
+      unit: "Ton of TNT",
+      description: "Explosive energy equivalent.",
+      conversion: 2.39006e-10,
+      example: "1 J ≈ 2.39006e-10 tons TNT, 4.184e9 J = 1 ton TNT"
+    },
+    {
+      unit: "Watt-second (W·s)",
+      description: "Direct equivalent to joule.",
+      conversion: 1,
+      example: "1 J = 1 W·s"
+    },
+    {
+      unit: "Gram-force centimeter (gf·cm)",
+      description: "Small mechanical work unit.",
+      conversion: 10197.2,
+      example: "1 J ≈ 10,197.2 gf·cm, 9.80665e-5 J = 1 gf·cm"
+    },
+    {
+      unit: "Kilogram-force meter (kgf·m)",
+      description: "Engineering work unit.",
+      conversion: 0.101972,
+      example: "1 J ≈ 0.101972 kgf·m, 9.80665 J = 1 kgf·m"
+    },
+    {
+      unit: "Poundal-foot (pdl·ft)",
+      description: "Alternative imperial energy unit.",
+      conversion: 23.7304,
+      example: "1 J ≈ 23.7304 pdl·ft, 0.0421401 J = 1 pdl·ft"
+    },
+    {
+      unit: "Hartree energy (Eh)",
+      description: "Atomic physics energy unit.",
+      conversion: 2.29371e17,
+      example: "1 J ≈ 2.29371e17 Eh, 4.35974e-18 J = 1 Eh"
+    },
+    {
+      unit: "Rydberg constant (Ry)",
+      description: "Atomic physics energy unit.",
+      conversion: 4.58743e17,
+      example: "1 J ≈ 4.58743e17 Ry, 2.17987e-18 J = 1 Ry"
+    },
+    {
+      unit: "Barrel of oil equivalent",
+      description: "Energy content of petroleum.",
+      conversion: 1.63456e-10,
+      example: "1 J ≈ 1.63456e-10 BOE, 6.12e9 J ≈ 1 BOE"
+    },
+    {
+      unit: "Apple (100g) energy content",
+      description: "Approximate food energy reference.",
+      conversion: 0.000434783,
+      example: "1 J ≈ 0.000434783 apples, 2,300 J ≈ 1 apple's energy"
+    },
+    {
+      unit: "AA battery energy (alkaline)",
+      description: "Typical battery energy storage.",
+      conversion: 0.000142857,
+      example: "1 J ≈ 0.000142857 AA batteries, 7,000 J ≈ 1 AA battery"
+    },
+    {
+      unit: "Lightning bolt energy",
+      description: "Approximate energy of single lightning strike.",
+      conversion: 2e-10,
+      example: "1 J ≈ 2e-10 lightning bolts, 5e9 J ≈ 1 lightning bolt"
+    },
+    {
+      unit: "Human heartbeat energy",
+      description: "Approximate energy per heartbeat.",
+      conversion: 0.01,
+      example: "1 J ≈ 0.01 heartbeats, 100 J ≈ 1 heartbeat's energy"
+    },
+    {
+      unit: "ATP molecule energy",
+      description: "Cellular energy currency.",
+      conversion: 1.67e19,
+      example: "1 J ≈ 1.67e19 ATP molecules, 6e-20 J ≈ 1 ATP hydrolysis"
+    },
+    {
+      unit: "Big Mac energy content",
+      description: "Fast food energy reference (550 kcal).",
+      conversion: 4.34783e-7,
+      example: "1 J ≈ 4.34783e-7 Big Macs, 2.3e6 J ≈ 1 Big Mac"
+    },
+    {
+      unit: "Gallon of gasoline energy",
+      description: "Automotive fuel energy reference.",
+      conversion: 3.21574e-8,
+      example: "1 J ≈ 3.21574e-8 gallons, 3.11e7 J ≈ 1 gallon gasoline"
+    },
+    {
+      unit: "Tsar Bomba energy (largest nuke)",
+      description: "Historical nuclear weapon reference.",
+      conversion: 2.39e-19,
+      example: "1 J ≈ 2.39e-19 Tsar Bombas, 4.2e18 J ≈ 1 Tsar Bomba yield"
+    },
+    {
+      unit: "Supernova energy output",
+      description: "Astrophysical energy reference.",
+      conversion: 1e-44,
+      example: "1 J ≈ 1e-44 supernovae, 1e44 J ≈ 1 typical supernova"
+    },
+    {
+      unit: "Daily human energy intake",
+      description: "Average adult caloric needs (2,000 kcal).",
+      conversion: 1.19679e-7,
+      example: "1 J ≈ 1.19679e-7 daily intakes, 8.36e6 J ≈ 1 daily intake"
+    },
+    {
+      unit: "Lifting 1kg 1m against gravity",
+      description: "Practical mechanical work reference.",
+      conversion: 0.101972,
+      example: "1 J ≈ 0.101972 kg lifts, 9.80665 J ≈ lifting 1kg 1m"
+    }
+],
+Kelvin: [
+    {
+      unit: "Celsius (°C)",
+      description: "Metric temperature scale where 0°C is water's freezing point and 100°C is its boiling point (at 1 atm).",
+      conversion:0,
+      example: "0 K = -273.15°C (absolute zero), 273.15 K = 0°C (water freezing point), 373.15 K = 100°C (water boiling point)"
+    },
+    {
+      unit: "Fahrenheit (°F)",
+      description: "Imperial temperature scale where 32°F is water's freezing point and 212°F is its boiling point (at 1 atm).",
+      conversion:0,
+      example: "0 K = -459.67°F (absolute zero), 273.15 K = 32°F (water freezing point), 373.15 K = 212°F (water boiling point)"
+    },
+    {
+      unit: "Rankine (°R)",
+      description: "Absolute temperature scale using Fahrenheit degrees, where 0°R is absolute zero.",
+      conversion:0,
+      example: "0 K = 0°R (absolute zero), 273.15 K = 491.67°R, 373.15 K = 671.67°R"
+    },
+    {
+      unit: "Réaumur (°Ré)",
+      description: "Historical scale where 0°Ré is water's freezing point and 80°Ré is its boiling point (at 1 atm).",
+      conversion:0,
+      example: "0 K = -218.52°Ré, 273.15 K = 0°Ré (water freezing point), 373.15 K = 80°Ré (water boiling point)"
+    },
+    {
+      unit: "Triple Point of Water",
+      description: "The unique temperature and pressure where water coexists as solid, liquid, and gas (defined as exactly 273.16 K).",
+      conversion:0,
+      example: "273.16 K = 1 (exact triple point), 0 K = 0, 546.32 K = 2"
+    },
+    {
+      unit: "Planck Temperature",
+      description: "Theoretical maximum temperature in quantum physics (≈1.41679×10³² K).",
+      conversion:0,
+      example: "1.41679e32 K = 1 Planck Temperature, 7.08395e31 K ≈ 0.5 Planck Temperature"
+    },
+    {
+      unit: "Room Temperature (20°C)",
+      description: "Common reference for indoor temperatures (293.15 K).",
+      conversion:0,
+      example: "293.15 K = 1 (room temp), 586.3 K ≈ 2 (hot oven), 146.575 K ≈ 0.5 (freezer)"
+    },
+    {
+      unit: "Human Body Temperature (37°C)",
+      description: "Average healthy human core body temperature (310.15 K).",
+      conversion:0,
+      example: "310.15 K = 1 (normal body temp), 325.66 K ≈ 1.05 (fever), 294.64 K ≈ 0.95 (hypothermia)"
+    },
+    {
+      unit: "Sun's Surface Temperature",
+      description: "Photosphere temperature of our Sun (5,772 K).",
+      conversion:0,
+      example: "5,772 K = 1 (Sun's surface), 11,544 K ≈ 2 (hot star), 2,886 K ≈ 0.5 (cool star)"
+    },
+    {
+      unit: "Absolute Hot (theoretical limit)",
+      description: "Theoretical maximum temperature before physics breaks down (1.417×10³² K).",
+      conversion:0,
+      example: "1.417e32 K = 1 (absolute hot), 7.085e31 K ≈ 0.5"
+    }
+],
+Kg: [
+    {
+      unit: "Gram (g)",
+      description: "Metric unit equal to 1/1000 of a kilogram.",
+      conversion: 1000,
+      example: "1 kg = 1,000 g, 0.001 kg = 1 g"
+    },
+    {
+      unit: "Milligram (mg)",
+      description: "Metric unit equal to 1/1,000,000 of a kilogram.",
+      conversion: 1000000,
+      example: "1 kg = 1,000,000 mg, 0.000001 kg = 1 mg"
+    },
+    {
+      unit: "Metric Ton (t)",
+      description: "Metric unit equal to 1,000 kilograms.",
+      conversion: 0.001,
+      example: "1 kg = 0.001 t, 1,000 kg = 1 t"
+    },
+    {
+      unit: "Ounce (oz)",
+      description: "Imperial/US customary unit equal to 1/16 pound.",
+      conversion: 35.274,
+      example: "1 kg ≈ 35.274 oz, 0.0283495 kg = 1 oz"
+    },
+    {
+      unit: "Pound (lb)",
+      description: "Common imperial/US unit equal to 16 ounces.",
+      conversion: 2.20462,
+      example: "1 kg ≈ 2.20462 lb, 0.453592 kg = 1 lb"
+    },
+    {
+      unit: "Stone (st)",
+      description: "British imperial unit equal to 14 pounds.",
+      conversion: 0.157473,
+      example: "1 kg ≈ 0.157473 st, 6.35029 kg = 1 st"
+    },
+    {
+      unit: "US Ton (short ton)",
+      description: "US unit equal to 2,000 pounds.",
+      conversion: 0.00110231,
+      example: "1 kg ≈ 0.00110231 short tons, 907.185 kg = 1 short ton"
+    },
+    {
+      unit: "Imperial Ton (long ton)",
+      description: "British unit equal to 2,240 pounds.",
+      conversion: 0.000984207,
+      example: "1 kg ≈ 0.000984207 long tons, 1,016.05 kg = 1 long ton"
+    },
+    {
+      unit: "Atomic Mass Unit (u)",
+      description: "Standard unit for atomic and molecular masses.",
+      conversion: 6.02214e26,
+      example: "1 kg ≈ 6.02214e26 u, 1.66054e-27 kg = 1 u"
+    },
+    {
+      unit: "Carat (ct)",
+      description: "Unit used for gemstones and pearls.",
+      conversion: 5000,
+      example: "1 kg = 5,000 ct, 0.0002 kg = 1 ct"
+    },
+    {
+      unit: "Slug",
+      description: "Imperial unit of mass in gravitational systems.",
+      conversion: 0.0685218,
+      example: "1 kg ≈ 0.0685218 slugs, 14.5939 kg = 1 slug"
+    },
+    {
+      unit: "Quintal (q)",
+      description: "Historical metric unit equal to 100 kilograms.",
+      conversion: 0.01,
+      example: "1 kg = 0.01 q, 100 kg = 1 q"
+    },
+    {
+      unit: "Planck Mass",
+      description: "Natural unit of mass in quantum physics.",
+      conversion: 4.59466e7,
+      example: "1 kg ≈ 4.59466e7 Planck masses, 2.17671e-8 kg = 1 Planck mass"
+    },
+    {
+      unit: "Troy Ounce (oz t)",
+      description: "Used for precious metals like gold and silver.",
+      conversion: 32.1507,
+      example: "1 kg ≈ 32.1507 oz t, 0.0311035 kg = 1 oz t"
+    },
+    {
+      unit: "Grain (gr)",
+      description: "Traditional unit based on wheat grain weight.",
+      conversion: 15432.4,
+      example: "1 kg ≈ 15,432.4 gr, 6.47989e-5 kg = 1 gr"
+    },
+    {
+      unit: "Pennyweight (dwt)",
+      description: "Unit used in jewelry, equal to 24 grains.",
+      conversion: 643.015,
+      example: "1 kg ≈ 643.015 dwt, 0.00155517 kg = 1 dwt"
+    },
+    {
+      unit: "Dram (dr)",
+      description: "Imperial unit equal to 1/16 ounce.",
+      conversion: 564.383,
+      example: "1 kg ≈ 564.383 dr, 0.00177185 kg = 1 dr"
+    },
+    {
+      unit: "Hundredweight (cwt)",
+      description: "Imperial unit equal to 112 pounds (UK).",
+      conversion: 0.0196841,
+      example: "1 kg ≈ 0.0196841 cwt, 50.8023 kg = 1 cwt"
+    },
+    {
+      unit: "US Hundredweight (short cwt)",
+      description: "US unit equal to 100 pounds.",
+      conversion: 0.0220462,
+      example: "1 kg ≈ 0.0220462 short cwt, 45.3592 kg = 1 short cwt"
+    },
+    {
+      unit: "Earth Mass (M⊕)",
+      description: "Astronomical unit equal to Earth's mass.",
+      conversion: 1.6744e-25,
+      example: "1 kg ≈ 1.6744e-25 M⊕, 5.972e24 kg = 1 M⊕"
+    },
+    {
+      unit: "Solar Mass (M☉)",
+      description: "Astronomical unit equal to Sun's mass.",
+      conversion: 5.0279e-31,
+      example: "1 kg ≈ 5.0279e-31 M☉, 1.989e30 kg = 1 M☉"
+    },
+    {
+      unit: "Elephant (African bush)",
+      description: "Approximate mass of adult male (6,000 kg).",
+      conversion: 0.000166667,
+      example: "1 kg ≈ 0.000166667 elephants, 6,000 kg ≈ 1 elephant"
+    },
+    {
+      unit: "Blue Whale",
+      description: "Approximate mass of adult (140,000 kg).",
+      conversion: 0.00000714286,
+      example: "1 kg ≈ 0.00000714286 whales, 140,000 kg ≈ 1 whale"
+    },
+    {
+      unit: "Car (average midsize)",
+      description: "Approximate mass (1,500 kg).",
+      conversion: 0.000666667,
+      example: "1 kg ≈ 0.000666667 cars, 1,500 kg ≈ 1 car"
+    },
+    {
+      unit: "Human (adult average)",
+      description: "Approximate body mass (62 kg).",
+      conversion: 0.016129,
+      example: "1 kg ≈ 0.016129 humans, 62 kg ≈ 1 human"
+    },
+    {
+      unit: "Brick (standard)",
+      description: "Approximate mass (2.3 kg).",
+      conversion: 0.434783,
+      example: "1 kg ≈ 0.434783 bricks, 2.3 kg ≈ 1 brick"
+    },
+    {
+      unit: "Bag of Sugar (standard)",
+      description: "Common reference (1 kg).",
+      conversion: 1,
+      example: "1 kg = 1 bag of sugar"
+    },
+    {
+      unit: "Gallon of Water (US)",
+      description: "Approximate mass at room temperature (3.785 kg).",
+      conversion: 0.264172,
+      example: "1 kg ≈ 0.264172 gallons, 3.785 kg ≈ 1 gallon"
+    },
+    {
+      unit: "Baseball (regulation)",
+      description: "Approximate mass (0.145 kg).",
+      conversion: 6.89655,
+      example: "1 kg ≈ 6.89655 baseballs, 0.145 kg ≈ 1 baseball"
+    },
+    {
+      unit: "Soccer Ball (FIFA standard)",
+      description: "Approximate mass (0.43 kg).",
+      conversion: 2.32558,
+      example: "1 kg ≈ 2.32558 soccer balls, 0.43 kg ≈ 1 soccer ball"
+    }
+],
+KB: [
+    {
+      unit: "Bit",
+      description: "The smallest unit of digital information.",
+      conversion: 8192,
+      example: "1 KB = 8,192 bits, 0.00012207 KB = 1 bit"
+    },
+    {
+      unit: "Nibble",
+      description: "4 bits, or half a byte.",
+      conversion: 2048,
+      example: "1 KB = 2,048 nibbles, 0.000488281 KB = 1 nibble"
+    },
+    {
+      unit: "Byte",
+      description: "Basic unit of digital information (8 bits).",
+      conversion: 1024,
+      example: "1 KB = 1,024 bytes, 0.000976562 KB = 1 byte"
+    },
+    {
+      unit: "Character",
+      description: "Typically represented by 1 byte in ASCII encoding.",
+      conversion: 1024,
+      example: "1 KB ≈ 1,024 ASCII characters, 0.000976562 KB per character"
+    },
+    {
+      unit: "Word",
+      description: "Typically 2 bytes (16 bits) in many systems.",
+      conversion: 512,
+      example: "1 KB = 512 words, 0.00195312 KB = 1 word"
+    },
+    {
+      unit: "MAPM-word",
+      description: "4 bytes (32 bits) in MAPM library.",
+      conversion: 256,
+      example: "1 KB = 256 MAPM-words, 0.00390625 KB = 1 MAPM-word"
+    },
+    {
+      unit: "Quadruple-word",
+      description: "8 bytes (64 bits).",
+      conversion: 128,
+      example: "1 KB = 128 quadruple-words, 0.0078125 KB = 1 quadruple-word"
+    },
+    {
+      unit: "Block",
+      description: "Traditional block size of 512 bytes.",
+      conversion: 2,
+      example: "1 KB = 2 blocks, 0.5 KB = 1 block"
+    },
+    {
+      unit: "Kilobit",
+      description: "1,000 bits (note difference from kilobyte).",
+      conversion: 8,
+      example: "1 KB = 8 kilobits, 0.125 KB = 1 kilobit"
+    },
+    {
+      unit: "Kilobyte (10^3 Bytes)",
+      description: "Decimal kilobyte (1,000 bytes).",
+      conversion: 1.024,
+      example: "1 binary KB ≈ 1.024 decimal KB, 0.976562 binary KB = 1 decimal KB"
+    },
+    {
+      unit: "Megabit",
+      description: "1,000,000 bits.",
+      conversion: 0.0078125,
+      example: "1 KB ≈ 0.0078125 Mb, 128 KB = 1 Mb"
+    },
+    {
+      unit: "Megabyte",
+      description: "1,024 kilobytes (binary).",
+      conversion: 0.000976562,
+      example: "1 KB ≈ 0.000976562 MB, 1,024 KB = 1 MB"
+    },
+    {
+      unit: "Megabyte (10^6 Bytes)",
+      description: "Decimal megabyte (1,000,000 bytes).",
+      conversion: 0.001024,
+      example: "1 KB ≈ 0.001024 decimal MB, 976.562 KB ≈ 1 decimal MB"
+    },
+    {
+      unit: "Gigabit",
+      description: "1,000,000,000 bits.",
+      conversion: 7.62939e-6,
+      example: "1 KB ≈ 7.62939e-6 Gb, 131,072 KB = 1 Gb"
+    },
+    {
+      unit: "Gigabyte",
+      description: "1,024 megabytes (binary).",
+      conversion: 9.53674e-7,
+      example: "1 KB ≈ 9.53674e-7 GB, 1,048,576 KB = 1 GB"
+    },
+    {
+      unit: "Gigabyte (10^9 Bytes)",
+      description: "Decimal gigabyte (1,000,000,000 bytes).",
+      conversion: 1.024e-6,
+      example: "1 KB ≈ 1.024e-6 decimal GB, 976,562 KB ≈ 1 decimal GB"
+    },
+    {
+      unit: "Terabit",
+      description: "1,000,000,000,000 bits.",
+      conversion: 7.45058e-9,
+      example: "1 KB ≈ 7.45058e-9 Tb, 134,217,728 KB = 1 Tb"
+    },
+    {
+      unit: "Terabyte",
+      description: "1,024 gigabytes (binary).",
+      conversion: 9.31323e-10,
+      example: "1 KB ≈ 9.31323e-10 TB, 1,073,741,824 KB = 1 TB"
+    },
+    {
+      unit: "Terabyte (10^12 Bytes)",
+      description: "Decimal terabyte (1,000,000,000,000 bytes).",
+      conversion: 1.024e-9,
+      example: "1 KB ≈ 1.024e-9 decimal TB, 976,562,500 KB ≈ 1 decimal TB"
+    },
+    {
+      unit: "Floppy Disk (3.5\", DD)",
+      description: "720 KB capacity floppy disk.",
+      conversion: 0.000140512,
+      example: "1 KB ≈ 0.000140512 floppies, 7,116.8 KB = 1 floppy"
+    },
+    {
+      unit: "Floppy Disk (3.5\", HD)",
+      description: "1.44 MB capacity floppy disk.",
+      conversion: 7.02563e-5,
+      example: "1 KB ≈ 7.02563e-5 HD floppies, 1,423.36 KB = 1 HD floppy"
+    },
+    {
+      unit: "Floppy Disk (3.5\", ED)",
+      description: "2.88 MB capacity floppy disk.",
+      conversion: 3.51281e-5,
+      example: "1 KB ≈ 3.51281e-5 ED floppies, 2,846.72 KB = 1 ED floppy"
+    },
+    {
+      unit: "CD (74 Minute)",
+      description: "Approximately 650 MB storage capacity.",
+      conversion: 1.50403e-6,
+      example: "1 KB ≈ 1.50403e-6 CDs, 664,848 KB ≈ 1 CD"
+    },
+    {
+      unit: "CD (80 Minute)",
+      description: "Approximately 700 MB storage capacity.",
+      conversion: 1.39138e-6,
+      example: "1 KB ≈ 1.39138e-6 CDs, 718,750 KB ≈ 1 CD"
+    },
+    {
+      unit: "DVD (1 Layer, 1 Side)",
+      description: "Approximately 4.7 GB storage capacity.",
+      conversion: 1.91371e-7,
+      example: "1 KB ≈ 1.91371e-7 DVDs, 5,225,390 KB ≈ 1 DVD"
+    },
+    {
+      unit: "Smartphone Storage (64GB)",
+      description: "Average base model smartphone storage.",
+      conversion: 1.52588e-8,
+      example: "1 KB ≈ 1.52588e-8 smartphones, 65,536,000 KB ≈ 1 smartphone"
+    },
+    {
+      unit: "Blu-ray Disc (25GB)",
+      description: "Single-layer Blu-ray disc capacity.",
+      conversion: 3.8147e-8,
+      example: "1 KB ≈ 3.8147e-8 Blu-rays, 26,214,400 KB ≈ 1 Blu-ray"
+    },
+    {
+      unit: "Library of Congress (Digital)",
+      description: "Estimated 10TB for entire print collection.",
+      conversion: 9.31323e-11,
+      example: "1 KB ≈ 9.31323e-11 LoC, 10,737,418,240 KB ≈ 1 LoC"
+    }
+],
+KJ: [
+    {
+      unit: "Kilocalorie",
+      description: "Energy needed to raise 1kg of water by 1°C.",
+      conversion: 0.239006,
+      example: "1 kJ ≈ 0.239 kcal, 4.184 kJ = 1 kcal"
+    },
+    {
+      unit: "Joule",
+      description: "SI unit of energy (1 kJ = 1000 J).",
+      conversion: 1000,
+      example: "1 kJ = 1,000 J, 0.001 kJ = 1 J"
+    },
+    {
+      unit: "Kilowatt-hour",
+      description: "Common electricity billing unit.",
+      conversion: 0.000277778,
+      example: "1 kJ ≈ 0.000277778 kWh, 3,600 kJ = 1 kWh"
+    },
+    {
+      unit: "Watt-hour",
+      description: "Energy from 1 watt over 1 hour.",
+      conversion: 0.277778,
+      example: "1 kJ ≈ 0.277778 Wh, 3.6 kJ = 1 Wh"
+    },
+    {
+      unit: "Calorie (nutritional)",
+      description: "Food energy measurement.",
+      conversion: 0.238846,
+      example: "1 kJ ≈ 0.238846 nutritional calories, 4.1868 kJ = 1 Cal"
+    },
+    {
+      unit: "Btu (IT)",
+      description: "British thermal unit (International Table).",
+      conversion: 0.947817,
+      example: "1 kJ ≈ 0.947817 BTU, 1.05506 kJ = 1 BTU"
+    },
+    {
+      unit: "Btu (th)",
+      description: "British thermal unit (thermochemical).",
+      conversion: 0.948452,
+      example: "1 kJ ≈ 0.948452 BTUth, 1.05435 kJ = 1 BTUth"
+    },
+    {
+      unit: "Horsepower Hour",
+      description: "Mechanical energy measurement.",
+      conversion: 0.000372506,
+      example: "1 kJ ≈ 0.000372506 hp·h, 2,684.5 kJ = 1 hp·h"
+    },
+    {
+      unit: "Newton Meter",
+      description: "Equivalent to 1 joule.",
+      conversion: 1000,
+      example: "1 kJ = 1,000 N·m, 0.001 kJ = 1 N·m"
+    },
+    {
+      unit: "Erg",
+      description: "CGS unit of energy (1 erg = 10^-7 J).",
+      conversion: 1e10,
+      example: "1 kJ = 10^10 erg, 10^-10 kJ = 1 erg"
+    },
+    {
+      unit: "Electron-volt",
+      description: "Energy gained by single electron in 1V potential.",
+      conversion: 6.24151e18,
+      example: "1 kJ ≈ 6.24151×10^18 eV, 1.60218×10^-19 kJ = 1 eV"
+    },
+    {
+      unit: "Foot-pound",
+      description: "Energy to apply 1 pound-force over 1 foot.",
+      conversion: 737.562,
+      example: "1 kJ ≈ 737.562 ft·lb, 0.00135582 kJ = 1 ft·lb"
+    },
+    {
+      unit: "Therm",
+      description: "Natural gas energy measurement.",
+      conversion: 9.47817e-6,
+      example: "1 kJ ≈ 9.47817×10^-6 therms, 105,506 kJ = 1 therm"
+    },
+    {
+      unit: "Ton-hour (refrigeration)",
+      description: "Cooling capacity measurement.",
+      conversion: 0.0000789848,
+      example: "1 kJ ≈ 0.0000789848 ton-hours, 12,660.7 kJ = 1 ton-hour"
+    },
+    {
+      unit: "Gram TNT",
+      description: "Explosive energy equivalent.",
+      conversion: 239.006,
+      example: "1 kJ ≈ 239 grams TNT equivalent, 0.004184 kJ = 1 gram TNT"
+    },
+    {
+      unit: "Barrel of Oil Equivalent",
+      description: "Energy in one barrel of crude oil.",
+      conversion: 1.6346e-7,
+      example: "1 kJ ≈ 1.6346×10^-7 BOE, 6,117,863 kJ ≈ 1 BOE"
+    },
+    {
+      unit: "Cup of Gasoline",
+      description: "Approximate energy in 240mL gasoline.",
+      conversion: 0.000072,
+      example: "1 kJ ≈ 0.000072 cups gasoline, 13,900 kJ ≈ 1 cup gasoline"
+    },
+    {
+      unit: "Banana Equivalent",
+      description: "Approximate energy in one medium banana.",
+      conversion: 0.0714,
+      example: "1 kJ ≈ 0.0714 bananas, 14 kJ ≈ 1 banana"
+    },
+    {
+      unit: "AA Battery",
+      description: "Energy in one alkaline AA battery.",
+      conversion: 0.0833,
+      example: "1 kJ ≈ 0.0833 AA batteries, 12 kJ ≈ 1 AA battery"
+    },
+    {
+      unit: "Smartphone Battery Charge",
+      description: "Energy to fully charge typical smartphone.",
+      conversion: 0.0143,
+      example: "1 kJ ≈ 0.0143 charges, 70 kJ ≈ 1 full charge"
+    },
+    {
+      unit: "Human Heartbeat",
+      description: "Energy expended per heartbeat.",
+      conversion: 5000,
+      example: "1 kJ ≈ energy for 5,000 heartbeats, 0.0002 kJ per beat"
+    },
+    {
+      unit: "10-minute Walk",
+      description: "Energy expended walking at average pace.",
+      conversion: 0.0167,
+      example: "1 kJ ≈ 0.0167 walks, 60 kJ ≈ energy for 10-minute walk"
+    },
+    {
+      unit: "Light Bulb (60W for 1 minute)",
+      description: "Energy consumed by standard bulb.",
+      conversion: 0.0167,
+      example: "1 kJ ≈ 1 minute of 60W bulb operation, 3.6 kJ per hour"
+    },
+    {
+      unit: "Gram of Uranium-235",
+      description: "Nuclear fission energy potential.",
+      conversion: 8.2e-11,
+      example: "1 kJ ≈ 8.2×10^-11 grams U-235, 1.22×10^10 kJ per gram"
+    },
+    {
+      unit: "Supernova Energy",
+      description: "Total energy from stellar explosion.",
+      conversion: 1e-46,
+      example: "1 kJ ≈ 1×10^-46 supernovae, 1×10^46 kJ ≈ 1 supernova"
+    }
+],
+Km: [
+    {
+      unit: "Mile/hour",
+      description: "Common speed unit in imperial/US customary systems.",
+      conversion: 0.621371,
+      example: "100 km/h ≈ 62.1371 mph, 1 mph ≈ 1.60934 km/h"
+    },
+    {
+      unit: "Meter/second",
+      description: "SI unit of speed (m/s).",
+      conversion: 0.277778,
+      example: "36 km/h = 10 m/s, 1 m/s = 3.6 km/h"
+    },
+    {
+      unit: "Knot",
+      description: "Nautical miles per hour (international standard).",
+      conversion: 0.539957,
+      example: "100 km/h ≈ 53.9957 knots, 1 knot ≈ 1.852 km/h"
+    },
+    {
+      unit: "Foot/second",
+      description: "Imperial unit for velocity measurements.",
+      conversion: 0.911344,
+      example: "60 km/h ≈ 54.6807 ft/s, 1 ft/s ≈ 1.09728 km/h"
+    },
+    {
+      unit: "Mach (20°C, 1 Atm)",
+      description: "Ratio to speed of sound in standard atmospheric conditions.",
+      conversion: 0.000808433,
+      example: "1,234 km/h ≈ Mach 1, 1 Mach ≈ 1,236 km/h"
+    },
+    {
+      unit: "Velocity Of Light In Vacuum",
+      description: "Fundamental physical constant (c).",
+      conversion: 9.26567e-10,
+      example: "1,079,252,848.8 km/h = 1c, 1 km/h ≈ 9.26567×10^-10c"
+    },
+    {
+      unit: "Cosmic Velocity - First",
+      description: "Minimum orbital velocity around Earth.",
+      conversion: 3.51614e-5,
+      example: "28,440 km/h ≈ First Cosmic Velocity, 1 km/h ≈ 3.516×10^-5 CV1"
+    },
+    {
+      unit: "Earth's Velocity",
+      description: "Average orbital speed of Earth around the Sun.",
+      conversion: 9.33236e-6,
+      example: "107,000 km/h ≈ Earth's orbital speed, 1 km/h ≈ 9.332×10^-6 Earth velocities"
+    },
+    {
+      unit: "Velocity Of Sound In Sea Water (20°C, 10 Meter Deep)",
+      description: "Speed of sound in typical ocean conditions.",
+      conversion: 0.000182508,
+      example: "5,480 km/h ≈ speed of sound in seawater, 1 km/h ≈ 0.000183 sea sound speeds"
+    },
+    {
+      unit: "Mile/minute",
+      description: "Imperial unit for high-speed measurements.",
+      conversion: 0.0103562,
+      example: "96.5606 km/h = 1 mi/min, 1 km/h ≈ 0.01036 mi/min"
+    },
+    {
+      unit: "Centimeter/second",
+      description: "CGS unit of speed.",
+      conversion: 27.7778,
+      example: "1 km/h ≈ 27.7778 cm/s, 1 cm/s ≈ 0.036 km/h"
+    },
+    {
+      unit: "Yard/minute",
+      description: "Imperial unit for moderate speeds.",
+      conversion: 18.2269,
+      example: "3.29184 km/h = 60 yd/min, 1 km/h ≈ 18.2269 yd/min"
+    },
+    {
+      unit: "Kilometer/minute",
+      description: "Metric unit for very high speeds.",
+      conversion: 0.0166667,
+      example: "60 km/h = 1 km/min, 1 km/h ≈ 0.01667 km/min"
+    },
+    {
+      unit: "Millimeter/hour",
+      description: "Extremely slow speed measurement.",
+      conversion: 1000000,
+      example: "0.001 km/h = 1,000 mm/h, 1 km/h = 1,000,000 mm/h"
+    },
+    {
+      unit: "Foot/hour",
+      description: "Specialized slow speed unit.",
+      conversion: 3280.84,
+      example: "0.0003048 km/h = 1 ft/h, 1 km/h ≈ 3,280.84 ft/h"
+    },
+    {
+      unit: "Knot (UK)",
+      description: "UK nautical mile per hour (slightly different from international knot).",
+      conversion: 0.539612,
+      example: "100 km/h ≈ 53.9612 UK knots, 1 UK knot ≈ 1.85318 km/h"
+    },
+    {
+      unit: "Cosmic Velocity - Second",
+      description: "Escape velocity from Earth's gravitational pull.",
+      conversion: 2.48016e-5,
+      example: "40,320 km/h ≈ Second Cosmic Velocity, 1 km/h ≈ 2.480×10^-5 CV2"
+    },
+    {
+      unit: "Velocity Of Sound In Pure Water",
+      description: "Speed of sound in distilled water at 25°C.",
+      conversion: 0.000187346,
+      example: "5,400 km/h ≈ speed of sound in pure water, 1 km/h ≈ 0.000187 water sound speeds"
+    },
+    {
+      unit: "Mach (SI Standard)",
+      description: "Mach number based on SI-defined speed of sound.",
+      conversion: 0.000941471,
+      example: "1,062 km/h ≈ Mach 1 (SI), 1 km/h ≈ 0.000941 SI Mach"
+    },
+    {
+      unit: "Cosmic Velocity - Third",
+      description: "Escape velocity from the solar system.",
+      conversion: 1.48792e-5,
+      example: "67,200 km/h ≈ Third Cosmic Velocity, 1 km/h ≈ 1.488×10^-5 CV3"
+    },
+    {
+      unit: "Mile/second",
+      description: "Extremely high-speed measurement.",
+      conversion: 0.000172603,
+      example: "5,793.64 km/h = 1 mi/s, 1 km/h ≈ 0.000173 mi/s"
+    },
+    {
+      unit: "Kilometer/second",
+      description: "Astronomical speed measurements.",
+      conversion: 0.000277778,
+      example: "3,600 km/h = 1 km/s, 1 km/h ≈ 0.000278 km/s"
+    },
+    {
+      unit: "Break",
+      description: "Extremely small unit (demonstration purposes only).",
+      conversion: 1e15,
+      example: "1 km/h = 1×10^15 break units, 1 break = 1×10^-15 km/h"
+    }
+],
+Kw: [
+    {
+      unit: "Watt",
+      description: "SI unit of power (1 kW = 1,000 W).",
+      conversion: 1000,
+      example: "1 kW = 1,000 W, 0.001 kW = 1 W"
+    },
+    {
+      unit: "Horsepower (metric)",
+      description: "Common mechanical power measurement.",
+      conversion: 1.35962,
+      example: "1 kW ≈ 1.35962 hp, 0.735499 kW = 1 hp"
+    },
+    {
+      unit: "Btu (IT)/hour",
+      description: "British thermal unit per hour.",
+      conversion: 3412.14,
+      example: "1 kW ≈ 3,412.14 BTU/h, 0.000293071 kW = 1 BTU/h"
+    },
+    {
+      unit: "Ton (refrigeration)",
+      description: "Cooling capacity unit.",
+      conversion: 0.284345,
+      example: "1 kW ≈ 0.284345 refrigeration tons, 3.51685 kW = 1 ton"
+    },
+    {
+      unit: "Foot Pound-force/second",
+      description: "Mechanical power unit.",
+      conversion: 737.562,
+      example: "1 kW ≈ 737.562 ft·lb/s, 0.00135582 kW = 1 ft·lb/s"
+    },
+    {
+      unit: "Kilocalorie (IT)/hour",
+      description: "Common thermal power unit.",
+      conversion: 859.845,
+      example: "1 kW ≈ 859.845 kcal/h, 0.001163 kW = 1 kcal/h"
+    },
+    {
+      unit: "Calorie (IT)/second",
+      description: "Small thermal power measurement.",
+      conversion: 238.846,
+      example: "1 kW ≈ 238.846 cal/s, 0.0041868 kW = 1 cal/s"
+    },
+    {
+      unit: "Volt Ampere",
+      description: "Electrical apparent power (equal to watts for DC).",
+      conversion: 1000,
+      example: "1 kW = 1,000 VA (DC), 1 VA = 0.001 kW"
+    },
+    {
+      unit: "Newton Meter/second",
+      description: "Mechanical power equivalent to watts.",
+      conversion: 1000,
+      example: "1 kW = 1,000 N·m/s, 1 N·m/s = 0.001 kW"
+    },
+    {
+      unit: "Joule/second",
+      description: "Direct equivalent to watts.",
+      conversion: 1000,
+      example: "1 kW = 1,000 J/s, 1 J/s = 0.001 kW"
+    },
+    {
+      unit: "Erg/second",
+      description: "CGS unit of power (1 erg/s = 10^-7 W).",
+      conversion: 1e10,
+      example: "1 kW = 10^10 erg/s, 1 erg/s = 10^-10 kW"
+    },
+    {
+      unit: "Megawatt",
+      description: "Large power unit (1 MW = 1,000 kW).",
+      conversion: 0.001,
+      example: "1,000 kW = 1 MW, 1 kW = 0.001 MW"
+    },
+    {
+      unit: "Gigawatt",
+      description: "Very large power unit (1 GW = 1,000,000 kW).",
+      conversion: 1e-6,
+      example: "1,000,000 kW = 1 GW, 1 kW = 0.000001 GW"
+    },
+    {
+      unit: "Milliwatt",
+      description: "Small power measurement (1 mW = 0.001 W).",
+      conversion: 1e6,
+      example: "1 kW = 1,000,000 mW, 1 mW = 0.000001 kW"
+    },
+    {
+      unit: "Horsepower (electric)",
+      description: "Electrical horsepower (slightly different from metric).",
+      conversion: 1.34048,
+      example: "1 kW ≈ 1.34048 hp(electric), 0.746043 kW = 1 hp(electric)"
+    },
+    {
+      unit: "Pferdestarke (ps)",
+      description: "German name for metric horsepower.",
+      conversion: 1.35962,
+      example: "1 kW ≈ 1.35962 ps, 0.735499 kW = 1 ps"
+    },
+    {
+      unit: "Btu (th)/hour",
+      description: "Thermochemical BTU per hour.",
+      conversion: 3414.42,
+      example: "1 kW ≈ 3,414.42 BTU(th)/h, 0.000292875 kW = 1 BTU(th)/h"
+    },
+    {
+      unit: "Kilojoule/hour",
+      description: "Energy rate measurement.",
+      conversion: 3600,
+      example: "1 kW = 3,600 kJ/h, 1 kJ/h ≈ 0.000277778 kW"
+    },
+    {
+      unit: "Kilocalorie (th)/second",
+      description: "Thermochemical thermal power.",
+      conversion: 0.239006,
+      example: "1 kW ≈ 0.239006 kcal(th)/s, 4.184 kW = 1 kcal(th)/s"
+    },
+    {
+      unit: "Foot Pound-force/minute",
+      description: "Rotational mechanical power.",
+      conversion: 44253.7,
+      example: "1 kW ≈ 44,253.7 ft·lb/min, 1 ft·lb/min ≈ 0.000022597 kW"
+    },
+    {
+      unit: "MBH",
+      description: "Thousands of BTU per hour.",
+      conversion: 3.41214,
+      example: "1 kW ≈ 3.41214 MBH, 0.293071 kW = 1 MBH"
+    },
+    {
+      unit: "Horsepower (water)",
+      description: "Water horsepower (slightly different value).",
+      conversion: 1.34041,
+      example: "1 kW ≈ 1.34041 hp(water), 0.746116 kW = 1 hp(water)"
+    },
+    {
+      unit: "Dekawatt",
+      description: "10 watts.",
+      conversion: 100,
+      example: "1 kW = 100 daW, 1 daW = 0.01 kW"
+    },
+    {
+      unit: "Calorie (th)/minute",
+      description: "Small thermal power measurement.",
+      conversion: 14.3403,
+      example: "1 kW ≈ 14,340.3 cal(th)/min, 1 cal(th)/min ≈ 0.0000697333 kW"
+    },
+    {
+      unit: "Kilojoule/minute",
+      description: "Energy rate measurement.",
+      conversion: 60,
+      example: "1 kW = 60 kJ/min, 1 kJ/min ≈ 0.0166667 kW"
+    },
+    {
+      unit: "Horsepower (boiler)",
+      description: "Boiler capacity measurement.",
+      conversion: 0.101942,
+      example: "1 kW ≈ 0.101942 hp(boiler), 9.8095 kW = 1 hp(boiler)"
+    },
+    {
+      unit: "Pound-foot/second",
+      description: "Alternative mechanical power unit.",
+      conversion: 737.562,
+      example: "1 kW ≈ 737.562 lb·ft/s, 1 lb·ft/s ≈ 0.00135582 kW"
+    },
+    {
+      unit: "Joule/minute",
+      description: "Small energy rate measurement.",
+      conversion: 60000,
+      example: "1 kW = 60,000 J/min, 1 J/min ≈ 0.0000166667 kW"
+    },
+    {
+      unit: "Nanowatt",
+      description: "Extremely small power measurement.",
+      conversion: 1e12,
+      example: "1 kW = 10^12 nW, 1 nW = 10^-12 kW"
+    },
+    {
+      unit: "Terawatt",
+      description: "Extremely large power unit.",
+      conversion: 1e-9,
+      example: "1,000,000,000 kW = 1 TW, 1 kW = 0.000000001 TW"
+    }
+],
+Liters: [
+    {
+      unit: "Cubic Meter (m³)",
+      description: "The SI unit of volume, equal to 1,000 liters.",
+      conversion: 0.001,
+      example: "1 liter = 0.001 m³, 1,000 liters = 1 m³"
+    },
+    {
+      unit: "Milliliter (mL)",
+      description: "Metric unit equal to 1/1,000 of a liter.",
+      conversion: 1000,
+      example: "1 liter = 1,000 mL, 0.001 liters = 1 mL"
+    },
+    {
+      unit: "Cubic Centimeter (cc)",
+      description: "Equal to 1 mL, commonly used in medicine and automotive.",
+      conversion: 1000,
+      example: "1 liter = 1,000 cc, 0.001 liters = 1 cc"
+    },
+    {
+      unit: "Gallon (US liquid)",
+      description: "Standard US liquid volume unit.",
+      conversion: 0.264172052,
+      example: "1 liter ≈ 0.264 gallons, 3.78541 liters = 1 gallon"
+    },
+    {
+      unit: "Quart (US liquid)",
+      description: "US customary unit equal to 1/4 gallon.",
+      conversion: 1.05668821,
+      example: "1 liter ≈ 1.05669 quarts, 0.946353 liters = 1 quart"
+    },
+    {
+      unit: "Pint (US liquid)",
+      description: "US customary unit equal to 1/8 gallon.",
+      conversion: 2.11337642,
+      example: "1 liter ≈ 2.11338 pints, 0.473176 liters = 1 pint"
+    },
+    {
+      unit: "Fluid Ounce (US fl oz)",
+      description: "Small US liquid volume unit equal to 1/128 gallon.",
+      conversion: 33.8140227,
+      example: "1 liter ≈ 33.814 fl oz, 0.0295735 liters = 1 fl oz"
+    },
+    {
+      unit: "Cubic Inch (in³)",
+      description: "Imperial unit of volume commonly used in engineering.",
+      conversion: 61.0237441,
+      example: "1 liter ≈ 61.0237 in³, 0.0163871 liters = 1 in³"
+    },
+    {
+      unit: "Cubic Foot (ft³)",
+      description: "Imperial unit of volume for larger measurements.",
+      conversion: 0.0353146667,
+      example: "1 liter ≈ 0.0353147 ft³, 28.3168 liters = 1 ft³"
+    },
+    {
+      unit: "Teaspoon (US tsp)",
+      description: "Small cooking measurement equal to 1/6 fl oz.",
+      conversion: 202.884136,
+      example: "1 liter ≈ 202.884 tsp, 0.00492892 liters = 1 tsp"
+    },
+    {
+      unit: "Tablespoon (US tbsp)",
+      description: "Common cooking measurement equal to 3 tsp.",
+      conversion: 67.6280454,
+      example: "1 liter ≈ 67.628 tbsp, 0.0147868 liters = 1 tbsp"
+    },
+    {
+      unit: "Cup (US)",
+      description: "Common cooking measurement equal to 16 tbsp.",
+      conversion: 4.22675284,
+      example: "1 liter ≈ 4.22675 cups, 0.236588 liters = 1 cup"
+    },
+    {
+      unit: "Barrel (oil)",
+      description: "Standard volume for crude oil and petroleum products.",
+      conversion: 0.00628981077,
+      example: "1 liter ≈ 0.00628981 barrels, 158.987 liters = 1 barrel"
+    },
+    {
+      unit: "Gallon (UK imperial)",
+      description: "British imperial gallon, about 20% larger than US gallon.",
+      conversion: 0.219969157,
+      example: "1 liter ≈ 0.219969 UK gallons, 4.54609 liters = 1 UK gallon"
+    },
+    {
+      unit: "Fluid Ounce (UK fl oz)",
+      description: "Imperial fluid ounce, slightly smaller than US fl oz.",
+      conversion: 35.1950797,
+      example: "1 liter ≈ 35.1951 UK fl oz, 0.0284131 liters = 1 UK fl oz"
+    },
+    {
+      unit: "Hogshead",
+      description: "Traditional unit for alcoholic beverages and tobacco.",
+      conversion: 0.0042459146,
+      example: "1 liter ≈ 0.00424591 hogsheads, 235.48 liters = 1 hogshead"
+    },
+    {
+      unit: "Cord",
+      description: "Unit for measuring firewood volume.",
+      conversion: 0.0002758958,
+      example: "1 liter ≈ 0.000275896 cords, 3,624.56 liters = 1 cord"
+    },
+    {
+      unit: "Engine Displacement (cc)",
+      description: "Cubic centimeters, used for engine cylinder volumes.",
+      conversion: 1000,
+      example: "1 liter = 1,000 cc, 2.0 liters = 2,000 cc engine"
+    },
+    {
+      unit: "Shot Glass (1.5 fl oz)",
+      description: "Standard volume for alcoholic shots.",
+      conversion: 22.5426818,
+      example: "1 liter ≈ 22.5427 shots, 0.0443603 liters = 1 shot"
+    },
+    {
+      unit: "Soda Can (12 fl oz)",
+      description: "Common reference volume for beverages.",
+      conversion: 2.81783521,
+      example: "1 liter ≈ 2.81784 cans, 0.354882 liters = 1 can"
+    },
+    {
+      unit: "Baseball (regulation size)",
+      description: "Approximate volume of a baseball (≈0.213 liter).",
+      conversion: 4.69219,
+      example: "1 liter ≈ 4.692 baseballs, 0.213 liters ≈ 1 baseball"
+    },
+    {
+      unit: "Golf Ball (regulation size)",
+      description: "Approximate volume of a golf ball (≈0.0407 liter).",
+      conversion: 24.568,
+      example: "1 liter ≈ 24.568 golf balls, 0.0407 liters ≈ 1 golf ball"
+    },
+    {
+      unit: "Bath (Biblical)",
+      description: "Ancient Hebrew liquid measure.",
+      conversion: 0.0454545455,
+      example: "1 liter ≈ 0.0454545 bath, 22 liters = 1 bath"
+    },
+    {
+      unit: "Earth's Volume",
+      description: "Theoretical volume of planet Earth (approximate).",
+      conversion: 9.23e-22,
+      example: "1 liter ≈ 9.23e-22 Earth volumes, 1.083e21 liters ≈ 1 Earth volume"
+    }
+],
+MB: [
+    {
+      unit: "Bit",
+      description: "The smallest unit of digital information.",
+      conversion: 8388608,
+      example: "1 MB = 8,388,608 bits, 0.000000119209 MB = 1 bit"
+    },
+    {
+      unit: "Nibble",
+      description: "4 bits, or half a byte.",
+      conversion: 2097152,
+      example: "1 MB = 2,097,152 nibbles, 0.000000476837 MB = 1 nibble"
+    },
+    {
+      unit: "Byte",
+      description: "8 bits, fundamental unit for most computer systems.",
+      conversion: 1048576,
+      example: "1 MB = 1,048,576 bytes, 0.000000953674 MB = 1 byte"
+    },
+    {
+      unit: "Kilobyte (KB)",
+      description: "1,024 bytes, common for small files.",
+      conversion: 1024,
+      example: "1 MB = 1,024 KB, 0.000976562 MB = 1 KB"
+    },
+    {
+      unit: "Gigabyte (GB)",
+      description: "1,024 MB, standard for hard drive capacities.",
+      conversion: 0.000976562,
+      example: "1 MB ≈ 0.000977 GB, 1,024 MB = 1 GB"
+    },
+    {
+      unit: "Terabyte (TB)",
+      description: "1,024 GB, used for large storage systems.",
+      conversion: 9.53674e-7,
+      example: "1 MB ≈ 0.000000954 TB, 1,048,576 MB = 1 TB"
+    },
+    {
+      unit: "Petabyte (PB)",
+      description: "1,024 TB, for massive data storage.",
+      conversion: 9.31323e-10,
+      example: "1 MB ≈ 0.000000000931 PB, 1,073,741,824 MB = 1 PB"
+    },
+    {
+      unit: "Gigabit (Gb)",
+      description: "1 billion bits, used in networking.",
+      conversion: 0.0078125,
+      example: "1 MB ≈ 0.0078125 Gb, 128 MB = 1 Gb"
+    },
+    {
+      unit: "Terabit (Tb)",
+      description: "1 trillion bits, for high-capacity networks.",
+      conversion: 7.62939e-6,
+      example: "1 MB ≈ 0.000007629 Tb, 131,072 MB = 1 Tb"
+    },
+    {
+      unit: "Word",
+      description: "Typically 2 bytes (16 bits) in many systems.",
+      conversion: 524288,
+      example: "1 MB = 524,288 words, 0.00000190735 MB = 1 word"
+    },
+    {
+      unit: "Floppy Disk (3.5\", HD)",
+      description: "Classic 1.44 MB storage medium.",
+      conversion: 0.694444,
+      example: "1 MB ≈ 0.694 floppies, 1.44 MB = 1 floppy"
+    },
+    {
+      unit: "Floppy Disk (3.5\", ED)",
+      description: "Extended density 2.88 MB floppy.",
+      conversion: 0.347222,
+      example: "1 MB ≈ 0.347 ED floppies, 2.88 MB = 1 ED floppy"
+    },
+    {
+      unit: "CD (74 Minute)",
+      description: "Standard 650-700 MB CD-ROM capacity.",
+      conversion: 0.00141878,
+      example: "1 MB ≈ 0.00142 CDs, 700 MB ≈ 1 CD"
+    },
+    {
+      unit: "DVD (Single Layer)",
+      description: "4.7 GB storage capacity.",
+      conversion: 0.000212314,
+      example: "1 MB ≈ 0.000212 DVDs, 4,700 MB ≈ 1 DVD"
+    },
+    {
+      unit: "DVD (Dual Layer)",
+      description: "8.5 GB storage capacity.",
+      conversion: 0.000116959,
+      example: "1 MB ≈ 0.000117 dual-layer DVDs, 8,500 MB ≈ 1 dual-layer DVD"
+    },
+    {
+      unit: "Blu-ray (Single Layer)",
+      description: "25 GB storage capacity.",
+      conversion: 0.00004,
+      example: "1 MB ≈ 0.00004 Blu-rays, 25,000 MB = 1 Blu-ray"
+    },
+    {
+      unit: "Blu-ray (Dual Layer)",
+      description: "50 GB storage capacity.",
+      conversion: 0.00002,
+      example: "1 MB ≈ 0.00002 dual-layer Blu-rays, 50,000 MB = 1 dual-layer Blu-ray"
+    },
+    {
+      unit: "Zip 100 Disk",
+      description: "100 MB removable storage (Iomega).",
+      conversion: 0.01,
+      example: "1 MB = 0.01 Zip disks, 100 MB = 1 Zip 100 disk"
+    },
+    {
+      unit: "Jaz 1GB Disk",
+      description: "1 GB removable storage (Iomega).",
+      conversion: 0.001024,
+      example: "1 MB ≈ 0.00102 Jaz disks, 1,024 MB = 1 Jaz 1GB disk"
+    },
+    {
+      unit: "iPhone Photo (12MP)",
+      description: "Average 3.5 MB per photo.",
+      conversion: 0.285714,
+      example: "1 MB ≈ 0.286 photos, 3.5 MB = 1 iPhone photo"
+    },
+    {
+      unit: "MP3 Song (4 min)",
+      description: "Average 4 MB per song at 128 kbps.",
+      conversion: 0.25,
+      example: "1 MB = 0.25 songs, 4 MB = 1 MP3 song"
+    },
+    {
+      unit: "Email with Attachment",
+      description: "Average 0.3 MB for typical emails.",
+      conversion: 3.33333,
+      example: "1 MB ≈ 3.33 emails, 0.3 MB = 1 typical email"
+    },
+    {
+      unit: "Text Page",
+      description: "Approximately 0.004 MB per page.",
+      conversion: 250,
+      example: "1 MB ≈ 250 text pages, 0.004 MB = 1 text page"
+    },
+    {
+      unit: "Standard Web Page",
+      description: "Average 2 MB for modern web pages.",
+      conversion: 0.5,
+      example: "1 MB = 0.5 web pages, 2 MB = 1 standard web page"
+    }
+],
+MetersPerSecond: [
+    {
+      unit: "Kilometer/hour (km/h)",
+      description: "Common speed unit used in most countries for road signs and vehicle speedometers.",
+      conversion: 3.6,
+      example: "1 m/s = 3.6 km/h, 100 km/h ≈ 27.778 m/s"
+    },
+    {
+      unit: "Mile/hour (mph)",
+      description: "Standard speed unit in the United States and United Kingdom.",
+      conversion: 2.23694,
+      example: "1 m/s ≈ 2.237 mph, 60 mph ≈ 26.822 m/s"
+    },
+    {
+      unit: "Foot/second (ft/s)",
+      description: "Common in engineering and physics in the US.",
+      conversion: 3.28084,
+      example: "1 m/s ≈ 3.281 ft/s, 10 ft/s ≈ 3.048 m/s"
+    },
+    {
+      unit: "Knot (kn)",
+      description: "Nautical mile per hour, used in maritime and aviation navigation.",
+      conversion: 1.94384,
+      example: "1 m/s ≈ 1.944 knots, 15 knots ≈ 7.717 m/s"
+    },
+    {
+      unit: "Mach (at sea level)",
+      description: "Ratio of speed to the speed of sound in air (≈343 m/s at sea level).",
+      conversion: 0.00291545,
+      example: "1 m/s ≈ Mach 0.002915, Mach 1 ≈ 343 m/s"
+    },
+    {
+      unit: "Speed of Light (c)",
+      description: "Fundamental physical constant (299,792,458 m/s).",
+      conversion: 3.33564e-9,
+      example: "1 m/s ≈ 3.336×10⁻⁹ c, 1 c ≈ 299,792,458 m/s"
+    },
+    {
+      unit: "Inch/second (in/s)",
+      description: "Used in some engineering applications.",
+      conversion: 39.3701,
+      example: "1 m/s ≈ 39.37 in/s, 10 in/s ≈ 0.254 m/s"
+    },
+    {
+      unit: "Centimeter/second (cm/s)",
+      description: "Used for very slow speeds in scientific contexts.",
+      conversion: 100,
+      example: "1 m/s = 100 cm/s, 50 cm/s = 0.5 m/s"
+    },
+    {
+      unit: "Kilometer/second (km/s)",
+      description: "Used for astronomical and high-speed measurements.",
+      conversion: 0.001,
+      example: "1 m/s = 0.001 km/s, 7 km/s = 7,000 m/s"
+    },
+    {
+      unit: "Earth's Orbital Speed",
+      description: "Average speed of Earth around the Sun (≈29,785 m/s).",
+      conversion: 0.00003357,
+      example: "1 m/s ≈ 0.0000336 × Earth's orbital speed"
+    },
+    {
+      unit: "Cosmic Velocity - First",
+      description: "Minimum speed needed to escape Earth's gravity (7,910 m/s).",
+      conversion: 0.0001264,
+      example: "1 m/s ≈ 0.000126 × cosmic velocity (first)"
+    },
+    {
+      unit: "Velocity of Sound in Water",
+      description: "Speed of sound in pure water (≈1,480 m/s).",
+      conversion: 0.0006757,
+      example: "1 m/s ≈ 0.000676 × speed of sound in water"
+    },
+    {
+      unit: "Cheetah Speed",
+      description: "Maximum speed of a cheetah (≈29 m/s).",
+      conversion: 0.03448,
+      example: "1 m/s ≈ 0.0345 × cheetah's top speed"
+    },
+    {
+      unit: "Usain Bolt's Record (100m)",
+      description: "Average speed during 9.58s 100m dash (≈10.44 m/s).",
+      conversion: 0.0958,
+      example: "1 m/s ≈ 0.0958 × Bolt's record speed"
+    },
+    {
+      unit: "Walking Speed (human)",
+      description: "Average human walking speed (≈1.4 m/s).",
+      conversion: 0.7143,
+      example: "1 m/s ≈ 0.714 × average walking speed"
+    },
+    {
+      unit: "Snail Speed",
+      description: "Average speed of a garden snail (≈0.001 m/s).",
+      conversion: 1000,
+      example: "1 m/s ≈ 1,000 × snail speed"
+    },
+    {
+      unit: "Tornado Wind Speed (EF5)",
+      description: "Maximum wind speed in strongest tornadoes (≈142 m/s).",
+      conversion: 0.007042,
+      example: "1 m/s ≈ 0.00704 × EF5 tornado wind speed"
+    },
+    {
+      unit: "Jet Stream Speed",
+      description: "Average speed of high-altitude jet streams (≈50 m/s).",
+      conversion: 0.02,
+      example: "1 m/s ≈ 0.02 × jet stream speed"
+    },
+    {
+      unit: "Blood Flow Speed (aorta)",
+      description: "Peak speed of blood in human aorta (≈1.2 m/s).",
+      conversion: 0.8333,
+      example: "1 m/s ≈ 0.833 × peak aortic blood flow"
+    },
+    {
+      unit: "Typical CPU Electron Speed",
+      description: "Drift velocity of electrons in CPU (≈0.0001 m/s).",
+      conversion: 10000,
+      example: "1 m/s ≈ 10,000 × CPU electron drift speed"
+    }
+],
+Meters: [
+    {
+      unit: "Kilometer (km)",
+      description: "Metric unit equal to 1,000 meters, used for longer distances.",
+      conversion: 0.001,
+      example: "1 m = 0.001 km, 1 km = 1,000 m"
+    },
+    {
+      unit: "Centimeter (cm)",
+      description: "Common metric unit equal to 1/100 of a meter.",
+      conversion: 100,
+      example: "1 m = 100 cm, 1 cm = 0.01 m"
+    },
+    {
+      unit: "Millimeter (mm)",
+      description: "Small metric unit equal to 1/1,000 of a meter.",
+      conversion: 1000,
+      example: "1 m = 1,000 mm, 1 mm = 0.001 m"
+    },
+    {
+      unit: "Mile (mi)",
+      description: "Imperial unit commonly used in the United States and UK.",
+      conversion: 0.000621371,
+      example: "1 m ≈ 0.000621 mi, 1 mi ≈ 1,609.34 m"
+    },
+    {
+      unit: "Yard (yd)",
+      description: "Imperial unit equal to 3 feet.",
+      conversion: 1.09361,
+      example: "1 m ≈ 1.094 yd, 1 yd ≈ 0.9144 m"
+    },
+    {
+      unit: "Foot (ft)",
+      description: "Imperial unit commonly used for human height and short distances.",
+      conversion: 3.28084,
+      example: "1 m ≈ 3.281 ft, 1 ft ≈ 0.3048 m"
+    },
+    {
+      unit: "Inch (in)",
+      description: "Small imperial unit equal to 1/12 of a foot.",
+      conversion: 39.3701,
+      example: "1 m ≈ 39.37 in, 1 in = 0.0254 m"
+    },
+    {
+      unit: "Light-year (ly)",
+      description: "Distance light travels in one year in vacuum.",
+      conversion: 1.057e-16,
+      example: "1 m ≈ 1.057×10⁻¹⁶ ly, 1 ly ≈ 9.461×10¹⁵ m"
+    },
+    {
+      unit: "Astronomical Unit (AU)",
+      description: "Average distance from Earth to Sun.",
+      conversion: 6.68459e-12,
+      example: "1 m ≈ 6.685×10⁻¹² AU, 1 AU ≈ 1.496×10¹¹ m"
+    },
+    {
+      unit: "Nautical Mile (nmi)",
+      description: "Used in maritime and aviation navigation.",
+      conversion: 0.000539957,
+      example: "1 m ≈ 0.000540 nmi, 1 nmi = 1,852 m"
+    },
+    {
+      unit: "Fathom (ftm)",
+      description: "Nautical unit for measuring water depth.",
+      conversion: 0.546807,
+      example: "1 m ≈ 0.547 fathoms, 1 fathom = 1.8288 m"
+    },
+    {
+      unit: "Football Field (US)",
+      description: "American football field including end zones (91.44 m).",
+      conversion: 0.0109361,
+      example: "1 m ≈ 0.0109 football fields, 1 field = 91.44 m"
+    },
+    {
+      unit: "Olympic Swimming Pool (50m)",
+      description: "Standard Olympic-sized pool length.",
+      conversion: 0.02,
+      example: "1 m = 0.02 pool lengths, 50 m = 1 pool length"
+    },
+    {
+      unit: "Basketball Court (FIBA)",
+      description: "FIBA standard court length (28 m).",
+      conversion: 0.0357143,
+      example: "1 m ≈ 0.0357 courts, 28 m = 1 court length"
+    },
+    {
+      unit: "Human Height (average)",
+      description: "Approximate average human height (1.7 m).",
+      conversion: 0.588235,
+      example: "1 m ≈ 0.588 human heights, 1.7 m ≈ average height"
+    },
+    {
+      unit: "Giraffe Height (adult male)",
+      description: "Average height of adult male giraffe (5.5 m).",
+      conversion: 0.181818,
+      example: "1 m ≈ 0.182 giraffes, 5.5 m ≈ 1 giraffe height"
+    },
+    {
+      unit: "Blue Whale Length",
+      description: "Average length of adult blue whale (30 m).",
+      conversion: 0.0333333,
+      example: "1 m ≈ 0.0333 whale lengths, 30 m ≈ 1 blue whale"
+    },
+    {
+      unit: "Eiffel Tower Height",
+      description: "Height to tip (330 m including antenna).",
+      conversion: 0.0030303,
+      example: "1 m ≈ 0.00303 Eiffel Towers, 330 m = 1 Eiffel Tower"
+    },
+    {
+      unit: "Empire State Building Height",
+      description: "Height to tip (443 m including antenna).",
+      conversion: 0.00225734,
+      example: "1 m ≈ 0.00226 ESB heights, 443 m = 1 ESB height"
+    },
+    {
+      unit: "Earth's Circumference",
+      description: "Circumference at equator (40,075,017 m).",
+      conversion: 2.49532e-8,
+      example: "1 m ≈ 2.495×10⁻⁸ Earth circumferences"
+    },
+    {
+      unit: "Planck Length",
+      description: "Theoretical smallest measurable length.",
+      conversion: 6.18793e34,
+      example: "1 m ≈ 6.188×10³⁴ Planck lengths"
+    },
+    {
+      unit: "DNA Helix Width",
+      description: "Approximate diameter of DNA double helix (2 nm).",
+      conversion: 5e8,
+      example: "1 m = 500 million DNA widths"
+    },
+    {
+      unit: "Grain of Sand (medium)",
+      description: "Average medium sand grain diameter (0.5 mm).",
+      conversion: 2000,
+      example: "1 m ≈ 2,000 sand grains lined up"
+    },
+    {
+      unit: "US Dollar Bill Length",
+      description: "Length of US paper currency (0.155955 m).",
+      conversion: 6.4121,
+      example: "1 m ≈ 6.41 dollar bills, 1 bill ≈ 0.156 m"
+    },
+    {
+      unit: "iPhone 14 Length",
+      description: "Length of iPhone 14 (0.1467 m).",
+      conversion: 6.81663,
+      example: "1 m ≈ 6.82 iPhones, 1 iPhone ≈ 0.1467 m"
+    },
+    {
+      unit: "Pencil Length",
+      description: "Standard unsharpened pencil (0.19 m).",
+      conversion: 5.26316,
+      example: "1 m ≈ 5.26 pencils, 1 pencil ≈ 0.19 m"
+    },
+    {
+      unit: "Football (Soccer) Goal Width",
+      description: "Standard goal width (7.32 m).",
+      conversion: 0.136612,
+      example: "1 m ≈ 0.137 goal widths, 7.32 m = 1 goal width"
+    },
+    {
+      unit: "Tennis Court Length",
+      description: "Singles court length (23.77 m).",
+      conversion: 0.04207,
+      example: "1 m ≈ 0.042 court lengths, 23.77 m = 1 court"
+    },
+    {
+      unit: "Average Step Length",
+      description: "Average adult human step (0.79 m).",
+      conversion: 1.26582,
+      example: "1 m ≈ 1.27 steps, 1 step ≈ 0.79 m"
+    }
+],
+Milligrams: [
+    {
+      unit: "Gram (g)",
+      description: "Base metric unit of mass equal to one thousandth of a kilogram.",
+      conversion: 0.001,
+      example: "1 milligram = 0.001 grams, 1,000 milligrams = 1 gram"
+    },
+    {
+      unit: "Kilogram (kg)",
+      description: "SI base unit of mass, equal to 1,000 grams.",
+      conversion: 0.000001,
+      example: "1 milligram = 0.000001 kg, 1,000,000 milligrams = 1 kg"
+    },
+    {
+      unit: "Metric Ton (t)",
+      description: "Metric unit equal to 1,000 kilograms.",
+      conversion: 1e-9,
+      example: "1 milligram = 1e-9 metric tons, 1e9 milligrams = 1 metric ton"
+    },
+    {
+      unit: "Pound (lb)",
+      description: "Common imperial unit of mass.",
+      conversion: 0.00000220462,
+      example: "1 milligram ≈ 0.00000220462 lb, 453,592 milligrams = 1 lb"
+    },
+    {
+      unit: "Ounce (oz)",
+      description: "Imperial unit equal to 1/16 pound.",
+      conversion: 0.000035274,
+      example: "1 milligram ≈ 0.000035274 oz, 28,349.5 milligrams = 1 oz"
+    },
+    {
+      unit: "Carat (ct)",
+      description: "Unit used for gemstones and pearls.",
+      conversion: 0.005,
+      example: "1 milligram = 0.005 carats, 200 milligrams = 1 carat"
+    },
+    {
+      unit: "Grain (gr)",
+      description: "Traditional unit based on the weight of a grain of wheat.",
+      conversion: 0.0154324,
+      example: "1 milligram ≈ 0.0154324 grains, 64.7989 milligrams = 1 grain"
+    },
+    {
+      unit: "Microgram (μg)",
+      description: "Metric unit equal to one millionth of a gram.",
+      conversion: 1000,
+      example: "1 milligram = 1,000 micrograms, 0.001 milligrams = 1 microgram"
+    },
+    {
+      unit: "Nanogram (ng)",
+      description: "Metric unit equal to one billionth of a gram.",
+      conversion: 1000000,
+      example: "1 milligram = 1,000,000 nanograms, 0.000001 milligrams = 1 nanogram"
+    },
+    {
+      unit: "Atomic Mass Unit (u)",
+      description: "Unit used to express atomic and molecular weights.",
+      conversion: 6.02214076e+20,
+      example: "1 milligram ≈ 6.022e20 AMU, 1.66054e-24 milligrams = 1 AMU"
+    },
+    {
+      unit: "Pennyweight (dwt)",
+      description: "Unit used in measuring precious metals.",
+      conversion: 0.000643015,
+      example: "1 milligram ≈ 0.000643015 dwt, 1,555.17 milligrams = 1 dwt"
+    },
+    {
+      unit: "Troy Ounce (oz t)",
+      description: "Unit used for precious metals like gold and silver.",
+      conversion: 0.0000321507,
+      example: "1 milligram ≈ 0.0000321507 oz t, 31,103.5 milligrams = 1 oz t"
+    },
+    {
+      unit: "Slug",
+      description: "Imperial unit of mass in the gravitational system.",
+      conversion: 6.85218e-8,
+      example: "1 milligram ≈ 6.85218e-8 slugs, 14,593.9 grams = 1 slug"
+    },
+    {
+      unit: "Stone (st)",
+      description: "British unit of weight equal to 14 pounds.",
+      conversion: 1.57473e-7,
+      example: "1 milligram ≈ 1.57473e-7 stone, 6,350,293 milligrams = 1 stone"
+    },
+    {
+      unit: "US Ton (short ton)",
+      description: "US unit equal to 2,000 pounds.",
+      conversion: 1.10231e-9,
+      example: "1 milligram ≈ 1.10231e-9 short tons, 907,184,740 milligrams = 1 short ton"
+    },
+    {
+      unit: "UK Ton (long ton)",
+      description: "British unit equal to 2,240 pounds.",
+      conversion: 9.84207e-10,
+      example: "1 milligram ≈ 9.84207e-10 long tons, 1,016,046,908.8 milligrams = 1 long ton"
+    },
+    {
+      unit: "Dram (dr)",
+      description: "Unit equal to 1/16 ounce or 1/256 pound.",
+      conversion: 0.000564383,
+      example: "1 milligram ≈ 0.000564383 dr, 1,771.85 milligrams = 1 dr"
+    },
+    {
+      unit: "Scruple (s ap)",
+      description: "Apothecary unit equal to 20 grains.",
+      conversion: 0.000771618,
+      example: "1 milligram ≈ 0.000771618 scruples, 1,295.98 milligrams = 1 scruple"
+    },
+    {
+      unit: "Planck Mass",
+      description: "Natural unit of mass in quantum physics.",
+      conversion: 4.59e+31,
+      example: "1 milligram ≈ 4.59e31 Planck masses, 2.18e-32 milligrams = 1 Planck mass"
+    },
+    {
+      unit: "Earth Mass",
+      description: "Mass of planet Earth (approximate).",
+      conversion: 1.674e-28,
+      example: "1 milligram ≈ 1.674e-28 Earth masses, 5.972e27 grams = 1 Earth mass"
+    },
+    {
+      unit: "Solar Mass",
+      description: "Mass of the Sun (astronomical unit).",
+      conversion: 5.03e-34,
+      example: "1 milligram ≈ 5.03e-34 solar masses, 1.9885e33 grams = 1 solar mass"
+    },
+    {
+      unit: "Paper Clip",
+      description: "Approximate mass of a standard paper clip.",
+      conversion: 0.01,
+      example: "1 milligram = 0.01 paper clips, 100 milligrams ≈ 1 paper clip"
+    },
+    {
+      unit: "US Dollar Bill",
+      description: "Approximate mass of a US banknote.",
+      conversion: 0.001,
+      example: "1 milligram = 0.001 dollar bills, 1,000 milligrams ≈ 1 dollar bill"
+    },
+    {
+      unit: "Grain of Rice",
+      description: "Approximate mass of a single grain of rice.",
+      conversion: 0.02,
+      example: "1 milligram = 0.02 rice grains, 50 milligrams ≈ 1 grain of rice"
+    },
+    {
+      unit: "Snowflake",
+      description: "Approximate mass of a typical snowflake.",
+      conversion: 0.003,
+      example: "1 milligram ≈ 0.003 snowflakes, 333 milligrams ≈ 1 snowflake"
+    },
+    {
+      unit: "Human Hair",
+      description: "Approximate mass of one centimeter of human hair.",
+      conversion: 0.0005,
+      example: "1 milligram = 0.0005 hair cm, 2,000 milligrams ≈ 1 cm of hair"
+    }
+],
+Mph:[
+    {
+      unit: "Meter/second (m/s)",
+      description: "SI unit of speed, representing distance traveled in meters per second.",
+      conversion: 0.44704,
+      example: "1 mph ≈ 0.44704 m/s, 2.23694 mph = 1 m/s"
+    },
+    {
+      unit: "Kilometer/hour (km/h)",
+      description: "Common metric unit of speed, used in most countries for road signs.",
+      conversion: 1.60934,
+      example: "1 mph ≈ 1.60934 km/h, 0.621371 mph = 1 km/h"
+    },
+    {
+      unit: "Foot/second (ft/s)",
+      description: "Imperial unit of speed, commonly used in engineering.",
+      conversion: 1.46667,
+      example: "1 mph ≈ 1.46667 ft/s, 0.681818 mph = 1 ft/s"
+    },
+    {
+      unit: "Knot (kn)",
+      description: "Nautical unit of speed used in maritime and aviation contexts.",
+      conversion: 0.868976,
+      example: "1 mph ≈ 0.868976 knots, 1.15078 mph = 1 knot"
+    },
+    {
+      unit: "Mach (at sea level, 20°C)",
+      description: "Ratio of speed to the speed of sound in air.",
+      conversion: 0.00130105,
+      example: "1 mph ≈ 0.001301 Mach, 768.62 mph ≈ 1 Mach at sea level"
+    },
+    {
+      unit: "Speed of Light (c)",
+      description: "Fundamental physical constant representing the maximum speed in the universe.",
+      conversion: 1.49116e-9,
+      example: "1 mph ≈ 1.49116e-9 c, 670,616,629 mph = 1 c"
+    },
+    {
+      unit: "Cosmic Velocity - First",
+      description: "Astronomical speed unit based on Earth's orbital velocity.",
+      conversion: 5.65873e-5,
+      example: "1 mph ≈ 5.65873e-5 cosmic velocity, 17,672 mph ≈ 1 cosmic velocity (first)"
+    },
+    {
+      unit: "Earth's Velocity",
+      description: "Average speed of Earth's rotation at the equator.",
+      conversion: 1.50192e-5,
+      example: "1 mph ≈ 1.50192e-5 Earth's velocity, 66,582 mph ≈ 1 Earth's velocity"
+    },
+    {
+      unit: "Velocity of Sound in Water",
+      description: "Speed of sound in pure water at 20°C.",
+      conversion: 0.0003015,
+      example: "1 mph ≈ 0.0003015 sound speed in water, 3,317 mph ≈ sound speed in water"
+    },
+    {
+      unit: "Inch/second (in/s)",
+      description: "Small imperial unit of speed.",
+      conversion: 17.6,
+      example: "1 mph = 17.6 in/s, 0.0568182 mph = 1 in/s"
+    },
+    {
+      unit: "Mile/minute (mi/min)",
+      description: "Larger imperial unit of speed.",
+      conversion: 0.0166667,
+      example: "1 mph = 0.0166667 mi/min, 60 mph = 1 mi/min"
+    },
+    {
+      unit: "Mile/second (mi/s)",
+      description: "Extreme speed unit used in rocketry.",
+      conversion: 0.000277778,
+      example: "1 mph = 0.000277778 mi/s, 3,600 mph = 1 mi/s"
+    },
+    {
+      unit: "Yard/second (yd/s)",
+      description: "Imperial unit used in some sports measurements.",
+      conversion: 0.488889,
+      example: "1 mph ≈ 0.488889 yd/s, 2.04545 mph = 1 yd/s"
+    },
+    {
+      unit: "Furlong/fortnight",
+      description: "Humorous unit combining medieval distance with time.",
+      conversion: 2688,
+      example: "1 mph = 2,688 furlongs/fortnight, 0.000372024 mph = 1 furlong/fortnight"
+    },
+    {
+      unit: "Cheetah Speed",
+      description: "Approximate top speed of a cheetah (70-75 mph).",
+      conversion: 0.01333,
+      example: "1 mph ≈ 0.01333 cheetah speeds, 75 mph ≈ 1 cheetah speed"
+    },
+    {
+      unit: "Human Running Speed",
+      description: "Approximate world record sprint speed (≈27.8 mph).",
+      conversion: 0.03597,
+      example: "1 mph ≈ 0.03597 human record speeds, 27.8 mph ≈ 1 human record speed"
+    },
+    {
+      unit: "Commercial Airplane Speed",
+      description: "Typical cruising speed of a jet airliner (≈575 mph).",
+      conversion: 0.001739,
+      example: "1 mph ≈ 0.001739 airplane speeds, 575 mph ≈ 1 airplane speed"
+    },
+    {
+      unit: "Bullet Speed (9mm)",
+      description: "Approximate muzzle velocity of a 9mm handgun (≈1,200 mph).",
+      conversion: 0.000833,
+      example: "1 mph ≈ 0.000833 bullet speeds, 1,200 mph ≈ 1 bullet speed"
+    },
+    {
+      unit: "Earth's Rotation at Equator",
+      description: "Speed of Earth's surface at the equator (≈1,040 mph).",
+      conversion: 0.0009615,
+      example: "1 mph ≈ 0.0009615 Earth's equatorial rotation, 1,040 mph ≈ 1 Earth rotation speed"
+    },
+    {
+      unit: "International Space Station Speed",
+      description: "Orbital velocity of the ISS (≈17,500 mph).",
+      conversion: 0.00005714,
+      example: "1 mph ≈ 0.00005714 ISS speeds, 17,500 mph ≈ 1 ISS orbital speed"
+    },
+    {
+      unit: "Escape Velocity (Earth)",
+      description: "Speed needed to break free from Earth's gravity (≈25,000 mph).",
+      conversion: 0.00004,
+      example: "1 mph ≈ 0.00004 Earth escape velocities, 25,000 mph ≈ 1 escape velocity"
+    },
+    {
+      unit: "Solar System Speed Around Galaxy",
+      description: "Approximate speed of our solar system orbiting Milky Way center (≈514,000 mph).",
+      conversion: 0.000001945,
+      example: "1 mph ≈ 0.000001945 galactic orbit speeds, 514,000 mph ≈ 1 solar system orbital speed"
+    },
+    {
+      unit: "Light-minute per Hour",
+      description: "Ratio comparing speed to light travel distance.",
+      conversion: 8.94699e-8,
+      example: "1 mph ≈ 8.94699e-8 light-minutes/hour, 11,176,920 mph = 1 light-minute/hour"
+    },
+    {
+      unit: "Snail Speed",
+      description: "Approximate top speed of a garden snail (≈0.03 mph).",
+      conversion: 33.3333,
+      example: "1 mph ≈ 33.3333 snail speeds, 0.03 mph ≈ 1 snail speed"
+    },
+    {
+      unit: "Tortoise Speed",
+      description: "Approximate speed of a Galapagos tortoise (≈0.2 mph).",
+      conversion: 5,
+      example: "1 mph ≈ 5 tortoise speeds, 0.2 mph ≈ 1 tortoise speed"
+    }
+],
+Miles: [
+    {
+      unit: "Meter (m)",
+      description: "SI base unit of length, defined as the distance light travels in 1/299,792,458 seconds.",
+      conversion: 1609.34,
+      example: "1 mile = 1,609.34 meters, 0.000621371 miles = 1 meter"
+    },
+    {
+      unit: "Kilometer (km)",
+      description: "Metric unit equal to 1,000 meters, commonly used for road distances.",
+      conversion: 1.60934,
+      example: "1 mile ≈ 1.60934 km, 0.621371 miles = 1 km"
+    },
+    {
+      unit: "Yard (yd)",
+      description: "Imperial unit equal to 3 feet or 36 inches.",
+      conversion: 1760,
+      example: "1 mile = 1,760 yards, 0.000568182 miles = 1 yard"
+    },
+    {
+      unit: "Foot (ft)",
+      description: "Imperial unit equal to 12 inches, commonly used in aviation and elevation.",
+      conversion: 5280,
+      example: "1 mile = 5,280 feet, 0.000189394 miles = 1 foot"
+    },
+    {
+      unit: "Inch (in)",
+      description: "Small imperial unit, 1/12 of a foot.",
+      conversion: 63360,
+      example: "1 mile = 63,360 inches, 0.0000157828 miles = 1 inch"
+    },
+    {
+      unit: "Nautical Mile (international)",
+      description: "Unit used in maritime and aviation navigation, equal to 1 minute of latitude.",
+      conversion: 0.868976,
+      example: "1 mile ≈ 0.868976 nautical miles, 1.15078 miles = 1 nautical mile"
+    },
+    {
+      unit: "Light Year (ly)",
+      description: "Astronomical distance that light travels in one Julian year.",
+      conversion: 1.70108e-13,
+      example: "1 mile ≈ 1.70108e-13 light years, 5.8786e12 miles = 1 light year"
+    },
+    {
+      unit: "Astronomical Unit (AU)",
+      description: "Average distance from Earth to the Sun, used for solar system measurements.",
+      conversion: 1.07578e-8,
+      example: "1 mile ≈ 1.07578e-8 AU, 92,955,807 miles = 1 AU"
+    },
+    {
+      unit: "Furlong",
+      description: "Traditional unit equal to 1/8 mile, used in horse racing.",
+      conversion: 8,
+      example: "1 mile = 8 furlongs, 0.125 miles = 1 furlong"
+    },
+    {
+      unit: "Fathom (ftm)",
+      description: "Nautical unit of depth equal to 6 feet.",
+      conversion: 880,
+      example: "1 mile = 880 fathoms, 0.00113636 miles = 1 fathom"
+    },
+    {
+      unit: "Chain (ch)",
+      description: "Surveying unit equal to 66 feet or 1/80 mile.",
+      conversion: 80,
+      example: "1 mile = 80 chains, 0.0125 miles = 1 chain"
+    },
+    {
+      unit: "Rod (rd)",
+      description: "Survey unit equal to 16.5 feet or 1/320 mile.",
+      conversion: 320,
+      example: "1 mile = 320 rods, 0.003125 miles = 1 rod"
+    },
+    {
+      unit: "League",
+      description: "Traditional unit of distance, often equal to 3 miles.",
+      conversion: 0.333333,
+      example: "1 mile ≈ 0.333333 leagues, 3 miles = 1 league"
+    },
+    {
+      unit: "Mil",
+      description: "Unit equal to 1/1000 inch, used in manufacturing.",
+      conversion: 63360000,
+      example: "1 mile = 63,360,000 mils, 1.5783e-8 miles = 1 mil"
+    },
+    {
+      unit: "Micrometer (μm)",
+      description: "Metric unit equal to one millionth of a meter.",
+      conversion: 1609340000,
+      example: "1 mile = 1.60934e9 μm, 6.2137e-10 miles = 1 μm"
+    },
+    {
+      unit: "Angstrom (Å)",
+      description: "Unit used to measure atomic-scale distances.",
+      conversion: 16093400000000,
+      example: "1 mile = 1.60934e13 Å, 6.2137e-14 miles = 1 Å"
+    },
+    {
+      unit: "Earth's Equatorial Radius",
+      description: "Average radius at Earth's equator (≈3,963 miles).",
+      conversion: 0.000252321,
+      example: "1 mile ≈ 0.000252321 Earth radii, 3,963 miles ≈ 1 Earth radius"
+    },
+    {
+      unit: "Sun's Radius",
+      description: "Nominal radius of the Sun (≈432,288 miles).",
+      conversion: 0.00231228,
+      example: "1 mile ≈ 0.00231228 solar radii, 432,288 miles ≈ 1 solar radius"
+    },
+    {
+      unit: "Parsec (pc)",
+      description: "Astronomical unit based on parallax measurements.",
+      conversion: 5.21553e-14,
+      example: "1 mile ≈ 5.21553e-14 parsecs, 1.9174e13 miles = 1 parsec"
+    },
+    {
+      unit: "Planck Length",
+      description: "Theoretical smallest measurable length in quantum physics.",
+      conversion: 9.9585e+37,
+      example: "1 mile ≈ 9.9585e37 Planck lengths, 1.0042e-38 miles ≈ 1 Planck length"
+    },
+    {
+      unit: "Football Field (100 yd)",
+      description: "Standard American football field length including end zones.",
+      conversion: 17.6,
+      example: "1 mile ≈ 17.6 football fields, 0.0568182 miles = 1 football field"
+    },
+    {
+      unit: "Marathon Distance",
+      description: "Standard marathon race length (26 miles 385 yards).",
+      conversion: 0.0381408,
+      example: "1 mile ≈ 0.0381408 marathons, 26.2188 miles = 1 marathon"
+    },
+    {
+      unit: "Height of Burj Khalifa",
+      description: "World's tallest building (≈0.515 miles).",
+      conversion: 1.9417,
+      example: "1 mile ≈ 1.9417 Burj Khalifas, 0.515 miles = 1 Burj Khalifa height"
+    },
+    {
+      unit: "Length of Central Park",
+      description: "North-south length of NYC's Central Park (2.5 miles).",
+      conversion: 0.4,
+      example: "1 mile = 0.4 Central Park lengths, 2.5 miles = 1 Central Park length"
+    },
+    {
+      unit: "Distance of Golden Gate Bridge",
+      description: "Total length including approaches (≈1.7 miles).",
+      conversion: 0.588235,
+      example: "1 mile ≈ 0.588235 bridge lengths, 1.7 miles = 1 Golden Gate Bridge length"
+    }
+],
+Milliseconds: [
+    {
+      unit: "Second (s)",
+      description: "SI base unit of time, defined by the cesium atomic clock.",
+      conversion: 0.001,
+      example: "1 millisecond = 0.001 seconds, 1,000 milliseconds = 1 second"
+    },
+    {
+      unit: "Microsecond (μs)",
+      description: "Metric unit equal to one millionth of a second.",
+      conversion: 1000,
+      example: "1 millisecond = 1,000 microseconds, 0.001 milliseconds = 1 microsecond"
+    },
+    {
+      unit: "Nanosecond (ns)",
+      description: "Metric unit equal to one billionth of a second.",
+      conversion: 1000000,
+      example: "1 millisecond = 1,000,000 nanoseconds, 0.000001 milliseconds = 1 nanosecond"
+    },
+    {
+      unit: "Minute (min)",
+      description: "Common unit equal to 60 seconds.",
+      conversion: 1.66667e-5,
+      example: "1 millisecond ≈ 1.66667e-5 minutes, 60,000 milliseconds = 1 minute"
+    },
+    {
+      unit: "Hour (hr)",
+      description: "Standard time unit equal to 3,600 seconds.",
+      conversion: 2.77778e-7,
+      example: "1 millisecond ≈ 2.77778e-7 hours, 3,600,000 milliseconds = 1 hour"
+    },
+    {
+      unit: "Day (d)",
+      description: "Earth's rotation period (86,400 seconds).",
+      conversion: 1.15741e-8,
+      example: "1 millisecond ≈ 1.15741e-8 days, 86,400,000 milliseconds = 1 day"
+    },
+    {
+      unit: "Week",
+      description: "7-day period used in calendars worldwide.",
+      conversion: 1.65344e-9,
+      example: "1 millisecond ≈ 1.65344e-9 weeks, 604,800,000 milliseconds = 1 week"
+    },
+    {
+      unit: "Month (average)",
+      description: "Approximate average month duration.",
+      conversion: 3.80265e-10,
+      example: "1 millisecond ≈ 3.80265e-10 months, 2,629,746,000 milliseconds ≈ 1 month"
+    },
+    {
+      unit: "Year (Julian)",
+      description: "Calendar year of exactly 365.25 days.",
+      conversion: 3.16881e-11,
+      example: "1 millisecond ≈ 3.16881e-11 years, 31,557,600,000 milliseconds = 1 Julian year"
+    },
+    {
+      unit: "Decade",
+      description: "10-year period used for historical measurements.",
+      conversion: 3.16888e-12,
+      example: "1 millisecond ≈ 3.16888e-12 decades, 315,569,520,000 milliseconds = 1 decade"
+    },
+    {
+      unit: "Century",
+      description: "100-year period used in historical contexts.",
+      conversion: 3.16888e-13,
+      example: "1 millisecond ≈ 3.16888e-13 centuries, 3,155,695,200,000 milliseconds = 1 century"
+    },
+    {
+      unit: "Millennium",
+      description: "1,000-year period used in geological time.",
+      conversion: 3.16888e-14,
+      example: "1 millisecond ≈ 3.16888e-14 millennia, 31,556,952,000,000 milliseconds = 1 millennium"
+    },
+    {
+      unit: "Planck Time",
+      description: "Theoretical smallest measurable time unit in quantum physics.",
+      conversion: 1.85509e40,
+      example: "1 millisecond ≈ 1.85509e40 Planck times, 5.39e-44 seconds = 1 Planck time"
+    },
+    {
+      unit: "Shake",
+      description: "Nuclear physics unit equal to 10 nanoseconds.",
+      conversion: 100000,
+      example: "1 millisecond = 100,000 shakes, 0.00001 milliseconds = 1 shake"
+    },
+    {
+      unit: "Fortnight",
+      description: "Traditional unit equal to 2 weeks.",
+      conversion: 8.2672e-10,
+      example: "1 millisecond ≈ 8.2672e-10 fortnights, 1,209,600,000 milliseconds = 1 fortnight"
+    },
+    {
+      unit: "Human Blink",
+      description: "Average duration of an eye blink (≈300-400ms).",
+      conversion: 0.002857,
+      example: "1 millisecond ≈ 0.002857 blinks, 350 milliseconds ≈ 1 blink"
+    },
+    {
+      unit: "Camera Flash Duration",
+      description: "Typical duration of a professional camera flash (≈1ms).",
+      conversion: 1,
+      example: "1 millisecond ≈ 1 flash duration, 1 millisecond ≈ 1 flash pulse"
+    },
+    {
+      unit: "Neural Impulse",
+      description: "Time for a neuron to fire (≈1-5ms).",
+      conversion: 0.2,
+      example: "1 millisecond ≈ 0.2 neural impulses, 5 milliseconds ≈ 1 neural firing"
+    },
+    {
+      unit: "1Gbps Data Packet",
+      description: "Time to transmit 125 bytes at 1 gigabit/sec (≈1μs).",
+      conversion: 0.001,
+      example: "1 millisecond = 1,000 1Gbps packet times, 1 microsecond = 1 packet at 1Gbps"
+    },
+    {
+      unit: "CPU Clock Cycle (3GHz)",
+      description: "Single processor cycle on a 3GHz CPU (≈0.33ns).",
+      conversion: 3000000,
+      example: "1 millisecond = 3,000,000 clock cycles, 0.000000333 milliseconds = 1 cycle"
+    },
+    {
+      unit: "Light Travel (1km)",
+      description: "Time for light to travel 1 kilometer in vacuum (≈3.33μs).",
+      conversion: 300,
+      example: "1 millisecond ≈ 300 light-km times, 0.00333 milliseconds = light traveling 1km"
+    },
+    {
+      unit: "Earth Rotation (1°)",
+      description: "Time for Earth to rotate 1 degree (≈4 minutes).",
+      conversion: 4.62963e-8,
+      example: "1 millisecond ≈ 4.62963e-8 degree-rotations, 240,000 milliseconds = 1° rotation"
+    },
+    {
+      unit: "Moon Orbit (1°)",
+      description: "Time for Moon to orbit 1 degree around Earth (≈6.5 minutes).",
+      conversion: 2.5641e-8,
+      example: "1 millisecond ≈ 2.5641e-8 degree-orbits, 390,000 milliseconds = 1° lunar orbit"
+    },
+    {
+      unit: "Quinquennial",
+      description: "5-year period used in planning and contracts.",
+      conversion: 6.34196e-12,
+      example: "1 millisecond ≈ 6.34196e-12 quinquennials, 157,784,760,000 milliseconds = 1 quinquennial"
+    }
+],
+Minutes: [
+    {
+      unit: "Second",
+      description: "Base unit of time in the International System of Units.",
+      conversion: 60,
+      example: "1 minute = 60 seconds, 0.0166667 minutes = 1 second"
+    },
+    {
+      unit: "Millisecond",
+      description: "One thousandth of a second.",
+      conversion: 60000,
+      example: "1 minute = 60,000 milliseconds, 0.0000166667 minutes = 1 millisecond"
+    },
+    {
+      unit: "Hour",
+      description: "Common time unit equal to 60 minutes.",
+      conversion: 0.0166667,
+      example: "1 minute ≈ 0.0166667 hours, 60 minutes = 1 hour"
+    },
+    {
+      unit: "Day",
+      description: "24-hour period of time.",
+      conversion: 0.000694444,
+      example: "1 minute ≈ 0.000694444 days, 1,440 minutes = 1 day"
+    },
+    {
+      unit: "Week",
+      description: "7-day period of time.",
+      conversion: 9.92063e-5,
+      example: "1 minute ≈ 0.0000992063 weeks, 10,080 minutes = 1 week"
+    },
+    {
+      unit: "Month (average)",
+      description: "Approximate average month length.",
+      conversion: 2.28159e-5,
+      example: "1 minute ≈ 0.0000228159 months, 43,829 minutes ≈ 1 month"
+    },
+    {
+      unit: "Year (common)",
+      description: "365-day year (non-leap year).",
+      conversion: 1.90133e-6,
+      example: "1 minute ≈ 0.00000190133 years, 525,600 minutes = 1 common year"
+    },
+    {
+      unit: "Decade",
+      description: "10-year period.",
+      conversion: 1.90133e-7,
+      example: "1 minute ≈ 1.90133e-7 decades, 5,256,000 minutes = 1 decade"
+    },
+    {
+      unit: "Century",
+      description: "100-year period.",
+      conversion: 1.90133e-8,
+      example: "1 minute ≈ 1.90133e-8 centuries, 52,560,000 minutes = 1 century"
+    },
+    {
+      unit: "Millennium",
+      description: "1,000-year period.",
+      conversion: 1.90133e-9,
+      example: "1 minute ≈ 1.90133e-9 millennia, 525,600,000 minutes = 1 millennium"
+    },
+    {
+      unit: "Microsecond",
+      description: "One millionth of a second.",
+      conversion: 6e7,
+      example: "1 minute = 60,000,000 microseconds, 1.66667e-8 minutes = 1 microsecond"
+    },
+    {
+      unit: "Nanosecond",
+      description: "One billionth of a second.",
+      conversion: 6e10,
+      example: "1 minute = 60,000,000,000 nanoseconds, 1.66667e-11 minutes = 1 nanosecond"
+    },
+    {
+      unit: "Picosecond",
+      description: "One trillionth of a second.",
+      conversion: 6e13,
+      example: "1 minute = 60,000,000,000,000 picoseconds, 1.66667e-14 minutes = 1 picosecond"
+    },
+    {
+      unit: "Femtosecond",
+      description: "One quadrillionth of a second.",
+      conversion: 6e16,
+      example: "1 minute = 6e16 femtoseconds, 1.66667e-17 minutes = 1 femtosecond"
+    },
+    {
+      unit: "Attosecond",
+      description: "One quintillionth of a second.",
+      conversion: 6e19,
+      example: "1 minute = 6e19 attoseconds, 1.66667e-20 minutes = 1 attosecond"
+    },
+    {
+      unit: "Planck Time",
+      description: "The smallest measurable unit of time in quantum physics.",
+      conversion: 1.11306e45,
+      example: "1 minute ≈ 1.11306e45 Planck times, 8.984e-46 minutes ≈ 1 Planck time"
+    },
+    {
+      unit: "Day (sidereal)",
+      description: "Time for Earth to complete one rotation relative to stars.",
+      conversion: 0.000696346,
+      example: "1 minute ≈ 0.000696346 sidereal days, 1,436.07 minutes ≈ 1 sidereal day"
+    },
+    {
+      unit: "Year (sidereal)",
+      description: "Time for Earth to orbit the Sun relative to fixed stars.",
+      conversion: 1.90125e-6,
+      example: "1 minute ≈ 1.90125e-6 sidereal years, 525,969 minutes ≈ 1 sidereal year"
+    },
+    {
+      unit: "Fortnight",
+      description: "Period of 2 weeks.",
+      conversion: 4.96032e-5,
+      example: "1 minute ≈ 0.0000496032 fortnights, 20,160 minutes = 1 fortnight"
+    },
+    {
+      unit: "Olympiad",
+      description: "4-year period between Olympic Games.",
+      conversion: 4.75333e-7,
+      example: "1 minute ≈ 4.75333e-7 olympiads, 2,103,840 minutes ≈ 1 olympiad"
+    },
+    {
+      unit: "Lunar Month",
+      description: "Time between successive new moons (≈29.53 days).",
+      conversion: 2.35161e-5,
+      example: "1 minute ≈ 0.0000235161 lunar months, 42,524 minutes ≈ 1 lunar month"
+    },
+    {
+      unit: "Human Heartbeat (average)",
+      description: "Approximate time between heartbeats at rest.",
+      conversion: 72,
+      example: "1 minute ≈ 72 heartbeats, 0.83333 minutes ≈ 1 heartbeat"
+    },
+    {
+      unit: "Commercial Break (TV)",
+      description: "Typical duration of television commercials.",
+      conversion: 2,
+      example: "1 minute ≈ 2 commercial breaks (30 sec each), 0.5 minutes = 1 commercial break"
+    },
+    {
+      unit: "Microwave Popcorn",
+      description: "Typical cooking time for microwave popcorn.",
+      conversion: 0.2,
+      example: "1 minute = 5 microwave popcorn cycles, 3 minutes = 1 popcorn cycle"
+    },
+    {
+      unit: "Soccer Half",
+      description: "Duration of one half in professional soccer.",
+      conversion: 0.0166667,
+      example: "1 minute ≈ 0.0166667 soccer halves, 45 minutes = 1 soccer half"
+    },
+    {
+      unit: "Baseball Inning",
+      description: "Average duration of one baseball inning.",
+      conversion: 0.0833333,
+      example: "1 minute ≈ 0.0833333 innings, 12 minutes ≈ 1 baseball inning"
+    }
+],
+Ml: [
+    {
+      unit: "Cubic Meter (m³)",
+      description: "The SI unit of volume, representing a cube with 1-meter sides.",
+      conversion: 0.000001,
+      example: "1 milliliter = 0.000001 m³, 1,000,000 milliliters = 1 m³"
+    },
+    {
+      unit: "Liter (L)",
+      description: "Common metric unit equal to 1 cubic decimeter.",
+      conversion: 0.001,
+      example: "1 milliliter = 0.001 L, 1,000 milliliters = 1 L"
+    },
+    {
+      unit: "Cubic Centimeter (cc)",
+      description: "Equal to 1 milliliter, commonly used in medicine.",
+      conversion: 1,
+      example: "1 milliliter = 1 cc, 1 cc = 1 milliliter"
+    },
+    {
+      unit: "Cubic Inch (in³)",
+      description: "Imperial unit of volume.",
+      conversion: 0.0610237,
+      example: "1 milliliter ≈ 0.0610237 in³, 16.3871 milliliters = 1 in³"
+    },
+    {
+      unit: "Gallon (US liquid)",
+      description: "Standard US liquid volume unit.",
+      conversion: 0.000264172,
+      example: "1 milliliter ≈ 0.000264172 gallons, 3,785.41 milliliters = 1 gallon"
+    },
+    {
+      unit: "Quart (US liquid)",
+      description: "US customary unit equal to 1/4 gallon.",
+      conversion: 0.00105669,
+      example: "1 milliliter ≈ 0.00105669 quarts, 946.353 milliliters = 1 quart"
+    },
+    {
+      unit: "Pint (US liquid)",
+      description: "US customary unit equal to 1/8 gallon.",
+      conversion: 0.00211338,
+      example: "1 milliliter ≈ 0.00211338 pints, 473.176 milliliters = 1 pint"
+    },
+    {
+      unit: "Fluid Ounce (US fl oz)",
+      description: "Small US liquid volume unit equal to 1/128 gallon.",
+      conversion: 0.033814,
+      example: "1 milliliter ≈ 0.033814 fl oz, 29.5735 milliliters = 1 fl oz"
+    },
+    {
+      unit: "Tablespoon (US tbsp)",
+      description: "Common cooking measurement equal to 3 teaspoons.",
+      conversion: 0.067628,
+      example: "1 milliliter ≈ 0.067628 tbsp, 14.7868 milliliters = 1 tbsp"
+    },
+    {
+      unit: "Teaspoon (US tsp)",
+      description: "Small cooking measurement equal to 1/6 fl oz.",
+      conversion: 0.202884,
+      example: "1 milliliter ≈ 0.202884 tsp, 4.92892 milliliters = 1 tsp"
+    },
+    {
+      unit: "Cup (US)",
+      description: "Common cooking measurement equal to 16 tablespoons.",
+      conversion: 0.00422675,
+      example: "1 milliliter ≈ 0.00422675 cups, 236.588 milliliters = 1 cup"
+    },
+    {
+      unit: "Drop (metric)",
+      description: "Approximate volume of a liquid drop.",
+      conversion: 20,
+      example: "1 milliliter = 20 drops, 0.05 milliliters = 1 drop"
+    },
+    {
+      unit: "Microliter (µL)",
+      description: "One millionth of a liter.",
+      conversion: 1000,
+      example: "1 milliliter = 1,000 µL, 0.001 milliliters = 1 µL"
+    },
+    {
+      unit: "Cubic Millimeter (mm³)",
+      description: "Very small volume unit equal to 1 µL.",
+      conversion: 1000,
+      example: "1 milliliter = 1,000 mm³, 0.001 milliliters = 1 mm³"
+    },
+    {
+      unit: "Gallon (UK imperial)",
+      description: "British imperial gallon, about 20% larger than US gallon.",
+      conversion: 0.000219969,
+      example: "1 milliliter ≈ 0.000219969 UK gallons, 4,546.09 milliliters = 1 UK gallon"
+    },
+    {
+      unit: "Fluid Ounce (UK fl oz)",
+      description: "Imperial fluid ounce, slightly smaller than US fl oz.",
+      conversion: 0.0351951,
+      example: "1 milliliter ≈ 0.0351951 UK fl oz, 28.4131 milliliters = 1 UK fl oz"
+    },
+    {
+      unit: "Dram (US fluid)",
+      description: "Small unit used in pharmacy measurements.",
+      conversion: 0.270512,
+      example: "1 milliliter ≈ 0.270512 drams, 3.69669 milliliters = 1 dram"
+    },
+    {
+      unit: "Barrel (oil)",
+      description: "Standard volume for crude oil and petroleum products.",
+      conversion: 0.00000628981,
+      example: "1 milliliter ≈ 6.28981e-6 barrels, 158,987 milliliters = 1 barrel"
+    },
+    {
+      unit: "Coffee Spoon",
+      description: "Approximate volume of a standard coffee spoon.",
+      conversion: 0.5,
+      example: "1 milliliter = 2 coffee spoons, 2 milliliters = 1 coffee spoon"
+    },
+    {
+      unit: "Sugar Cube",
+      description: "Approximate volume of a standard sugar cube.",
+      conversion: 0.25,
+      example: "1 milliliter = 4 sugar cubes, 4 milliliters ≈ 1 sugar cube"
+    },
+    {
+      unit: "Medicine Cup (small)",
+      description: "Standard small medicine dosing cup.",
+      conversion: 0.2,
+      example: "1 milliliter = 5 medicine cups, 5 milliliters = 1 small medicine cup"
+    },
+    {
+      unit: "Eye Dropper (drop)",
+      description: "Approximate volume from a standard eye dropper.",
+      conversion: 0.05,
+      example: "1 milliliter = 20 eye dropper drops, 20 drops ≈ 1 milliliter"
+    },
+    {
+      unit: "Thimble",
+      description: "Approximate volume of a standard sewing thimble.",
+      conversion: 0.4,
+      example: "1 milliliter = 2.5 thimbles, 2.5 milliliters ≈ 1 thimble"
+    },
+    {
+      unit: "Shot Glass (standard)",
+      description: "Typical volume for an alcoholic shot (US).",
+      conversion: 0.0443603,
+      example: "1 milliliter ≈ 0.0443603 shots, 44.3603 milliliters = 1 shot (1.5 fl oz)"
+    },
+    {
+      unit: "Soda Cap",
+      description: "Approximate volume of a plastic soda bottle cap.",
+      conversion: 0.25,
+      example: "1 milliliter = 4 soda caps, 4 milliliters ≈ 1 soda cap"
+    },
+    {
+      unit: "Raindrop (average)",
+      description: "Approximate volume of a raindrop.",
+      conversion: 0.05,
+      example: "1 milliliter = 20 raindrops, 20 raindrops ≈ 1 milliliter"
+    },
+    {
+      unit: "Pinch (cooking)",
+      description: "Approximate volume of a pinch in cooking.",
+      conversion: 0.3125,
+      example: "1 milliliter ≈ 3.2 pinches, 3.2 pinches ≈ 1 milliliter"
+    },
+    {
+      unit: "Dash (cooking)",
+      description: "Approximate volume of a dash in cooking.",
+      conversion: 0.125,
+      example: "1 milliliter = 8 dashes, 8 dashes ≈ 1 milliliter"
+    },
+    {
+      unit: "Board Foot",
+      description: "Lumber volume measurement equal to 1 ft × 1 ft × 1 in.",
+      conversion: 0.000423776,
+      example: "1 milliliter ≈ 0.000423776 board feet, 2,359.74 milliliters = 1 board foot"
+    },
+    {
+      unit: "Acre-foot",
+      description: "Large volume unit used in water reservoir measurements.",
+      conversion: 8.10713e-10,
+      example: "1 milliliter ≈ 8.10713e-10 acre-feet, 1,233,482,000 milliliters = 1 acre-foot"
+    }
+],
 };
 
 export default Definations;
