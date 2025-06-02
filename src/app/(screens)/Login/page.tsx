@@ -13,11 +13,11 @@ const page = () => {
       setError("Email and Password cannot be empty");
       return false;
     }
-    if (email !== "admin@gmail.com") {
+    if (email !== process.env.NEXT_PUBLIC_ADMIN_EMAIL) {
       setError("Invalid Email");
       return false;
     }
-    if (password !== "Admin@123") {
+    if (password !== process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
       setError("Invalid Password");
       return false;
     }

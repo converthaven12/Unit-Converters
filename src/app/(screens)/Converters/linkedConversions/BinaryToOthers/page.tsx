@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import LockedUnitConverter from '../../../../utils/components/LockedConverter/LockedConverter';
+import LockedUnitConverterNumbers from '@/app/utils/components/LockedConverterNumbers/LockedCoverterNumbers';
 
 const convert = (value: number | string, from: string, to: string): number => {
   try {
@@ -40,7 +40,7 @@ const toUnits = [
 
 const BinaryToAllPage = () => {
   return (
-    <LockedUnitConverter
+    <LockedUnitConverterNumbers
       heading="Binary to All Units Converter"
       lockedFromUnit="Binary"
       units={toUnits}
