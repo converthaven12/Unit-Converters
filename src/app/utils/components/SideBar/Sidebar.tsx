@@ -7,8 +7,11 @@ import ArrowDown from "../../../../../public/assests/arrow-down.svg";
 import arrows from "../../../../../public/assests/sideMenuToggler.svg";
 import { menus } from "../../../../../Helper/Menus";
 import { useSidebar } from "../../../../app/utils/context/SidebarContext";
+import { Calculator, CalculatorIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const Sidebar: React.FC = () => {
+  const router = useRouter();
   const { isOpened, setIsOpened } = useSidebar();
   const [openSection, setOpenSection] = useState<string | "">("");
 
@@ -43,8 +46,15 @@ const Sidebar: React.FC = () => {
           <Image src={Logo} alt="logo" className="w-48 mx-auto" />
         </Link>
       )}
-
       <div className="flex flex-col flex-grow overflow-y-auto pr-1">
+        <p
+          className="inline-flex text-sm font-medium items-center gap-2"
+          onClick={() => {
+            router.push("/Converters/Calculator");
+          }}
+        >
+          Calculator <CalculatorIcon />
+        </p>
         {Object.entries(menus).map(([key, links]) => (
           <div key={key}>
             {/* Dropdown heading */}
