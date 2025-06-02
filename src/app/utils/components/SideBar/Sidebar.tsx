@@ -47,14 +47,16 @@ const Sidebar: React.FC = () => {
         </Link>
       )}
       <div className="flex flex-col flex-grow overflow-y-auto pr-1">
-        <p
-          className="inline-flex text-sm font-medium items-center gap-2"
-          onClick={() => {
-            router.push("/Converters/Calculator");
-          }}
-        >
-          Calculator <CalculatorIcon />
-        </p>
+        {isOpened && (
+          <p
+            className="inline-flex text-sm font-medium items-center gap-2"
+            onClick={() => {
+              router.push("/Converters/Calculator");
+            }}
+          >
+            Calculator <CalculatorIcon />
+          </p>
+        )}
         {Object.entries(menus).map(([key, links]) => (
           <div key={key}>
             {/* Dropdown heading */}
