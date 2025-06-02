@@ -8,6 +8,7 @@ import {
 import GetConversionAccordingToPathname from "@/app/utils/components/GetConversionAccordingToPathname/GetConversionAccordingToPathname";
 import { usePathname } from "next/navigation";
 import units from "../../../../Helper/CheckUnits";
+import DefinationsForUnit from "@/app/utils/components/DefinationsForUnit/DefinationsForUnit";
 
 function InnerLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -33,6 +34,7 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
         <div className="px-0 md:px-5 flex-1 font-alata">
           {children}
           {shouldShowConversion && <GetConversionAccordingToPathname />}
+          {!isLinkedConversions && <DefinationsForUnit />}
         </div>
       </div>
     </div>

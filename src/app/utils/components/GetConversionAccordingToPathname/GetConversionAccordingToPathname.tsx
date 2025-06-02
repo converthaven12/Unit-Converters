@@ -323,7 +323,7 @@ const GetConversionAccordingToPathname = () => {
       name = "Pounds";
     }
 
-    setPathUrlName(name);
+    localStorage.setItem("recentPath", name);
 
     if (unitConfigs[name]) {
       setObj(unitConfigs[name]);
