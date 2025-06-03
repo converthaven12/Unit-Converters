@@ -7,7 +7,7 @@ import ArrowDown from "../../../../../public/assests/arrow-down.svg";
 import arrows from "../../../../../public/assests/sideMenuToggler.svg";
 import { menus } from "../../../../../Helper/Menus";
 import { useSidebar } from "../../../../app/utils/context/SidebarContext";
-import { Calculator, CalculatorIcon } from "lucide-react";
+import { CalculatorIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const Sidebar: React.FC = () => {
@@ -22,8 +22,12 @@ const Sidebar: React.FC = () => {
   return (
     <div
       className={`bg-white p-4 font-alata font-normal text-xs text-nowrap min-h-screen h-screen
-      flex flex-col border border-[#D7D7FB] transition-all duration-300
-      ${!isOpened ? "w-[74px]" : "w-full md:w-[20dvw] xl:w-[18dvw]"}`}
+      flex flex-col border border-[#D7D7FB] transition-all duration-300 z-50
+      ${
+        !isOpened
+          ? "hidden md:block w-[74px]" // Hidden on mobile when collapsed
+          : "w-[75vw] md:w-[20dvw] xl:w-[18dvw]"
+      }`}
     >
       <div className="w-full flex justify-end mb-2 pb-2 border-b border-gray-200">
         <Image
@@ -37,29 +41,33 @@ const Sidebar: React.FC = () => {
           onClick={() => setIsOpened(!isOpened)}
         />
       </div>
-      {/* <p className="text-[#006633] font-bold text-xl mb-5 text-center">
-          Convert Haven
-        </p> */}
 
       {isOpened && (
         <Link href={"/Converters"}>
-          <Image src={Logo} alt="logo" className="w-48 mx-auto" />
+          <Image
+            src={Logo}
+            alt="logo"
+            className="w-48 mx-auto"
+            onClick={() => setIsOpened(!isOpened)}
+          />
         </Link>
       )}
+
       <div className="flex flex-col flex-grow overflow-y-auto pr-1">
         {isOpened && (
           <p
-            className="inline-flex text-sm font-medium items-center gap-2 cursor-pointer"
+            className="inline-flex text-sm font-medium items-center gap-2 cursor-pointer my-2"
             onClick={() => {
               router.push("/Converters/Calculator");
+              if (window.innerWidth < 768) setIsOpened(false);
             }}
           >
             Calculator <CalculatorIcon />
           </p>
         )}
+
         {Object.entries(menus).map(([key, links]) => (
           <div key={key}>
-            {/* Dropdown heading */}
             {isOpened && (
               <div
                 className="flex items-center justify-between mb-3 cursor-pointer"
@@ -78,7 +86,6 @@ const Sidebar: React.FC = () => {
               </div>
             )}
 
-            {/* Dropdown items */}
             {openSection === key &&
               links.map((item: any, index: number) => (
                 <Link
@@ -90,12 +97,12 @@ const Sidebar: React.FC = () => {
                       ? "text-themeColor font-semibold"
                       : "text-[#575757] font-light hover:text-black"
                   }`}
+                  onClick={() => {
+                    if (window.innerWidth < 768) setIsOpened(false);
+                  }}
                 >
                   {isOpened && (
-                    <p
-                      className="transition-opacity duration-100 text-sm"
-                      onClick={() => setIsOpened(!isOpened)}
-                    >
+                    <p className="transition-opacity duration-100 text-sm">
                       {item.label}
                     </p>
                   )}
