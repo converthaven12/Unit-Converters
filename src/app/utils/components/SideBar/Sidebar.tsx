@@ -49,7 +49,7 @@ const Sidebar: React.FC = () => {
       <div className="flex flex-col flex-grow overflow-y-auto pr-1">
         {isOpened && (
           <p
-            className="inline-flex text-sm font-medium items-center gap-2"
+            className="inline-flex text-sm font-medium items-center gap-2 cursor-pointer"
             onClick={() => {
               router.push("/Converters/Calculator");
             }}
