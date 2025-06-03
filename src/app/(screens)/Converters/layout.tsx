@@ -13,7 +13,9 @@ import DefinationsForUnit from "@/app/utils/components/DefinationsForUnit/Defina
 function InnerLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { isOpened } = useSidebar();
-  const sidebarWidth = isOpened ? "md:ml-[20dvw] xl:ml-[18dvw]" : "ml-[74px]";
+  const sidebarWidth = isOpened
+    ? "md:ml-[20dvw] xl:ml-[18dvw]"
+    : "ml-[74px] text-wrap";
 
   // Safely extract path segments
   const pathSegments = pathname?.split("/") || [];

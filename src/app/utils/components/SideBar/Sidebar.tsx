@@ -92,7 +92,10 @@ const Sidebar: React.FC = () => {
                   }`}
                 >
                   {isOpened && (
-                    <p className="transition-opacity duration-100 text-sm">
+                    <p
+                      className="transition-opacity duration-100 text-sm"
+                      onClick={() => setIsOpened(!isOpened)}
+                    >
                       {item.label}
                     </p>
                   )}
