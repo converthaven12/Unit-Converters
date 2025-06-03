@@ -41,11 +41,11 @@ const AdminDashboard: React.FC = () => {
       setLoading(true);
       setError(null);
       const res = await fetch("/api/analytics");
-      
+
       if (!res.ok) {
         throw new Error(`API request failed with status ${res.status}`);
       }
-      
+
       const data: AnalyticsData = await res.json();
 
       // Date helpers
@@ -58,7 +58,7 @@ const AdminDashboard: React.FC = () => {
       const initialStats: DashboardStats = {
         sessions: { today: 0, month: 0, year: 0 },
         clicks: { today: 0, month: 0, year: 0 },
-        pageViews: { today: 0, month: 0, year: 0 }
+        pageViews: { today: 0, month: 0, year: 0 },
       };
 
       // Process sessions data
@@ -66,11 +66,12 @@ const AdminDashboard: React.FC = () => {
         for (const row of data.sessions.rows) {
           const date = row.dimensionValues?.[0]?.value || "";
           const count = parseInt(row.metricValues?.[0]?.value || "0", 10);
-          
+
           if (!date) continue;
 
           if (date === todayStr) initialStats.sessions.today += count;
-          if (date.startsWith(currentMonth)) initialStats.sessions.month += count;
+          if (date.startsWith(currentMonth))
+            initialStats.sessions.month += count;
           if (date.startsWith(currentYear)) initialStats.sessions.year += count;
         }
       }
@@ -81,19 +82,21 @@ const AdminDashboard: React.FC = () => {
           const date = row.dimensionValues?.[0]?.value || "";
           const eventName = row.dimensionValues?.[1]?.value || "";
           const count = parseInt(row.metricValues?.[0]?.value || "0", 10);
-          
+
           if (!date || !eventName) continue;
 
           // Categorize events
           if (eventName === "click") {
             if (date === todayStr) initialStats.clicks.today += count;
-            if (date.startsWith(currentMonth)) initialStats.clicks.month += count;
+            if (date.startsWith(currentMonth))
+              initialStats.clicks.month += count;
             if (date.startsWith(currentYear)) initialStats.clicks.year += count;
-          } 
-          else if (eventName === "page_view") {
+          } else if (eventName === "page_view") {
             if (date === todayStr) initialStats.pageViews.today += count;
-            if (date.startsWith(currentMonth)) initialStats.pageViews.month += count;
-            if (date.startsWith(currentYear)) initialStats.pageViews.year += count;
+            if (date.startsWith(currentMonth))
+              initialStats.pageViews.month += count;
+            if (date.startsWith(currentYear))
+              initialStats.pageViews.year += count;
           }
         }
       }
@@ -108,9 +111,11 @@ const AdminDashboard: React.FC = () => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("isLoggedIn") !== "true") {
-      router.push("/Login");
-      return;
+    if (typeof window !== "undefined") {
+      if (localStorage.getItem("isLoggedIn") !== "true") {
+        router.push("/Login");
+        return;
+      }
     }
 
     fetchAnalytics();
@@ -144,34 +149,63 @@ const AdminDashboard: React.FC = () => {
 
       {/* Sessions stats */}
       <section aria-labelledby="sessions-heading" className="mb-10">
-        <h2 id="sessions-heading" className="text-xl font-semibold mb-4">Sessions</h2>
+        <h2 id="sessions-heading" className="text-xl font-semibold mb-4">
+          Sessions
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <StatCard label="Today" value={stats.sessions.today} color="blue" />
-          <StatCard label="This Month" value={stats.sessions.month} color="green" />
-          <StatCard label="This Year" value={stats.sessions.year} color="purple" />
+          <StatCard
+            label="This Month"
+            value={stats.sessions.month}
+            color="green"
+          />
+          <StatCard
+            label="This Year"
+            value={stats.sessions.year}
+            color="purple"
+          />
         </div>
       </section>
 
       {/* Page Views stats */}
       <section aria-labelledby="views-heading" className="mb-10">
-        <h2 id="views-heading" className="text-xl font-semibold mb-4">Page Views</h2>
+        <h2 id="views-heading" className="text-xl font-semibold mb-4">
+          Page Views
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <StatCard label="Today" value={stats.pageViews.today} color="blue" />
-          <StatCard label="This Month" value={stats.pageViews.month} color="green" />
-          <StatCard label="This Year" value={stats.pageViews.year} color="purple" />
+          <StatCard
+            label="This Month"
+            value={stats.pageViews.month}
+            color="green"
+          />
+          <StatCard
+            label="This Year"
+            value={stats.pageViews.year}
+            color="purple"
+          />
         </div>
       </section>
 
       {/* Clicks stats */}
       <section aria-labelledby="clicks-heading" className="mb-10">
-        <h2 id="clicks-heading" className="text-xl font-semibold mb-4">All Clicks</h2>
+        <h2 id="clicks-heading" className="text-xl font-semibold mb-4">
+          All Clicks
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <StatCard label="Today" value={stats.clicks.today} color="blue" />
-          <StatCard label="This Month" value={stats.clicks.month} color="green" />
-          <StatCard label="This Year" value={stats.clicks.year} color="purple" />
+          <StatCard
+            label="This Month"
+            value={stats.clicks.month}
+            color="green"
+          />
+          <StatCard
+            label="This Year"
+            value={stats.clicks.year}
+            color="purple"
+          />
         </div>
       </section>
-
     </div>
   );
 };

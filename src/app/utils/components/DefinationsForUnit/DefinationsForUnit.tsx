@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import units from "../../../../../Helper/Defination";
 const DefinationsForUnit = () => {
   const [data, setData] = useState<any[]>([]);
-  useEffect(() => {
-    const UnitName = localStorage.getItem("recentPath");
-    setData(units[UnitName as keyof typeof units]);
-  }, [localStorage.getItem("recentPath")]);
+
+  if (typeof window !== "undefined") {
+    useEffect(() => {
+      const UnitName = localStorage.getItem("recentPath");
+      setData(units[UnitName as keyof typeof units]);
+    }, [localStorage.getItem("recentPath")]);
+  }
   return (
     <>
       {data.map((item, index) => {
