@@ -19,12 +19,8 @@ interface AnalyticsRow {
 }
 
 interface AnalyticsData {
-  sessions: {
-    rows?: AnalyticsRow[];
-  };
-  events: {
-    rows?: AnalyticsRow[];
-  };
+  sessions: { rows?: AnalyticsRow[] };
+  events: { rows?: AnalyticsRow[] };
 }
 
 interface EventStats {
@@ -73,19 +69,18 @@ const AdminDashboard: React.FC = () => {
 
       const clicksPerDayMap: Record<string, number> = {};
 
-      // Process sessions
       if (data.sessions?.rows) {
         for (const row of data.sessions.rows) {
           const date = row.dimensionValues?.[0]?.value || "";
           const count = parseInt(row.metricValues?.[0]?.value || "0", 10);
           if (!date) continue;
           if (date === todayStr) initialStats.sessions.today += count;
-          if (date.startsWith(currentMonth)) initialStats.sessions.month += count;
+          if (date.startsWith(currentMonth))
+            initialStats.sessions.month += count;
           if (date.startsWith(currentYear)) initialStats.sessions.year += count;
         }
       }
 
-      // Process events
       if (data.events?.rows) {
         for (const row of data.events.rows) {
           const date = row.dimensionValues?.[0]?.value || "";
@@ -96,14 +91,17 @@ const AdminDashboard: React.FC = () => {
 
           if (eventName === "click") {
             if (date === todayStr) initialStats.clicks.today += count;
-            if (date.startsWith(currentMonth)) initialStats.clicks.month += count;
+            if (date.startsWith(currentMonth))
+              initialStats.clicks.month += count;
             if (date.startsWith(currentYear)) initialStats.clicks.year += count;
 
             clicksPerDayMap[date] = (clicksPerDayMap[date] || 0) + count;
           } else if (eventName === "page_view") {
             if (date === todayStr) initialStats.pageViews.today += count;
-            if (date.startsWith(currentMonth)) initialStats.pageViews.month += count;
-            if (date.startsWith(currentYear)) initialStats.pageViews.year += count;
+            if (date.startsWith(currentMonth))
+              initialStats.pageViews.month += count;
+            if (date.startsWith(currentYear))
+              initialStats.pageViews.year += count;
           }
         }
       }
@@ -161,43 +159,79 @@ const AdminDashboard: React.FC = () => {
       </div>
 
       {/* Sessions */}
-      <section aria-labelledby="sessions-heading" className="mb-10">
-        <h2 id="sessions-heading" className="text-xl font-semibold mb-4">Sessions</h2>
+      <section className="mb-10">
+        <h2 className="text-xl font-semibold mb-4">Sessions</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <StatCard label="Today" value={stats.sessions.today} color="blue" />
-          <StatCard label="This Month" value={stats.sessions.month} color="green" />
-          <StatCard label="This Year" value={stats.sessions.year} color="purple" />
+          <StatCard
+            label="This Month"
+            value={stats.sessions.month}
+            color="green"
+          />
+          <StatCard
+            label="This Year"
+            value={stats.sessions.year}
+            color="purple"
+          />
         </div>
       </section>
 
       {/* Page Views */}
-      <section aria-labelledby="views-heading" className="mb-10">
-        <h2 id="views-heading" className="text-xl font-semibold mb-4">Page Views</h2>
+      <section className="mb-10">
+        <h2 className="text-xl font-semibold mb-4">Page Views</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <StatCard label="Today" value={stats.pageViews.today} color="blue" />
-          <StatCard label="This Month" value={stats.pageViews.month} color="green" />
-          <StatCard label="This Year" value={stats.pageViews.year} color="purple" />
+          <StatCard
+            label="This Month"
+            value={stats.pageViews.month}
+            color="green"
+          />
+          <StatCard
+            label="This Year"
+            value={stats.pageViews.year}
+            color="purple"
+          />
         </div>
       </section>
 
       {/* Clicks */}
-      <section aria-labelledby="clicks-heading" className="mb-10">
-        <h2 id="clicks-heading" className="text-xl font-semibold mb-4">All Clicks</h2>
+      <section className="mb-10">
+        <h2 className="text-xl font-semibold mb-4">All Clicks</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <StatCard label="Today" value={stats.clicks.today} color="blue" />
-          <StatCard label="This Month" value={stats.clicks.month} color="green" />
-          <StatCard label="This Year" value={stats.clicks.year} color="purple" />
+          <StatCard
+            label="This Month"
+            value={stats.clicks.month}
+            color="green"
+          />
+          <StatCard
+            label="This Year"
+            value={stats.clicks.year}
+            color="purple"
+          />
         </div>
 
         {/* Clicks Graph */}
         <div className="mt-8 bg-white rounded-lg p-4 shadow">
-          <h3 className="text-lg font-medium mb-4">Click Activity (Last 7 Days)</h3>
+          <h3 className="text-lg font-medium mb-4">
+            Click Activity (Last 7 Days)
+          </h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={clicksGraphData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="date" />
               <YAxis />
-              <Tooltip />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #ccc",
+                  borderRadius: "6px",
+                  color: "#000000",
+                  boxShadow: "0px 2px 6px rgba(0,0,0,0.15)",
+                }}
+                labelStyle={{ color: "#000" }}
+                cursor={{ fill: "rgba(0, 0, 0, 0.05)" }}
+              />
               <Bar dataKey="clicks" fill="#3b82f6" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
