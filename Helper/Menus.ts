@@ -10,7 +10,6 @@ type Menus = {
 };
 
 export const menus: Menus = {
-
   CommonConversions: [
     { label: "cm to inches", path: "/Converters/CommonConversions/CmToInches" },
     { label: "inches to cm", path: "/Converters/CommonConversions/InchesToCm" },
@@ -769,7 +768,7 @@ export const menus: Menus = {
     { label: "ton to lbs", path: "/Converters/WeightAndMass/TonToLbs" },
     { label: "lbs to ton", path: "/Converters/WeightAndMass/LbsToTon" },
   ],
-  
+
   CommonConverters: [
     {
       label: "Length Converter",
@@ -1109,7 +1108,7 @@ export const menus: Menus = {
 
 export const CommonConversions = [
   { label: "cm to inches", path: "/Converters/CommonConversions/CmToInches" },
-  { label: "kg to lbs", path: "/Converters/CommonConversions/KgToLbs" },
+  { label: "kg to lbs", path: "/Converters/WeightAndMass/KgToLbs" },
   {
     label: "Celsius to Fahrenheit",
     path: "/Converters/CommonConversions/CelsiusToFahrenheit",
@@ -1153,7 +1152,7 @@ export const CommonConversions = [
   },
   { label: "mL to cups", path: "/Converters/CommonConversions/MlToCups" },
   { label: "inches to cm", path: "/Converters/CommonConversions/InchesToCm" },
-  { label: "lbs to kg", path: "/Converters/CommonConversions/LbsToKg" },
+  { label: "lbs to kg", path: "/Converters/WeightAndMass/LbsToKg" },
   {
     label: "Fahrenheit to Celsius",
     path: "/Converters/CommonConversions/FahrenheitToCelsius",
