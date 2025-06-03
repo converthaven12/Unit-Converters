@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState } from "react";
+import React from "react";
+import ReusableNumbersConverter from "../../../../utils/components/ReusableCoverterNumber/ReusableConverterNumber";
 
-// Support bases 2 through 36 with friendly labels for common ones:
-const numeralSystems: { label: string; base: number }[] = [
+const numeralSystems = [
   { label: "Binary", base: 2 },
   { label: "Ternary", base: 3 },
   { label: "Quaternary", base: 4 },
@@ -42,17 +42,13 @@ const numeralSystems: { label: string; base: number }[] = [
 ];
 
 const parseInput = (value: string, base: number): number | null => {
-  // Remove whitespace and toUpperCase for uniformity
-  const sanitized = value.trim().toUpperCase();
-  if (sanitized === "") return null;
-  
-  // Validate input: check if all chars are valid for the base
+  const clean = value.trim().toUpperCase();
+  if (!clean) return null;
   const validChars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".slice(0, base);
-  for (const ch of sanitized) {
+  for (const ch of clean) {
     if (!validChars.includes(ch)) return null;
   }
-
-  const parsed = parseInt(sanitized, base);
+  const parsed = parseInt(clean, base);
   return isNaN(parsed) ? null : parsed;
 };
 
@@ -60,78 +56,14 @@ const formatOutput = (value: number, base: number): string => {
   return value.toString(base).toUpperCase();
 };
 
-const NumbersConverterPage: React.FC = () => {
-  const [input, setInput] = useState("");
-  const [fromBase, setFromBase] = useState(10);
-  const [toBase, setToBase] = useState(2);
-
-  const parsedNumber = parseInput(input, fromBase);
-  const output = parsedNumber !== null ? formatOutput(parsedNumber, toBase) : "";
-
+const NumbersConverterPage = () => {
   return (
-    <div className="p-4 font-sans max-w-md ">
-      <h1 className="font-bold text-3xl text-[#006633] mb-4 text-center">Numbers Converter</h1>
-
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        className="w-full p-2 border rounded mb-4 text-sm"
-        placeholder={`Enter number in base ${fromBase}`}
-        spellCheck={false}
-        autoComplete="off"
-      />
-
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        <div>
-          <label className="block mb-1 text-sm">From:</label>
-          <select
-            value={fromBase}
-            onChange={(e) => setFromBase(Number(e.target.value))}
-            className="w-full p-2 border rounded text-sm"
-          >
-            {numeralSystems.map(({ label, base }) => (
-              <option key={base} value={base}>
-                {label} (base {base})
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div>
-          <label className="block mb-1 text-sm">To:</label>
-          <select
-            value={toBase}
-            onChange={(e) => setToBase(Number(e.target.value))}
-            className="w-full p-2 border rounded text-sm"
-          >
-            {numeralSystems.map(({ label, base }) => (
-              <option key={base} value={base}>
-                {label} (base {base})
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      <textarea
-        readOnly
-        rows={4}
-        className="w-full p-2 border rounded bg-gray-100 text-sm"
-        value={output}
-        placeholder="Converted number"
-      />
-
-      {input && !output && (
-        <p className="text-red-600 font-medium text-sm mt-2">Invalid input for base {fromBase}</p>
-      )}
-
-      {input && output && (
-        <p className="text-blue-600 font-medium text-sm mt-2">
-          Result: {input.toUpperCase()} (base {fromBase}) = {output} (base {toBase})
-        </p>
-      )}
-    </div>
+    <ReusableNumbersConverter
+      heading="Numbers Converter"
+      systems={numeralSystems}
+      parseInput={parseInput}
+      formatOutput={formatOutput}
+    />
   );
 };
 
