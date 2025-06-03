@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard",
-  description: "Track click analytics with GA4",
+  title: "Converthaven",
+  description: "A website for every unit conversion",
 };
 
 export default function RootLayout({
