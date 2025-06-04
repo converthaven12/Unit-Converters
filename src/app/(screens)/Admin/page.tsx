@@ -139,7 +139,7 @@ const AdminDashboard: React.FC = () => {
     return () => window.removeEventListener("focus", onFocus);
   }, []);
 
-  if (loading) return <div className="p-6">Loading analytics...</div>;
+  if (loading) return <div className="loader"></div>;
   if (error) return <div className="p-6 text-red-500">{error}</div>;
   if (!stats) return <div className="p-6">No analytics data available.</div>;
 
