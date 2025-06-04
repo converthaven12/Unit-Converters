@@ -1,15 +1,14 @@
 import { google } from "googleapis";
 import { NextResponse } from "next/server";
-import path from "path";
-import fs from "fs";
 
 export async function GET() {
   try {
-    const KEYFILEPATH = path.join(process.cwd(), "ga4-key.json");
-    if (!fs.existsSync(KEYFILEPATH)) {
-      throw new Error("ga4-key.json not found");
-    }
-    const credentials = JSON.parse(fs.readFileSync(KEYFILEPATH, "utf-8"));
+    const base64 = process.env.GA4_KEY_BASE64;
+    if (!base64) throw new Error("Missing GA4_KEY_BASE64 env var");
+
+    const credentials = JSON.parse(
+      Buffer.from(base64, "base64").toString("utf-8")
+    );
 
     const auth = new google.auth.GoogleAuth({
       credentials,
@@ -23,8 +22,6 @@ export async function GET() {
 
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
-    const currentMonth = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-    const todayStr = currentDate.toISOString().split('T')[0];
 
     // Fetch all events data with breakdown by event name
     const eventsResponse = await analyticsDataClient.properties.runReport({
@@ -38,16 +35,16 @@ export async function GET() {
         ],
         dimensions: [
           { name: "date" },
-          { name: "eventName" }
+          { name: "eventName" },
         ],
         metrics: [{ name: "eventCount" }],
         orderBys: [
           {
             dimension: {
               dimensionName: "date",
-              orderType: "NUMERIC"
-            }
-          }
+              orderType: "NUMERIC",
+            },
+          },
         ],
       },
     });
