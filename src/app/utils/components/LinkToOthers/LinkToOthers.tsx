@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 interface MoreConversionsLinkProps {
@@ -14,11 +15,15 @@ const LinkToOthers: React.FC<MoreConversionsLinkProps> = ({
   link,
   label,
 }) => {
+  const router = useRouter()
   return (
-    <div className="group p-6 mt-6 border border-gray-200 rounded-xl bg-white hover:border-blue-500 transition-all duration-200 shadow-sm hover:shadow-md">
+    <div className="group p-6 mt-6 border border-gray-200 rounded-xl bg-white hover:border-blue-500 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
+    onClick={()=>{
+      router.push(`${link}`)
+    }}
+    >
       <h2 className="text-xl font-semibold text-gray-900 mb-3">{heading}</h2>
-      <Link
-        href={link}
+      <div
         className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
       >
         {label}
@@ -36,7 +41,7 @@ const LinkToOthers: React.FC<MoreConversionsLinkProps> = ({
             d="M14 5l7 7m0 0l-7 7m7-7H3"
           />
         </svg>
-      </Link>
+      </div>
     </div>
   );
 };
