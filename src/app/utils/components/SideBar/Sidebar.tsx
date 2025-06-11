@@ -56,7 +56,7 @@ const Sidebar: React.FC = () => {
       <div className="flex flex-col flex-grow overflow-y-auto pr-1">
         {isOpened && (
           <p
-            className="inline-flex text-sm font-medium items-center gap-2 cursor-pointer my-2"
+            className="inline-flex text-sm font-medium items-center gap-2 cursor-pointer my-2 text-[#0d3b23]"
             onClick={() => {
               router.push("/Converters/Calculator");
               if (window.innerWidth < 768) setIsOpened(false);
@@ -73,7 +73,7 @@ const Sidebar: React.FC = () => {
                 className="flex items-center justify-between mb-3 cursor-pointer"
                 onClick={() => handleMenuClick(key)}
               >
-                <p className="text-sm font-medium">
+                <p className="text-sm font-medium text-[#0d3b23]">
                   {key.replace(/([A-Z])/g, " $1").trim()}
                 </p>
                 <Image
@@ -92,11 +92,7 @@ const Sidebar: React.FC = () => {
                   href={item.path}
                   key={index}
                   className={`cursor-pointer gap-2 py-1 ml-5 rounded-md truncate 
-                  transition-all duration-200 block ${
-                    item.isActive
-                      ? "text-themeColor font-semibold"
-                      : "text-[#575757] font-light hover:text-black"
-                  }`}
+                  transition-all duration-200 block text-[#006633] hover:text-[#0d3b23]`}
                   onClick={() => {
                     if (window.innerWidth < 768) setIsOpened(false);
                   }}
