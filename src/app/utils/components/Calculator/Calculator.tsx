@@ -56,7 +56,7 @@ export default function ScientificCalculator() {
     }
   };
 
-  const evaluateExpression = (expr: any) => {
+  const evaluateExpression = (expr: string) => {
     let replaced = expr
       .replace(/π/g, Math.PI.toString())
       .replace(/√\(/g, "Math.sqrt(")
@@ -66,6 +66,10 @@ export default function ScientificCalculator() {
       .replace(/log\(/g, "Math.log10(")
       .replace(/ln\(/g, "Math.log(")
       .replace(/\^/g, "**");
+
+    // Remove leading zeros from numbers (except after decimal)
+    replaced = replaced.replace(/\b0+([0-9]+)/g, "$1");
+
     return eval(replaced);
   };
 
