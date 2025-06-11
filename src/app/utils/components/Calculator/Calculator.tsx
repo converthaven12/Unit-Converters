@@ -67,8 +67,17 @@ export default function ScientificCalculator() {
       .replace(/ln\(/g, "Math.log(")
       .replace(/\^/g, "**");
 
-    // Remove leading zeros from numbers (except after decimal)
+    // Remove leading zeros from numbers
     replaced = replaced.replace(/\b0+([0-9]+)/g, "$1");
+
+    // Auto-close parentheses
+    const openParens = (replaced.match(/\(/g) || []).length;
+    const closeParens = (replaced.match(/\)/g) || []).length;
+    const missingClosings = openParens - closeParens;
+
+    if (missingClosings > 0) {
+      replaced += ")".repeat(missingClosings);
+    }
 
     return eval(replaced);
   };
