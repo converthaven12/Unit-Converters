@@ -12,6 +12,7 @@ import DefinationsForUnit from "@/app/utils/components/DefinationsForUnit/Defina
 import { Menu } from "lucide-react";
 import Dropdown from "@/app/utils/components/Dropdown/Dropdown";
 import { DropDownOptions } from "../../../../Helper/Menus";
+import Footer from "@/app/utils/components/Footer/Footer";
 
 function InnerLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -62,10 +63,8 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
       </div>
 
       {/* Main Content */}
-      <div
-        className={`bg-[#F5F5F9] w-full flex-1 flex flex-col overflow-y-auto py-5 px-3 md:px-0 transition-all duration-300 ${sidebarWidth}`}
-      >
-        <div className="px-0 md:px-5 flex-1 font-alata">
+     <div className={`bg-[#F5F5F9] w-full flex-1  flex flex-col justify-between transition-all duration-300 ${sidebarWidth}`}>
+        <div className="p-2 md:px-5 flex-1 font-alata">
           <div className="mb-2">
             <Dropdown
               options={DropDownOptions}
@@ -84,6 +83,7 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
           {shouldShowConversion && <GetConversionAccordingToPathname />}
           {!isLinkedConversions && <DefinationsForUnit />}
         </div>
+          <Footer/>
       </div>
     </div>
   );
