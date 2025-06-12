@@ -83,7 +83,6 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
           {shouldShowConversion && <GetConversionAccordingToPathname />}
           {!isLinkedConversions && <DefinationsForUnit />}
         </div>
-          <Footer/>
       </div>
     </div>
   );

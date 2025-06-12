@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -6,9 +7,9 @@ const Footer = () => {
       <span className="text-[#0d3b23]">
         © All rights reserved. Converthaven.com
       </span>{" "}
-      | <span className="text-[#0d3b23] cursor-pointer">About Us</span> |{" "}
-      <span className="text-[#0d3b23] cursor-pointer">Terms of Use</span> |{" "}
-      <span className="text-[#0d3b23] cursor-pointer">Privacy Policy</span>
+      | <Link href="/Footer#about"><span className="text-[#0d3b23] cursor-pointer">About Us</span></Link> |{" "}
+      <Link href="/Footer#terms"><span className="text-[#0d3b23] cursor-pointer">Terms of Use</span></Link> |{" "}
+      <Link href="/Footer#privacy"><span className="text-[#0d3b23] cursor-pointer">Privacy Policy</span></Link>
     </div>
   );
 };
