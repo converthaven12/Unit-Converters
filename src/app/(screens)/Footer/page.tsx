@@ -113,8 +113,7 @@ const FooterPage = () => {
           portions of our Service.
         </p>
         <p>
-          We allow third-party companies to serve ads and/or collect certain anonymous information when you visit our web site. These companies may use non-personally identifiable information (e.g., click stream information, browser type, time and date, subject of advertisements clicked or scrolled over) during your visits to this and other Web sites in order to provide advertisements about goods and services likely to be of greater interest to you. These companies typically use a cookie or third party web beacon to collect this information. To learn more about this behavioral advertising practice or to opt-out of this type of advertising, you can visit{" "}
-          <a href="https://optout.networkadvertising.org" target="_blank" className="underline text-blue-700">optout.networkadvertising.org</a>
+          We allow third-party companies to serve ads and/or collect certain anonymous information when you visit our web site. These companies may use non-personally identifiable information (e.g., click stream information, browser type, time and date, subject of advertisements clicked or scrolled over) during your visits to this and other Web sites in order to provide advertisements about goods and services likely to be of greater interest to you. These companies typically use a cookie or third party web beacon to collect this information.
         </p>
 
         <h3 className="text-xl font-semibold mt-4 text-[#006633]">
@@ -291,7 +290,7 @@ const FooterPage = () => {
         </p>
 
         <h3 className="text-xl font-semibold mt-4 text-[#006633]">Limitations of Liability</h3>
-        <p>UNDER NO CIRCUMSTANCES SHALL COMPANY BE LIABLE FOR DIRECT, INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES, RESULTING FROM ANY ASPECT OF YOUR USE OF THE WEBSITE INCLUDING BUT NOT LIMITED TO DAMAGES THAT ARISE FROM YOUR INABILITY TO USE THE WEBSITE OR THE SERVICE, OR THE INTERRUPTION, MODIFICATION, OR TERMINATION OF THE WEBSITE OR ANY SERVICE OR PART THEREOF.</p>
+        <p>Under no circumstances shall company be liable for direct, indirect, incidental, special, or consequential damages, resulting from any aspect of your use of the website including but not limited to damages that arise from your inability to use the website or the service, or the interruption, modification, or termination of the website or any service or part thereof.</p>
 
         <h3 className="text-xl font-semibold mt-4 text-[#006633]">
           Jurisdiction
