@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const FooterPage = () => {
   return (
-    <div className="px-4 py-6 max-w-[70%] mx-auto text-[#0d3b23] space-y-10">
+    <div className="px-4 py-6 max-w-[85%] md:max-w-[70%]  md:mx-auto text-[#0d3b23] space-y-10">
       {/* About Us */}
       <section id="about">
         <h2 className="text-3xl font-bold mb-3 text-[#006633]">About Us</h2>
