@@ -53,8 +53,8 @@ const FooterPage = () => {
           Our website uses these "cookies" to collection information and to improve our Service. You have the option to either accept or refuse these cookies, and know when a cookie is being sent to your computer. If you choose to refuse our cookies, you may not be able to use some portions of our Service.
         </p>
         <p>
-          We allow third-party companies to serve ads and/or collect certain anonymous information when you visit our web site. These companies may use non-personally identifiable information (e.g., click stream information, browser type, time and date, subject of advertisements clicked or scrolled over) during your visits to this and other Web sites in order to provide advertisements about goods and services likely to be of greater interest to you. These companies typically use a cookie or third party web beacon to collect this information. To learn more about this behavioral advertising practice or to opt-out of this type of advertising, you can visit{" "}
-          <a href="https://optout.networkadvertising.org" target="_blank" className="underline text-blue-700">optout.networkadvertising.org</a>
+          We allow third-party companies to serve ads and/or collect certain anonymous information when you visit our web site. These companies may use non-personally identifiable information (e.g., click stream information, browser type, time and date, subject of advertisements clicked or scrolled over) during your visits to this and other Web sites in order to provide advertisements about goods and services likely to be of greater interest to you. These companies typically use a cookie or third party web beacon to collect this information.
+          
         </p>
 
         <h3 className="text-xl font-semibold mt-4 text-[#006633]">Web Forms on Our Site</h3>
@@ -115,7 +115,7 @@ const FooterPage = () => {
         <p>THE COMPANY WEBSITE AND ANY INCLUDED SERVICES ARE PROVIDED ON AN "AS IS" BASIS, WITHOUT ANY WARRANTIES OF ANY KIND, INCLUDING WITHOUT LIMITATION THE WARRANTIES THAT IT IS FREE OF DEFECTS, ERRORS, VIRUSES, MERCHANTABLE AND THAT IT IS FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. YOUR USE OF THE WEBSITE IS AT YOUR OWN RISK.</p>
 
         <h3 className="text-xl font-semibold mt-4 text-[#006633]">Limitations of Liability</h3>
-        <p>UNDER NO CIRCUMSTANCES SHALL COMPANY BE LIABLE FOR DIRECT, INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES, RESULTING FROM ANY ASPECT OF YOUR USE OF THE WEBSITE INCLUDING BUT NOT LIMITED TO DAMAGES THAT ARISE FROM YOUR INABILITY TO USE THE WEBSITE OR THE SERVICE, OR THE INTERRUPTION, MODIFICATION, OR TERMINATION OF THE WEBSITE OR ANY SERVICE OR PART THEREOF.</p>
+        <p>Under no circumstances shall company be liable for direct, indirect, incidental, special, or consequential damages, resulting from any aspect of your use of the website including but not limited to damages that arise from your inability to use the website or the service, or the interruption, modification, or termination of the website or any service or part thereof.</p>
 
         <h3 className="text-xl font-semibold mt-4 text-[#006633]">Jurisdiction</h3>
         <p>The Terms of Use shall be governed by the laws of the State of Texas without regard to its conflict of law provisions. You and Company agree to submit to the personal and exclusive jurisdiction of the courts located within the State of Texas.</p>
