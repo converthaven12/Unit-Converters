@@ -93,16 +93,16 @@ const Dropdown = ({
 
 const CustomControl = ({ children, ...props }: any) => {
   useEffect(() => {
-    if (typeof window !== "undefined" && window.innerWidth < 768) {
-      const preventScroll = (e: any) => {
-        e.preventDefault();
-      };
-      document.addEventListener("touchmove", preventScroll, { passive: false });
+    // if (typeof window !== "undefined" && window.innerWidth < 768) {
+    //   const preventScroll = (e: any) => {
+    //     e.preventDefault();
+    //   };
+    //   document.addEventListener("touchmove", preventScroll, { passive: false });
 
-      return () => {
-        document.removeEventListener("touchmove", preventScroll);
-      };
-    }
+    //   return () => {
+    //     document.removeEventListener("touchmove", preventScroll);
+    //   };
+    // }
   }, []);
 
   return (
