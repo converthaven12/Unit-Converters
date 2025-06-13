@@ -40,12 +40,12 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen relative">
       {/* Overlay on mobile when sidebar is open */}
-      {isOpened && (
+      {/* {isOpened && (
         <div
           className="fixed inset-0 bg-black opacity-50 z-30 md:hidden"
           onClick={() => setIsOpened(false)}
         />
-      )}
+      )} */}
 
       {/* Hamburger icon (mobile only or when sidebar closed) */}
       {!isOpened && (
