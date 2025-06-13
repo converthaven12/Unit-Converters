@@ -5,6 +5,7 @@ import Script from "next/script";
 import "./globals.css";
 import AnalyticsPageviewTracker from "./utils/components/AnalyticsPageviewTracker/AnalyticsPageviewTracker";
 import Footer from "./utils/components/Footer/Footer";
+import DelayedFooter from "./utils/components/DelayedFooter/DelayedFooter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,7 +62,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AnalyticsPageviewTracker />
         {children}
-        <Footer />
+        <DelayedFooter />
       </body>
     </html>
   );
