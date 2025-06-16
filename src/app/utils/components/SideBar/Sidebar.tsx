@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../../../../public/assests/logo2.png";
+import Logo from "../../../../../public/assests/unitlogo.png";
 import ArrowDown from "../../../../../public/assests/arrow-down.svg";
 import arrows from "../../../../../public/assests/sideMenuToggler.svg";
 import { menus } from "../../../../../Helper/Menus";
