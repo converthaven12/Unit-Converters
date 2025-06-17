@@ -127,7 +127,7 @@ const GetConversionAccordingToPathname = () => {
     J: {
       heading: "More Joule Conversions",
       label: "Joule to other...",
-      link: "/Converters/linkedConversions/JouleToOthers",
+      link: "/Converters/linkedConversions/JToOthers",
     },
     Kelvin: {
       heading: "More Kelvin Conversions",
