@@ -1,4 +1,13 @@
+# *
 User-agent: *
-Disallow:
+Allow: /
 
+# *
+User-agent: *
+Disallow: /api/*
+
+# Host
+Host: https://www.converthaven.com
+
+# Sitemaps
 Sitemap: https://www.converthaven.com/sitemap.xml
