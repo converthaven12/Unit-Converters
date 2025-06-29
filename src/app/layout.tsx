@@ -6,6 +6,9 @@ import "./globals.css";
 import AnalyticsPageviewTracker from "./utils/components/AnalyticsPageviewTracker/AnalyticsPageviewTracker";
 import Footer from "./utils/components/Footer/Footer";
 import DelayedFooter from "./utils/components/DelayedFooter/DelayedFooter";
+import SeoHead from './components/SeoHead';
+ // adjust path based on file location
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,9 +20,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Default metadata (fallback)
 export const metadata: Metadata = {
-  title: "Converthaven",
-  description: "A website for every unit conversion",
+  title: "Converthaven — Every Unit Conversion",
+  description: "Convert units quickly and accurately with our free converters.",
 };
 
 export default function RootLayout({
@@ -30,6 +34,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Inject dynamic SEO tags */}
+        <SeoHead />
+
         {/* Google Analytics */}
         <Script
           strategy="afterInteractive"
@@ -38,11 +45,9 @@ export default function RootLayout({
         <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            function gtag(){dataLayer.push(arguments);}  
             gtag('js', new Date());
-            gtag('config', 'G-ZNMT4XLDX6', {
-              page_path: window.location.pathname,
-            });
+            gtag('config', 'G-ZNMT4XLDX6', { page_path: window.location.pathname });
           `}
         </Script>
 
@@ -50,14 +55,17 @@ export default function RootLayout({
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           crossOrigin="anonymous"
         />
-        <Script id="adsense-init" strategy="afterInteractive">
-          {`
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          `}
-        </Script>
+        <Script id="adsense-init" strategy="lazyOnload">
+  {`
+    if (window.adsbygoogle && document.querySelectorAll('ins.adsbygoogle[data-ad-status="done"]').length === 0) {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  `}
+</Script>
+
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AnalyticsPageviewTracker />

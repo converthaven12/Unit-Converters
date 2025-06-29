@@ -24,7 +24,8 @@ const ScreenLoader = () => {
             className="animate-dash4 animate-incrementOffset"
           ></circle>
         </svg>
-        <Image src={Logo} alt="logo" height={60} className="rounded-full" />
+        <Image src={Logo} alt="Unit Converters loading logo" height={60} className="rounded-full" />
+
       </div>
     </div>
   );

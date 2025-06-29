@@ -3,15 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { LogOut } from "lucide-react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  CartesianGrid,
-} from "recharts";
+import dynamic from "next/dynamic";
+
+const RechartsChart = dynamic(() => import("./RechartsChart"), { ssr: false });
 
 interface AnalyticsRow {
   dimensionValues?: { value: string }[];
@@ -218,25 +212,8 @@ const AdminDashboard: React.FC = () => {
           <h3 className="text-lg font-medium mb-4">
             Click Activity (Last 7 Days)
           </h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={clicksGraphData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="date" />
-              <YAxis />
-              <Tooltip
-                contentStyle={{
-                  backgroundColor: "#ffffff",
-                  border: "1px solid #ccc",
-                  borderRadius: "6px",
-                  color: "#000000",
-                  boxShadow: "0px 2px 6px rgba(0,0,0,0.15)",
-                }}
-                labelStyle={{ color: "#000" }}
-                cursor={{ fill: "rgba(0, 0, 0, 0.05)" }}
-              />
-              <Bar dataKey="clicks" fill="#3b82f6" radius={[4, 4, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
+          <RechartsChart data={clicksGraphData} />
+
         </div>
       </section>
     </div>

@@ -1,4 +1,3 @@
-import { google } from "googleapis";
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -9,6 +8,9 @@ export async function GET() {
     const credentials = JSON.parse(
       Buffer.from(base64, "base64").toString("utf-8")
     );
+
+    // ✅ Delay import to runtime to avoid bundling whole googleapis
+    const { google } = require("googleapis");
 
     const auth = new google.auth.GoogleAuth({
       credentials,
@@ -23,20 +25,11 @@ export async function GET() {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
 
-    // Fetch all events data with breakdown by event name
     const eventsResponse = await analyticsDataClient.properties.runReport({
       property: `properties/491304138`,
       requestBody: {
-        dateRanges: [
-          {
-            startDate: `${currentYear}-01-01`,
-            endDate: "today",
-          },
-        ],
-        dimensions: [
-          { name: "date" },
-          { name: "eventName" },
-        ],
+        dateRanges: [{ startDate: `${currentYear}-01-01`, endDate: "today" }],
+        dimensions: [{ name: "date" }, { name: "eventName" }],
         metrics: [{ name: "eventCount" }],
         orderBys: [
           {
@@ -49,16 +42,10 @@ export async function GET() {
       },
     });
 
-    // Fetch session data separately
     const sessionsResponse = await analyticsDataClient.properties.runReport({
       property: `properties/491304138`,
       requestBody: {
-        dateRanges: [
-          {
-            startDate: `${currentYear}-01-01`,
-            endDate: "today",
-          },
-        ],
+        dateRanges: [{ startDate: `${currentYear}-01-01`, endDate: "today" }],
         dimensions: [{ name: "date" }],
         metrics: [{ name: "sessions" }],
       },

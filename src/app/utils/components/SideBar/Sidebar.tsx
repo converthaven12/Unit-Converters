@@ -33,7 +33,7 @@ const Sidebar: React.FC = () => {
         <Image
           src={arrows}
           height={15}
-          alt="Collapse Toggle"
+          alt="Sidebar toggle icon to collapse menu"
           title="Collapse"
           className={`cursor-pointer transition-transform duration-100 ${
             isOpened ? "rotate-180" : ""
@@ -46,7 +46,7 @@ const Sidebar: React.FC = () => {
         <Link href={"/Converters"}>
           <Image
             src={Logo}
-            alt="logo"
+            alt="Unit Converter logo"
             className="w-48 mx-auto"
             onClick={() => setIsOpened(!isOpened)}
           />
@@ -78,7 +78,7 @@ const Sidebar: React.FC = () => {
                 </p>
                 <Image
                   src={ArrowDown}
-                  alt="arrow_down"
+                  alt={`Dropdown arrow for ${key} section`}
                   className={`w-4 h-4 transition-transform duration-200 ${
                     openSection === key ? "rotate-180" : ""
                   }`}
