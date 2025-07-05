@@ -1,6 +1,7 @@
 "use client";
 import ReusableConversionPage from "../../../../utils/components/ReusableConversionPage/ReusableConversionPage";
 import ConversionTable from "./ConversionTable";
+import Head from 'next/head';
 
 const definitions = [
   {
@@ -21,13 +22,21 @@ const definitions = [
   },
 ];
 
-const page = () => {
-  return (
+return (
+  <>
+    <Head>
+      <title>Convert cm to meters - Converthaven</title>
+      <meta name="description" content="Easily convert centimeters to meters using our fast and accurate cm to m converter. Perfect for students, engineers, and everyday use." />
+    </Head>
+
+    <h1>Centimeters to Meters Converter</h1>
+    <p>Convert centimeters (cm) to meters (m) in one click. Our tool ensures precision for your academic, engineering, or personal measurement needs.</p>
+
     <ReusableConversionPage
       title="Convert Centimeters to Meters"
       fromUnit="Centimeters"
       toUnit="Meters"
-      convertFunction={(val) => val / 100} // 1 cm = 0.01 m
+      convertFunction={(val) => val / 100}
       definitions={definitions}
       tableComponent={<ConversionTable />}
       conversionExample={
@@ -43,7 +52,5 @@ const page = () => {
       }
       reversePath="/Converters/LengthUnits/MetersToCm"
     />
-  );
-};
-
-export default page;
+  </>
+);
