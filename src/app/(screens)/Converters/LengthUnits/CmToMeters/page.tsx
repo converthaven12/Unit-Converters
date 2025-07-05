@@ -1,56 +1,62 @@
 "use client";
+
+import Head from 'next/head';
 import ReusableConversionPage from "../../../../utils/components/ReusableConversionPage/ReusableConversionPage";
 import ConversionTable from "./ConversionTable";
-import Head from 'next/head';
 
 const definitions = [
   {
     heading: "Centimeter",
     content: [
-      "Definition: A centimeter is a unit of length in the metric system equal to one hundredth of a meter, and it is based on the SI (International System of Units) base unit of length, the meter.",
-      "History/origin: The centimeter, derived from the meter, was introduced in the metric system as a convenient unit for everyday measurements and is part of the centimeter-gram-second (CGS) system of units.",
-      "Current use: The centimeter is widely used in everyday life for measuring small to medium lengths such as the height of a person or the dimensions of objects, and it is also commonly seen on rulers and measuring tapes.",
+      "Definition: A centimeter is a unit of length...",
+      "History/origin: The centimeter, derived from the meter...",
+      "Current use: The centimeter is widely used in everyday life...",
     ],
   },
   {
     heading: "Meter",
     content: [
-      "Definition: A meter is the SI base unit of length, originally defined in 1793 as one ten-millionth of the distance from the equator to the North Pole along a meridian through Paris.",
-      "History/origin: The meter was established to provide a universal standard for measuring length and is widely used around the world in science, industry, and everyday life.",
-      "Current use: The meter is the fundamental unit of length in the metric system, used globally in scientific measurements, engineering, and everyday length measurements.",
+      "Definition: A meter is the SI base unit of length...",
+      "History/origin: The meter was established to provide a standard...",
+      "Current use: The meter is the fundamental unit of length...",
     ],
   },
 ];
 
-return (
-  <>
-    <Head>
-      <title>Convert cm to meters - Converthaven</title>
-      <meta name="description" content="Easily convert centimeters to meters using our fast and accurate cm to m converter. Perfect for students, engineers, and everyday use." />
-    </Head>
+const page = () => {
+  return (
+    <>
+      <Head>
+        <title>Convert cm to meters - Converthaven</title>
+        <meta name="description" content="Easily convert centimeters to meters using our fast and accurate cm to m converter. Perfect for students, engineers, and everyday use." />
+      </Head>
 
-    <h1>Centimeters to Meters Converter</h1>
-    <p>Convert centimeters (cm) to meters (m) in one click. Our tool ensures precision for your academic, engineering, or personal measurement needs.</p>
+      <h1>Centimeters to Meters Converter</h1>
+      <p>Convert centimeters (cm) to meters (m) in one click. Our tool ensures precision for your academic, engineering, or personal measurement needs.</p>
 
-    <ReusableConversionPage
-      title="Convert Centimeters to Meters"
-      fromUnit="Centimeters"
-      toUnit="Meters"
-      convertFunction={(val) => val / 100}
-      definitions={definitions}
-      tableComponent={<ConversionTable />}
-      conversionExample={
-        <>
-          1 cm = 0.01 m
-          <br />
-          1 m = 100 cm
-          <br />
-          <strong>Example:</strong> convert 150 cm to m:
-          <br />
-          150 cm = 150 ÷ 100 m = 1.5 m
-        </>
-      }
-      reversePath="/Converters/LengthUnits/MetersToCm"
-    />
-  </>
-);
+      <ReusableConversionPage
+        title="Convert Centimeters to Meters"
+        fromUnit="Centimeters"
+        toUnit="Meters"
+        convertFunction={(val) => val / 100}
+        definitions={definitions}
+        tableComponent={<ConversionTable />}
+        conversionExample={
+          <>
+            1 cm = 0.01 m
+            <br />
+            1 m = 100 cm
+            <br />
+            <strong>Example:</strong> convert 150 cm to m:
+            <br />
+            150 cm = 150 ÷ 100 m = 1.5 m
+          </>
+        }
+        reversePath="/Converters/LengthUnits/MetersToCm"
+      />
+    </>
+  );
+};
+
+export default page;
+
