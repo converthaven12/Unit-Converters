@@ -2,7 +2,7 @@
 module.exports = {
   siteUrl: 'https://www.converthaven.com',
   generateRobotsTxt: true,
-  generateIndexSitemap: false,
+  generateIndexSitemap: true,
   robotsTxtOptions: {
     policies: [
       { userAgent: '*', allow: '/' },
