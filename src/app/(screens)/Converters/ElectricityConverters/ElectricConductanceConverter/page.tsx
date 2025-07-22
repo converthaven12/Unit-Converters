@@ -1,6 +1,7 @@
 'use client';
 
 import React from "react";
+import Head from "next/head";
 import ReusableConverter from "../../../../utils/components/ReusableConverter/ReusableConverter";
 
 const electricConductanceUnits: Record<string, number> = {
@@ -18,6 +19,14 @@ const electricConductanceUnits: Record<string, number> = {
   "Quantized Hall conductance": 3.874e-5,
 };
 
+const schemaJSONLD = {
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Electric Conductance Converter",
+  "image": "https://www.converthaven.com/Converters/ElectricityConverters/ElectricConductanceConverter.png",
+  "description": "Easily convert electric conductance units such as Siemens and mhos with our fast and accurate converter tool.",
+  "url": "https://www.converthaven.com/Converters/ElectricityConverters/ElectricConductanceConverter",
+};
 
 const ElectricConductanceConverterPage: React.FC = () => {
   const convertElectricConductance = (value: number, from: string, to: string): number => {
@@ -28,11 +37,45 @@ const ElectricConductanceConverterPage: React.FC = () => {
   };
 
   return (
-    <ReusableConverter
-      heading="Electric Conductance Converter"
-      units={Object.keys(electricConductanceUnits)}
-      convert={convertElectricConductance}
-    />
+    <>
+      <Head>
+        <title>Electric Conductance Converter - ConvertHaven</title>
+        <meta
+          name="description"
+          content="Easily convert electric conductance units such as Siemens and mhos with our fast and accurate converter tool."
+        />
+        <link
+          rel="canonical"
+          href="https://www.converthaven.com/Converters/ElectricityConverters/ElectricConductanceConverter"
+        />
+        {/* OpenGraph Tags */}
+        <meta property="og:title" content="Electric Conductance Converter - ConvertHaven" />
+        <meta
+          property="og:description"
+          content="Easily convert electric conductance units such as Siemens and mhos with our fast and accurate converter tool."
+        />
+        <meta
+          property="og:image"
+          content="https://www.converthaven.com/Converters/ElectricityConverters/ElectricConductanceConverter.png"
+        />
+        <meta
+          property="og:url"
+          content="https://www.converthaven.com/Converters/ElectricityConverters/ElectricConductanceConverter"
+        />
+        <meta property="og:type" content="website" />
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJSONLD) }}
+        />
+      </Head>
+
+      <ReusableConverter
+        heading="Electric Conductance Converter"
+        units={Object.keys(electricConductanceUnits)}
+        convert={convertElectricConductance}
+      />
+    </>
   );
 };
 
