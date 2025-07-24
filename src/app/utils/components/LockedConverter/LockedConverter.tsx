@@ -1,108 +1,132 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import CategoryLinksList from "../CategoryList/CategoryLinksList";
+import React from 'react';
+import LockedUnitConverter from '../../../../../../utils/components/LockedConverter/LockedConverter';
 
-interface LockedUnitConverterProps {
-  heading: string;
-  lockedFromUnit: string;
-  units: string[]; // List of TO units
-  convert: (value: number, from: string, to: string) => number;
-}
+const mileToMile: Record<string, number> = {
+  'Mile': 1,
+  'Meter': 1609.34,
+  'Kilometer': 1.60934,
+  'Decimeter': 16093.4,
+  'Centimeter': 160934,
+  'Millimeter': 1609340,
+  'Micrometer': 1609340000,
+  'Nanometer': 1609340000000,
+  'Yard': 1760,
+  'Foot': 5280,
+  'Inch': 63360,
+  'Light Year': 1.70108e-13,
+  'Break': 1.60934e-9,
+  'Exameter': 1.60934e-15,
+  'Petameter': 1.60934e-12,
+  'Terameter': 1.60934e-9,
+  'Gigameter': 0.00160934,
+  'Megameter': 1.60934,
+  'Hectometer': 16.0934,
+  'Dekameter': 160.934,
+  'Micron': 1609340000,
+  'Picometer': 1.60934e+15,
+  'Femtometer': 1.60934e+18,
+  'Attometer': 1.60934e+21,
+  'Megaparsec': 5.21553e-20,
+  'Kiloparsec': 5.21553e-17,
+  'Parsec': 5.21553e-14,
+  'Astronomical Unit': 1.07578e-8,
+  'League': 0.333333,
+  'Nautical League (UK)': 0.289474,
+  'Nautical League (int.)': 0.289659,
+  'League (statute)': 0.333333,
+  'Nautical Mile (UK)': 0.868421,
+  'Nautical Mile (international)': 0.868976,
+  'Mile (statute)': 1,
+  'Mile (US Survey)': 1,
+  'Mile (Roman)': 1.08754,
+  'Kiloyard': 1.76,
+  'Furlong': 8,
+  'Furlong (US Survey)': 8,
+  'Chain': 80,
+  'Chain (US Survey)': 80,
+  'Rope': 264,
+  'Rod': 320,
+  'Rod (US Survey)': 320,
+  'Perch': 320,
+  'Pole': 320,
+  'Fathom': 880,
+  'Fathom (US Survey)': 880,
+  'Ell': 1408,
+  'Foot (US Survey)': 5279.99,
+  'Link': 8000,
+  'Link (US Survey)': 8000,
+  'Cubit (UK)': 3520,
+  'Hand': 15840,
+  'Span (cloth)': 7040,
+  'Finger (cloth)': 14080,
+  'Nail (cloth)': 28160,
+  'Inch (US Survey)': 63360,
+  'Barleycorn': 190080,
+  'Mil': 63360000,
+  'Microinch': 63360000000,
+  'Angstrom': 16093400000000,
+  'A.u. Of Length': 30412191813635,
+  'X-unit': 16059372703412,
+  'Fermi': 1.60934e+18,
+  'Arpent': 27.5056,
+  'Pica': 380160,
+  'Point': 4561920,
+  'Twip': 91238400,
+  'Aln': 2710.35,
+  'Famn': 903.449,
+  'Caliber': 6336000,
+  'Centiinch': 6336000,
+  'Ken': 759.827,
+  'Russian Archin': 2262.86,
+  'Roman Actus': 45.3608,
+  'Vara De Tarea': 642.336,
+  'Vara Conuquera': 642.336,
+  'Vara Castellana': 1927.01,
+  'Cubit (Greek)': 3477.49,
+  'Long Reed': 502.857,
+  'Reed': 586.667,
+  'Long Cubit': 3017.14,
+  'Handbreadth': 21120,
+  'Fingerbreadth': 84480,
+  'Planck Length': 9.9585e+37,
+  'Electron Radius (classical)': 5.7110635e+17,
+  'Bohr Radius': 30412191813635,
+  'Earth\'s Equatorial Radius': 0.000252321,
+  'Earth\'s Polar Radius': 0.000253356,
+  'Earth\'s Distance From Sun': 1.07578e-8,
+  'Sun\'s Radius': 0.00231228
+};
 
-const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
-  heading,
-  lockedFromUnit,
-  units,
-  convert,
-}) => {
-  const [fromValue, setFromValue] = useState<string>("");
-  const [toUnit, setToUnit] = useState<string>(units?.[0] || lockedFromUnit || "");
+const convert = (value: number, from: string, to: string): number => {
+  const fromInMiles = value;
+  const toFactor = mileToMile[to];
+  if (!toFactor) return 0;
 
-  const numericValue = parseFloat(fromValue) || 0;
-  const result = convert(numericValue, lockedFromUnit, toUnit);
+  const result = fromInMiles / toFactor;
+  if (isNaN(result)) {
+    console.error("Conversion error: result is NaN", { value, from, to, toFactor });
+    return 0;
+  }
 
+  return result;
+};
+
+const toUnits = Object.keys(mileToMile).sort();
+
+console.log("Rendering MileToOthers page");
+console.log("Loaded units:", toUnits);
+
+const MileToAllPage = () => {
   return (
-    <div className="p-6 font-sans w-full bg-white rounded-lg shadow-sm">
-      <h1 className="font-bold text-2xl sm:text-3xl text-[#006633] mb-6 text-center">
-        {heading}
-      </h1>
-
-      <div className="mb-8 p-4 bg-gray-50 rounded-lg border border-[#006633]/10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-          {/* From Section (Locked) */}
-          <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700">
-              From:
-            </label>
-            <input
-              type="number"
-              value={fromValue}
-              onChange={(e) => setFromValue(e.target.value)}
-              className="w-full p-3 border border-[#138a55] rounded-lg outline-none transition"
-              placeholder="Enter value"
-            />
-            <input
-              type="text"
-              readOnly
-              value={lockedFromUnit}
-              className="w-full p-3 border border-gray-300 rounded-lg outline-none bg-gray-50"
-            />
-          </div>
-
-          {/* To Section */}
-          <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700">
-              To:
-            </label>
-            <input
-              type="text"
-              readOnly
-              value={fromValue ? result.toFixed(6) : ""}
-              className="w-full p-3 border border-[#138a55] outline-none rounded-lg bg-gray-50"
-            />
-            {units?.length > 0 && (
-              <select
-                value={toUnit}
-                onChange={(e) => setToUnit(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-lg outline-none bg-white transition"
-              >
-                {units.map((unit) => (
-                  <option key={unit} value={unit}>
-                    {unit}
-                  </option>
-                ))}
-              </select>
-            )}
-          </div>
-        </div>
-
-        {fromValue && (
-          <div className="mt-4 p-3 bg-[#006633]/5 rounded-lg border border-[#006633]/10">
-            <p className="text-[#006633] font-medium text-center">
-              {numericValue} {lockedFromUnit} ={" "}
-              <span className="font-bold">{result.toFixed(6)}</span> {toUnit}
-            </p>
-          </div>
-        )}
-      </div>
-
-      {/* Hide spinners in number inputs */}
-      <style jsx>{`
-        input[type="number"]::-webkit-inner-spin-button,
-        input[type="number"]::-webkit-outer-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }
-        input[type="number"] {
-          -moz-appearance: textfield;
-        }
-      `}</style>
-
-      {/* Related Links */}
-      <CategoryLinksList />
-    </div>
+    <LockedUnitConverter
+      heading="Miles to All Units Converter"
+      lockedFromUnit="Mile"
+      units={toUnits}
+      convert={convert}
+    />
   );
 };
 
-export default LockedUnitConverter;
+export default MileToAllPage;
