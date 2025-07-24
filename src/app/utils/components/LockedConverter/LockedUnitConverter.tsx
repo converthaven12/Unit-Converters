@@ -63,7 +63,7 @@ const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
         <GreenBtn clickEvent={handleConvert} text="Convert" />
       </div>
       <div className="my-4">
-        <OutputBox value={outputValue.toString()} unit={toUnit} />
+        <OutputBox value={`${outputValue.toString()} ${toUnit}`} />
       </div>
     </div>
   );
