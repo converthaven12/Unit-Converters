@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import CategoryLinkBtn from "../../LinkToOthers/CategoryLinkBtn";
+import CategoryLinkBtn from "../LinkToOthers/CategoryLinkBtn";
 
 interface LockedUnitConverterProps {
   heading: string;
@@ -10,7 +10,7 @@ interface LockedUnitConverterProps {
   convert: (value: number, fromUnit: string, toUnit: string) => number;
 }
 
-const LockedConverter: React.FC<LockedUnitConverterProps> = ({
+const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
   heading,
   lockedFromUnit,
   units,
@@ -21,51 +21,43 @@ const LockedConverter: React.FC<LockedUnitConverterProps> = ({
   const [result, setResult] = useState<number | null>(null);
 
   const handleConvert = () => {
-    const value = parseFloat(fromValue);
-    if (!isNaN(value)) {
-      const converted = convert(value, lockedFromUnit, toUnit);
-      setResult(converted);
-    } else {
-      setResult(null);
+    const parsedValue = parseFloat(fromValue);
+    if (!isNaN(parsedValue)) {
+      const conversionResult = convert(parsedValue, lockedFromUnit, toUnit);
+      setResult(conversionResult);
     }
   };
 
   return (
-    <div className="converter-container">
+    <div className="locked-converter">
       <h2>{heading}</h2>
 
-      <div className="converter-inputs">
-        <div>
-          <label>From ({lockedFromUnit}):</label>
-          <input
-            type="number"
-            value={fromValue}
-            onChange={(e) => setFromValue(e.target.value)}
-          />
-        </div>
+      <div>
+        <input
+          type="number"
+          value={fromValue}
+          onChange={(e) => setFromValue(e.target.value)}
+          placeholder={`Enter value in ${lockedFromUnit}`}
+        />
+        <span>{lockedFromUnit}</span>
+      </div>
 
-        <div>
-          <label>To:</label>
-          <select value={toUnit} onChange={(e) => setToUnit(e.target.value)}>
-            {units
-              .filter((unit) => unit !== lockedFromUnit)
-              .map((unit) => (
-                <option key={unit} value={unit}>
-                  {unit}
-                </option>
-              ))}
-          </select>
-        </div>
+      <div>
+        <select value={toUnit} onChange={(e) => setToUnit(e.target.value)}>
+          {units.map((unit, index) => (
+            <option key={index} value={unit}>
+              {unit}
+            </option>
+          ))}
+        </select>
       </div>
 
       <button onClick={handleConvert}>Convert</button>
 
       {result !== null && (
-        <div className="converter-result">
-          <p>
-            {fromValue} {lockedFromUnit} = {result} {toUnit}
-          </p>
-        </div>
+        <p>
+          Result: {fromValue} {lockedFromUnit} = {result} {toUnit}
+        </p>
       )}
 
       <CategoryLinkBtn />
@@ -73,5 +65,6 @@ const LockedConverter: React.FC<LockedUnitConverterProps> = ({
   );
 };
 
-export default LockedConverter;
+export default LockedUnitConverter;
+
 
