@@ -1,67 +1,34 @@
 "use client";
 
-import React, { useState } from "react";
-import CategoryLinkBtn from "../LinkToOthers/CategoryLinkBtn"; // ✅ UPDATED PATH
+import React from "react";
+import CategoryLinkBtn from "../LinkToOthers/CategoryLinkBtn"; // ✅ Fixed import
 
-interface LockedUnitConverterProps {
-  heading: string;
-  lockedFromUnit: string;
-  units: string[];
-  convert: (value: number, fromUnit: string, toUnit: string) => number;
-}
-
-const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
-  heading,
-  lockedFromUnit,
-  units,
-  convert,
-}) => {
-  const [fromValue, setFromValue] = useState("");
-  const [toUnit, setToUnit] = useState(units[1] || "");
-  const [result, setResult] = useState<number | null>(null);
-
-  const handleConvert = () => {
-    const value = parseFloat(fromValue);
-    if (!isNaN(value)) {
-      const conversionResult = convert(value, lockedFromUnit, toUnit);
-      setResult(conversionResult);
-    } else {
-      setResult(null);
-    }
-  };
-
+const LockedConverter = () => {
   return (
-    <div className="converter-container">
-      <h2>{heading}</h2>
-      <div className="input-group">
-        <input
-          type="number"
-          value={fromValue}
-          onChange={(e) => setFromValue(e.target.value)}
-          placeholder={`Enter ${lockedFromUnit} value`}
-        />
-        <select value={toUnit} onChange={(e) => setToUnit(e.target.value)}>
-          {units.map((unit) =>
-            unit !== lockedFromUnit ? (
-              <option key={unit} value={unit}>
-                {unit}
-              </option>
-            ) : null
-          )}
-        </select>
-        <button onClick={handleConvert}>Convert</button>
-      </div>
-      {result !== null && (
-        <p>
-          {fromValue} {lockedFromUnit} = {result} {toUnit}
+    <div className="locked-converter-wrapper">
+      <div className="locked-message">
+        <h2 className="text-2xl font-bold mb-2">This Converter is Locked 🔒</h2>
+        <p className="mb-4 text-gray-600">
+          Unlock this and 200+ converters on ConvertHaven.com
         </p>
-      )}
-      <CategoryLinkBtn unitCategory={heading} />
+
+        {/* Example of a redirect button */}
+        <a
+          href="https://www.converthaven.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition"
+        >
+          Visit ConvertHaven.com
+        </a>
+
+        {/* Optional: Button to browse other categories */}
+        <div className="mt-6">
+          <CategoryLinkBtn />
+        </div>
+      </div>
     </div>
   );
 };
 
-export default LockedUnitConverter;
-
-
-
+export default LockedConverter;
