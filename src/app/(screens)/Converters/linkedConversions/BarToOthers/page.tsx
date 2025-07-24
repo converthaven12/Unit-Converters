@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import LockedUnitConverter from '../../../../utils/components/LockedConverter/LockedConverter';
+import LockedUnitConverter from '../../../../utils/components/LockedConverter/LockedUnitConverter'; // ✅ Correct import
 
 // Conversion factors (relative to 1 bar)
 const pressureToBar: Record<string, number> = {
@@ -56,7 +56,7 @@ const pressureToBar: Record<string, number> = {
   'Foot Water (4°C)': 0.000334562,
   'Inch Water (60°F)': 0.00401865,
   'Foot Water (60°F)': 0.000334888,
-  'Atmosphere Technical': 0.000980665
+  'Atmosphere Technical': 0.000980665,
 };
 
 const convert = (value: number, from: string, to: string): number => {
