@@ -3,8 +3,8 @@
 import React from "react";
 import HeadingTag from "../HeadingTag/HeadingTag";
 import InputTag from "../InputTag/InputTag";
-import OutputBox from "../OutputBox/OutputBox"; // ✅ Ensure correct import path
-import GreenBtn from "../GreenBtn/GreenBtn";
+import OutputBox from "../OutputBox/OutputBox";
+import GreenBtn from "../GreenBtn/GreenBtn"; // ✅ Correct import
 
 type LockedUnitConverterProps = {
   heading: string;
@@ -60,7 +60,7 @@ const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
         </select>
       </div>
       <div className="my-4">
-        <GreenBtn onClick={handleConvert} label="Convert" />
+        <GreenBtn clickEvent={handleConvert} text="Convert" />
       </div>
       <div className="my-4">
         <OutputBox value={outputValue.toString()} unit={toUnit} />
