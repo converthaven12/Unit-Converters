@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import OutputBox from "../OutputBox/OutputBox";
 
 type LockedUnitConverterProps = {
   heading?: string;
@@ -15,25 +16,44 @@ const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
   units,
   convert,
 }) => {
+  const [inputValue, setInputValue] = useState<number>(1);
+
+  if (!lockedFromUnit || !units || units.length === 0 || !convert) {
+    return (
+      <div className="text-red-500 text-center mt-8">
+        ⚠️ Error: Conversion data missing or invalid.
+      </div>
+    );
+  }
+
   return (
     <div className="converter-wrapper">
       {heading && (
         <h1 className="text-2xl font-bold mb-4 text-center">{heading}</h1>
       )}
 
-      {/* Add your actual converter UI here (example below is placeholder) */}
-      <div className="text-gray-700">
-        <p>From unit: <strong>{lockedFromUnit}</strong></p>
-        <p>Available conversions:</p>
-        <ul className="list-disc ml-6">
-          {units.map((unit) => (
-            <li key={unit}>{unit}</li>
-          ))}
-        </ul>
+      <div className="flex justify-center mb-6">
+        <input
+          type="number"
+          value={inputValue}
+          onChange={(e) => setInputValue(Number(e.target.value))}
+          className="border p-2 rounded w-48"
+          min="0"
+        />
+        <span className="ml-2 self-center font-semibold">{lockedFromUnit}</span>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {units.map((unit) => (
+          <OutputBox
+            key={unit}
+            value={convert(inputValue, lockedFromUnit, unit)}
+            unit={unit}
+          />
+        ))}
       </div>
     </div>
   );
 };
 
 export default LockedUnitConverter;
-
