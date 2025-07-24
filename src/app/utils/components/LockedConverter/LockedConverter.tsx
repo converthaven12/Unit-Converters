@@ -47,7 +47,7 @@ const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
         {units.map((unit) => (
           <OutputBox
             key={unit}
-            value={convert(inputValue, lockedFromUnit, unit)}
+            value={convert(inputValue, lockedFromUnit, unit).toString()}
             unit={unit}
           />
         ))}
