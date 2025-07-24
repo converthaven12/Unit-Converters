@@ -3,7 +3,7 @@
 import React from "react";
 import HeadingTag from "../HeadingTag/HeadingTag";
 import InputTag from "../InputTag/InputTag";
-import OutputBox from "../OutputBox/OutputBox";
+import OutputBox from "../OutputBox/OutputBox"; // ✅ Ensure correct import path
 import GreenBtn from "../GreenBtn/GreenBtn";
 
 type LockedUnitConverterProps = {
@@ -71,3 +71,4 @@ const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
 };
 
 export default LockedUnitConverter;
+
