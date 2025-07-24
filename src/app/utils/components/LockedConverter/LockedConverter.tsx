@@ -1,34 +1,77 @@
-'use client';
+"use client";
 
-import React from 'react';
-import ConversionCard from '@/app/components/ConversionCard';
-import { convert } from '@/app/utils/conversionHelpers';
-import { UnitCategory } from '@/app/utils/types';
+import React, { useState } from "react";
+import CategoryLinkBtn from "../../LinkToOthers/CategoryLinkBtn";
 
-type Props = {
-  category: UnitCategory;
-  fromUnit: string;
-  toUnit: string;
-  inputValue: number;
-};
+interface LockedUnitConverterProps {
+  heading: string;
+  lockedFromUnit: string;
+  units: string[];
+  convert: (value: number, fromUnit: string, toUnit: string) => number;
+}
 
-const LockedConverter = ({ category, fromUnit, toUnit, inputValue }: Props) => {
-  const result = convert(category, fromUnit, toUnit, inputValue);
+const LockedConverter: React.FC<LockedUnitConverterProps> = ({
+  heading,
+  lockedFromUnit,
+  units,
+  convert,
+}) => {
+  const [fromValue, setFromValue] = useState("");
+  const [toUnit, setToUnit] = useState(units[1] || "");
+  const [result, setResult] = useState<number | null>(null);
+
+  const handleConvert = () => {
+    const value = parseFloat(fromValue);
+    if (!isNaN(value)) {
+      const converted = convert(value, lockedFromUnit, toUnit);
+      setResult(converted);
+    } else {
+      setResult(null);
+    }
+  };
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <ConversionCard
-        category={category}
-        fromUnit={fromUnit}
-        toUnit={toUnit}
-        inputValue={inputValue}
-        result={result}
-        isLocked={true}
-      />
+    <div className="converter-container">
+      <h2>{heading}</h2>
+
+      <div className="converter-inputs">
+        <div>
+          <label>From ({lockedFromUnit}):</label>
+          <input
+            type="number"
+            value={fromValue}
+            onChange={(e) => setFromValue(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label>To:</label>
+          <select value={toUnit} onChange={(e) => setToUnit(e.target.value)}>
+            {units
+              .filter((unit) => unit !== lockedFromUnit)
+              .map((unit) => (
+                <option key={unit} value={unit}>
+                  {unit}
+                </option>
+              ))}
+          </select>
+        </div>
+      </div>
+
+      <button onClick={handleConvert}>Convert</button>
+
+      {result !== null && (
+        <div className="converter-result">
+          <p>
+            {fromValue} {lockedFromUnit} = {result} {toUnit}
+          </p>
+        </div>
+      )}
+
+      <CategoryLinkBtn />
     </div>
   );
 };
 
 export default LockedConverter;
-
 
