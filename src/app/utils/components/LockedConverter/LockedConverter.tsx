@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import CategoryLinkBtn from "@/components/LinkToOthers/CategoryLinkBtn";
+import CategoryLinkBtn from "@/app/components/LinkToOthers/CategoryLinkBtn";
 
 interface LockedUnitConverterProps {
   heading: string;
@@ -16,8 +16,8 @@ const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
   units,
   convert,
 }) => {
-  const [fromValue, setFromValue] = useState<string>("");
-  const [toUnit, setToUnit] = useState<string>(units[0] || "");
+  const [fromValue, setFromValue] = useState("");
+  const [toUnit, setToUnit] = useState(units[1] || "");
   const [result, setResult] = useState<number | null>(null);
 
   const handleConvert = () => {
@@ -27,47 +27,36 @@ const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
   };
 
   return (
-    <div className="converter">
-      <h1 className="text-2xl font-bold mb-4">{heading}</h1>
-      <div className="flex gap-4 mb-4">
+    <div className="converter-container">
+      <h2>{heading}</h2>
+      <div className="input-section">
         <input
           type="number"
-          className="border p-2 rounded w-full"
           placeholder={`Enter value in ${lockedFromUnit}`}
           value={fromValue}
           onChange={(e) => setFromValue(e.target.value)}
         />
-        <select
-          className="border p-2 rounded"
-          value={toUnit}
-          onChange={(e) => setToUnit(e.target.value)}
-        >
-          {units.map((unit) => (
-            <option key={unit} value={unit}>
-              {unit}
-            </option>
-          ))}
+        <select value={toUnit} onChange={(e) => setToUnit(e.target.value)}>
+          {units.map((unit) =>
+            unit !== lockedFromUnit ? (
+              <option key={unit} value={unit}>
+                {unit}
+              </option>
+            ) : null
+          )}
         </select>
-        <button
-          onClick={handleConvert}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-        >
-          Convert
-        </button>
+        <button onClick={handleConvert}>Convert</button>
       </div>
-
       {result !== null && (
-        <div className="text-lg font-medium">
-          Result: {result} {toUnit}
-        </div>
+        <p>
+          {fromValue} {lockedFromUnit} = {result} {toUnit}
+        </p>
       )}
-
-      <div className="mt-8">
-        <CategoryLinkBtn />
-      </div>
+      <CategoryLinkBtn />
     </div>
   );
 };
 
 export default LockedUnitConverter;
+
 
