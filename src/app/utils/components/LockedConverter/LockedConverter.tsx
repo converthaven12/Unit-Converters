@@ -1,34 +1,39 @@
 "use client";
 
 import React from "react";
-import CategoryLinkBtn from "../LinkToOthers/CategoryLinkBtn"; // ✅ Fixed import
 
-const LockedConverter = () => {
+type LockedUnitConverterProps = {
+  heading?: string;
+  lockedFromUnit: string;
+  units: string[];
+  convert: (value: number, from: string, to: string) => number;
+};
+
+const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
+  heading,
+  lockedFromUnit,
+  units,
+  convert,
+}) => {
   return (
-    <div className="locked-converter-wrapper">
-      <div className="locked-message">
-        <h2 className="text-2xl font-bold mb-2">This Converter is Locked 🔒</h2>
-        <p className="mb-4 text-gray-600">
-          Unlock this and 200+ converters on ConvertHaven.com
-        </p>
+    <div className="converter-wrapper">
+      {heading && (
+        <h1 className="text-2xl font-bold mb-4 text-center">{heading}</h1>
+      )}
 
-        {/* Example of a redirect button */}
-        <a
-          href="https://www.converthaven.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition"
-        >
-          Visit ConvertHaven.com
-        </a>
-
-        {/* Optional: Button to browse other categories */}
-        <div className="mt-6">
-          <CategoryLinkBtn />
-        </div>
+      {/* Add your actual converter UI here (example below is placeholder) */}
+      <div className="text-gray-700">
+        <p>From unit: <strong>{lockedFromUnit}</strong></p>
+        <p>Available conversions:</p>
+        <ul className="list-disc ml-6">
+          {units.map((unit) => (
+            <li key={unit}>{unit}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
 };
 
-export default LockedConverter;
+export default LockedUnitConverter;
+
