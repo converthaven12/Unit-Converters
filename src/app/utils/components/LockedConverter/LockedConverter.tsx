@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import CategoryLinkBtn from "../LinkToOthers/CategoryLinkBtn";
+import CategoryLinkBtn from "../LinkToOthers/CategoryLinkBtn"; // ✅ UPDATED PATH
 
 interface LockedUnitConverterProps {
   heading: string;
@@ -21,50 +21,47 @@ const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
   const [result, setResult] = useState<number | null>(null);
 
   const handleConvert = () => {
-    const parsedValue = parseFloat(fromValue);
-    if (!isNaN(parsedValue)) {
-      const conversionResult = convert(parsedValue, lockedFromUnit, toUnit);
+    const value = parseFloat(fromValue);
+    if (!isNaN(value)) {
+      const conversionResult = convert(value, lockedFromUnit, toUnit);
       setResult(conversionResult);
+    } else {
+      setResult(null);
     }
   };
 
   return (
-    <div className="locked-converter">
+    <div className="converter-container">
       <h2>{heading}</h2>
-
-      <div>
+      <div className="input-group">
         <input
           type="number"
           value={fromValue}
           onChange={(e) => setFromValue(e.target.value)}
-          placeholder={`Enter value in ${lockedFromUnit}`}
+          placeholder={`Enter ${lockedFromUnit} value`}
         />
-        <span>{lockedFromUnit}</span>
-      </div>
-
-      <div>
         <select value={toUnit} onChange={(e) => setToUnit(e.target.value)}>
-          {units.map((unit, index) => (
-            <option key={index} value={unit}>
-              {unit}
-            </option>
-          ))}
+          {units.map((unit) =>
+            unit !== lockedFromUnit ? (
+              <option key={unit} value={unit}>
+                {unit}
+              </option>
+            ) : null
+          )}
         </select>
+        <button onClick={handleConvert}>Convert</button>
       </div>
-
-      <button onClick={handleConvert}>Convert</button>
-
       {result !== null && (
         <p>
-          Result: {fromValue} {lockedFromUnit} = {result} {toUnit}
+          {fromValue} {lockedFromUnit} = {result} {toUnit}
         </p>
       )}
-
-      <CategoryLinkBtn />
+      <CategoryLinkBtn unitCategory={heading} />
     </div>
   );
 };
 
 export default LockedUnitConverter;
+
 
 
