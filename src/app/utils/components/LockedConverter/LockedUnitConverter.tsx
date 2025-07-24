@@ -25,11 +25,6 @@ const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
     convert(0, lockedFromUnit, units[1] || "")
   );
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = parseFloat(e.target.value);
-    setInputValue(isNaN(newValue) ? 0 : newValue);
-  };
-
   const handleConvert = () => {
     const result = convert(inputValue, lockedFromUnit, toUnit);
     setOutputValue(result);
@@ -40,9 +35,13 @@ const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
       <HeadingTag heading={heading} />
       <div className="my-4">
         <InputTag
+          name="locked-input"
           label={`From (${lockedFromUnit})`}
           value={inputValue.toString()}
-          onChange={handleInputChange}
+          setter={(name, value) => {
+            const parsed = parseFloat(value);
+            setInputValue(isNaN(parsed) ? 0 : parsed);
+          }}
         />
       </div>
       <div className="my-4">
@@ -71,4 +70,3 @@ const LockedUnitConverter: React.FC<LockedUnitConverterProps> = ({
 };
 
 export default LockedUnitConverter;
-
