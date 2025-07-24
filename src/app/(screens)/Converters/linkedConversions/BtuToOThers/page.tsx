@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import LockedUnitConverter from '../../../../utils/components/LockedConverter/LockedConverter';
+import LockedUnitConverter from '../../../../utils/components/LockedConverter/LockedUnitConverter';
 
 // Conversion factors (relative to 1 Btu (IT)/hour)
 const btuToBtu: Record<string, number> = {
