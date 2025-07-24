@@ -67,3 +67,4 @@ const AcreToAllPage = () => {
 };
 
 export default AcreToAllPage;
+
