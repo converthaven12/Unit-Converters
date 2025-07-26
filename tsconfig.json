@@ -14,17 +14,13 @@
     "jsx": "preserve",
     "incremental": true,
 
-    // ——— Path alias setup ———
+    // —————— Add / adjust these ——————
     "baseUrl": "src",
     "paths": {
-      "@/*": ["*"]
-    },
-
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+      "@/*": ["*"],
+      "@Helper/*": ["Helper/*"]
+    }
+    // ——————————————————————————————
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
