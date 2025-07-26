@@ -6,17 +6,17 @@ import Head from 'next/head';
 export const dynamicParams = false; // only the units you list will build
 
 /**
- * Pre‑generate one page per key in conversionFactors.
+ * Tell Next.js which `unit` pages to prerender.
  */
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return Object.keys(conversionFactors).map((unit) => ({ unit }));
 }
 
-interface PageProps {
+export default function Page({
+  params,
+}: {
   params: { unit: string };
-}
-
-export default function Page({ params }: PageProps) {
+}) {
   const { unit } = params;
   const entries = Object.entries(conversionFactors).map(([otherUnit]) => ({
     otherUnit,
