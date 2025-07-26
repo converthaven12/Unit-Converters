@@ -1,20 +1,22 @@
-// src/app/screens/Converters/linkedConversions/[unit]/page.tsx
+// File: src/app/screens/Converters/linkedConversions/[unit]/page.tsx
+
 import { conversionFactors, convert } from '../../../../../../Helper/conversionFactors';
 import Head from 'next/head';
 
-export const dynamicParams = false;
+export const dynamicParams = false; // only the units you list will build
 
 /**
- * Tell Next.js which `unit` slugs to prerender.
+ * Pre‑generate one page per key in conversionFactors.
  */
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return Object.keys(conversionFactors).map((unit) => ({ unit }));
 }
 
-/**
- * Page component must be `async` so Next can accept Promise<Props>.
- */
-export default async function Page({ params }: { params: { unit: string } }) {
+interface PageProps {
+  params: { unit: string };
+}
+
+export default function Page({ params }: PageProps) {
   const { unit } = params;
   const entries = Object.entries(conversionFactors).map(([otherUnit]) => ({
     otherUnit,
@@ -30,7 +32,6 @@ export default async function Page({ params }: { params: { unit: string } }) {
           content={`Convert ${unit} to ${entries.length} other units instantly.`}
         />
       </Head>
-
       <main>
         <h1>{unit} to All Units Converter</h1>
         <table>
