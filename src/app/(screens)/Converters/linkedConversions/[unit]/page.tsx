@@ -5,14 +5,12 @@ import Head from 'next/head';
 
 export const dynamicParams = false; // only the units you list will build
 
-/**
- * Tell Next.js which `unit` pages to prerender.
- */
+/** Tell Next.js which `unit` slugs to prerender. */
 export async function generateStaticParams() {
   return Object.keys(conversionFactors).map((unit) => ({ unit }));
 }
 
-export default function Page({
+export default async function Page({
   params,
 }: {
   params: { unit: string };
