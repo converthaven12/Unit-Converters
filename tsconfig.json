@@ -13,10 +13,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "src",                             // ✅ Add this line
+
+    // ——— Path alias setup ———
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["*"]                                // ✅ Change this line too
+      "@/*": ["*"]
     },
+
     "plugins": [
       {
         "name": "next"
