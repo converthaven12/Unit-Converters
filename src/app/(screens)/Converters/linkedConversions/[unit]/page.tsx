@@ -1,5 +1,5 @@
 // src/app/screens/Converters/linkedConversions/[unit]/page.tsx
-import { conversionFactors, convert } from '@/Helper/conversionFactors';
+import { conversionFactors, convert } from '../../../../../Helper/conversionFactors';
 import Head from 'next/head';
 
 export const dynamicParams = false; // Only the units you list will render.
