@@ -3,19 +3,20 @@
 import { conversionFactors, convert } from '../../../../../../Helper/conversionFactors';
 import Head from 'next/head';
 
-export const dynamicParams = false; // only the units you list will build
+// Only prerender the units you list here.
+export const dynamicParams = false;
 
 /** Tell Next.js which `unit` slugs to prerender. */
 export async function generateStaticParams() {
   return Object.keys(conversionFactors).map((unit) => ({ unit }));
 }
 
-export default async function Page({
-  params,
-}: {
-  params: { unit: string };
-}) {
-  const { unit } = params;
+/** 
+ * Page component MUST be `async` so it returns a Promise (matching Next's PageProps).
+ * We drop the explicit type annotation to avoid the params‐type mismatch.
+ */
+export default async function Page(props: any) {
+  const unit: string = props.params.unit;
   const entries = Object.entries(conversionFactors).map(([otherUnit]) => ({
     otherUnit,
     value: convert(1, unit, otherUnit),
@@ -30,6 +31,7 @@ export default async function Page({
           content={`Convert ${unit} to ${entries.length} other units instantly.`}
         />
       </Head>
+
       <main>
         <h1>{unit} to All Units Converter</h1>
         <table>
