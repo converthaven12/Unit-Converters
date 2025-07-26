@@ -2,7 +2,7 @@
 import { conversionFactors, convert } from '../../../../../../Helper/conversionFactors';
 import Head from 'next/head';
 
-export const dynamicParams = false; // Only the units you list will render.
+export const dynamicParams = false;
 
 /**
  * Tell Next.js which `unit` slugs to prerender.
@@ -11,7 +11,10 @@ export async function generateStaticParams() {
   return Object.keys(conversionFactors).map((unit) => ({ unit }));
 }
 
-export default function Page({ params }: { params: { unit: string } }) {
+/**
+ * Page component must be `async` so Next can accept Promise<Props>.
+ */
+export default async function Page({ params }: { params: { unit: string } }) {
   const { unit } = params;
   const entries = Object.entries(conversionFactors).map(([otherUnit]) => ({
     otherUnit,
