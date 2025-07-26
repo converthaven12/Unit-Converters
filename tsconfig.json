@@ -14,18 +14,11 @@
     "jsx": "preserve",
     "incremental": true,
 
-    // ─── START ALIAS CONFIG ─────────────────────────────────────────────────────
-    "baseUrl": "src",            // ← the root for all non-relative imports
+    // ↓↓↓ Add these two lines exactly as shown ↓↓↓
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["*"]               // ← e.g. "@/app/…" → "src/app/…"
-    },
-    // ─── END ALIAS CONFIG ───────────────────────────────────────────────────────
-
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+      "@/*": ["*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
