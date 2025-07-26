@@ -1,5 +1,4 @@
 // src/app/screens/Converters/linkedConversions/[unit]/page.tsx
-
 import { conversionFactors, convert } from '../../../../../../Helper/conversionFactors';
 import Head from 'next/head';
 
@@ -12,11 +11,7 @@ export async function generateStaticParams() {
   return Object.keys(conversionFactors).map((unit) => ({ unit }));
 }
 
-interface ConverterPageProps {
-  params: { unit: string };
-}
-
-export default function ConverterPage({ params }: ConverterPageProps) {
+export default function Page({ params }: { params: { unit: string } }) {
   const { unit } = params;
   const entries = Object.entries(conversionFactors).map(([otherUnit]) => ({
     otherUnit,
