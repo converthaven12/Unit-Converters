@@ -1,19 +1,22 @@
 // src/app/screens/Converters/linkedConversions/[unit]/page.tsx
-import Head from 'next/head';
 import { conversionFactors, convert } from '@/Helper/conversionFactors';
+import Head from 'next/head';
 
-interface Params { params: { unit: string } }
+export const dynamicParams = false; // Only the units you list will render.
 
-export async function getStaticPaths() {
-  const paths = Object.keys(conversionFactors).map(unit => ({ params: { unit } }));
-  return { paths, fallback: false };
+/**
+ * Tell Next.js which `unit` slugs to prerender.
+ */
+export async function generateStaticParams() {
+  return Object.keys(conversionFactors).map((unit) => ({ unit }));
 }
 
-export async function getStaticProps({ params }: Params) {
-  return { props: { unit: params.unit } };
+interface ConverterPageProps {
+  params: { unit: string };
 }
 
-const ConverterPage: React.FC<{ unit: string }> = ({ unit }) => {
+export default function ConverterPage({ params }: ConverterPageProps) {
+  const { unit } = params;
   const entries = Object.entries(conversionFactors).map(([otherUnit]) => ({
     otherUnit,
     value: convert(1, unit, otherUnit),
@@ -28,6 +31,7 @@ const ConverterPage: React.FC<{ unit: string }> = ({ unit }) => {
           content={`Convert ${unit} to ${entries.length} other units instantly.`}
         />
       </Head>
+
       <main>
         <h1>{unit} to All Units Converter</h1>
         <table>
@@ -49,6 +53,4 @@ const ConverterPage: React.FC<{ unit: string }> = ({ unit }) => {
       </main>
     </>
   );
-};
-
-export default ConverterPage;
+}
