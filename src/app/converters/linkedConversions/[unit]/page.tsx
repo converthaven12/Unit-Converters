@@ -1,25 +1,29 @@
-// File: src/app/screens/Converters/linkedConversions/[unit]/page.tsx
+// File: src/app/converters/[unit]/page.tsx
 
-import Head from 'next/head'
-// ↑ we’ll use a plain relative path for the helper:
-import { conversionFactors, convert } from '../../../../../../Helper/conversionFactors'
+import Head from 'next/head';
+import { conversionFactors, convert } from '../../../Helper/conversionFactors';
 
-export const dynamicParams = false // Only the units you list will render.
+export const dynamicParams = false; // only the units you list get prerendered
 
-/**
- * Tell Next.js which `unit` slugs to prerender.
+/**  
+ * Tell Next.js which `unit` slugs to prerender.  
  */
 export async function generateStaticParams() {
-  return Object.keys(conversionFactors).map((unit) => ({ unit }))
+  return Object.keys(conversionFactors).map((unit) => ({ unit }));
 }
 
+/**  
+ * Page component must be async so it returns a Promise (matching Next’s PageProps).  
+ * We accept `props: any` to avoid the built‑in PageProps mismatch.  
+ */
 export default async function Page(props: any) {
-  // mark as async so it satisfies Next’s PageProps signature
-  const unit: string = props.params.unit
-  const entries = Object.entries(conversionFactors).map(([otherUnit]) => ({
-    otherUnit,
-    value: convert(1, unit, otherUnit),
-  }))
+  const unit: string = props.params.unit;
+  const entries = Object.entries(conversionFactors).map(
+    ([otherUnit]) => ({
+      otherUnit,
+      value: convert(1, unit, otherUnit),
+    })
+  );
 
   return (
     <>
@@ -31,7 +35,7 @@ export default async function Page(props: any) {
         />
       </Head>
       <main>
-        <h1>{unit} → all units</h1>
+        <h1>{unit} to All Units Converter</h1>
         <table>
           <thead>
             <tr>
@@ -50,5 +54,6 @@ export default async function Page(props: any) {
         </table>
       </main>
     </>
-  )
+  );
 }
+
