@@ -5,7 +5,7 @@ import Link from "next/link";
 import Logo from "../../../../../public/assests/unitlogo.png";
 import ArrowDown from "../../../../../public/assests/arrow-down.svg";
 import arrows from "../../../../../public/assests/sideMenuToggler.svg";
-import { menus } from "../../../../../helper/Menus";
+import { menus } from "../../../../helper/Menus";
 import { useSidebar } from "../../../../app/utils/context/SidebarContext";
 import { CalculatorIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -112,3 +112,4 @@ const Sidebar: React.FC = () => {
 };
 
 export default Sidebar;
+
