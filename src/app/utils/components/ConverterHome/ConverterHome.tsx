@@ -14,10 +14,12 @@ const ConverterHome: React.FC = () => {
 
   const categories = Object.keys(unitMaps).concat("TemperatureUnits");
 
-  const getUnits = () => {
+  const getUnits = (): string[] => {
     return category === "TemperatureUnits"
       ? temperatureUnits
-      : Object.keys(unitMaps[category]);
+      : Object.keys((unitMaps as Record<string, Record<string, number>>)[
+          category
+        ] || {});
   };
 
   const convert = (value: number, from: string, to: string): number => {
@@ -36,9 +38,13 @@ const ConverterHome: React.FC = () => {
       else return value;
     }
 
-    const currentMap = unitMaps[category] as Record<string, number>;
-    const baseValue = value * currentMap[from];
-    return baseValue / currentMap[to];
+    // Look up the map for this category; fall back to empty object
+    const currentMap =
+      (unitMaps as Record<string, Record<string, number>>)[category] || {};
+    const factorFrom = currentMap[from] ?? 1;
+    const factorTo = currentMap[to] ?? 1;
+    const baseValue = value * factorFrom;
+    return baseValue / factorTo;
   };
 
   const units = getUnits();
@@ -64,12 +70,16 @@ const ConverterHome: React.FC = () => {
                 }`}
                 onClick={() => {
                   setCategory(cat);
-                  const units =
+                  const newUnits =
                     cat === "TemperatureUnits"
                       ? temperatureUnits
-                      : Object.keys(unitMaps[cat]);
-                  setFromUnit(units[0]);
-                  setToUnit(units[1] || units[0]);
+                      : Object.keys(
+                          (unitMaps as Record<string, Record<string, number>>)[
+                            cat
+                          ] || {}
+                        );
+                  setFromUnit(newUnits[0]);
+                  setToUnit(newUnits[1] || newUnits[0]);
                   setFromValue("");
                 }}
               >
