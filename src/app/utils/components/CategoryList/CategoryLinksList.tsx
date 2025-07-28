@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { menus } from "../../../../../Helper/Menus";
+import { menus } from "../../../../../helper/Menus";
 
 type MenuItem = { label: string; path: string };
 type Menus = Record<string, MenuItem[]>;
