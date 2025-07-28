@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import unitMaps from "../../../../helper/Units";
+import conversionFactors from "../../../../helper/conversionFactors";
 import LinkDisplay from "../LinkDisplay/LinkDisplay";
 
 const temperatureUnits = ["Celsius", "Fahrenheit", "Kelvin"];
@@ -12,39 +12,32 @@ const ConverterHome: React.FC = () => {
   const [fromUnit, setFromUnit] = useState<string>("Meter");
   const [toUnit, setToUnit] = useState<string>("Kilometer");
 
-  const categories = Object.keys(unitMaps).concat("TemperatureUnits");
+  // categories come from flat conversionFactors keys
+  const numericUnits = Object.keys(conversionFactors);
+  const categories = ["TemperatureUnits", ...numericUnits];
 
   const getUnits = (): string[] => {
     return category === "TemperatureUnits"
       ? temperatureUnits
-      : Object.keys((unitMaps as Record<string, Record<string, number>>)[
-          category
-        ] || {});
+      : numericUnits;
   };
 
   const convert = (value: number, from: string, to: string): number => {
     if (category === "TemperatureUnits") {
       if (from === to) return value;
-
-      let celsius: number;
-      if (from === "Celsius") celsius = value;
-      else if (from === "Fahrenheit") celsius = (value - 32) * (5 / 9);
-      else if (from === "Kelvin") celsius = value - 273.15;
-      else return value;
-
-      if (to === "Celsius") return celsius;
-      else if (to === "Fahrenheit") return (celsius * 9) / 5 + 32;
-      else if (to === "Kelvin") return celsius + 273.15;
-      else return value;
+      let c: number;
+      if (from === "Celsius") c = value;
+      else if (from === "Fahrenheit") c = (value - 32) * 5 / 9;
+      else c = value - 273.15;
+      if (to === "Celsius") return c;
+      if (to === "Fahrenheit") return (c * 9) / 5 + 32;
+      return c + 273.15;
     }
 
-    // Look up the map for this category; fall back to empty object
-    const currentMap =
-      (unitMaps as Record<string, Record<string, number>>)[category] || {};
-    const factorFrom = currentMap[from] ?? 1;
-    const factorTo = currentMap[to] ?? 1;
-    const baseValue = value * factorFrom;
-    return baseValue / factorTo;
+    const factorFrom = conversionFactors[from] ?? 1;
+    const factorTo = conversionFactors[to] ?? 1;
+    const base = value * factorFrom;
+    return base / factorTo;
   };
 
   const units = getUnits();
@@ -57,7 +50,6 @@ const ConverterHome: React.FC = () => {
         <h1 className="font-bold text-3xl sm:text-4xl text-[#006633] mb-6 text-center">
           Universal Unit Converter
         </h1>
-
         <div className="mb-8 p-4 bg-gray-50 rounded-lg border border-[#006633]/10">
           <div className="flex flex-wrap gap-2 sm:gap-3 px-2 overflow-x-auto mb-2">
             {categories.map((cat) => (
@@ -71,13 +63,7 @@ const ConverterHome: React.FC = () => {
                 onClick={() => {
                   setCategory(cat);
                   const newUnits =
-                    cat === "TemperatureUnits"
-                      ? temperatureUnits
-                      : Object.keys(
-                          (unitMaps as Record<string, Record<string, number>>)[
-                            cat
-                          ] || {}
-                        );
+                    cat === "TemperatureUnits" ? temperatureUnits : numericUnits;
                   setFromUnit(newUnits[0]);
                   setToUnit(newUnits[1] || newUnits[0]);
                   setFromValue("");
@@ -87,9 +73,8 @@ const ConverterHome: React.FC = () => {
               </button>
             ))}
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-            <div className="space-y-2">
+            <div>
               <label className="block text-sm font-medium text-gray-700">
                 From:
               </label>
@@ -103,17 +88,16 @@ const ConverterHome: React.FC = () => {
               <select
                 value={fromUnit}
                 onChange={(e) => setFromUnit(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-lg outline-none bg-white transition"
+                className="w-full p-3 border border-gray-300 rounded-lg outline-none bg-white transition mt-2"
               >
-                {units.map((unit) => (
-                  <option key={unit} value={unit}>
-                    {unit}
+                {units.map((u) => (
+                  <option key={u} value={u}>
+                    {u}
                   </option>
                 ))}
               </select>
             </div>
-
-            <div className="space-y-2">
+            <div>
               <label className="block text-sm font-medium text-gray-700">
                 To:
               </label>
@@ -121,43 +105,28 @@ const ConverterHome: React.FC = () => {
                 type="text"
                 readOnly
                 value={fromValue ? result.toFixed(6) : ""}
-                className="w-full p-3 border border-[#138a55] outline-none rounded-lg bg-gray-50"
+                className="w-full p-3 border border-[#138a55] rounded-lg bg-gray-50"
               />
               <select
                 value={toUnit}
                 onChange={(e) => setToUnit(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-lg outline-none bg-white transition"
+                className="w-full p-3 border border-gray-300 rounded-lg outline-none bg-white transition mt-2"
               >
-                {units.map((unit) => (
-                  <option key={unit} value={unit}>
-                    {unit}
+                {units.map((u) => (
+                  <option key={u} value={u}>
+                    {u}
                   </option>
                 ))}
               </select>
             </div>
           </div>
-
           {fromValue && (
-            <div className="mt-4 p-3 bg-[#006633]/5 rounded-lg border border-[#006633]/10">
-              <p className="text-[#006633] font-medium text-center">
-                {numericValue} {fromUnit} ={" "}
-                <span className="font-bold">{result.toFixed(6)}</span> {toUnit}
-              </p>
-            </div>
+            <p className="text-center text-[#006633] font-medium">
+              {numericValue} {fromUnit} ={" "}
+              <span className="font-bold">{result.toFixed(6)}</span> {toUnit}
+            </p>
           )}
         </div>
-
-        {/* Hide spinners in number inputs */}
-        <style jsx>{`
-          input[type="number"]::-webkit-inner-spin-button,
-          input[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-          }
-          input[type="number"] {
-            -moz-appearance: textfield;
-          }
-        `}</style>
       </div>
       <LinkDisplay />
     </>
