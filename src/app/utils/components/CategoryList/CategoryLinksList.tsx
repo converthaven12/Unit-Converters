@@ -3,8 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// 5 levels up: CategoryList → components → utils → app → src, then into helper
-import { menus } from "../../../../../helper/Menus";
+// 4 levels up from CategoryList → src/helper
+import { menus } from "../../../../helper/Menus";
 
 type MenuItem = { label: string; path: string };
 type Menus = Record<string, MenuItem[]>;
