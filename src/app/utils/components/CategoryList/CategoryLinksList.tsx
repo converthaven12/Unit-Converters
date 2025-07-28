@@ -3,7 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { menus } from "../../../../../helper/Menus";
+// Go up four levels from CategoryList → into src/helper
+import { menus } from "../../../../helper/Menus";
 
 type MenuItem = { label: string; path: string };
 type Menus = Record<string, MenuItem[]>;
@@ -11,21 +12,18 @@ type Menus = Record<string, MenuItem[]>;
 const CategoryLinksList: React.FC = () => {
   const pathname = usePathname();
 
-  // Find category that contains current path
   const currentCategoryKey = Object.keys(menus).find((categoryKey) =>
     menus[categoryKey].some((item) => pathname.startsWith(item.path))
   );
 
   if (!currentCategoryKey) {
-    return null; // or some fallback if you want
+    return null;
   }
 
-  // Filter out current path so it's not shown twice
   const filteredItems = menus[currentCategoryKey].filter(
     (item) => item.path !== pathname
   );
 
-  // Format heading by splitting camel case or just use key as is
   const heading = currentCategoryKey.replace(/([A-Z])/g, " $1").trim();
 
   return (
