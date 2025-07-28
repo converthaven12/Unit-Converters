@@ -3,8 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// Go up four levels from CategoryList → into src/helper
-import { menus } from "../../../../helper/Menus";
+// 5 levels up: CategoryList → components → utils → app → src, then into helper
+import { menus } from "../../../../../helper/Menus";
 
 type MenuItem = { label: string; path: string };
 type Menus = Record<string, MenuItem[]>;
@@ -15,15 +15,11 @@ const CategoryLinksList: React.FC = () => {
   const currentCategoryKey = Object.keys(menus).find((categoryKey) =>
     menus[categoryKey].some((item) => pathname.startsWith(item.path))
   );
-
-  if (!currentCategoryKey) {
-    return null;
-  }
+  if (!currentCategoryKey) return null;
 
   const filteredItems = menus[currentCategoryKey].filter(
     (item) => item.path !== pathname
   );
-
   const heading = currentCategoryKey.replace(/([A-Z])/g, " $1").trim();
 
   return (
