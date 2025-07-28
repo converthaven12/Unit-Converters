@@ -1,166 +1,33 @@
-// File: src/app/(screens)/Converters/layout.tsx
+// File: src/app/layout.tsx
 
-type FAQEntry = {
-  "@type": "Question";
-  name: string;
-  acceptedAnswer: {
-    "@type": "Answer";
-    text: string;
-  };
-};
+import "./globals.css";
+import React from "react";
 
-type FAQMap = Record<string, FAQEntry[]>;
+// ↓ Corrected: import PageHeader from the app-level components folder
+import PageHeader from "./components/PageHeader";
 
-'use client';
-import dynamic from 'next/dynamic';
-import React, { useEffect, useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
-import { Menu } from 'lucide-react';
-import Script from 'next/script';
+// Any other root‑level providers or styles…
+import { SidebarProvider } from "./utils/context/SidebarContext";
 
-import { SidebarProvider, useSidebar } from '../../utils/context/SidebarContext';
-import Footer from '@/app/utils/components/Footer/Footer';
-import SeoHead from '../../components/SeoHead';
-import PageHeader from '../../components/PageHeader';
+// ↓ Corrected: go up one level from app/ to src/, then into helper/
+import units from "../helper/CheckUnits";
+import { menus } from "../helper/Menus";
 
-import faqMapRaw from '@/data/faqMap.json';
-import keywordMap from '@/data/keywordMap.json';
-
-// ↓ Corrected imports: go up three levels, then into lowercase helper folder
-import units from '../../../helper/CheckUnits';
-import { DropDownOptions } from '../../../helper/Menus';
-
-const faqMap = faqMapRaw as FAQMap;
-
-// Dynamically loaded components (client‑side only)
-const Sidebar = dynamic(
-  () => import('../../utils/components/SideBar/Sidebar'),
-  { ssr: false }
-);
-const GetConversionAccordingToPathname = dynamic(
-  () =>
-    import(
-      '@/app/utils/components/GetConversionAccordingToPathname/GetConversionAccordingToPathname'
-    ),
-  { ssr: false }
-);
-const DefinationsForUnit = dynamic(
-  () =>
-    import(
-      '@/app/utils/components/DefinationsForUnit/DefinationsForUnit'
-    ),
-  { ssr: false }
-);
-const Dropdown = dynamic(
-  () => import('@/app/utils/components/Dropdown/Dropdown'),
-  { ssr: false }
-);
-const RelatedConverters = dynamic(
-  () => import('../../components/RelatedConverters'),
-  { ssr: false }
-);
-
-function InnerLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname() || '/';
-  const router = useRouter();
-  const { isOpened, setIsOpened } = useSidebar();
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
-
-  // SEO title determination
-  const meta =
-    (keywordMap as Record<string, { title: string }>)[pathname] || {
-      title: 'Converter',
-    };
-  const titleBase = meta.title.split(' Converter')[0];
-
-  // Sidebar width handling
-  const sidebarWidth = isOpened
-    ? 'md:ml-[20dvw] xl:ml-[18dvw]'
-    : 'ml-0 md:ml-[74px]';
-
-  // Show conversion component logic
-  const pathSegments = pathname.split('/') || [];
-  const isLinkedConversions = pathSegments[2] !== 'linkedConversions';
-  const baseUnit = pathSegments[3]?.split('To')[0] || '';
-  const shouldShowConversion = isLinkedConversions && units.includes(baseUnit);
-
-  useEffect(() => {
-    if (selectedOption && selectedOption.trim() !== '') {
-      router.push(selectedOption);
-    }
-  }, [selectedOption, router]);
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      <SeoHead />
+    <html lang="en">
+      <head>
+        {/* your <head> content */}
+      </head>
+      <body>
+        <SidebarProvider>
+          {/* Optionally render a header on every page */}
+          <PageHeader />
 
-      <div className="flex min-h-screen relative">
-        {!isOpened && (
-          <button
-            className="fixed top-4 right-4 z-40 md:hidden bg-white p-2 rounded-md shadow-md"
-            onClick={() => setIsOpened(true)}
-          >
-            <Menu className="w-6 h-6" />
-          </button>
-        )}
-
-        <div className="fixed top-0 h-full z-40">
-          <Sidebar />
-        </div>
-
-        <div
-          className={`bg-[#F5F5F9] w-full flex-1 flex flex-col justify-between transition-all duration-300 ${sidebarWidth}`}
-        >
-          <div className="p-2 md:px-5 font-alata">
-            <PageHeader title={titleBase} />
-
-            <div className="mb-4">
-              <Dropdown
-                options={DropDownOptions}
-                activeId={selectedOption}
-                name="selectedOption"
-                handleDropdownChange={(_, value) =>
-                  setSelectedOption(value as string)
-                }
-                placeHolder="Search converters"
-                clearable
-              />
-            </div>
-
-            {children}
-            {shouldShowConversion && <GetConversionAccordingToPathname />}
-            {!isLinkedConversions && <DefinationsForUnit />}
-          </div>
-
-          <aside className="p-2 md:px-5 mt-8">
-            <h2 className="text-xl font-semibold">Related Converters</h2>
-            <RelatedConverters />
-          </aside>
-
-          <Footer />
-        </div>
-      </div>
-
-      {/* JSON-LD FAQ */}
-      <Script id="faq-jsonld" type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: faqMap[pathname] || [],
-        })}
-      </Script>
-    </>
-  );
-}
-
-export default function ConvertersLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <SidebarProvider>
-      <InnerLayout>{children}</InnerLayout>
-    </SidebarProvider>
+          {/* Now render the page content */}
+          {children}
+        </SidebarProvider>
+      </body>
+    </html>
   );
 }
