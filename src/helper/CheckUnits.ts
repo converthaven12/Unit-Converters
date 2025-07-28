@@ -2,17 +2,16 @@
 
 /**
  * A list of all base units that your converters support.
- * Adjust this array to match the keys in your helper/Units.ts file.
+ * Typed as string[] so you can pass any string from `usePathname()`.
  */
-const checkUnits = [
+const checkUnits: string[] = [
   "Meter",
   "Kilometer",
   "Mile",
   "Yard",
   "Foot",
   "Inch",
-  // …add all other unit keys here…
-] as const;
+  // …add any other unit keys here…
+];
 
-// Export it as the default module export
 export default checkUnits;
