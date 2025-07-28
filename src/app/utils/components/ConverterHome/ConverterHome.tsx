@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import unitMaps from "../../../../../Helper/Units";
+import unitMaps from "../../../../../helper/Units";
 import LinkDisplay from "../LinkDisplay/LinkDisplay";
 
 const temperatureUnits = ["Celsius", "Fahrenheit", "Kelvin"];
@@ -47,36 +47,12 @@ const ConverterHome: React.FC = () => {
 
   return (
     <>
-      <div className="p-6 font-sans w-full  bg-white rounded-lg shadow-sm">
+      <div className="p-6 font-sans w-full bg-white rounded-lg shadow-sm">
         <h1 className="font-bold text-3xl sm:text-4xl text-[#006633] mb-6 text-center">
           Universal Unit Converter
         </h1>
 
         <div className="mb-8 p-4 bg-gray-50 rounded-lg border border-[#006633]/10">
-          {/* <div className="flex flex-wrap gap-2 mb-6 justify-center">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className={`px-4 py-2 rounded-full text-sm transition-all ${
-                category === cat
-                  ? "bg-[#006633] text-white font-medium shadow-md"
-                  : "bg-white text-gray-700 border border-[#006633]/20 hover:border-[#006633]/40"
-              }`}
-              onClick={() => {
-                setCategory(cat);
-                const units =
-                  cat === "TemperatureUnits"
-                    ? temperatureUnits
-                    : Object.keys(unitMaps[cat]);
-                setFromUnit(units[0]);
-                setToUnit(units[1] || units[0]);
-                setFromValue("");
-              }}
-            >
-              {cat}
-            </button>
-          ))}
-        </div> */}
           <div className="flex flex-wrap gap-2 sm:gap-3 px-2 overflow-x-auto mb-2">
             {categories.map((cat) => (
               <button
@@ -111,7 +87,7 @@ const ConverterHome: React.FC = () => {
                 type="number"
                 value={fromValue}
                 onChange={(e) => setFromValue(e.target.value)}
-                className="w-full p-3 border border-[#138a55] rounded-lg outline-none  transition"
+                className="w-full p-3 border border-[#138a55] rounded-lg outline-none transition"
                 placeholder="Enter value"
               />
               <select
@@ -135,7 +111,7 @@ const ConverterHome: React.FC = () => {
                 type="text"
                 readOnly
                 value={fromValue ? result.toFixed(6) : ""}
-                className="w-full p-3 border border-[#138a55] outline-none rounded-lg bg-gray-50 "
+                className="w-full p-3 border border-[#138a55] outline-none rounded-lg bg-gray-50"
               />
               <select
                 value={toUnit}
