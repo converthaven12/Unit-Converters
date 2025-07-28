@@ -2,10 +2,11 @@ import React from "react";
 import KgToGram from "./WeightAndMass/KgToGram/page";
 import ConverterHome from "@/app/utils/components/ConverterHome/ConverterHome";
 
-const page = () => {
+const page: React.FC = () => {
   return (
     <div>
-      <ConverterHome/>
+      <ConverterHome />
+      <KgToGram />   {/* if you need to mount this conversion too */}
     </div>
   );
 };

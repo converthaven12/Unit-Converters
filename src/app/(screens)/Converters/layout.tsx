@@ -1,4 +1,5 @@
 // File: src/app/(screens)/Converters/layout.tsx
+
 type FAQEntry = {
   "@type": "Question";
   name: string;
@@ -12,38 +13,53 @@ type FAQMap = Record<string, FAQEntry[]>;
 
 'use client';
 import dynamic from 'next/dynamic';
-
-
-// Dynamically loaded components (client-heavy or large)
-const Sidebar = dynamic(() => import('../../utils/components/SideBar/Sidebar'), { ssr: false });
-const GetConversionAccordingToPathname = dynamic(() => import('@/app/utils/components/GetConversionAccordingToPathname/GetConversionAccordingToPathname'), { ssr: false });
-const DefinationsForUnit = dynamic(() => import('@/app/utils/components/DefinationsForUnit/DefinationsForUnit'), { ssr: false });
-const Dropdown = dynamic(() => import('@/app/utils/components/Dropdown/Dropdown'), { ssr: false });
-const RelatedConverters = dynamic(() => import('../../components/RelatedConverters'), { ssr: false });
-
 import React, { useEffect, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { Menu } from 'lucide-react';
+import Script from 'next/script';
 
 import { SidebarProvider, useSidebar } from '../../utils/context/SidebarContext';
-
-import { usePathname, useRouter } from 'next/navigation';
-import units from '../../../../Helper/CheckUnits';
-
-import { Menu } from 'lucide-react';
-
-import { DropDownOptions } from '../../../../Helper/Menus';
 import Footer from '@/app/utils/components/Footer/Footer';
-
-// SEO & Layout imports
 import SeoHead from '../../components/SeoHead';
 import PageHeader from '../../components/PageHeader';
 
-
 import faqMapRaw from '@/data/faqMap.json';
+import keywordMap from '@/data/keywordMap.json';
+
+// ↓ corrected imports ↓
+// Go up three levels from this file into 'src', then into 'helper'
+import units from '../../../helper/CheckUnits';
+import { DropDownOptions } from '../../../helper/Menus';
 
 const faqMap = faqMapRaw as FAQMap;
 
-import keywordMap from '@/data/keywordMap.json';
-import Script from 'next/script';
+// Dynamically loaded components
+const Sidebar = dynamic(
+  () => import('../../utils/components/SideBar/Sidebar'),
+  { ssr: false }
+);
+const GetConversionAccordingToPathname = dynamic(
+  () =>
+    import(
+      '@/app/utils/components/GetConversionAccordingToPathname/GetConversionAccordingToPathname'
+    ),
+  { ssr: false }
+);
+const DefinationsForUnit = dynamic(
+  () =>
+    import(
+      '@/app/utils/components/DefinationsForUnit/DefinationsForUnit'
+    ),
+  { ssr: false }
+);
+const Dropdown = dynamic(
+  () => import('@/app/utils/components/Dropdown/Dropdown'),
+  { ssr: false }
+);
+const RelatedConverters = dynamic(
+  () => import('../../components/RelatedConverters'),
+  { ssr: false }
+);
 
 function InnerLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() || '/';
@@ -51,19 +67,22 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
   const { isOpened, setIsOpened } = useSidebar();
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
-  // Determine converter title and FAQ
-  const meta = (keywordMap as Record<string, { title: string }>)[pathname] || { title: 'Converter' };
+  // SEO title logic
+  const meta =
+    (keywordMap as Record<string, { title: string }>)[pathname] || {
+      title: 'Converter',
+    };
   const titleBase = meta.title.split(' Converter')[0];
 
-  // Dropdown and sidebar logic
+  // Sidebar toggle handling
   const sidebarWidth = isOpened
     ? 'md:ml-[20dvw] xl:ml-[18dvw]'
     : 'ml-0 md:ml-[74px]';
 
+  // Determine if this path should show the conversion component
   const pathSegments = pathname.split('/') || [];
   const isLinkedConversions = pathSegments[2] !== 'linkedConversions';
   const baseUnit = pathSegments[3]?.split('To')[0] || '';
-
   const shouldShowConversion = isLinkedConversions && units.includes(baseUnit);
 
   useEffect(() => {
@@ -74,11 +93,9 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      {/* SEO meta tags */}
       <SeoHead />
 
       <div className="flex min-h-screen relative">
-        {/* Sidebar toggle */}
         {!isOpened && (
           <button
             className="fixed top-4 right-4 z-40 md:hidden bg-white p-2 rounded-md shadow-md"
@@ -88,52 +105,45 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
           </button>
         )}
 
-        {/* Sidebar */}
         <div className="fixed top-0 h-full z-40">
           <Sidebar />
         </div>
 
-        {/* Main Content Area */}
-        <div className={`bg-[#F5F5F9] w-full flex-1 flex flex-col justify-between transition-all duration-300 ${sidebarWidth}`}>
-          {/* Page Header H1 */}
+        <div
+          className={`bg-[#F5F5F9] w-full flex-1 flex flex-col justify-between transition-all duration-300 ${sidebarWidth}`}
+        >
           <div className="p-2 md:px-5 font-alata">
             <PageHeader title={titleBase} />
 
-            {/* Search Dropdown */}
             <div className="mb-4">
               <Dropdown
                 options={DropDownOptions}
                 activeId={selectedOption}
                 name="selectedOption"
-                handleDropdownChange={(name, value) => setSelectedOption(value as string)}
+                handleDropdownChange={(_, value) =>
+                  setSelectedOption(value as string)
+                }
                 placeHolder="Search converters"
                 clearable
               />
             </div>
 
-            {/* Page Children & Conversion Logic */}
             {children}
             {shouldShowConversion && <GetConversionAccordingToPathname />}
             {!isLinkedConversions && <DefinationsForUnit />}
           </div>
 
-          {/* Related Converters Section */}
           <aside className="p-2 md:px-5 mt-8">
             <h2 className="text-xl font-semibold">Related Converters</h2>
             <RelatedConverters />
           </aside>
 
-          {/* Footer */}
           <Footer />
         </div>
       </div>
 
-      {/* JSON-LD FAQ Data */}
-      
-{console.log('🔍 Current pathname:', pathname)}
-{console.log('📦 FAQ Data for this path:', faqMap[pathname])}
-
-      <Script id="faq-jsonld" type="application/ld+json" >
+      {/* JSON-LD FAQ */}
+      <Script id="faq-jsonld" type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'FAQPage',
@@ -144,10 +154,10 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function ConvertersLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <SidebarProvider>
-      <InnerLayout>{children}</InnerLayout>
-    </SidebarProvider>
-  );
+export default function ConvertersLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <SidebarProvider><InnerLayout>{children}</InnerLayout></SidebarProvider>;
 }
