@@ -1,18 +1,20 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import units from "../../../../helper/Defination";
+// ↓ default-import the Defination map
+import Defination from "../../../../helper/Defination";
+
+import type { DefinitionEntry } from "../../../../helper/Defination";
 
 const DefinationsForUnit: React.FC = () => {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<DefinitionEntry[]>([]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const UnitName = localStorage.getItem("recentPath") as keyof typeof units;
-      if (UnitName) {
-        setData(units[UnitName] || []);
-      }
-    }
+    if (typeof window === "undefined") return;
+
+    const UnitName = localStorage.getItem("recentPath") || "";
+    // Look up the array (or fallback to empty)
+    setData(Defination[UnitName] || []);
   }, []);
 
   return (
