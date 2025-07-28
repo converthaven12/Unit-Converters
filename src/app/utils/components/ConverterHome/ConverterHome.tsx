@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import conversionFactors from "../../../../helper/conversionFactors";
+// ↓ fixed: named import, not default
+import { conversionFactors } from "../../../../helper/conversionFactors";
 import LinkDisplay from "../LinkDisplay/LinkDisplay";
 
 const temperatureUnits = ["Celsius", "Fahrenheit", "Kelvin"];
@@ -17,9 +18,7 @@ const ConverterHome: React.FC = () => {
   const categories = ["TemperatureUnits", ...numericUnits];
 
   const getUnits = (): string[] => {
-    return category === "TemperatureUnits"
-      ? temperatureUnits
-      : numericUnits;
+    return category === "TemperatureUnits" ? temperatureUnits : numericUnits;
   };
 
   const convert = (value: number, from: string, to: string): number => {
