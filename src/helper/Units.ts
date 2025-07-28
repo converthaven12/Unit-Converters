@@ -1,8 +1,6 @@
-// src/helper/Units.ts
-
 /**
- * Maps each unit key to its factor relative to a base unit (e.g. meter).
- * The converter logic multiplies by `Units[from]` then divides by `Units[to]`.
+ * Maps each unit key to its factor relative to a base unit (e.g. metre).
+ * The converter logic multiplies by Units[from] then divides by Units[to].
  */
 const Units: Record<string, number> = {
   Meter: 1,
@@ -11,8 +9,8 @@ const Units: Record<string, number> = {
   Yard: 0.9144,
   Foot: 0.3048,
   Inch: 0.0254,
-  // …all the other unit factors…
+  // …add any other unit factors you need…
 };
 
-// Export as the default module export
+// Make this file a module by exporting the Units object
 export default Units;
