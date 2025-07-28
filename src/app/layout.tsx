@@ -2,29 +2,23 @@
 
 import "./globals.css";
 import React from "react";
-
-// ↓ Corrected: import PageHeader from the app-level components folder
 import PageHeader from "./components/PageHeader";
-
-// Any other root‑level providers or styles…
 import { SidebarProvider } from "./utils/context/SidebarContext";
 
-// ↓ Corrected: go up one level from app/ to src/, then into helper/
-import units from "../helper/CheckUnits";
-import { menus } from "../helper/Menus";
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>
-        {/* your <head> content */}
+        {/* You can add favicon, meta tags, etc. here */}
       </head>
       <body>
         <SidebarProvider>
-          {/* Optionally render a header on every page */}
-          <PageHeader />
-
-          {/* Now render the page content */}
+          {/* Now passing a default title so PageHeader compiles */}
+          <PageHeader title="Home" />
           {children}
         </SidebarProvider>
       </body>
