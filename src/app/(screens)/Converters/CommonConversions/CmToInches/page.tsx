@@ -1,36 +1,47 @@
+import type { Metadata } from "next";
 import ClientCmToInches from "./ClientCmToInches";
 import ConversionTable from "./ConversionTable";
 
 /* ---------------------------
    Page-level SEO (Server-rendered)
 ---------------------------- */
-export const metadata = {
+const SITE = "https://www.converthaven.com";
+const CANONICAL = `${SITE}/Converters/CommonConversions/CmToInches`;
+const OG_IMAGE = `${SITE}/images/og-default.jpg`;
+
+export const metadata: Metadata = {
   title: "Cm to Inches Converter (cm → in) | Fast & Accurate",
   description:
     "Instantly convert centimeters to inches (cm to in). Accurate results with examples and a handy conversion table. Free and mobile-friendly.",
-  alternates: {
-    canonical:
-      "https://www.converthaven.com/Converters/CommonConversions/CmToInches",
-  },
+  alternates: { canonical: CANONICAL },
   openGraph: {
     type: "website",
-    url: "https://www.converthaven.com/Converters/CommonConversions/CmToInches",
+    url: CANONICAL,
     siteName: "ConvertHaven",
     title: "Cm to Inches Converter (cm → in) | Fast & Accurate",
     description:
       "Instantly convert centimeters to inches (cm to in). Accurate results with examples and a handy conversion table. Free and mobile-friendly.",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Cm to Inches Converter",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Cm to Inches Converter (cm → in) | Fast & Accurate",
     description:
       "Instantly convert centimeters to inches (cm to in). Accurate results with examples and a handy conversion table. Free and mobile-friendly.",
+    images: [OG_IMAGE],
   },
 };
 
-const CANONICAL =
-  "https://www.converthaven.com/Converters/CommonConversions/CmToInches";
-
+/* ---------------------------
+   JSON-LD Schemas (server-rendered)
+---------------------------- */
 const WEBAPP_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -50,10 +61,7 @@ const FAQ_SCHEMA = {
     {
       "@type": "Question",
       name: "How many inches are in 1 cm?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "1 cm = 0.3937007874 inches.",
-      },
+      acceptedAnswer: { "@type": "Answer", text: "1 cm = 0.3937007874 inches." },
     },
     {
       "@type": "Question",
@@ -70,9 +78,14 @@ const BREADCRUMBS_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.converthaven.com/" },
-    { "@type": "ListItem", position: 2, name: "Converters", item: "https://www.converthaven.com/Converters" },
-    { "@type": "ListItem", position: 3, name: "Common Conversions", item: "https://www.converthaven.com/Converters/CommonConversions" },
+    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+    { "@type": "ListItem", position: 2, name: "Converters", item: `${SITE}/Converters` },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Common Conversions",
+      item: `${SITE}/Converters/CommonConversions`,
+    },
     { "@type": "ListItem", position: 4, name: "Cm to Inches", item: CANONICAL },
   ],
 };
@@ -80,7 +93,7 @@ const BREADCRUMBS_SCHEMA = {
 export default function Page() {
   return (
     <div className="min-h-screen">
-      {/* Short intro (keep H1 in the client component only) */}
+      {/* Short intro (keep the only H1 inside ClientCmToInches) */}
       <p className="mt-4">
         Convert centimeters to inches instantly. Formula: inches = centimeters ×
         0.3937007874. Example: 30 cm = 11.811 in. Works on mobile and desktop,
@@ -98,68 +111,46 @@ export default function Page() {
         </ul>
       </nav>
 
-      {/* JSON-LD (server-rendered, visible in View Source) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBAPP_SCHEMA) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMBS_SCHEMA) }}
-      />
+      {/* JSON-LD (visible in “View source”) */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBAPP_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMBS_SCHEMA) }} />
 
-      {/* Client-side interactive converter */}
+      {/* Client-side interactive converter (contains the single H1) */}
       <ClientCmToInches />
 
-      {/* Content sections: change extra H1s to H2s to avoid “too many H1s” */}
+      {/* Content sections */}
       <h2 className="text-xl text-[#006633] font-semibold mt-10">Centimeter</h2>
       <section className="space-y-3 text-justify">
         <p className="mt-2">
           <strong>Definition:</strong> A centimeter (symbol: cm) is a unit of
-          length in the International System of Units (SI), the current form of
-          the metric system. It is defined as 1/100 meters.
+          length in the International System of Units (SI). It is defined as 1/100 meters.
         </p>
         <p>
-          <strong>History/origin:</strong> A centimeter is based on the SI unit
-          meter, and as the prefix "centi" indicates, is equal to one hundredth
-          of a meter. Metric prefixes range from factors of 10<sup>-18</sup> to
-          10<sup>18</sup> based on a decimal system, with the base (in this case
-          the meter) having no prefix and having a factor of 1.
+          <strong>History/origin:</strong> The centimeter is based on the SI unit
+          meter; the prefix “centi” means one hundredth. Learning a few common prefixes
+          (kilo-, centi-, milli-) helps with quick mental conversions.
         </p>
         <p>
-          <strong>Current use: </strong>
-          The centimeter, like the meter, is used in all sorts of applications
-          worldwide (in countries that have undergone metrication) in instances
-          where a smaller denomination of the meter is required. Height is
-          commonly measured in centimeters outside of countries like the United
-          States.
+          <strong>Current use:</strong> The centimeter is widely used where a smaller
+          unit than the meter is needed. Height is commonly measured in centimeters in
+          most countries outside the U.S.
         </p>
       </section>
 
       <h2 className="text-xl text-[#006633] font-semibold mt-10">Inch</h2>
       <section className="space-y-3 text-justify">
         <p className="mt-2">
-          <strong>Definition:</strong> An inch (symbol: in) is a unit of length
-          in the imperial and US customary systems of measurement. An inch was
-          defined to be equivalent to exactly 25.4 millimeters in 1959. There
-          are 12 inches in a foot and 36 inches in a yard.
+          <strong>Definition:</strong> An inch (symbol: in) is a unit of length in the
+          imperial and U.S. customary systems. Since 1959, 1 inch = 25.4 millimeters.
         </p>
         <p>
-          <strong>History/origin:</strong> The term "inch" was derived from the
-          Latin unit "uncia" which equated to "one-twelfth" of a Roman foot.
-          There have been a number of different standards for the inch in the
-          past, with the current definition being based on the international
-          yard. One early definition used “three barleycorns” end-to-end; another
-          used the average width of three human thumbs.
+          <strong>History/origin:</strong> Historically linked to the “uncia” and
+          barleycorn measures; the modern inch is derived from the international yard.
         </p>
         <p>
-          <strong>Current use:</strong> The inch is mostly used in the United
-          States, Canada, and the United Kingdom. It is also sometimes used in
-          Japan and elsewhere for electronic parts like display sizes.
+          <strong>Current use:</strong> Common in the U.S., Canada, and the U.K., and
+          often used worldwide for electronics (e.g., screen sizes).
         </p>
       </section>
 
@@ -176,11 +167,10 @@ export default function Page() {
         <br />1 in = 2.54 cm
       </p>
       <p>
-        <strong>Example: </strong>convert 15 cm to in:
+        <strong>Example:</strong> convert 15 cm to in:
         <br />
         15 cm = 15 × 0.3937007874 in = 5.905511811 in
       </p>
     </div>
   );
 }
-
