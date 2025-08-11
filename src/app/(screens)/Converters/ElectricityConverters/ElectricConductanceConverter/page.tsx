@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import Link from "next/link";
+import ClientElectricConductance from "./ClientElectricConductance";
 
 /** ====== Canonical + SEO ====== */
 const CANONICAL =
@@ -66,50 +66,43 @@ function JsonLd() {
         mainEntity: [
           {
             "@type": "Question",
-            name: "What is electric conductance?",
-            acceptedAnswer: { "@type": "Answer", text: "Electric conductance (G) measures how easily current flows. The SI unit is the siemens (S). Conductance and resistance are reciprocals: G = 1/R." },
+            "name": "What is electric conductance?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Electric conductance (G) measures how easily current flows. The SI unit is the siemens (S). Conductance and resistance are reciprocals: G = 1/R." }
           },
           {
             "@type": "Question",
-            name: "How do I convert between conductance units?",
-            acceptedAnswer: { "@type": "Answer", text: "1 S = 1000 mS = 1,000,000 µS. Multiply or divide by powers of 10 to move between S, mS, and µS." },
+            "name": "How do I convert between conductance units?",
+            "acceptedAnswer": { "@type": "Answer", "text": "1 S = 1000 mS = 1,000,000 µS. Multiply or divide by powers of 10 to move between S, mS, and µS." }
           },
           {
             "@type": "Question",
-            name: "How is conductance related to resistance?",
-            acceptedAnswer: { "@type": "Answer", text: "They are reciprocals. Example: R = 50 Ω → G = 1/50 = 0.02 S (20 mS)." },
-          },
-        ],
-      },
-    ],
+            "name": "How is conductance related to resistance?",
+            "acceptedAnswer": { "@type": "Answer", "text": "They are reciprocals. Example: R = 50 Ω → G = 1/50 = 0.02 S (20 mS)." }
+          }
+        ]
+      }
+    ]
   };
 
   return (
     <script
       type="application/ld+json"
-      // avoid hydration mismatch
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   );
 }
 
-/** ====== Client calculator (put file below in SAME folder) ====== */
-const ClientElectricConductance = dynamic(() => import("./ClientElectricConductance"), {
-  ssr: false,
-});
-
 /** ====== Page (server component) ====== */
 export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-8">
-      {/* Exactly ONE H1 here. Ensure your site header isn't <h1> on this route. */}
+      {/* Exactly ONE H1 here. Ensure your global header is not <h1> on this route. */}
       <h1 className="text-3xl font-semibold mb-4">
         Electric Conductance Converter (Siemens, mS, µS)
       </h1>
 
       <ClientElectricConductance />
 
-      {/* Supporting copy to avoid thin content */}
       <section className="prose prose-neutral max-w-none mt-8">
         <h2>How to Convert Conductance</h2>
         <p>
