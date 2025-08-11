@@ -1,9 +1,8 @@
-// Unit-Converters/src/app/(screens)/Converters/ElectricityConverters/ElectricConductanceConverter/page.tsx
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
-/** ====== Constants ====== */
+/** ====== Canonical + SEO ====== */
 const CANONICAL =
   "https://www.converthaven.com/Converters/ElectricityConverters/ElectricConductanceConverter";
 
@@ -11,7 +10,7 @@ const SEO_TITLE = "Electric Conductance Converter (S ⇄ mS ⇄ µS) | ConvertHa
 const SEO_DESC =
   "Instantly convert electric conductance between siemens (S), millisiemens (mS), and microsiemens (µS). Includes G = 1/R formula, worked examples, and FAQs.";
 
-/** ====== Next.js App Router metadata (server-rendered) ====== */
+/** ====== App Router metadata (server-rendered) ====== */
 export const metadata: Metadata = {
   title: SEO_TITLE,
   description: SEO_DESC,
@@ -47,25 +46,9 @@ function JsonLd() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Converters",
-            item: "https://www.converthaven.com/Converters",
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Electricity Converters",
-            item:
-              "https://www.converthaven.com/Converters/ElectricityConverters",
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: "Electric Conductance Converter",
-            item: CANONICAL,
-          },
+          { "@type": "ListItem", position: 1, name: "Converters", item: "https://www.converthaven.com/Converters" },
+          { "@type": "ListItem", position: 2, name: "Electricity Converters", item: "https://www.converthaven.com/Converters/ElectricityConverters" },
+          { "@type": "ListItem", position: 3, name: "Electric Conductance Converter", item: CANONICAL },
         ],
       },
       {
@@ -74,14 +57,9 @@ function JsonLd() {
         url: CANONICAL,
         applicationCategory: "UtilitiesApplication",
         operatingSystem: "Any",
-        description:
-          "Convert electric conductance between siemens (S), millisiemens (mS), and microsiemens (µS) with instant results.",
+        description: "Convert electric conductance between siemens (S), millisiemens (mS), and microsiemens (µS) with instant results.",
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        publisher: {
-          "@type": "Organization",
-          name: "ConvertHaven",
-          url: "https://www.converthaven.com",
-        },
+        publisher: { "@type": "Organization", name: "ConvertHaven", url: "https://www.converthaven.com" },
       },
       {
         "@type": "FAQPage",
@@ -89,29 +67,17 @@ function JsonLd() {
           {
             "@type": "Question",
             name: "What is electric conductance?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text:
-                "Electric conductance (G) measures how easily current flows. The SI unit is the siemens (S). Conductance and resistance are reciprocals: G = 1/R.",
-            },
+            acceptedAnswer: { "@type": "Answer", text: "Electric conductance (G) measures how easily current flows. The SI unit is the siemens (S). Conductance and resistance are reciprocals: G = 1/R." },
           },
           {
             "@type": "Question",
             name: "How do I convert between conductance units?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text:
-                "1 S = 1000 mS = 1,000,000 µS. Multiply or divide by powers of 10 to move between S, mS, and µS.",
-            },
+            acceptedAnswer: { "@type": "Answer", text: "1 S = 1000 mS = 1,000,000 µS. Multiply or divide by powers of 10 to move between S, mS, and µS." },
           },
           {
             "@type": "Question",
             name: "How is conductance related to resistance?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text:
-                "They are reciprocals. Example: R = 50 Ω → G = 1/50 = 0.02 S (20 mS).",
-            },
+            acceptedAnswer: { "@type": "Answer", text: "They are reciprocals. Example: R = 50 Ω → G = 1/50 = 0.02 S (20 mS)." },
           },
         ],
       },
@@ -121,76 +87,51 @@ function JsonLd() {
   return (
     <script
       type="application/ld+json"
-      // Avoid hydration mismatch
+      // avoid hydration mismatch
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   );
 }
 
-/** ====== Client calculator (put ClientElectricConductance.tsx in same folder) ====== */
-const ClientElectricConductance = dynamic(
-  () => import("./ClientElectricConductance"),
-  { ssr: false }
-);
+/** ====== Client calculator (put file below in SAME folder) ====== */
+const ClientElectricConductance = dynamic(() => import("./ClientElectricConductance"), {
+  ssr: false,
+});
 
 /** ====== Page (server component) ====== */
 export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-8">
-      {/* Exactly ONE H1 on this page */}
+      {/* Exactly ONE H1 here. Ensure your site header isn't <h1> on this route. */}
       <h1 className="text-3xl font-semibold mb-4">
         Electric Conductance Converter (Siemens, mS, µS)
       </h1>
 
-      {/* Calculator */}
       <ClientElectricConductance />
 
       {/* Supporting copy to avoid thin content */}
       <section className="prose prose-neutral max-w-none mt-8">
         <h2>How to Convert Conductance</h2>
         <p>
-          Conductance (<strong>G</strong>) is the reciprocal of resistance (
-          <strong>R</strong>): <strong>G = 1/R</strong>. Use siemens (
-          <strong>S</strong>) as the base SI unit, and switch to{" "}
-          <strong>mS</strong> or <strong>µS</strong> for smaller values.
+          Conductance (<strong>G</strong>) is the reciprocal of resistance (<strong>R</strong>): <strong>G = 1/R</strong>.
+          Use siemens (<strong>S</strong>) as the base SI unit and switch to <strong>mS</strong> or <strong>µS</strong> for smaller values.
         </p>
 
         <h3>Quick Examples</h3>
         <ul>
-          <li>
-            <strong>0.25 S → mS:</strong> 0.25 × 1000 = <strong>250 mS</strong>
-          </li>
-          <li>
-            <strong>7500 µS → S:</strong> 7500 ÷ 1,000,000 ={" "}
-            <strong>0.0075 S</strong>
-          </li>
-          <li>
-            <strong>R = 40 Ω → G:</strong> 1 ÷ 40 = <strong>0.025 S</strong> (
-            25 mS)
-          </li>
+          <li><strong>0.25 S → mS:</strong> 0.25 × 1000 = <strong>250 mS</strong></li>
+          <li><strong>7500 µS → S:</strong> 7500 ÷ 1,000,000 = <strong>0.0075 S</strong></li>
+          <li><strong>R = 40 Ω → G:</strong> 1 ÷ 40 = <strong>0.025 S</strong> (25 mS)</li>
         </ul>
 
         <h2>Related Converters</h2>
         <ul>
-          <li>
-            <Link href="/Converters/ElectricityConverters/ElectricResistanceConverter">
-              Electric Resistance Converter (Ω, kΩ)
-            </Link>
-          </li>
-          <li>
-            <Link href="/Converters/ElectricityConverters/ElectricConductivityConverter">
-              Electrical Conductivity Converter (S/m)
-            </Link>
-          </li>
-          <li>
-            <Link href="/Converters/ElectricityConverters/ElectricCurrentConverter">
-              Electric Current Converter (A, mA)
-            </Link>
-          </li>
+          <li><Link href="/Converters/ElectricityConverters/ElectricResistanceConverter">Electric Resistance Converter (Ω, kΩ)</Link></li>
+          <li><Link href="/Converters/ElectricityConverters/ElectricConductivityConverter">Electrical Conductivity Converter (S/m)</Link></li>
+          <li><Link href="/Converters/ElectricityConverters/ElectricCurrentConverter">Electric Current Converter (A, mA)</Link></li>
         </ul>
       </section>
 
-      {/* JSON-LD */}
       <JsonLd />
     </main>
   );
