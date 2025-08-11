@@ -2,8 +2,10 @@
 
 import React from "react";
 import ReusableConverter from "../../../../../utils/components/ReusableConverter/ReusableConverter";
+// If your component file is `utils/components/ReusableConverter/index.tsx`
+// use this instead:
+// import ReusableConverter from "../../../../../utils/components/ReusableConverter";
 
-/** Units */
 const units: Record<string, number> = {
   "siemens [S]": 1,
   "kilosiemens [kS]": 1e3,
@@ -24,7 +26,7 @@ const convert = (value: number, from: string, to: string): number => {
 export default function ClientElectricConductance() {
   return (
     <ReusableConverter
-      heading=""             // avoid second <h1>
+      heading=""               // avoid duplicate <h1>
       units={Object.keys(units)}
       convert={convert}
     />
