@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
 };
 
-/** ====== JSON-LD (Breadcrumbs + WebApp + FAQ) ====== */
+/** ====== JSON-LD (Breadcrumbs + FAQ) ====== */
 function JsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -53,39 +53,15 @@ function JsonLd() {
         ]
       },
       {
-        "@type": "WebApplication",
-        name: "Millimeters to Centimeters Converter",
-        url: CANONICAL,
-        applicationCategory: "UtilitiesApplication",
-        operatingSystem: "Any",
-        description:
-          "Convert millimeters (mm) to centimeters (cm) instantly with accurate results, formula, examples, and a handy table.",
-        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        publisher: { "@type": "Organization", name: "ConvertHaven", url: "https://www.converthaven.com" }
-      },
-      {
         "@type": "FAQPage",
         mainEntity: [
-          {
-            "@type": "Question",
-            name: "How do you convert mm to cm?",
-            acceptedAnswer: { "@type": "Answer", text: "Divide millimeters by 10. Formula: cm = mm ÷ 10." }
-          },
-          {
-            "@type": "Question",
-            name: "What is 25 mm in cm?",
-            acceptedAnswer: { "@type": "Answer", text: "25 mm ÷ 10 = 2.5 cm." }
-          },
-          {
-            "@type": "Question",
-            name: "What is the relationship between mm and cm?",
-            acceptedAnswer: { "@type": "Answer", text: "1 cm = 10 mm; 1 mm = 0.1 cm." }
-          }
+          { "@type": "Question", name: "How do you convert mm to cm?", acceptedAnswer: { "@type": "Answer", text: "Divide millimeters by 10. Formula: cm = mm ÷ 10." } },
+          { "@type": "Question", name: "What is 25 mm in cm?", acceptedAnswer: { "@type": "Answer", text: "25 mm ÷ 10 = 2.5 cm." } },
+          { "@type": "Question", name: "What is the relationship between mm and cm?", acceptedAnswer: { "@type": "Answer", text: "1 cm = 10 mm; 1 mm = 0.1 cm." } }
         ]
       }
     ]
   };
-
   return (
     <script
       type="application/ld+json"
@@ -94,22 +70,23 @@ function JsonLd() {
   );
 }
 
+/** ====== Page (server component) ====== */
 export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-8">
-      {/* Exactly ONE H1 on the page */}
+      {/* exactly one H1 */}
       <h1 className="text-3xl font-semibold mb-4">
         Millimeters to Centimeters Converter (mm → cm)
       </h1>
 
-      {/* Calculator */}
+      {/* calculator */}
       <ClientMillimetersToCm />
 
-      {/* Helpful copy to avoid thin-content flags */}
+      {/* supporting copy (prevents thin-content flags) */}
       <section className="prose prose-neutral max-w-none mt-8">
         <h2>How to Convert mm to cm</h2>
         <p>
-          Millimeters and centimeters are both metric units. The conversion is simple:
+          Millimeters and centimeters are both metric units. The conversion is straightforward:
           <strong> cm = mm ÷ 10</strong> and <strong>mm = cm × 10</strong>.
         </p>
 
