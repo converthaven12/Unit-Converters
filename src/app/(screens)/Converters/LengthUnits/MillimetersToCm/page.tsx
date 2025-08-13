@@ -1,111 +1,78 @@
-// src/app/(screens)/Converters/LengthUnits/MillimetersToCm/page.tsx
-import type { Metadata } from "next";
-import Link from "next/link";
-import ClientMillimetersToCm from "./ClientMillimetersToCm";
+import Head from 'next/head';
 
-/** ====== SEO ====== */
-const CANONICAL =
-  "https://www.converthaven.com/Converters/LengthUnits/MillimetersToCm";
-
-const SEO_TITLE =
-  "Millimeters to Centimeters Converter (mm → cm) | ConvertHaven";
-const SEO_DESC =
-  "Instantly convert millimeters to centimeters (mm → cm) with accurate results. Includes formula, worked examples, a quick table, and FAQs.";
-
-export const metadata: Metadata = {
-  title: SEO_TITLE,
-  description: SEO_DESC,
-  alternates: { canonical: CANONICAL },
-  robots: {
-    index: true,
-    follow: true,
-    maxSnippet: -1,
-    maxImagePreview: "large",
-    maxVideoPreview: -1,
-  },
-  openGraph: {
-    type: "website",
-    url: CANONICAL,
-    siteName: "ConvertHaven",
-    title: SEO_TITLE,
-    description: SEO_DESC,
-    images: [{ url: "https://www.converthaven.com/og-default.png" }],
-  },
-  twitter: {
-    card: "summary",
-    title: SEO_TITLE,
-    description: SEO_DESC,
-    images: ["https://www.converthaven.com/og-default.png"],
-  },
-};
-
-/** ====== JSON-LD (Breadcrumbs + FAQ) ====== */
-function JsonLd() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Converters", item: "https://www.converthaven.com/Converters" },
-          { "@type": "ListItem", position: 2, name: "Length Units", item: "https://www.converthaven.com/Converters/LengthUnits" },
-          { "@type": "ListItem", position: 3, name: "Millimeters to Centimeters", item: CANONICAL }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: [
-          { "@type": "Question", name: "How do you convert mm to cm?", acceptedAnswer: { "@type": "Answer", text: "Divide millimeters by 10. Formula: cm = mm ÷ 10." } },
-          { "@type": "Question", name: "What is 25 mm in cm?", acceptedAnswer: { "@type": "Answer", text: "25 mm ÷ 10 = 2.5 cm." } },
-          { "@type": "Question", name: "What is the relationship between mm and cm?", acceptedAnswer: { "@type": "Answer", text: "1 cm = 10 mm; 1 mm = 0.1 cm." } }
-        ]
-      }
-    ]
-  };
+export default function MillimetersToCm() {
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
-}
+    <>
+      <Head>
+        {/* Unique Title & Meta Description */}
+        <title>Millimeters to Centimeters Converter | Length Conversion</title>
+        <meta name="description" content="Accurately convert millimeters to centimeters. Simple calculator, formula, and conversion table for mm to cm." />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://www.converthaven.com/Converters/LengthUnits/MillimetersToCm" />
 
-/** ====== Page (server component) ====== */
-export default function Page() {
-  return (
-    <main className="mx-auto max-w-3xl px-4 py-8">
-      {/* exactly one H1 */}
-      <h1 className="text-3xl font-semibold mb-4">
-        Millimeters to Centimeters Converter (mm → cm)
-      </h1>
+        {/* OpenGraph Tags */}
+        <meta property="og:title" content="Millimeters to Centimeters Converter" />
+        <meta property="og:description" content="Use this free tool to convert millimeters (mm) to centimeters (cm) easily and accurately." />
+        <meta property="og:url" content="https://www.converthaven.com/Converters/LengthUnits/MillimetersToCm" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.converthaven.com/images/mm-to-cm-og.jpg" />
 
-      {/* calculator */}
-      <ClientMillimetersToCm />
+        {/* Structured Data (Schema.org) */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Millimeters to Centimeters Converter",
+              "description": "Free online calculator to convert millimeters to centimeters (mm to cm) with formula and table.",
+              "url": "https://www.converthaven.com/Converters/LengthUnits/MillimetersToCm"
+            }
+          `}
+        </script>
+      </Head>
+      {/* Exactly one H1 tag */}
+      <main>
+        <h1>Millimeters to Centimeters Converter</h1>
+        {/* Rich, unique content */}
+        <section>
+          <p>
+            Easily convert millimeters (mm) to centimeters (cm) using this free tool. 
+            Enter your value in millimeters and get the equivalent in centimeters instantly.
+          </p>
+          <p>
+            <strong>Formula:</strong> 1 centimeter = 10 millimeters, so cm = mm &divide; 10.
+          </p>
+          <div>
+            {/* Example conversion tool UI */}
+            <input type="number" placeholder="Millimeters" id="mmInput" />
+            <button onClick={() => {
+              const mm = document.getElementById('mmInput').value;
+              document.getElementById('cmResult').innerText = mm ? (mm/10).toFixed(2) : '';
+            }}>
+              Convert
+            </button>
+            <div id="cmResult"></div>
+          </div>
+          {/* Conversion Table */}
+          <table>
+            <thead>
+              <tr><th>Millimeters (mm)</th><th>Centimeters (cm)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>10</td><td>1</td></tr>
+              <tr><td>50</td><td>5</td></tr>
+              <tr><td>100</td><td>10</td></tr>
+            </tbody>
+          </table>
+        </section>
 
-      {/* supporting copy (prevents thin-content flags) */}
-      <section className="prose prose-neutral max-w-none mt-8">
-        <h2>How to Convert mm to cm</h2>
-        <p>
-          Millimeters and centimeters are both metric units. The conversion is straightforward:
-          <strong> cm = mm ÷ 10</strong> and <strong>mm = cm × 10</strong>.
-        </p>
-
-        <h3>Quick Examples</h3>
-        <ul>
-          <li><strong>45 mm → cm:</strong> 45 ÷ 10 = <strong>4.5 cm</strong></li>
-          <li><strong>120 mm → cm:</strong> 120 ÷ 10 = <strong>12 cm</strong></li>
-          <li><strong>7.2 cm → mm:</strong> 7.2 × 10 = <strong>72 mm</strong></li>
-        </ul>
-
-        <h2>Related Converters</h2>
-        <ul>
-          <li><Link href="/Converters/LengthUnits/CentimetersToMm">Centimeters to Millimeters (cm → mm)</Link></li>
-          <li><Link href="/Converters/LengthUnits/MmToInches">Millimeters to Inches (mm → in)</Link></li>
-          <li><Link href="/Converters/LengthUnits/CmToInches">Centimeters to Inches (cm → in)</Link></li>
-        </ul>
-      </section>
-
-      <JsonLd />
-    </main>
+        {/* Internal Links */}
+        <nav>
+          <a href="/Converters/LengthUnits/CmToMillimeters">Centimeters to Millimeters Converter</a>
+          <a href="/Converters/LengthUnits/MillimetersToInches">Millimeters to Inches Converter</a>
+        </nav>
+      </main>
+    </>
   );
 }
