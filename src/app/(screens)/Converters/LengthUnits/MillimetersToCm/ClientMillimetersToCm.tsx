@@ -3,7 +3,7 @@
 
 import React, { useMemo, useState } from "react";
 
-/** Base factors relative to millimeter (mm) */
+/** base factors relative to millimeter (mm) */
 const UNITS: Record<string, number> = {
   "millimeters [mm]": 1,
   "centimeters [cm]": 0.1, // 1 mm = 0.1 cm
@@ -12,8 +12,8 @@ const UNITS: Record<string, number> = {
 
 export default function ClientMillimetersToCm() {
   const unitList = useMemo(() => Object.keys(UNITS), []);
-  const [from, setFrom] = useState(unitList[0]);      // mm
-  const [to, setTo] = useState(unitList[1]);          // cm
+  const [from, setFrom] = useState(unitList[0]); // mm
+  const [to, setTo] = useState(unitList[1]);     // cm
   const [value, setValue] = useState<string>("10");
 
   const result = useMemo(() => {
@@ -70,3 +70,4 @@ export default function ClientMillimetersToCm() {
     </div>
   );
 }
+
