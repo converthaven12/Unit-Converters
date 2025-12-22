@@ -15,18 +15,17 @@ const CONVERSIONS = {
   },
 };
 
-type PageProps = {
-  params: {
-    slug: keyof typeof CONVERSIONS;
-  };
-};
+type Slug = keyof typeof CONVERSIONS;
 
-export default function Page({ params }: PageProps) {
-  const data = CONVERSIONS[params.slug];
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: Slug }>;
+}) {
+  const { slug } = await params;
 
-  if (!data) {
-    notFound();
-  }
+  const data = CONVERSIONS[slug];
+  if (!data) return notFound();
 
   return (
     <div style={{ padding: 20 }}>
