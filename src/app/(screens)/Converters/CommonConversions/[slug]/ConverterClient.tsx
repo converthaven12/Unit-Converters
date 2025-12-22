@@ -1,6 +1,13 @@
 "use client";
 
-export default function ConverterClient({ data }) {
+type ConversionData = {
+  title?: string;
+  description?: string;
+  from?: string;
+  to?: string;
+};
+
+export default function ConverterClient({ data }: { data: ConversionData }) {
   return (
     <div style={{ marginTop: 20 }}>
       <p>
