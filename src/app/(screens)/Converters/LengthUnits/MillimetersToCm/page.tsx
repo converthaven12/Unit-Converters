@@ -1,5 +1,6 @@
-import Client from "./Client";
+import ClientMillimetersToCm from "./ClientMillimetersToCm";
 
 export default function Page() {
-  return <Client />;
+  return <ClientMillimetersToCm />;
 }
+
