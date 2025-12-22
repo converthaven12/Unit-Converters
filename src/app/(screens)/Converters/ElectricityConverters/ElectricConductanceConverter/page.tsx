@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    maxSnippet: -1,
+    
     maxImagePreview: "large",
     maxVideoPreview: -1,
   },
