@@ -47,9 +47,15 @@ export default function MillimetersToCm() {
             {/* Example conversion tool UI */}
             <input type="number" placeholder="Millimeters" id="mmInput" />
             <button onClick={() => {
-              const mm = document.getElementById('mmInput').value;
-              document.getElementById('cmResult').innerText = mm ? (mm/10).toFixed(2) : '';
-            }}>
+              const inputEl = document.getElementById("mmInput") as HTMLInputElement | null;
+const mm = inputEl?.value ?? "";
+
+const resultEl = document.getElementById("cmResult");
+if (resultEl) {
+  resultEl.innerText = mm ? (Number(mm) / 10).toFixed(2) : "";
+}
+
+          }}>
               Convert
             </button>
             <div id="cmResult"></div>
