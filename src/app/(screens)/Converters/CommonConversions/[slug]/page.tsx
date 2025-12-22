@@ -1,17 +1,7 @@
-import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
+import ConverterClient from "./ConverterClient";
 
-const ConverterClient = dynamic(() => import("./ConverterClient"), {
-  ssr: false,
-  loading: () => (
-    <div style={{ padding: 16 }}>
-      <div style={{ height: 140, borderRadius: 10, background: "#f2f2f2" }} />
-      <p>Loading converter...</p>
-    </div>
-  ),
-});
-
-const CONVERSIONS: Record<string, any> = {
+const CONVERSIONS = {
   "cm-to-inches": {
     title: "Cm to Inches Converter",
     description: "Convert centimeters to inches instantly.",
@@ -30,7 +20,7 @@ export function generateStaticParams() {
   return Object.keys(CONVERSIONS).map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: any) {
+export async function generateMetadata({ params }) {
   const data = CONVERSIONS[params.slug];
   if (!data) return {};
   return {
@@ -42,7 +32,7 @@ export async function generateMetadata({ params }: any) {
   };
 }
 
-export default function Page({ params }: any) {
+export default function Page({ params }) {
   const data = CONVERSIONS[params.slug];
   if (!data) return notFound();
 
@@ -50,9 +40,7 @@ export default function Page({ params }: any) {
     <div>
       <h1>{data.title}</h1>
       <p>{data.description}</p>
-
       <ConverterClient data={data} />
     </div>
   );
 }
-
