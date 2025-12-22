@@ -21,7 +21,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const data = CONVERSIONS[params.slug];
+const data = CONVERSIONS[params.slug];
   if (!data) return {};
   return {
     title: `${data.title} | ConvertHaven`,
@@ -32,8 +32,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function Page({ params }) {
-  const data = CONVERSIONS[params.slug];
+export default function Page({ params }: { params: { slug: string } }) {
+const data = CONVERSIONS[params.slug];
   if (!data) return notFound();
 
   return (
