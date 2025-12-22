@@ -1,7 +1,14 @@
 import { notFound } from "next/navigation";
 import ConverterClient from "./ConverterClient";
 
-const CONVERSIONS = {
+type Conversion = {
+  title: string;
+  description: string;
+  from: string;
+  to: string;
+};
+
+const CONVERSIONS: Record<string, Conversion> = {
   "cm-to-inches": {
     title: "Cm to Inches Converter",
     description: "Convert centimeters to inches instantly.",
@@ -16,18 +23,14 @@ const CONVERSIONS = {
   },
 };
 
-export function generateStaticParams() {
-  return Object.keys(CONVERSIONS).map((slug) => ({ slug }));
-}
-
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const { slug } = await params;
-const data = CONVERSIONS[slug];
+  const data = CONVERSIONS[params.slug];
   if (!data) return {};
+
   return {
     title: `${data.title} | ConvertHaven`,
     description: data.description,
@@ -37,17 +40,12 @@ const data = CONVERSIONS[slug];
   };
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-const data = CONVERSIONS[slug];
+export default function Page({ params }: { params: { slug: string } }) {
+  const data = CONVERSIONS[params.slug];
   if (!data) return notFound();
 
   return (
-    <div>
+    <div style={{ padding: 16 }}>
       <h1>{data.title}</h1>
       <p>{data.description}</p>
       <ConverterClient data={data} />
