@@ -20,8 +20,13 @@ export function generateStaticParams() {
   return Object.keys(CONVERSIONS).map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }) {
-const data = CONVERSIONS[params.slug];
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+const data = CONVERSIONS[slug];
   if (!data) return {};
   return {
     title: `${data.title} | ConvertHaven`,
@@ -32,8 +37,13 @@ const data = CONVERSIONS[params.slug];
   };
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
-const data = CONVERSIONS[params.slug];
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+const data = CONVERSIONS[slug];
   if (!data) return notFound();
 
   return (
