@@ -7,8 +7,8 @@ type ConversionData = {
   to?: string;
 };
 
-export default function ConverterClient({ data }: { data: ConversionData }) {
-  return (
+export default function ConverterClient({ data }: { data: any }) {
+return (
     <div style={{ marginTop: 20 }}>
       <p>
         From <b>{data?.from}</b> to <b>{data?.to}</b>
