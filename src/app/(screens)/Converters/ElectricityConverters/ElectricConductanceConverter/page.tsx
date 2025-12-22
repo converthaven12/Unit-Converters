@@ -17,8 +17,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
     
-    maxImagePreview: "large",
-    maxVideoPreview: -1,
+    
   },
   openGraph: {
     type: "website",
