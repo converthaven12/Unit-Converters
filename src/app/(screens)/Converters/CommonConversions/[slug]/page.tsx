@@ -1,10 +1,10 @@
-import dynamic from "next/dynamic";
+import ConverterClient from "./ConverterClient";
 import { notFound } from "next/navigation";
 
-const ConverterClient = dynamic(() => import("./ConverterClient"), {
-  ssr: false,
-});
-
+/**
+ * Conversion config
+ * (abhi sirf 2 example, baad mein aur add kar sakte ho)
+ */
 const CONVERSIONS = {
   "cm-to-inches": {
     title: "Cm to Inches Converter",
@@ -18,9 +18,16 @@ const CONVERSIONS = {
   },
 };
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default function Page({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const data = CONVERSIONS[params.slug as keyof typeof CONVERSIONS];
-  if (!data) notFound();
+
+  if (!data) {
+    notFound();
+  }
 
   return <ConverterClient data={data} />;
 }
