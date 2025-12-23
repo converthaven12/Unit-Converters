@@ -17,20 +17,15 @@ const CONVERSIONS = {
   },
 } as const;
 
-type Params = { slug: string };
-type Slug = keyof typeof CONVERSIONS;
-
-async function resolveParams(p: Params | Promise<Params>) {
-  return await Promise.resolve(p);
-}
+type Params = { slug: keyof typeof CONVERSIONS };
 
 export async function generateMetadata({
   params,
 }: {
-  params: Params | Promise<Params>;
+  params: Promise<Params>;
 }): Promise<Metadata> {
-  const { slug } = await resolveParams(params);
-  const data = CONVERSIONS[slug as Slug];
+  const { slug } = await params;
+  const data = CONVERSIONS[slug];
 
   if (!data) return {};
 
@@ -40,13 +35,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Params | Promise<Params>;
-}) {
-  const { slug } = await resolveParams(params);
-  const data = CONVERSIONS[slug as Slug];
+export default async function Page({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const data = CONVERSIONS[slug];
 
   if (!data) notFound();
 
