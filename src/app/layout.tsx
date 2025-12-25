@@ -89,7 +89,6 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AnalyticsPageviewTracker />
         {children}
-        <DelayedFooter />
         {/* If you still want the regular footer visible immediately, keep this: */}
         <Footer />
       </body>
